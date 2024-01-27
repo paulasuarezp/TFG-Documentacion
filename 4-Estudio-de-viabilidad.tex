@@ -100,7 +100,7 @@ En el presente apartado, se realiza un examen detallado de las diversas alternat
 Este análisis implica una evaluación rigurosa de las ventajas y desventajas asociadas a cada opción. La finalidad es identificar la solución más apropiada que no solo cumpla con los requisitos funcionales y no funcionales del proyecto, sino que también se alinee óptimamente con las restricciones y objetivos globales del mismo.
 
 \subsubsection{Valoración de alternativas para la arquitectura}
-En lo que respecta a la arquitectura, se han considerado las siguientes alternativas:
+A continuación, se presenta una comparación de varias alternativas arquitectónicas para el desarrollo del sistema.
 \subsubsubsection{Arquitectura Monolítica}
 La arquitectura monolítica es un enfoque de desarrollo de software en el que una aplicación se construye como una sola unidad. En este caso, todos los componentes del sistema se diseñan y se implementan como un único bloque, que se ejecuta como un único proceso.
 Este enfoque en un proyecto pequeño puede ser beneficioso, ya que simplifica el proceso de desarrollo y sobretodo de despliegue. Sin embargo, a medida que el proyecto crece, la arquitectura monolítica se vuelve cada vez más compleja y difícil de mantener. Además, la escalabilidad de la aplicación se ve limitada por la necesidad de escalar el sistema en su conjunto, en lugar de poder escalar componentes individuales de forma independiente.
@@ -109,66 +109,159 @@ Este enfoque en un proyecto pequeño puede ser beneficioso, ya que simplifica el
 La arquitectura de microservicios es un enfoque de desarrollo de software en el que una aplicación se construye como un conjunto de servicios pequeños, independientes y altamente escalables. Cada servicio se ejecuta como un proceso separado y se comunica con otros servicios mediante mecanismos ligeros, como una API REST.
 Este enfoque permite que los servicios se desarrollen, desplieguen y escalen de forma independiente, lo que facilita la gestión de proyectos complejos. Sin embargo, la arquitectura de microservicios también introduce una mayor complejidad en el desarrollo y la gestión de la aplicación, ya que requiere la implementación de mecanismos de comunicación entre los servicios, así como la gestión de la escalabilidad de cada uno de ellos.
 
-\subsubsubsection{Arquitectura de API Rest y WepApp}    
-Se caracteriza por una clara división entre cliente y servidor, encapsulados respectivamente en WepApp (frontend) y REST Api (backend). Esta separación promueve una organización modular, facilitando el mantenimiento del proyecto al separar de forma clara las distintas responsabilidades. 
+\subsubsubsection{Arquitectura de REST API y WepApp}    
+Se caracteriza por una clara división entre cliente y servidor, encapsulados respectivamente en WepApp (frontend) y REST API (backend). Esta separación promueve una organización modular, facilitando el mantenimiento del proyecto al separar de forma clara las distintas responsabilidades. 
 Este enfoque es un punto intermedio entre las dos arquitecturas anteriores, ya que permite una mayor flexibilidad en el desarrollo y la gestión de la aplicación, sin introducir una complejidad excesiva. 
 
+\subsubsubsection{Comparativa de alternativas arquitectónicas}
+Mediante la siguiente tabla, se presenta una comparación de las alternativas arquitectónicas previamente mencionadas.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ 
+       >{\raggedright\arraybackslash}p{4cm} 
+       >{\centering\arraybackslash}p{3cm} 
+       >{\centering\arraybackslash}p{3cm} 
+       >{\centering\arraybackslash}p{3cm} }
+    \toprule
+    \textbf{Criterio} & \textbf{Arquitectura Monolítica} & \textbf{Arquitectura de Microservicios} & \textbf{API REST y WebApp} \\
+    \midrule
+    Complejidad Inicial & Baja & Alta & Moderada \\
+    \midrule
+    Escalabilidad & Limitada & Alta & Moderada \\
+    \midrule
+    Facilidad de Mantenimiento & Alta en proyectos pequeños & Moderada a baja & Moderada si en cada modulo hay una estructura interna clara  \\
+    \midrule
+    Despliegue & Sencillo & Complejo & Moderado \\
+    \midrule
+    Gestión de Proyectos & Simple en proyectos pequeños & Requiere coordinación compleja & Balanceada \\
+    \midrule
+    Independencia de Componentes & No & Sí & Parcial \\
+    \midrule
+    Adaptabilidad a Cambios & Baja & Alta & Moderada \\
+    \midrule
+    Recomendado para & Proyectos pequeños y simples & Proyectos grandes y escalables & Proyectos con necesidad de separación clara entre frontend y backend \\
+    \bottomrule
+    \end{tabular}
+    \caption{Comparación de Arquitecturas de Software}
+    \label{tabla:comparacion_arquitecturas}
+    \end{table}
+
+\subsubsubsection{Decisión final de la arquitectura}
+Tras un análisis exhaustivo de las alternativas disponibles, se ha optado por implementar una arquitectura de API REST y WebApp.
+
+Esta decisión permite alcanzar un equilibrio entre la simplicidad inherente a la arquitectura monolítica y la escalabilidad ofrecida por la arquitectura de microservicios. Además, esta elección facilita la gestión del proyecto mediante una separación clara entre el frontend y el backend. Tal distinción posibilita el desarrollo y despliegue independiente de cada componente, contribuyendo a la minimización de riesgos asociados a fallos en cadena. 
+Además, cada módulo, operando de manera aislada, mejora significativamente la disponibilidad y confiabilidad del sistema.
+
+
+
 \subsubsection{Valoración de alternativas para el Backend}
-En lo que respecta al desarrollo del backend, se han considerado las siguientes alternativas:
+Es crucial seleccionar una tecnología de backend que no solo soporte eficientemente las operaciones en tiempo real sino que también se integre de manera óptima con el frontend.
+A continuación, se presenta un análisis de varias alternativas para el desarrollo del backend teniendo en cuenta estos requisitos.
+
+\subsubsubsection{Java con Spring Boot}
+Java es un lenguaje de programación orientado a objetos que destaca por su portabilidad y robustez, siendo ampliamente utilizado en el desarrollo de aplicaciones empresariales. 
+La combinación con Spring Boot permite un desarrollo ágil con una amplia gama de herramientas como Spring Data y Spring Security entre otras. 
+Entre sus ventajas, además de las herramientas mencionadas, destacan su escalabilidad, su robustez en el manejo de transacciones y su amplia comunidad. 
+Sin embargo, Java con Spring Boot presenta una curva de aprendizaje significativa y, aunque Spring Boot puede manejar aplicaciones en tiempo real mediante Spring WebFlux, su rendimiento en este ámbito puede ser inferior comparado con otras tecnologías. Además, la integración con el frontend, podría no ser la más rápida en términos de desarrollo.
+
+\subsubsubsection{Node.js con Express}
+Node.js es un entorno de ejecución para JavaScript en el lado del servidor, conocido por su modelo de I/O no bloqueante y su eficiencia en el manejo de múltiples conexiones simultáneas
+La integración de Node.js con Express, un framework ligero y flexible, ofrece una solución óptima para desarrollar aplicaciones web dinámicas.
+Esta combinación destaca por su capacidad para gestionar operaciones en tiempo real de manera eficiente y su sinergia natural con tecnologías frontend basadas en JavaScript, facilitando un desarrollo cohesivo y ágil entre el backend y el frontend.
+Como desventajas, cabe mencionar que Node.js puede no ser la opción más adecuada para tareas que requieren un alto uso de CPU debido a su naturaleza de ejecución de un solo hilo, ya que su rendimiento en este ámbito puede ser inferior al de otras tecnologías.
+
+\subsubsubsection{Python con Django}
+Python, un lenguaje de programación de alto nivel, se caracteriza por su versatilidad y amplia gama de bibliotecas. Utilizado ampliamente en aplicaciones empresariales combinado con Django, un framework de alto nivel que se enfoca en el desarrollo rápido y eficiente.
+Como ventajas, destacan su desarrollo rápido, sus excelentes capacidades de seguridad y su buena documentación.
+Aunque Django puede ser configurado para soportar aplicaciones en tiempo real mediante Django Channels, su rendimiento en estos escenarios puede no ser tan óptimo como el de Node.js. Además, aunque Django asegura una buena integración con el frontend, puede no ser la opción más ágil para aplicaciones que requieren una interacción constante.
 
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{ 
-   >{\raggedright\arraybackslash}p{3cm} 
-   >{\raggedright\arraybackslash}p{3cm} 
-   >{\raggedright\arraybackslash}p{3cm} 
-   >{\raggedright\arraybackslash}p{3cm} }
-\toprule
-\textbf{Criterio} & \textbf{Java con Spring Boot} & \textbf{Node.js con Express} & \textbf{Python con Django} \\
-\midrule
-\textbf{Descripción} & Framework basado en Java ideal para crear aplicaciones basadas en Spring. & Framework ligero y flexible para Node.js, optimizado para APIs REST. & Framework de alto nivel para Python, orientado al rápido desarrollo. \\
-\midrule
-\textbf{Ventajas} & Alta escalabilidad, robustez en manejo de transacciones, amplia comunidad. & Rendimiento excelente en operaciones I/O, desarrollo rápido. & Desarrollo rápido, excelentes capacidades de seguridad, buena documentación. \\
-\midrule
-\textbf{Desventajas} & Curva de aprendizaje significativa, tiempos de inicio más lentos. & Manejo menos óptimo de tareas CPU intensivas. & Menos adecuado para tareas de tiempo real y alta concurrencia. \\
-\midrule
-\textbf{Uso en Subastas en Tiempo Real} & Buen manejo de transacciones pero menos óptimo para tiempo real. & Excelente para operaciones en tiempo real gracias a su eficiencia en I/O. & Posible pero requiere más configuración para tiempo real. \\
-\midrule
-\textbf{Escalabilidad} & Alta, pero con escalabilidad vertical. & Alta, con facilidad para escalar horizontalmente. & Moderada, con algunas limitaciones en escalabilidad. \\
-\midrule
-\textbf{Seguridad} & Fuertes capacidades de seguridad. & Requiere implementaciones adicionales para seguridad. & Seguridad integrada y robusta. \\
-\bottomrule
-\end{tabular}
-\caption{Comparación de Tecnologías para el Backend}
-\label{tabla:comparacion_backend}
+
+\subsubsubsection{Comparativa de alternativas para el Backend}
+En la siguiente tabla, se presenta una comparación de las alternativas para el desarrollo del Backend.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ 
+       >{\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} }
+    \toprule
+    \textbf{Criterio} & \textbf{Java con Spring Boot} & \textbf{Node.js con Express} & \textbf{Python con Django} \\
+    \midrule
+    \textbf{Modelo de Programación} & Orientado a objetos, con énfasis en inyección de dependencias. & Basado en eventos y callbacks. & Orientado a componentes/modelos con énfasis en la reutilización de código. \\
+    \midrule
+    \textbf{Funcionalidad en tiempo real} & Buen manejo de transacciones pero menos óptimo para tiempo real. & Excelente para operaciones en tiempo real gracias a su eficiencia en I/O. & Posible pero requiere más configuración para tiempo real. \\
+    \midrule
+    \textbf{Integración con Frontend} & Buena, puede requerir esfuerzos adicionales. & Natural y fluida. & Buena, pero puede necesitar configuraciones extra. \\
+    \midrule
+    \textbf{Escalabilidad} & Alta, pero con escalabilidad vertical. & Alta, con facilidad para escalar horizontalmente. & Moderada, con algunas limitaciones en escalabilidad. \\
+    \midrule
+    \textbf{Seguridad} & Fuertes capacidades de seguridad. & Requiere implementaciones adicionales para seguridad. & Seguridad integrada y robusta. \\
+    \bottomrule
+    \end{tabular}
+    \caption{Comparación de Tecnologías para el Backend}
+    \label{tabla:comparacion_backend}
+    \end{table}
+
+    
+\subsubsection{Decisión final del Backend}
+Considerando las necesidades del sistema a desarrollar, para soportar subastas en tiempo real y una integración fluida con el frontend la opción más adecuada es Node.js con Express.
+
+
+\subsubsection{Valoración de alternativas para el Frontend}
+Por último, se presenta un análisis de alternativas para el desarrollo del frontend.
+
+\subsubsubsection{React}
+React es una biblioteca de JavaScript desarrollada y mantenida por Facebook, centrada en la construcción de interfaces de usuario a través de componentes reutilizables. Se caracteriza por su virtual DOM y su enfoque declarativo.
+
+Entre sus ventajas, destacan su amplia comunidad, su rendimiento optimizado con Virtual DOM y su flexibilidad en la elección de estilos y componentes. 
+Como desventajas cabe mencionar las actualizaciones frecuentes que implican mantenerse al día con los cambios y que necesita integración con otras herramientas para ser una solución completa.
+
+
+\subsubsubsection{Angular}
+Angular es un framework de desarrollo web mantenido por Google, conocido por su enfoque en aplicaciones de página única (SPA). Utiliza TypeScript como lenguaje principal y proporciona un entorno robusto y completo para el desarrollo.
+
+Entre sus ventajas, destaca su ecosistema completo, promueve un estilo de desarrollo coherente y mantenible y, además, cuenta con una comunidad activa y un amplio soporte de Google, lo que garantiza actualizaciones y soporte continuo.
+Sin embargo, Angular puede ser excesivo para proyectos pequeños, ya que su curva de aprendizaje es pronunciada y su configuración inicial puede ser compleja.
+
+\subsubsubsection{Vue.js}
+Vue es un framework progresivo para la construcción de interfaces de usuario, creado por Evan You. Se destaca por su facilidad de adopción, su sistema reactividad y su enfoque en la simplicidad.
+
+Entre sus ventajas, destacan su sintaxis sencilla, su buena documentación y su facilidad de integración en proyectos existentes.
+Aunque su uso va en aumento, su comunidad es más pequeña en comparación con React o Angular, lo que se traduce en menos librerías y recursos disponibles.
+
+\subsubsubsection{Comparativa de alternativas para el Frontend}
+A continuación, se presenta una comparación de las alternativas para el desarrollo del Frontend.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ 
+       >{\raggedright\arraybackslash}p{2.5cm} 
+       >{\raggedright\arraybackslash}p{3.5cm} 
+       >{\raggedright\arraybackslash}p{3.5cm} 
+       >{\raggedright\arraybackslash}p{3.5cm} }
+    \toprule
+    \textbf{Criterio} & \textbf{React} & \textbf{Angular} & \textbf{Vue.js} \\
+    \midrule
+    \textbf{Velocidad y Rendimiento} & Alto con Virtual DOM. Optimizado para cambios dinámicos de UI. & Buen rendimiento, pero puede ser más lento en proyectos grandes debido a su complejidad. & Rendimiento similar a React, con optimizaciones en la actualización de la UI. \\
+    \midrule
+    \textbf{Mantener el Estado} & Requiere bibliotecas adicionales como Redux para manejo complejo del estado. & Gestión de estado integrada, adecuada para aplicaciones complejas. & Sistema reactividad sencillo, para manejo de estado complejo requiere la biblioteca Vuex. \\
+    \midrule
+    \textbf{Comunidad} & Muy grande y activa, con un ecosistema extenso. & Amplia y soportada por Google, con muchas empresas adoptándolo. & Creciente y entusiasta, con un enfoque en la facilidad de uso. \\
+    \midrule
+    \textbf{Curva de Aprendizaje} & Moderada; JSX y el ecosistema pueden requerir tiempo de aprendizaje. & Elevada; TypeScript y su arquitectura completa requieren más tiempo para aprender. & Baja; Vue es considerado fácil de aprender, especialmente para principiantes. \\
+    \midrule
+    \textbf{Escalabilidad} & Muy escalable con un enfoque modular y reutilizable. & Diseñado para aplicaciones empresariales escalables y complejas. & Escalable, pero más adecuado para proyectos de tamaño mediano. \\
+    \midrule
+    \textbf{Ecosistemas y Módulos} & Rico ecosistema con una gran cantidad de módulos y herramientas. & Ecosistema completo con soluciones integradas para muchas necesidades. & Ecosistema más pequeño aunque en crecimiento, con módulos y librerías en aumento. \\
+    \bottomrule
+    \end{tabular}
+    \caption{Análisis Comparativo de Frameworks y Bibliotecas de Frontend}
+    \label{tabla:comparacion_frontend}
 \end{table}
 
+\subsubsubsection{Decisión final del Frontend}
+Tras una evaluación detallada de las distintas opciones disponibles y en función de los requisitos específicos del sistema a desarrollar, se ha determinado que React es la tecnología más adecuada para el frontend.
 
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{ 
-   >{\raggedright\arraybackslash}p{2.5cm} 
-   >{\raggedright\arraybackslash}p{2.5cm} 
-   >{\raggedright\arraybackslash}p{2.5cm} 
-   >{\raggedright\arraybackslash}p{2.5cm} }
-\toprule
-\textbf{Criterio} & \textbf{React} & \textbf{Angular} & \textbf{Vue.js} \\
-\midrule
-\textbf{Ventajas} & Amplia comunidad, gran ecosistema, rendimiento óptimo. & Solución completa, incluye herramientas de construcción y gestión de estado. & Facilidad de integración, sintaxis sencilla, buena documentación. \\
-\midrule
-\textbf{Desventajas} & Solo abarca la capa de vista, requiere integración con otras herramientas. & Curva de aprendizaje pronunciada, puede ser excesivo para proyectos pequeños. & Comunidad más pequeña, ecosistema menos extenso. \\
-\midrule
-\textbf{Gestión del Estado} & Uso común de Redux para manejar el estado. & Gestión integrada del estado dentro del framework. & Uso de Vuex para la gestión del estado en proyectos Vue.js. \\
-\midrule
-\textbf{Estilos y Componentes} & Flexibilidad en la elección de estilos y componentes. & Incluye su propio conjunto de componentes. & Facilita la integración con diversas bibliotecas de estilos. \\
-\midrule
-\textbf{Rendimiento} & Virtual DOM para un rendimiento óptimo. & Optimización de rendimiento mediante técnicas avanzadas. & Rendimiento eficiente con un enfoque minimalista. \\
-\midrule
-\textbf{Integración con Backend} & Flexible para integrar con diversas APIs. & Diseñado para trabajar eficientemente con REST y GraphQL. & Compatible con diversas opciones de backend. \\
-\bottomrule
-\end{tabular}
-\caption{Comparación de Tecnologías para el Frontend}
-\label{tabla:comparacion_frontend}
-\end{table}
+Esta decisión se basa, principalmente, en la gran comunidad de React y en la rica colección de recursos disponles.
