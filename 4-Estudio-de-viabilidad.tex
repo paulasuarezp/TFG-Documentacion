@@ -1,0 +1,174 @@
+\subsection{Análisis de sistemas similares}
+En este apartado, se aborda un análisis detallado de las plataformas y sistemas que actualmente exhiben un comportamiento similar al del sistema que se pretende desarrollar para 'BidMon Universe'. 
+
+La realización de este análisis es crucial, ya que proporciona una base sólida para la toma de decisiones estratégicas. Al examinar detenidamente tanto las ventajas como las desventajas de los sistemas existentes, se identifican estrategias exitosas y se reconocen posibles fallos o áreas susceptibles de mejora. Este enfoque no solo informa las decisiones de diseño y tecnología, sino que también las fundamenta en un conocimiento práctico y bien contextualizado. Así, se garantiza que el desarrollo de 'BidMon Universe' esté en consonancia con las tendencias actuales y adopte las soluciones más efectivas y adecuadas para su propósito.
+
+\subsubsection{EA Sports FC}
+EA Sports FC constituye una destacada franquicia de videojuegos de fútbol, los cuales se encuentran disponibles en diversas plataformas. Dentro de estos juegos, los usuarios tienen la oportunidad de adquirir sobres que contienen cartas de futbolistas y otros elementos complementarios. Además, cuentan con acceso a un mercado virtual donde pueden llevar a cabo transferencias de jugadores mediante un sistema de subastas.
+
+El sistema de subastas puede variar según la plataforma del juego, sin embargo, todos comparten una serie de características que sera continuación.
+
+\subsubsubsection{Ventajas de EA Sports FC}
+En el contexto de EA Sports FC, destacan las siguientes ventajas:
+\begin{itemize}
+    \item Los usuarios pueden marcar una carta para efectuar un seguimiento y recibir notificaciones en caso de una disminución en su precio.
+    \item Se proporcionan estadísticas detalladas de cada carta, incluyendo su evolución de precio en las últimas semanas, así como los valores más bajos y más altos a los que se está vendiendo actualmente.
+    \item Existe la opción de vender una carta directamente, evitando la necesidad de utilizar el sistema de subastas. 
+    \item Cuenta con un buscador de ofertas que incorpora varios filtros.
+    \item Los usuarios tienen la posibilidad de editar o cancelar sus pujas en curso.
+    \item El sistema de subastas implementado opera bajo un mecanismo de puja ciega.
+\end{itemize}
+
+\subsubsubsection{Desventajas de EA Sports FC}
+Sin embargo, es importante mencionar algunas desventajas de EA Sports FC, que incluyen:
+\begin{itemize}
+    \item Un número limitado de órdenes de canje simultáneas como, por ejemplo, el máximo de 25 permitido en EA Sports FC Mobile.
+    \item Las pujas solo se pueden realizar por un valor igual o superior al establecido por el juego. 
+\end{itemize}
+
+\subsubsubsection{Ventajas del nuevo sistema respecto EA Sports FC}
+El sistema en desarrollo presenta varias características que mejoran la experiencia del usuario en comparación con EA Sports FC.
+
+\begin{itemize}
+    \item El acceso a la aplicación es completamente gratuito.
+    \item Ofrece una mayor personalización en el proceso de puja, brindando a los usuarios una experiencia más flexible y adaptada a sus preferencias.
+    \item El usuario tiene la posibilidad de acceder a un histórico exhaustivo en el que se detallan todas las transacciones realizadas.
+\end{itemize}
+
+\subsubsection{LaLiga Fantasy}
+\href{https://laligafantasy.relevo.com/}{LaLiga Fantasy} un juego basado en la liga de fútbol española, conocida como LaLiga. En este juego, los usuarios tienen la capacidad de crear equipos que se componen de jugadores cuyo rendimiento se correlaciona con el desempeño real en los partidos de LaLiga. Además, existe la posibilidad de competir por premios reales en determinadas instancias del juego.
+El juego dispone de un mercado en el que los usuarios pueden vender o adquirir jugadores a través de un sistema de subastas, por lo que estamos ante un escenario similar al anterior.
+
+
+\subsubsubsection{Ventajas de LaLiga Fantasy}
+Dentro del marco de LaLiga Fantasy, se destacan las siguientes características:
+\begin{itemize}
+    \item El juego renueva constantemente el mercado de transferibles.
+    \item El juego cuenta con la capacidad de generar ofertas automáticas por los futbolistas que se encuentran en venta. Estas ofertas se establecen a partir de un valor aleatorio que oscila entre el valor de mercado del jugador, con un margen del 10\% tanto por encima como por debajo de dicho valor.
+    \item Recientemente se ha incorporado el mercado de ``clausulazos'', donde los usuarios pueden adquirir un jugador pagando su cláusula, que será más elevada que el valor de mercado, sin tener que depender del propietario del jugador.
+    \item Se pueden realizar ofertas por jugadores a otros usuarios.
+\end{itemize}
+
+\subsubsubsection{Desventajas de LaLiga Fantasy}
+Se pueden identificar las siguientes desventajas:
+\begin{itemize}
+    \item La limitación a un máximo de 24 jugadores en la plantilla, lo que puede ocasionar la pérdida de oportunidades en subastas.
+    \item La plataforma brinda escasa flexibilidad en lo que respecta a la personalización al momento de poner un jugador en venta.
+\end{itemize}
+
+\subsubsubsection{Ventajas del nuevo sistema respecto LaLiga Fantasy}
+\begin{itemize}
+    \item LaLiga Fantasy ofrece una suscripción de 0,99€/mes para poder jugar sin anuncios mientras que el sistema que se desarrollará carece de anuncios.
+    \item Se proporciona un historial de transacciones completo para que los usuarios puedan rastrear las compras y ventas.
+    \item Se implementa un sistema de subastas en tiempo real que, además, brinda una mayor personalización al usuario en aspectos como la duración de la subasta y los valores de venta, entre otros.
+    \item Además de acceder al mercado, los usuarios tienen la opción de adquirir sobres de cartas, lo que añade un elemento de emoción a la aplicación.
+\end{itemize}
+
+\subsubsection{eBay}
+\href{https://www.ebay.es/}{eBay} es una plataforma de comercio online que permite a los usuarios comprar y vender productos a través de subastas o ventas directas. 
+\subsubsubsection{Ventajas de eBay}
+Dentro del marco de LaLiga Fantasy, se destacan las siguientes características:
+\begin{itemize}
+    \item Para cada producto subastado, la plataforma ofrece la posibilidad de visualizar información detallada que incluye el número de pujas, la cantidad de pujadores, las retractaciones, el tiempo restante en la subasta, y proporciona un historial completo de las pujas realizadas en ese producto. Este historial incluye datos relevantes sobre las pujas, como su valor y la fecha en la que se efectuaron. Además, se brinda acceso a información pertinente sobre los pujadores involucrados.
+    \item eBay proporciona a los usuarios la capacidad de configurar pujas automáticas. En este proceso, el comprador define el precio máximo que está dispuesto a pagar por el producto, y la plataforma aumenta automáticamente la oferta en su nombre, siempre que sea necesario, para mantener al comprador como el principal postor hasta alcanzar el límite previamente establecido.
+    \item Los usuarios tienen la posibilidad de examinar el perfil del vendedor, explorar otros productos que este tenga en venta y establecer contacto directo con él.
+    \item Como vendedor, la plataforma te brinda la capacidad de definir el valor inicial de la puja, decidir si deseas recibir ofertas, establecer la fecha de inicio de la subasta, determinar su duración y habilitar la opción de compra directa a un precio específico de tu elección.
+\end{itemize}
+
+\subsubsubsection{Desventajas de eBay}
+A continuación, es posible señalar las siguientes desventajas:
+\begin{itemize}
+    \item La interfaz de usuario muestra una gran cantidad de información, lo que puede resultar confuso para alguien que no está acostumbrado a ella.
+    \item Cuando se va a realizar una puja, no aparece una ventana emergente de confirmación de puja o similar por lo que es fácil introducir una puja errónea y, posteriormente, puede resultar complicado retirarla.
+    \item Las subastas tienen incrementos de puja predefinidos, lo que significa que no puedes especificar un valor concreto por el que desees pujar.
+\end{itemize}
+
+\subsubsubsection{Ventajas del nuevo sistema respecto eBay}
+\begin{itemize}
+    \item El sistema en desarrollo presentará una interfaz simple e intuitiva, que proporcionará todos los datos esenciales para efectuar una puja con confianza, sin abrumar al usuario con una sobrecarga de información.
+    \item El sistema que se desarrollará proporcionará al usuario información sobre las condiciones para retirar una puja antes de su confirmación.
+\end{itemize}
+
+
+% datos de facturación de laliga y juegos fantasy
+% https://www.palco23.com/entorno/los-fantasy-se-preparan-para-su-boom-el-negocio-rebasara-416-millones-en-2024
+% ebay https://www.ebayinc.com/company/
+
+\subsection{Valoración de alternativas de solución}
+En el presente apartado, se realiza un examen detallado de las diversas alternativas tecnológicas y arquitectónicas disponibles que satisfacen los requisitos previamente establecidos para el proyecto. 
+
+Este análisis implica una evaluación rigurosa de las ventajas y desventajas asociadas a cada opción. La finalidad es identificar la solución más apropiada que no solo cumpla con los requisitos funcionales y no funcionales del proyecto, sino que también se alinee óptimamente con las restricciones y objetivos globales del mismo.
+
+\subsubsection{Valoración de alternativas para la arquitectura}
+En lo que respecta a la arquitectura, se han considerado las siguientes alternativas:
+\subsubsubsection{Arquitectura Monolítica}
+La arquitectura monolítica es un enfoque de desarrollo de software en el que una aplicación se construye como una sola unidad. En este caso, todos los componentes del sistema se diseñan y se implementan como un único bloque, que se ejecuta como un único proceso.
+Este enfoque en un proyecto pequeño puede ser beneficioso, ya que simplifica el proceso de desarrollo y sobretodo de despliegue. Sin embargo, a medida que el proyecto crece, la arquitectura monolítica se vuelve cada vez más compleja y difícil de mantener. Además, la escalabilidad de la aplicación se ve limitada por la necesidad de escalar el sistema en su conjunto, en lugar de poder escalar componentes individuales de forma independiente.
+
+\subsubsubsection{Arquitectura de Microservicios}
+La arquitectura de microservicios es un enfoque de desarrollo de software en el que una aplicación se construye como un conjunto de servicios pequeños, independientes y altamente escalables. Cada servicio se ejecuta como un proceso separado y se comunica con otros servicios mediante mecanismos ligeros, como una API REST.
+Este enfoque permite que los servicios se desarrollen, desplieguen y escalen de forma independiente, lo que facilita la gestión de proyectos complejos. Sin embargo, la arquitectura de microservicios también introduce una mayor complejidad en el desarrollo y la gestión de la aplicación, ya que requiere la implementación de mecanismos de comunicación entre los servicios, así como la gestión de la escalabilidad de cada uno de ellos.
+
+\subsubsubsection{Arquitectura de API Rest y WepApp}    
+Se caracteriza por una clara división entre cliente y servidor, encapsulados respectivamente en WepApp (frontend) y REST Api (backend). Esta separación promueve una organización modular, facilitando el mantenimiento del proyecto al separar de forma clara las distintas responsabilidades. 
+Este enfoque es un punto intermedio entre las dos arquitecturas anteriores, ya que permite una mayor flexibilidad en el desarrollo y la gestión de la aplicación, sin introducir una complejidad excesiva. 
+
+\subsubsection{Valoración de alternativas para el Backend}
+En lo que respecta al desarrollo del backend, se han considerado las siguientes alternativas:
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ 
+   >{\raggedright\arraybackslash}p{3cm} 
+   >{\raggedright\arraybackslash}p{3cm} 
+   >{\raggedright\arraybackslash}p{3cm} 
+   >{\raggedright\arraybackslash}p{3cm} }
+\toprule
+\textbf{Criterio} & \textbf{Java con Spring Boot} & \textbf{Node.js con Express} & \textbf{Python con Django} \\
+\midrule
+\textbf{Descripción} & Framework basado en Java ideal para crear aplicaciones basadas en Spring. & Framework ligero y flexible para Node.js, optimizado para APIs REST. & Framework de alto nivel para Python, orientado al rápido desarrollo. \\
+\midrule
+\textbf{Ventajas} & Alta escalabilidad, robustez en manejo de transacciones, amplia comunidad. & Rendimiento excelente en operaciones I/O, desarrollo rápido. & Desarrollo rápido, excelentes capacidades de seguridad, buena documentación. \\
+\midrule
+\textbf{Desventajas} & Curva de aprendizaje significativa, tiempos de inicio más lentos. & Manejo menos óptimo de tareas CPU intensivas. & Menos adecuado para tareas de tiempo real y alta concurrencia. \\
+\midrule
+\textbf{Uso en Subastas en Tiempo Real} & Buen manejo de transacciones pero menos óptimo para tiempo real. & Excelente para operaciones en tiempo real gracias a su eficiencia en I/O. & Posible pero requiere más configuración para tiempo real. \\
+\midrule
+\textbf{Escalabilidad} & Alta, pero con escalabilidad vertical. & Alta, con facilidad para escalar horizontalmente. & Moderada, con algunas limitaciones en escalabilidad. \\
+\midrule
+\textbf{Seguridad} & Fuertes capacidades de seguridad. & Requiere implementaciones adicionales para seguridad. & Seguridad integrada y robusta. \\
+\bottomrule
+\end{tabular}
+\caption{Comparación de Tecnologías para el Backend}
+\label{tabla:comparacion_backend}
+\end{table}
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{ 
+   >{\raggedright\arraybackslash}p{2.5cm} 
+   >{\raggedright\arraybackslash}p{2.5cm} 
+   >{\raggedright\arraybackslash}p{2.5cm} 
+   >{\raggedright\arraybackslash}p{2.5cm} }
+\toprule
+\textbf{Criterio} & \textbf{React} & \textbf{Angular} & \textbf{Vue.js} \\
+\midrule
+\textbf{Ventajas} & Amplia comunidad, gran ecosistema, rendimiento óptimo. & Solución completa, incluye herramientas de construcción y gestión de estado. & Facilidad de integración, sintaxis sencilla, buena documentación. \\
+\midrule
+\textbf{Desventajas} & Solo abarca la capa de vista, requiere integración con otras herramientas. & Curva de aprendizaje pronunciada, puede ser excesivo para proyectos pequeños. & Comunidad más pequeña, ecosistema menos extenso. \\
+\midrule
+\textbf{Gestión del Estado} & Uso común de Redux para manejar el estado. & Gestión integrada del estado dentro del framework. & Uso de Vuex para la gestión del estado en proyectos Vue.js. \\
+\midrule
+\textbf{Estilos y Componentes} & Flexibilidad en la elección de estilos y componentes. & Incluye su propio conjunto de componentes. & Facilita la integración con diversas bibliotecas de estilos. \\
+\midrule
+\textbf{Rendimiento} & Virtual DOM para un rendimiento óptimo. & Optimización de rendimiento mediante técnicas avanzadas. & Rendimiento eficiente con un enfoque minimalista. \\
+\midrule
+\textbf{Integración con Backend} & Flexible para integrar con diversas APIs. & Diseñado para trabajar eficientemente con REST y GraphQL. & Compatible con diversas opciones de backend. \\
+\bottomrule
+\end{tabular}
+\caption{Comparación de Tecnologías para el Frontend}
+\label{tabla:comparacion_frontend}
+\end{table}
