@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{makeidx}
 \usepackage{enumerate}
+\usepackage{lastpage} % Para obtener la referencia a la última página
 \usepackage{fancyhdr, ragged2e}
 \usepackage{eurosym}
 \usepackage{float}
@@ -35,13 +36,16 @@
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\scriptsize\MakeUppercase{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}}
-\fancyfoot{}
-%\fancyfoot[RO, LE] {\thepage}
-\fancyfoot[R] {\thepage}
-%\fancyfoot[LO, RE] {\scriptsize Escuela de Ingeniería Informática - Universidad de Oviedo. ((Nombre del Alumno))}
-\fancyfoot[L] {\scriptsize Escuela de Ingeniería Informática - Universidad de Oviedo. Paula Suárez Prieto.}
 
-\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt} 
+    \fancyfoot[L]{\raisebox{-0.6cm}{\includegraphics[height=1cm]{figures/EscudoUniovi.jpg}}}
+    \fancyfoot[C]{\scriptsize BidMon Universe. Plataforma de coleccionismo de cartas digitales. \\ Trabajo Fin de Grado Ingeniería Informática del Software \textbar{} Versión 0.1 \\ Paula Suárez Prieto}
+    \fancyfoot[R]{\thepage\ de \pageref{LastPage}}
+    \renewcommand{\footrulewidth}{0.4pt}
+}
+
 %Evita warnings de cabecera
 \setlength{\headheight}{15pt}
 \setcounter{secnumdepth}{4}
@@ -94,7 +98,7 @@
 	\par\vspace{1cm}
 	
 	\vspace{1.5cm}
-	{\huge\bfseries PLANTILLA PARA TRABAJOS DE FIN DE GRADO DE DESARROLLO DE LA EII V1.95\par}
+	{\huge\bfseries BidMon Universe \\ Plataforma de coleccionismo de cartas digitales\par}
 	\vspace{2cm}
 	{\large \textbf{GRADO EN INGENIERÍA INFORMÁTICA DEL SOFTWARE} \par}
 	\vspace{1cm}
@@ -104,20 +108,21 @@
   \vspace{2cm}
 	%\vfill
 	\textbf{AUTOR}\par
-	((Nombre del Alumno)) \\
+	Paula Suárez Prieto \\
 	%\vfill
 	\vspace{1.5cm}
 	%{\Large\itshape ((Nombre del Alumno))\par}
 	%\vfill
 	\textbf{TUTOR}\par
-	((Nombre del tutor))
+	Hugo Lebredo Buján
 	\vfill
 	
-	{\large Julio 2020 \par}
+	{\large Julio 2024 \par}
 \end{titlepage}
 
 
 \newpage
+\pagestyle{plain}
 Copyright (C) 2020 \textbf{ELENA ALLEGUE GONZÁLEZ, JOSÉ MANUEL REDONDO LÓPEZ} \\
 Teaching Innovation Project: PINN-19-A-029 (University of Oviedo)\\
 This work has been published in \cite{RedondoPlantillasRG19} \cite{RedondoUCO20}\\
@@ -127,34 +132,36 @@ Esta versión de la plantilla para Trabajos de Fin de Grado ha sido posible grac
 Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabajo bastante largo, pero gracias al trabajo de Elena se ha podido equiparar esta versión con las de \textit{Word} mucho más rápidamente.
 
 %\newpage
-\thispagestyle{empty}
+\pagestyle{fancy}
 \chapter*{Agradecimientos}
 
 \pagestyle{fancy}
+
 \renewcommand{\chaptermark}[1]{\markboth{\scriptsize\MakeUppercase{#1}}{}}
 \renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}}
 
-%\fancyhead{}
-%\lhead{\parbox[t]{0.5\textwidth}{\RaggedRight\rightmark\strut}}
-%\rhead{\parbox[t]{0.5\textwidth}{\RaggedLeft\leftmark\strut}}
-%\setlength{\headheight}{5\baselineskip}
+
+
+%\Configuración del pie de página
 
 \fancyfoot{}
-%\fancyfoot[RO, LE] {\thepage}
-\fancyfoot[R] {\thepage}
-%\fancyfoot[LO, RE] {\scriptsize Escuela de Ingeniería Informática - Universidad de Oviedo. ((Autor del TFG))}
-\fancyfoot[L] {\scriptsize Escuela de Ingeniería Informática - Universidad de Oviedo. ((Nombre del Alumno))}
+\fancyfoot[L]{\raisebox{-0.6cm}{\includegraphics[height=1cm]{figures/EscudoUniovi.jpg}}}
+
+\fancyfoot[R] {\thepage\ de \pageref{LastPage}}
+\fancyfoot[C]{\scriptsize BidMon Universe. Plataforma de coleccionismo de cartas digitales. \\ Trabajo Fin de Grado Ingeniería Informática del Software \textbar{} Versión 0.1 \\ Paula Suárez Prieto   }
+\setlength{\footskip}{32.93277pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \pagenumbering{arabic}
+
 %\newpage
 
 
-\thispagestyle{empty}
+\pagestyle{plain}
 
 
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
-\pagestyle{empty}
+\pagestyle{plain}
 {
   \renewcommand{\thispagestyle}[1]{}
   \tableofcontents
