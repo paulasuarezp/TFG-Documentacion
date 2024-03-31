@@ -22,6 +22,8 @@
 \usepackage[table]{xcolor}
 \usepackage{multirow}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{shadings} % Cargar la librería para degradados
 
 \usepackage{listings}
 
@@ -83,12 +85,21 @@
 \titlespacing*{\paragraph}
   {0pt}{3.25ex plus 1ex minus .2ex}{-1ex plus .2ex}
 
-  
-\makeindex
 
 % Colores usados en las tablas
 \definecolor{headercolor}{rgb}{.871,  .918,  .965}
 \definecolor{rowcolor}{rgb}{.949,  .949,  .949}
+\definecolor{darkgreen}{rgb}{0.525, 0.655, 0.537}
+\definecolor{lightgreen}{rgb}{0.824, 0.890, 0.784}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\raggedright}
+  {\color{darkgreen}\chaptertitlename\ \thechapter}{20pt}{\Huge\color{black}\raggedright}
+
+
+
+
+\makeindex
 
 \begin{document}
 \selectlanguage{spanish} 
@@ -196,6 +207,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \newpage
 \thispagestyle{empty}
 \chapter{Introducción}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 \section{Resumen}
 
 
@@ -206,10 +222,17 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 
 \section{Keywords}
-
+\newpage
 \pagestyle{fancy}
+
 %\newpage
 \chapter{PLANIFICACIÓN DEL SISTEMA DE INFORMACIÓN}
+
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 \newpage
 \input{2-PSI}
 
@@ -217,7 +240,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 %\newpage
 \chapter{DEFINICIÓN DE LA ARQUITECTURA TECNOLÓGICA}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
 
+\end{tikzpicture}
 \newpage
 
 \section{Identificación de las Necesidades de Infraestructura Tecnológica} 
@@ -227,7 +254,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{ESTUDIO DE VIABILIDAD DEL SISTEMA}
-	
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 \newpage
 
 
@@ -238,63 +269,21 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{PLANIFICACIÓN Y GESTIÓN DEL TFG}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 \newpage
-
-\newpage
-\section{PLANIFICACIÓN DEL PROYECTO}
-
-\subsection{Identificación de Interesados}
-
-
-\subsection{OBS y PBS}
-
-
-\subsection{Planificación Inicial. WBS}
-
-
-\subsection{Riesgos}
-
-\subsubsection{Plan de Gestión de Riesgos} 
-
-\subsubsection{Identificación de Riesgos}
-
-\subsubsection{Registro de Riesgos} 
-
-
-
-\subsection{Presupuesto Inicial}
-
-\subsubsection{Presupuesto de Costes}
-
-\subsubsection{Presupuesto de Cliente} 
-
-
-\newpage
-\section{EJECUCIÓN DEL PROYECTO}
-
-\subsection{Plan Seguimiento de Planificación}
-
-\subsection{Bitácora de Incidencias del Proyecto}
-
-\subsection{Riesgos}
-
-
-\newpage
-\section{CIERRE DEL PROYECTO}
-
-\subsection{Planificación Final}
-
-\subsection{Informe Final de Riesgos}
-
-\subsection{Presupuesto Final de Costes}
-
-\subsection{Informe de Lecciones Aprendidas}
-
-
+\input{5-Planificacion-Gestion-TFG}
 
 \newpage
 \chapter{ANÁLISIS DEL SISTEMA DE INFORMACIÓN}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
 
+\end{tikzpicture}
 \newpage
 
 
@@ -395,7 +384,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{DISEÑO DEL SISTEMA DE INFORMACIÓN}
-	
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 
 \newpage
 
@@ -465,7 +458,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{CONSTRUCCIÓN DEL SISTEMA DE INFORMACIÓN}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
 
+\end{tikzpicture}
 
 \newpage
 
@@ -583,7 +580,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{IMPLANTACIÓN Y ACEPTACIÓN DEL SISTEMA}
-	
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 
 \newpage
 
@@ -612,6 +613,11 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \chapter{CONCLUSIONES Y AMPLIACIONES}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
 \newpage
 
 \section{CONCLUSIONES}

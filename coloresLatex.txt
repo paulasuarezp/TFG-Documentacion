@@ -1,0 +1,4 @@
+colores latex:
+- verde pastel muy claro: [rgb]{0.922, 0.953, 0.910}
+{rgb}{0.824, 0.890, 0.784}
+- verde menos claro: {rgb}{0.698, 0.784, 0.729}
