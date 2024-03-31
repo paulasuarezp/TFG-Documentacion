@@ -115,13 +115,17 @@ Este enfoque es un punto intermedio entre las dos arquitecturas anteriores, ya q
 
 \subsubsubsection{Comparativa de alternativas arquitectónicas}
 Mediante la siguiente tabla, se presenta una comparación de las alternativas arquitectónicas previamente mencionadas.
-\begin{table}[H]
+
+\begin{table}[htb]
     \centering
-    \begin{tabular}{ 
-       >{\raggedright\arraybackslash}p{4cm} 
-       >{\centering\arraybackslash}p{3cm} 
-       >{\centering\arraybackslash}p{3cm} 
-       >{\centering\arraybackslash}p{3cm} }
+    \caption{Comparación de Arquitecturas de Software}
+    \label{tabla:comparacion_arquitecturas}
+    \begin{tabular}{
+       >{\columncolor{rowcolor}\raggedright\arraybackslash}p{4cm}
+       >{\raggedright\arraybackslash}p{3cm}
+       >{\raggedright\arraybackslash}p{3cm}
+       >{\raggedright\arraybackslash}p{3cm} }
+    \rowcolor{lightgreen}
     \toprule
     \textbf{Criterio} & \textbf{Arquitectura Monolítica} & \textbf{Arquitectura de Microservicios} & \textbf{API REST y WebApp} \\
     \midrule
@@ -129,7 +133,7 @@ Mediante la siguiente tabla, se presenta una comparación de las alternativas ar
     \midrule
     Escalabilidad & Limitada & Alta & Moderada \\
     \midrule
-    Facilidad de Mantenimiento & Alta en proyectos pequeños & Moderada a baja & Moderada si en cada modulo hay una estructura interna clara  \\
+    Facilidad de Mantenimiento & Alta en proyectos pequeños & Moderada a baja & Moderada si cada módulo tiene una estructura interna clara \\
     \midrule
     Despliegue & Sencillo & Complejo & Moderado \\
     \midrule
@@ -142,9 +146,8 @@ Mediante la siguiente tabla, se presenta una comparación de las alternativas ar
     Recomendado para & Proyectos pequeños y simples & Proyectos grandes y escalables & Proyectos con necesidad de separación clara entre frontend y backend \\
     \bottomrule
     \end{tabular}
-    \caption{Comparación de Arquitecturas de Software}
-    \label{tabla:comparacion_arquitecturas}
-    \end{table}
+\end{table}
+
 
 \subsubsubsection{Decisión final de la arquitectura}
 Tras un análisis exhaustivo de las alternativas disponibles, se ha optado por implementar una arquitectura de API REST y WebApp.
@@ -182,10 +185,11 @@ En la siguiente tabla, se presenta una comparación de las alternativas para el 
 \begin{table}[H]
     \centering
     \begin{tabular}{ 
-       >{\raggedright\arraybackslash}p{3cm} 
+       >{\columncolor{rowcolor}\raggedright\arraybackslash}p{3cm} 
        >{\raggedright\arraybackslash}p{3cm} 
        >{\raggedright\arraybackslash}p{3cm} 
        >{\raggedright\arraybackslash}p{3cm} }
+        \rowcolor{lightgreen}
     \toprule
     \textbf{Criterio} & \textbf{Java con Spring Boot} & \textbf{Node.js con Express} & \textbf{Python con Django} \\
     \midrule
@@ -237,11 +241,13 @@ A continuación, se presenta una comparación de las alternativas para el desarr
 \begin{table}[H]
     \centering
     \begin{tabular}{ 
-       >{\raggedright\arraybackslash}p{2.5cm} 
+       >{\columncolor{rowcolor}\raggedright\arraybackslash}p{2.5cm} 
        >{\raggedright\arraybackslash}p{3.5cm} 
        >{\raggedright\arraybackslash}p{3.5cm} 
        >{\raggedright\arraybackslash}p{3.5cm} }
+        \rowcolor{lightgreen}
     \toprule
+    
     \textbf{Criterio} & \textbf{React} & \textbf{Angular} & \textbf{Vue.js} \\
     \midrule
     \textbf{Velocidad y Rendimiento} & Alto con Virtual DOM. Optimizado para cambios dinámicos de UI. & Buen rendimiento, pero puede ser más lento en proyectos grandes debido a su complejidad. & Rendimiento similar a React, con optimizaciones en la actualización de la UI. \\
