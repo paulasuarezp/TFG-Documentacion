@@ -1,15 +1,58 @@
 
 \section{INICIO DEL PLAN DE SISTEMAS DE INFORMACIÓN}
- 
-\subsection{Identificación del Alcance del Plan de Sistemas de Información}
+\subsection{Análisis de la Necesidad del Plan de Sistemas de Información}
 Con la tecnología, la forma en la que nos relacionamos con nuestros pasatiempos ha cambiado. La popularidad de plataformas como EA Sports FC y su modo Ultimate Team\cite{artsEASPORTSFC2023}, deja en evidencia que el mercado de coleccionismo digital está en pleno crecimiento \cite{sanmartin000MillonesDolares2021}. Sin embargo, aún existe un nicho de mercado específico por explorar: una plataforma dedicada exclusivamente al coleccionismo de cartas digitales.
+
 BidMon Universe trata de dar respuesta a esta necesidad, ofreciendo a los coleccionistas digitales una forma segura e innovadora de comprar y vender activos digitales mediante un sistema de pujas ciego.
 
 El Plan de Sistemas de Información para este proyecto se aborda desde una perspectiva que considera tanto la arquitectura técnica como la experiencia del usuario final. De esta manera se establece un marco de trabajo que garantiza que, además de cumplir con las expectativas del mercado actual, el proyecto proporciona características y experiencias novedosas que enriquecen la dinámica del coleccionismo digital.
 
+\subsection{Identificación del Alcance del Plan de Sistemas de Información}
+La aplicación web a desarrollar deberá de proporcionar al usuario final las siguientes funcionalidades de alto nivel:
+\begin{itemize}
+    \item Todo usuario final puede acceder a la aplicación web y consultar la información sobre esta.
+    \item Cualquier usuario, mayor de 18 años, tiene la posibilidad de crear una cuenta de usuario dentro de la aplicación.
+    \item Cualquier usuario con una cuenta asociada en la aplicación puede iniciar sesión en esta.
+    \item Los usuarios autenticados pueden recargar el saldo de su cuenta para posteriormente realizar compras en la aplicación.
+    \item Los usuarios autenticados tendrán acceso a un catálogo de sobres de cartas que podrán adquirir si cuentan con saldo suficiente.
+    \item Los usuarios autenticados podrán visualizar la colección de cartas adquiridas.
+    \item Los usuarios autenticados tendrán la posibilidad de poner a la venta sus cartas.
+    \item Los usuarios autenticados tendrán la posibilidad de comprar una carta directamente a otro jugador a través de subastas ciegas.
+    \item Un usuario podrá retirar una puja antes de que el periodo de la subasta finalice.
+    \item Los usuarios autenticados podrán consultar el mercado de subastas en cualquier momento.
+    \item Los usuarios autenticados podrán consultar el histórico de transacciones realizadas.
+    \item Los usuarios autenticados podrán consultar el estado de las subastas en las que ha participado, así como las que ha iniciado. 
+    \item Los usuarios autenticados recibirán notificaciones informativas sobre las pujas realizadas y las subastas iniciadas.
+    \item Los usuarios autenticados podrán modificar su perfil.
+    \item Los usuarios autenticados podrán consultar el perfil de las personas que están subastando cartas. Se mostrará la siguiente información:
+    \begin{itemize}
+        \item Cartas destacadas del usuario. Por ejemplo, si este posee una carta rara podrá seleccionarla como destacada para mostrarla en su perfil.
+        \item Número de pujas en las que ha participado.
+        \item Número de subastas que ha realizado.
+        \item Subastas activas.
+        \item Tendrán la opción de añadir este usuario como favorito. ``Seguir'' al usuario para estar al día de sus subastas.
+    \end{itemize}
+    \item Un usuario con rol de administrador podrá acceder al histórico de subastas y cancelar las que considere fraudulentas, el sistema notificará al usuario que la ha iniciado.
+\end{itemize}
+
+En base a estas funcionalidades se extraen los siguientes \textbf{objetivos estratégicos} a lograr para alcanzar el éxito del proyecto:
+
+\begin{itemize}
+    \item Implementar un sistema de autenticación de usuarios.
+    \item Implementar un sistema de venta de cartas.
+    \item Implementar un sistema de subastas ciegas que permita a los usuarios comprar y vender cartas.
+    \item Implememntar un sistema de gestión de subastas por parte de un usuario autenticado.
+    \item Implememntar un sistema de gestión de subastas por parte de un usuario administrador.
+    \item Implementar un sistema de notificaciones que informe a los usuarios sobre el estado de las subastas en las que participan.
+    \item Interfaz intuitiva que permita al usuario realizar consultas sobre el estado de las pujas y subastas, además de visualizar la colección de cartas adquirida.
+\end{itemize}
 
 \subsection{Determinación de Responsables}
-
+A continuación, se detallan las personas que participan en el proyecto junto con sus funciones.
+\begin{itemize}
+    \item El tutor del trabajo se encargará de la supervisión del proyecto.
+    \item El alumno se encargará del desarrollo del proyecto y documentación de este. 
+\end{itemize}
 
 \newpage
 \section{DEFINICIÓN Y ORGANIZACIÓN DEL PLAN DE SISTEMAS DE INFORMACIÓN}
