@@ -1,5 +1,28 @@
+En este apartado se describirá brevemente el sistema a desarrollar indicando el alcance del mismo.
 \subsection{Determinación del Alcance del Sistema}
+BidMon Universe tiene como objetivo principal permitir al usuario coleccionar activos digitales, en este caso, cartas. Estas se pueden obtener mediante una compra directa a la aplicación o por medio de subastas. Para obtener más detalles sobre las funcionalidades de alto nivel, se puede consultar el apartado \nameref{sec:2_identificacion_alcance_PSI}, y para una descripción más exhaustiva, ver el apartado \nameref{sec:6_2-requisitos}.
+Es esencial establecer un sistema de trazabilidad robusto que registre cada transacción de compra y venta dentro de la aplicación de manera clara e inequívoca, asegurando la integridad y la transparencia de todas las operaciones.
+En esta versión del sistema, la carga inicial de datos se llevará a cabo una única vez. Los administradores del sistema no podrán añadir nuevas cartas a través de la interfaz de usuario, cualquier adición de nuevas cartas se realizará directamente en la base de datos. Además, la plataforma no incluirá una opción que permita a los usuarios exportar la colección de cartas que posean.
+La aplicación no incluye un sistema de mensajería interna ni permite la formación de relaciones sociales directas entre los usuarios, tales como "amistades" o conexiones similares. La plataforma se centra exclusivamente en las transacciones y la colección de cartas.
 
 
 
 \subsection{Identificación de Actores del Sistema} 
+El sistema está diseñado para soportar tres categorías principales de usuarios, cada uno con niveles de acceso y funcionalidades específicas adecuadas a su rol dentro de la plataforma:
+\begin{enumerate}
+    \item \textbf{Usuarios Invitados}
+    \begin{itemize}
+        \item Tienen acceso limitado exclusivamente a la página de bienvenida y a otras páginas informativas de acceso público dentro de la plataforma.
+        \item El objetivo es proporcionar a los usuarios no registrados información general sobre la plataforma y sus características sin comprometer la seguridad o la privacidad de las transacciones y actividades de los usuarios registrados.
+    \end{itemize}
+    
+    \item \textbf{Usuarios Autenticados}
+    \begin{itemize}
+        \item Tienen acceso a todas las funcionalidades operativas de la plataforma, incluyendo la colección de cartas, compra y subasta de estas.
+    \end{itemize}
+    
+    \item \textbf{Usuarios Administradores}
+    \begin{itemize}
+        \item El acceso estaría limitado a la consulta de subastas activas, capacidad de intervenir en una subasta que considere fraudulenta y acceso al histórico de transacciones.
+    \end{itemize}
+\end{enumerate}
