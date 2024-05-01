@@ -1,46 +1,43 @@
-\documentclass[11pt]{report}
-%\usepackage[margin=0.75in]{geometry}
-\usepackage{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[greek, spanish, es-tabla]{babel}
-\usepackage[bottom]{footmisc}
-\usepackage[tt]{titlepic}
-\usepackage{url}
-\usepackage{xurl}
-\usepackage{graphicx}
-\usepackage{makeidx}
-\usepackage{enumerate}
-\usepackage{lastpage} % Para obtener la referencia a la última página
-\usepackage{fancyhdr, ragged2e}
-\usepackage{eurosym}
-\usepackage{float}
-\usepackage{titlesec}
-\usepackage[bookmarks,hidelinks]{hyperref}
-\usepackage{nameref}
-\usepackage{enumitem}
-\usepackage{booktabs}
-\usepackage[table]{xcolor}
-\usepackage{multirow}
-\usepackage{amsmath}
-\usepackage{tikz}
-\usetikzlibrary{shadings} % Cargar la librería para degradados
-\usepackage[nameinlink]{cleveref}
-\usepackage[normalem]{ulem}
+\documentclass[11pt]{report} % Define la clase de documento como 'report' con tamaño de fuente 11pt
+\usepackage{geometry} % Paquete para personalizar los márgenes del documento
+\usepackage[utf8]{inputenc} % Permite la introducción de caracteres UTF-8
+\usepackage[greek, spanish, es-tabla]{babel} % Establece idiomas para el documento
+\usepackage[bottom]{footmisc} % Coloca las notas al pie en la parte inferior de la página
+\usepackage[tt]{titlepic} % Permite incluir una imagen en la página de título con una fuente mono-spaced
+\usepackage{url} % Permite la inserción de URL en el documento
+\usepackage{xurl} % Mejora el manejo de URL en el documento
+\usepackage{graphicx} % Permite la inclusión de gráficos en el documento
+\usepackage{makeidx} % Facilita la creación de índices
+\usepackage{enumerate} % Permite la personalización de listas enumeradas
+\usepackage{lastpage} % Proporciona una referencia a la última página del documento
+\usepackage{fancyhdr, ragged2e} % Personaliza los encabezados y pies de página
+\usepackage{eurosym} % Permite la inserción del símbolo de euro
+\usepackage{float} % Mejora el posicionamiento de los elementos flotantes en el documento
+\usepackage{titlesec} % Facilita la personalización de títulos de secciones
+\usepackage{hyperref} % Permite la creación de enlaces hipertexto
+\usepackage{nameref} % Permite hacer referencia al nombre de secciones
+\usepackage{enumitem} % Permite personalizar listas
+\usepackage{booktabs} % Mejora la apariencia de las tablas
+\usepackage[table]{xcolor} % Permite el uso de colores en tablas
+\usepackage{multirow} % Permite combinar celdas en tablas
+\usepackage{amsmath} % Proporciona funciones matemáticas avanzadas
+\usepackage{tikz} % Permite la creación de gráficos vectoriales
+\usetikzlibrary{shadings} % Carga la librería para degradados en los gráficos de TikZ
+\usepackage[nameinlink]{cleveref} % Facilita las referencias cruzadas con nombres
+\usepackage{listings} % Permite la inclusión de código fuente en el documento
 
+% Ajustes de los márgenes de la página
+\addtolength{\oddsidemargin}{-.8in}
+\addtolength{\evensidemargin}{-.8in}
+\addtolength{\textwidth}{1.45in}
+\addtolength{\topmargin}{-.1in}
+\addtolength{\textheight}{1.25in}
 
-\usepackage{listings}
+\graphicspath{{figures/}} % Directorio donde se encuentran los archivos de imágenes
+\pagestyle{fancy} % Estilo de página personalizado
+\renewcommand{\chaptermark}[1]{\markboth{\scriptsize\MakeUppercase{#1}}{}} % Configuración del marcado de capítulos
+\renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}} % Configuración del marcado de secciones
 
-	\addtolength{\oddsidemargin}{-.8in}
-	\addtolength{\evensidemargin}{-.8in}
-	\addtolength{\textwidth}{1.45in}
-
-	\addtolength{\topmargin}{-.1in}
-	\addtolength{\textheight}{1.25in}
-
-\graphicspath{{figures/}}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\scriptsize\MakeUppercase{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}}
 
 \fancypagestyle{plain}{
    
@@ -50,6 +47,7 @@
     \fancyfoot[R]{\thepage\ de \pageref{LastPage}}
     \renewcommand{\footrulewidth}{0.4pt}
 }
+
 
 %Evita warnings de cabecera
 \setlength{\headheight}{15pt}
@@ -94,16 +92,20 @@
 \definecolor{rowcolor}{rgb}{.949,  .949,  .949}
 \definecolor{darkgreen}{rgb}{0.525, 0.655, 0.537}
 \definecolor{lightgreen}{rgb}{0.824, 0.890, 0.784}
+\definecolor{linkColor}{HTML}{0E6655}
+
 
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\raggedright}
   {\color{darkgreen}\chaptertitlename\ \thechapter}{20pt}{\Huge\color{black}\raggedright}
 
-% Comando para dar estilo a los links
-\newcommand{\refLink}[1]{\textcolor{darkgreen}{\uline{\nameref{#1}}}}
-
-
-
+\hypersetup{
+    colorlinks = true, % Colores en los enlaces 
+    linkcolor = linkColor, % Color de los enlaces internos
+    filecolor = linkColor, % Color de los enlaces a archivos
+    urlcolor = linkColor % Color de los enlaces externos
+}
+\phantomsection
 \makeindex
 
 \begin{document}
@@ -183,6 +185,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \setcounter{secnumdepth}{4}
 \pagestyle{plain}
 {
+\hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \tableofcontents
 }
@@ -191,6 +194,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 {
+\hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \listoffigures
 }
@@ -198,6 +202,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 {
+\hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \listoftables
 }
