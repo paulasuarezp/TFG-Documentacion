@@ -39,8 +39,8 @@
 \renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}} % Configuración del marcado de secciones
 
 
+% Configuración del pie de página
 \fancypagestyle{plain}{
-   
     \renewcommand{\headrulewidth}{0pt} 
     \fancyfoot[L]{\raisebox{-0.6cm}{\includegraphics[height=1cm]{figures/EscudoUniovi.jpg}}}
     \fancyfoot[C]{\scriptsize BidMon Universe. Plataforma de coleccionismo de cartas digitales. \\ Trabajo Fin de Grado Ingeniería Informática del Software \textbar{} Versión 0.1 \\ Paula Suárez Prieto}
@@ -95,23 +95,30 @@
 \definecolor{linkColor}{HTML}{0E6655}
 
 
+% Configuración de los estilos del capítulo
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\raggedright}
   {\color{darkgreen}\chaptertitlename\ \thechapter}{20pt}{\Huge\color{black}\raggedright}
 
+% Estilos de los enlaces 
 \hypersetup{
     colorlinks = true, % Colores en los enlaces 
     linkcolor = linkColor, % Color de los enlaces internos
     filecolor = linkColor, % Color de los enlaces a archivos
     urlcolor = linkColor % Color de los enlaces externos
 }
+
+
 \phantomsection
 \makeindex
 
 \begin{document}
 \selectlanguage{spanish} 
 
+
 \hypersetup{pageanchor=false}
+
+% ----- Portada -----
 \begin{titlepage}
 	\centering
 	\includegraphics[width=0.2\textwidth]{EscudoUniovi}
@@ -125,24 +132,20 @@
 	{\large \textbf{GRADO EN INGENIERÍA INFORMÁTICA DEL SOFTWARE} \par}
 	\vspace{1cm}
 	{\scshape\Large Trabajo Fin de Grado\par}
-	%\vfill
    	
   \vspace{2cm}
-	%\vfill
 	\textbf{AUTOR}\par
 	Paula Suárez Prieto \\
-	%\vfill
 	\vspace{1.5cm}
-	%{\Large\itshape ((Nombre del Alumno))\par}
-	%\vfill
 	\textbf{TUTOR}\par
 	Hugo Lebredo Buján
 	\vfill
 	
 	{\large Julio 2024 \par}
 \end{titlepage}
+% ----- Fin Portada -----
 
-
+% ----- Página de copyright -----
 \newpage
 \pagestyle{plain}
 Copyright (C) 2020 \textbf{ELENA ALLEGUE GONZÁLEZ, JOSÉ MANUEL REDONDO LÓPEZ} \\
@@ -152,6 +155,7 @@ This work has been published in \cite{RedondoPlantillasRG19} \cite{RedondoUCO20}
 Esta versión de la plantilla para Trabajos de Fin de Grado ha sido posible gracias a la donación de la ex-alumna Elena Allegue González de su documentación de Trabajo de Fin de Grado, que ha servido como base para elaborar esta versión. Aquí podréis encontrar todos los títulos y subtítulos de las secciones, pero las explicaciones se mantendrán en la versión \textit{Word} de la plantilla (se proporciona una versión PDF de la misma para facilitar el acceso a las mismas). No obstante, del trabajo de Elena se han conservado ejemplos de como hacer elementos clave como imágenes, tablas, etc.
 
 Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabajo bastante largo, pero gracias al trabajo de Elena se ha podido equiparar esta versión con las de \textit{Word} mucho más rápidamente.
+% ----- Fin Página de copyright -----
 
 %\newpage
 \pagestyle{fancy}
@@ -159,9 +163,17 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \pagestyle{fancy}
 
-\renewcommand{\chaptermark}[1]{\markboth{\scriptsize\MakeUppercase{#1}}{}}
-\renewcommand{\sectionmark}[1]{\markright{\tiny\MakeUppercase{#1}}{}}
+% Redefine el comando \chaptermark para personalizar el encabezado de los capítulos
+\renewcommand{\chaptermark}[1]{ 
+    % Marca ambos encabezados izquierdo y derecho con el título del capítulo
+    \markboth{\scriptsize\MakeUppercase{#1}}{} 
+}
 
+% Redefine el comando \sectionmark para personalizar el encabezado de las secciones
+\renewcommand{\sectionmark}[1]{ 
+    % Marca el encabezado derecho con el título de la sección
+    \markright{\tiny\MakeUppercase{#1}}{} 
+}
 
 
 %\Configuración del pie de página
@@ -175,34 +187,35 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \renewcommand{\footrulewidth}{0.4pt}
 \pagenumbering{arabic}
 
-%\newpage
-
 
 \pagestyle{plain}
 
 
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{4}
+
+% ----- Página de Lista de contenidos -----
 \pagestyle{plain}
 {
-\hypersetup{hidelinks}
+  \hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \tableofcontents
 }
 \clearpage
 
-
+% ----- Página de Lista de figuras -----
 \newpage
 {
-\hypersetup{hidelinks}
+  \hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \listoffigures
 }
 \clearpage
 
+% ----- Página de Lista de tablas -----
 \newpage
 {
-\hypersetup{hidelinks}
+  \hypersetup{hidelinks}
   \renewcommand{\thispagestyle}[1]{}
   \listoftables
 }
