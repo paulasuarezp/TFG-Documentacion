@@ -25,6 +25,9 @@
 \usetikzlibrary{shadings} % Carga la librería para degradados en los gráficos de TikZ
 \usepackage[nameinlink]{cleveref} % Facilita las referencias cruzadas con nombres
 \usepackage{listings} % Permite la inclusión de código fuente en el documento
+\usepackage{microtype} % Para mejor formato de texto
+\usepackage[normalem]{ulem} % Para subrayado con color
+
 
 % Ajustes de los márgenes de la página
 \addtolength{\oddsidemargin}{-.8in}
@@ -32,6 +35,7 @@
 \addtolength{\textwidth}{1.45in}
 \addtolength{\topmargin}{-.1in}
 \addtolength{\textheight}{1.25in}
+
 
 \graphicspath{{figures/}} % Directorio donde se encuentran los archivos de imágenes
 \pagestyle{fancy} % Estilo de página personalizado
@@ -47,6 +51,8 @@
     \fancyfoot[R]{\thepage\ de \pageref{LastPage}}
     \renewcommand{\footrulewidth}{0.4pt}
 }
+
+
 
 
 %Evita warnings de cabecera
@@ -108,6 +114,9 @@
     urlcolor = linkColor, % Color de los enlaces externos
     citecolor = linkColor
 }
+
+% Comando para subrayar enlaces
+\newcommand{\coloredUnderline}[1]{\bgroup\markoverwith{\textcolor{linkColor}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon{#1}}
 
 
 \phantomsection
