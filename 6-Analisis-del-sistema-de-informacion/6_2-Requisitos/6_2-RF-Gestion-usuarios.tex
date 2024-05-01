@@ -14,11 +14,11 @@
 		\item El usuario deberá proporcionar el nombre de usuario que desea utilizar.
 			\begin{RFGestionUsuarios}
 				\item El sistema verificará que el nombre de usuario está disponible.
-				\item El sistema verificará que el nombre de usuario cumpla con las restricciones de formato especificadas en GU\_NOMBRE\_USUARIO.
+				\item El sistema verificará que el nombre de usuario cumpla con las restricciones de formato especificadas en \coloredUnderline{\hyperlink{confParam:gu-nombreUsuario}{GU\_NOMBRE\_USUARIO}}.
 			\end{RFGestionUsuarios} 
 		\item El usuario deberá proporcionar una contraseña.
 			\begin{RFGestionUsuarios}
-				\item El sistema asegurará que la contraseña cumpla con las políticas de seguridad especificadas en \textit{GU\_CONTRASEÑA}.
+				\item El sistema asegurará que la contraseña cumpla con las políticas de seguridad especificadas en \coloredUnderline{\hyperlink{confParam:gu-contrasena}{GU\_CONTRASEÑA}}.
 			\end{RFGestionUsuarios}
 		\item Un usuario deberá de confirmar la contraseña
 			\begin{RFGestionUsuarios}
@@ -26,20 +26,22 @@
 			\end{RFGestionUsuarios}
 		\item Un usuario deberá de especificar la fecha de nacimiento.
 			\begin{RFGestionUsuarios}
-				\item El sistema comprobará que la fecha de nacimiento cumple con las restricciones de edad mínima especificadas en \textit{GU\_FECHA\_NACIMIENTO}.
+               \item El sistema verificará que la fecha de nacimiento está en el formato \coloredUnderline{\hyperlink{confParam:gu-fechaNacimiento}{GU\_FECHA\_NACIMIENTO}}.
+				\item El sistema verificará que el usuario cumple con \coloredUnderline{\hyperlink{confParam:gu-minEdad}{GU\_MIN\_EDAD}}.
+                
 			\end{RFGestionUsuarios}
 		\item Una vez finalizado el registro, el sistema escribirá los datos en la base de datos:
 			\begin{RFGestionUsuarios}
 				\item Nombre de usuario
 				\item Contraseña cifrada
 				\begin {RFGestionUsuarios}
-					\item La contraseña se cifrará de acuerdo a \textit{GU\_CIFRADO\_CONTRASEÑA}.
+					\item La contraseña se cifrará de acuerdo a \coloredUnderline{\hyperlink{confParam:gu-cifradoContrasena}{GU\_CIFRADO\_CONTRASEÑA}}.
 				\end{RFGestionUsuarios}
 				\item Fecha de nacimiento
 				\item Fecha de creación
-				\item \textit{ROL\_DEFECTO}
-				\item \textit{IMG\_PERFIL\_DEFECTO}
-				\item \textit{SALDO\_DEFECTO}
+				\item \coloredUnderline{\hyperlink{confParam:gu-rolDefecto}{GU\_ROL\_DEFECTO}}
+				\item \coloredUnderline{\hyperlink{confParam:gu-imgPerfilDefecto}{GU\_IMG\_PERFIL\_DEFECTO}}
+				\item \coloredUnderline{\hyperlink{confParam:gu-saldoDefecto}{GU\_SALDO\_DEFECTO}}
 			\end{RFGestionUsuarios}
 
 		\item El usuario será redirigido a la pantalla de inicio de sesión.
@@ -67,8 +69,3 @@
     \end{RFGestionUsuarios}
 
 \end{RFGestionUsuarios}
-
-
-
-  
-  

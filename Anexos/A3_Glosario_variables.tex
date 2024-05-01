@@ -1,26 +1,36 @@
-En esta sección se detallan los parámetros de configuración de usuario que se deben cumplir para poder utilizar la aplicación. Estos parámetros se encuentran en la tabla \ref{table:user_settings}.
+En esta sección se detallan los parámetros de configuración de usuario que se deben cumplir para poder utilizar la aplicación. Estos parámetros se encuentran en la tabla \ref{table:variables_requisitos}.
 \begin{table}[htb]
     \centering
     \caption{Parámetros de configuración}
-    \label{table:user_settings}
+    \label{table:variables_requisitos}
     \begin{tabular}{>{\columncolor{lightgreen!20}}p{7cm} p{10cm}}
     \toprule
     \rowcolor{darkgreen!50}
     \textbf{Parámetro} & \textbf{Descripción} \\
     \midrule
-    \textbf{GU\_NOMBRE\_USUARIO} & El nombre de usuario debe tener una longitud mínima de 6 caracteres y máxima de 20. Además, solo puede contener letras y números. \\
+    \hypertarget{confParam:gu-nombreUsuario}{}
+    \textbf{GU\_NOMBRE\_USUARIO} & El nombre de usuario debe tener una longitud mínima de 6 caracteres y máxima de 20. Además, solo puede contener letras y números.  \\
     \midrule
+    \hypertarget{confParam:gu-contrasena}{}
     \textbf{GU\_CONTRASEÑA} & La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 20. Además, debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial. \\
     \midrule
-    \textbf{GU\_FECHA\_NACIMIENTO} & La fecha de nacimiento debe ser mayor a 18 años. \\
+    \hypertarget{confParam:gu-minEdad}{}
+    \textbf{GU\_MIN\_EDAD} & La edad mínima para usar el sistema es 18 años. \\
     \midrule
-    \textbf{GU\_CIFRADO\_CONTRASEÑA} & La contraseña se cifrará utilizando el algoritmo de cifrado SHA-256. \\
+    \hypertarget{confParam:gu-fechaNacimiento}{}
+    \textbf{GU\_FECHA\_NACIMIENTO} & El formato  de la fecha es DD/MM/AAAA. \\
     \midrule
+    \hypertarget{confParam:gu-cifradoContrasena}{}
+    \textbf{GU\_CIFRADO\_CONTRASEÑA} & La contraseña se cifrará utilizando el algoritmo de cifrado SHA-256.  \\
+    \midrule
+    \hypertarget{confParam:gu-rolDefecto}{}
     \textbf{GU\_ROL\_DEFECTO} & El rol por defecto será \textit{"STANDARD"}. \\
     \midrule
-    \textbf{GU\_IMG\_PERFIL\_DEFECTO} & La imagen de perfil por defecto será la de un avatar. \\
+    \hypertarget{confParam:gu-imgPerfilDefecto}{}
+    \textbf{GU\_IMG\_PERFIL\_DEFECTO} & La imagen de perfil por defecto será la de un avatar.  \\
     \midrule
-    \textbf{GU\_SALDO\_DEFECTO} & El saldo por defecto será de 0 euros. \\
+    \hypertarget{confParam:gu-saldoDefecto}{}
+    \textbf{GU\_SALDO\_DEFECTO} & El saldo por defecto será de 0 monedas. \\
     \bottomrule
     \end{tabular}
 \end{table}
