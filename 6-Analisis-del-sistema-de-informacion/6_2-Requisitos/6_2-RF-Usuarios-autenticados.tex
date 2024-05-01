@@ -1,0 +1,33 @@
+\newlist{RFUsuarioAutenticado}{enumerate}{5}
+\setlist[RFUsuarioAutenticado,1]{label=\textbf{RUA-\arabic*.}, leftmargin=*, align=left, font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFUsuarioAutenticado,2]{label*=\textbf{\arabic*.},font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFUsuarioAutenticado,3]{label*=\textbf{\arabic*.},font=\fontsize{9pt}{11pt}\selectfont}
+\setlist[RFUsuarioAutenticado,4]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+\setlist[RFUsuarioAutenticado,5]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+
+
+\subsubsubsection{Gestión de usuarios autenticados}
+\begin{RFUsuarioAutenticado}
+	\item El sistema deberá de permitir a los usuarios autenticados modificar su información personal.
+    \begin{RFUsuarioAutenticado}
+        \item Un usuario deberá de poder modificar su imagen de perfil.
+        \item Un usuario deberá de poder modificar su contraseña.
+    \end{RFUsuarioAutenticado}
+    \item El sistema deberá de permitir a los usuarios autenticados consultar su colección de cartas. (ver \coloredUnderline{\hyperlink{req_coleccion_cartas}{RCC-2}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus transacciones. (ver \coloredUnderline{\hyperlink{req_transacciones}{RT-3}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus subastas. (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{RSP-6}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus pujas. (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{RSP-6}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar su saldo de monedas. 
+    \item El sistema deberá de permitir a los usuarios autenticados recargar su saldo.
+    \begin{RFUsuarioAutenticado}
+        \item Un usuario deberá de poder recargar su saldo mediante \coloredUnderline{\hyperlink{confParam:metodosBancarios}{GU\_MÉTODOS\_BANCARIOS}}.
+        \item El sistema deberá de registrar en la base de datos una nueva transacción con los siguientes datos:
+        \begin{RFUsuarioAutenticado}
+            \item Identificador único (UID).
+            \item Usuario que realiza la recarga.
+            \item Concepto de recarga.
+            \item Fecha de recarga.
+            \item Importe de la recarga.
+        \end{RFUsuarioAutenticado}
+    \end{RFUsuarioAutenticado}
+\end{RFUsuarioAutenticado}
