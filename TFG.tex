@@ -24,6 +24,9 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{shadings} % Cargar la librería para degradados
+\usepackage[nameinlink]{cleveref}
+\usepackage[normalem]{ulem}
+
 
 \usepackage{listings}
 
@@ -96,6 +99,8 @@
   {\normalfont\huge\bfseries\raggedright}
   {\color{darkgreen}\chaptertitlename\ \thechapter}{20pt}{\Huge\color{black}\raggedright}
 
+% Comando para dar estilo a los links
+\newcommand{\refLink}[1]{\textcolor{darkgreen}{\uline{\nameref{#1}}}}
 
 
 
@@ -288,99 +293,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 
 \section{DEFINICIÓN DEL SISTEMA}
-
-\subsection{Determinación del Alcance del Sistema}
-
-
-\newpage
-\section{ESTABLECIMIENTO DE REQUISITOS}
-
-\subsection{Obtención de los Requisitos del Sistema} 
-
-\subsection{Identificación de Actores del Sistema} 
-
-\subsection{Especificación de Casos de Uso}
-
-\textcolor[rgb]{0.65,0.16,0}{Ejemplo de tabla para especificación de casos de uso}
-
-\begin{table}[htbp]
-  \centering
-  \caption{Especificación Caso de Uso 1}
-    \begin{tabular}{p{20.855em}r}
-\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
-\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Registro} & \multicolumn{1}{r}{} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{2}{p{31.64em}}{Un usuario no registrado debe poder registrarse en el sistema mediante su cuenta de Google, lo que hará que automáticamente se inicie sesión en la aplicación.} \\
-    \bottomrule
-    \end{tabular}%
-  \label{espec_caso_uso_1}%
-  \vspace{-4mm}
-\end{table}%
-
-\newpage
-\section{IDENTIFICACIÓN DE SUBSISTEMAS DE ANÁLISIS}
-
-\subsection{Descripción de los Subsistemas} 
-
-\subsection{Descripción de los Interfaces entre Subsistemas}
-
-
-\newpage
-\section{ANÁLISIS DE LOSac CASOS DE USO}
-
-\subsection{Caso de Uso 1} 
-
-\textcolor[rgb]{0.65,0.16,0}{Ejemplo de tabla para análisis de casos de usos}
-
-\begin{table}[H]
-  \centering
-  \vspace{-5mm}
-  \caption{Análisis del Caso de Uso 1}
-    \begin{tabular}{p{7.5em}p{24.145em}}
-    \toprule
-    \rowcolor[rgb]{ .871,  .918,  .965} \multicolumn{2}{p{31.645em}}{\textbf{Registro}} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \textbf{Precondiciones} & \cellcolor[rgb]{ 1,  1,  1}El usuario no debe haber iniciado sesión nunca. \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \textbf{Postcondiciones} & \cellcolor[rgb]{ 1,  1,  1}- \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \textbf{Actores} & \cellcolor[rgb]{ 1,  1,  1}Usuario no registrado \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \textbf{Descripción} & \cellcolor[rgb]{ 1,  1,  1}El usuario accederá a la pantalla principal de la aplicación cuando no se está registrado, y seleccionará el botón de inicio de sesión, que, al ser la primera vez, registrará.Seleccionará la cuenta de Google con la que desee registrarse y el sistema completará el resto del registro. \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \textbf{Escenarios          Secundarios} & \cellcolor[rgb]{ 1,  1,  1} El usuario no tiene cuenta de Google: escenario que puede ser posible si accede a la aplicación a través del App Market. En este caso se le solicitará crear una cuenta. \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
- 
-\subsection{Caso de Uso 2}
-
-
-\newpage
-\section{ANÁLISIS DE CLASES}
-
-\subsection{Diagrama de Clases} 
-
-\subsection{Descripción de las Clases}
-
-
-\newpage
-\section{DEFINICIÓN DE INTERFACES DE USUARIO}
-
-\subsection{Descripción de la Interfaz} 
-
-\subsection{Definición del aspecto de la interfaz}
-
-\subsection{Descripción del Comportamiento de la Interfaz} 
-
-\subsection{Diagrama de Navegabilidad}
-
-
-\newpage
-\section{ESPECIFICACIÓN DEL PLAN DE PRUEBAS}
-
+\input{6-Analisis-del-sistema-de-informacion}
 
 \newpage
 \chapter{DISEÑO DEL SISTEMA DE INFORMACIÓN}
@@ -630,10 +543,14 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \chapter*{ANEXOS}
 \addcontentsline{toc}{chapter}{ANEXOS}
 \newpage
-\phantomsection
-\section*{PLAN DE GESTIÓN DE RIESGOS}\label{plan_de_gestion_de_riesgos}
-\addcontentsline{toc}{section}{PLAN DE GESTIÓN DE RIESGOS}
-
+\phantomsection\label{plan_de_gestion_de_riesgos}
+\section*{PLAN DE GESTIÓN DE RIESGOS}
+\begin{figure}[H]
+    \centering
+    \includegraphics{figures/matriz_prob_vs_impact.png}
+    \caption{Matriz de probabilidad vs impacto}
+    \label{fig:matriz_prob_vs_impact}
+\end{figure}
 \newpage
 \section*{CONTENIDO ENTREGADO EN LOS ANEXOS} 
 \addcontentsline{toc}{section}{CONTENIDO ENTREGADO EN LOS ANEXOS}
