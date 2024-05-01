@@ -1,0 +1,44 @@
+\newlist{RFSobres}{enumerate}{5}
+\setlist[RFSobres,1]{label=\textbf{RS-\arabic*.}, leftmargin=*, align=left, font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFSobres,2]{label*=\textbf{\arabic*.},font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFSobres,3]{label*=\textbf{\arabic*.},font=\fontsize{9pt}{11pt}\selectfont}
+\setlist[RFSobres,4]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+\setlist[RFSobres,5]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+
+
+\subsubsubsection{Gestión de sobres}
+
+\begin{RFSobres}
+	\item El sistema tendrá una colección de sobres de cartas disponibles para los usuarios.
+	\begin{RFSobres}
+		\item Cada sobre de cartas tendrá un identificador único (UID).
+		\item El valor de cada sobre de cartas será determinado por:
+		\begin{RFSobres}
+			\item La cantidad de cartas que contiene.
+			\item La rareza del sobre.
+		\end{RFSobres}
+		\item El sistema limitará la cantidad disponible de cada tipo de sobre.
+	\end{RFSobres}
+	\item Los usuarios autenticados podrán visualizar los sobres disponibles para la compra.
+	\item Los usuarios autenticados tendrán la posibilidad de comprar sobres de cartas.\label{req_compra_sobres}
+	\begin{RFSobres}
+		\item El sistema verificará que el usuario tenga saldo suficiente antes de permitir la compra de un sobre.
+		\item Al confirmar la compra, el sistema deducirá el precio del sobre del saldo del usuario.
+		\item Se decrementará la cantidad disponible de ese tipo de sobre en el inventario.
+		\item El sistema deberá de seleccionar un mazo del que extraer las cartas en base a la rareza del sobre.
+		\item El sistema generará N cartas aleatorias.
+		\item Las cartas generadas serán añadidas a la colección del usuario, identificadas como \textit{USERCARD}.
+		\item Cada \textit{USERCARD} se vinculará al tipo de carta correspondiente.
+		\item El sistema registrará en la base de datos una nueva transacción con los siguientes datos:
+		\begin{RFSobres}
+			\item Identificador único (UID).
+			\item Usuario que realiza la compra.
+			\item Concepto de compra.
+			\item Identificador del sobre.
+			\item Fecha de compra.
+			\item Precio del sobre.
+			\item Cartas obtenidas.
+		\end{RFSobres}
+		\item Finalmente, el sistema mostrará las cartas \textit{USERCARD} al usuario.
+	\end{RFSobres}
+\end{RFSobres}

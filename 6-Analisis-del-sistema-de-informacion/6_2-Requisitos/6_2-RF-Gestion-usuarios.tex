@@ -60,12 +60,22 @@
 			\item El sistema comprobará que la contraseña se corresponde con la registrada para dicho nombre de usuario.
 		\end{RFGestionUsuarios}
 
-      \item Si las credenciales son correctas, el usuario será redirigido a la pantalla principal.
+      \item Si las credenciales son correctas:
+		\begin{RFGestionUsuarios}
+			\item El sistema redirigirá al usuario a la pantalla principal.
+			\item Se generará un token de sesión con las restricciones \coloredUnderline{\hyperlink{confParam:gu-tokenSesion}{GU\_TOKEN\_SESION}}.
+		\end{RFGestionUsuarios}
 	  \item Si las credenciales son incorrectas:
 		\begin{RFGestionUsuarios}
 			\item El sistema mostrará un mensaje de error.
 			\item El usuario podrá intentar iniciar sesión de nuevo.
 		\end{RFGestionUsuarios}
     \end{RFGestionUsuarios}
+
+	\item Un usuario autenticado deberá poder cerrar sesión en el sistema.\label{req_cerrar_sesion}
+	\begin{RFGestionUsuarios}
+		\item El sistema invalidará el token de sesión.
+		\item El sistema redirigirá al usuario a la pantalla de inicio de sesión.
+	\end{RFGestionUsuarios}
 
 \end{RFGestionUsuarios}
