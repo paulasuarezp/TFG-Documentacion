@@ -1,0 +1,37 @@
+
+\newlist{RFColeccionCartas}{enumerate}{5}
+\setlist[RFColeccionCartas,1]{label=\textbf{RCC-\arabic*.}, leftmargin=*, align=left, font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFColeccionCartas,2]{label*=\textbf{\arabic*.},font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFColeccionCartas,3]{label*=\textbf{\arabic*.},font=\fontsize{9pt}{11pt}\selectfont}
+\setlist[RFColeccionCartas,4]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+\setlist[RFColeccionCartas,5]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+
+
+\subsubsubsection{Colección de cartas}
+\begin{RFColeccionCartas}
+	\item El sistema tendrá una colección de cartas disponibles para los usuarios.
+	\begin{RFColeccionCartas}
+		\item Las cartas serán representaciones de pokémon.
+		\item Cada carta tendrá dos identificadores:
+		\begin{RFColeccionCartas}
+			\item Un identificador único (UID).
+			\item Un identificador de colección (IDC) en formato \coloredUnderline{\hyperlink{confParam:cc-formatoIDCCarta}{CC\_FORMATO\_IDC\_CARTA}}..
+		\end{RFColeccionCartas}
+		\item El valor de cada carta será determinado por:
+		\begin{RFColeccionCartas}
+			\item El pokémon que representan.
+			\item Rareza del pokémon.
+			\item Rareza de la carta.
+		\end{RFColeccionCartas}
+	\end{RFColeccionCartas}
+	\item El sistema deberá permitir a los usuarios autenticados coleccionar cartas.\label{req_coleccion_cartas}
+	\begin{RFColeccionCartas}
+		\item Un usuario deberá poder visualizar las cartas que posee en su colección.
+		\item El sistema deberá de mostrar si una carta está repetida en la colección del usuario.
+		\item Un usuario deberá poder añadir cartas a su colección mediante:
+		\begin{RFColeccionCartas}
+			\item La compra de sobres (ver Compra de Sobres).
+			\item La compra de cartas individuales mediante subastas (ver Gestión de Subastas).
+		\end{RFColeccionCartas}
+	\end{RFColeccionCartas}
+\end{RFColeccionCartas}
