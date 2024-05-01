@@ -235,16 +235,8 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
 
 \end{tikzpicture}
-\section{Resumen}
+\input{1-Introduccion.tex}
 
-
-\section{Palabras Clave}
-
-
-\section{Abstract}
-
-
-\section{Keywords}
 \newpage
 \pagestyle{fancy}
 
@@ -257,7 +249,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-\input{2-PSI}
+\input{2-PSI.tex}
 
 
 
@@ -269,11 +261,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-
-\section{Identificación de las Necesidades de Infraestructura Tecnológica} 
-
-\newpage
-\section{Selección de la Arquitectura Tecnológica} 
+\input{3-Arquitectura-Tecnologica.tex}
 
 \newpage
 \chapter{ESTUDIO DE VIABILIDAD DEL SISTEMA}
@@ -287,7 +275,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \section{ESTUDIO Y VALORACIÓN DE ALTERNATIVAS DE SOLUCIÓN. SELECCIÓN DE ALTERNATIVA FINAL}
 
-\input{4-Estudio-de-viabilidad}
+\input{4-Estudio-de-viabilidad.tex}
 
 
 \newpage
@@ -298,7 +286,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-\input{5-Planificacion-Gestion-TFG}
+\input{5-Planificacion-Gestion-TFG.tex}
 
 \newpage
 \chapter{ANÁLISIS DEL SISTEMA DE INFORMACIÓN}
@@ -311,7 +299,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 
 \section{DEFINICIÓN DEL SISTEMA}
-\input{6-Analisis-del-sistema-de-informacion}
+\input{6-Analisis-del-sistema-de-informacion.tex}
 
 \newpage
 \chapter{DISEÑO DEL SISTEMA DE INFORMACIÓN}
@@ -322,70 +310,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \end{tikzpicture}
 
 \newpage
-
-
-\section{DISEÑO DE CASOS DE USO REALES}
-
-\subsection{Caso de Uso 1.1} 
-
-\subsubsection{Diagramas de Interacción (Comunicación y Secuencia)} 
-
-\subsubsection{Diagramas de Estados de las Clases} 
- 
-\subsubsection{Diagramas de Actividades} 
-
-
-\subsection{Caso de Uso 1.2}
-
-
-\newpage
-\section{DISEÑO DE CLASES}
-
-\subsection{Diagrama de Clases}
-
-
-\newpage
-\section{DISEÑO DE LA ARQUITECTURA DE MÓDULOS DEL SISTEMA}
-
-\subsection{Diseño de Módulos del Sistema}
-
-\subsection{Diseño de Comunicaciones entre Módulos}
-
-\subsection{Revisión de la Interfaz de Usuario}
-
-
-\newpage
-\section{DISEÑO FÍSICO DE DATOS}
-
-\subsection{Descripción del SGBD Usado} 
-
-\subsection{Integración del SGBD en Nuestro Sistema} 
-
-\subsection{Diagrama E--R} 
-
-
-\newpage
-\section{DISEÑO DE LA MIGRACIÓN Y CARGA INICIAL DE DATOS}
-
-
-\newpage
-\section{ESPECIFICACIÓN TÉCNICA DEL PLAN DE PRUEBAS}
-
-\subsection{Pruebas Unitarias} 
-
-\subsection{Pruebas de Integración y del Sistema} 
-
-\subsection{Pruebas de Usabilidad y Accesibilidad} 
-
-\subsubsection{Diseño de Cuestionarios} 
-
-\subsubsection{Actividades de las Pruebas de Usabilidad} 
-
-
-\subsection{Pruebas de Accesibilidad} 
-
-\subsection{Pruebas de Rendimiento} 
-
+\input{7-Diseño-del-sistema-de-informacion.tex}
 
 \newpage
 \chapter{CONSTRUCCIÓN DEL SISTEMA DE INFORMACIÓN}
@@ -397,149 +322,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 
-
-\section{PREPARACIÓN DEL ENTORNO DE GENERACIÓN Y CONSTRUCCIÓN}
-
-\subsection{Estándares y normas seguidos}
-
-
-\subsection{Lenguajes de programación}
-
-
-\subsection{Herramientas y programas usados para el desarrollo}
-
-
-\newpage
-\section{GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y PROCEDIMIENTOS}
-
-\textcolor[rgb]{0.65,0.16,0}{Ejemplos de tablas descripción de clases}
-
-\begin{table}[H]
-\vspace{-4mm}
-  \centering
-  \caption{Descripción de diseño de LoginScreen}
-    \begin{tabular}{p{8.645em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{LoginScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de inicio de sesión.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{signInWithGoogle} & \multicolumn{2}{p{22.64em}}{Hace una llamada al objeto Fire para el inicio de sesión con Firebase authentication mediante una cuenta de Google.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
-
-
-\begin{table}[htbp]
-  \centering
-  \caption{Descripción de diseño de HomeScreen}
-    \begin{tabular}{p{10em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{HomeScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de emergencia.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{componentWillMount} & \multicolumn{2}{r}{} \\
-    \midrule
-    \textbf{emergencyCalling} & \multicolumn{2}{p{21.285em}}{Es el método encargado de redirigir la aplicación hacia el marcador con el 112 marcado.} \\
-    \midrule
-    \textbf{warnProtectors} & \multicolumn{2}{p{21.285em}}{[Falta implementar] Es el encargado de generar un mensaje de aviso a los protectores creando notificaciones push.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
-
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS UNITARIAS}
-
-
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS DE INTEGRACIÓN}
-
-
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS DEL SISTEMA}
-
-\subsection{Prueba de Usabilidad}
-
-\subsection{Pruebas de Accesibilidad} 
- 
-\subsubsection{Revisión Preliminar} 
-
-\subsubsection{Evaluación de Conformidad} 
-
-\subsubsection{Checklist del WCAG 2.1} 
-
-\subsubsection{Accesibilidad con Dispositivos Móviles} 
-
-
-\newpage
-\section{ELABORACIÓN DE LOS MANUALES DE USUARIO}
-
-\subsection{Manual de Instalación} 
-
-\subsection{Manual de Ejecución} 
-
-\subsection{Manual de Usuario} 
-
-\subsection{Manual del Programador}
-
-
-\newpage
-\section{CONSTRUCCIÓN DE LOS COMPONENTES Y PROCEDIMIENTOS DE MIGRACIÓN Y CARGA INICIAL DE DATOS}
-
-
-
-\newpage
-\chapter{IMPLANTACIÓN Y ACEPTACIÓN DEL SISTEMA}
-\noindent\begin{tikzpicture}
-% Definir el degradado
-\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
-
-\end{tikzpicture}
-
-\newpage
-
-\section{ESTABLECIMIENTO DEL PLAN DE IMPLANTACIÓN}
-
-
-\newpage
-\section{CARGA DE DATOS AL ENTORNO DE OPERACIÓN}
-
-
-\newpage
-\section{PRUEBAS DE IMPLANTACIÓN DEL SISTEMA}
-
-
-\newpage
-\section{PREPARACIÓN DEL MANTENIMIENTO DEL SISTEMA}
-
-
-\newpage
-\section{ESTABLECIMIENTO DEL ACUERDO DE NIVEL DE SERVICIO}
-
-
-\newpage
-\section{PRESENTACIÓN Y APROBACIÓN DEL SISTEMA Y PASO A PRODUCCIÓN}
+\input{8-Construccion-sistema-informacion.tex}
 
 
 \newpage
@@ -550,77 +333,16 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-
-\section{CONCLUSIONES}
-
-\newpage
-\section{AMPLIACIONES} 
-
+\input{9-Conclusiones-amplicaciones.tex}
 
 \newpage
 \chapter*{ANEXOS}
+\phantomsection
 \addcontentsline{toc}{chapter}{ANEXOS}
 \newpage
-\phantomsection\label{plan_de_gestion_de_riesgos}
-\section*{PLAN DE GESTIÓN DE RIESGOS}
-\begin{figure}[H]
-    \centering
-    \includegraphics{figures/matriz_prob_vs_impact.png}
-    \caption{Matriz de probabilidad vs impacto}
-    \label{fig:matriz_prob_vs_impact}
-\end{figure}
-\newpage
-\section*{CONTENIDO ENTREGADO EN LOS ANEXOS} 
-\addcontentsline{toc}{section}{CONTENIDO ENTREGADO EN LOS ANEXOS}
 
-\subsection*{Contenidos} 
 
-\textcolor[rgb]{0.65,0.16,0}{Ejemplo de como especificar los contenidos entregados}
-
-Además de este documento, se hace entrega de una carpeta comprimida ``.zip'' en la que ahora se describirán sus contenidos. Se estructurará también la organización del código fuente.
-
-\begin{itemize}
-	\item \textbf{Planificación\_TFG.mpp} -> Archivo de Microsoft Project que contiene la planificación del proyecto entera.
-	\item \textbf{Presupuesto-GuardMe\_TFG.xlsx} -> Archivo Microsoft Excel que contiene los cálculos del presupuesto del proyecto.
-	\item \textbf{Diagramas} -> Carpeta que contiene todos los diagramas utilizados en este documento.
-	\begin{itemize}
-		\item \textit{Diagrama\_de\_paquetes.png}
-		\item \textit{Diagrama\_firestore.png}
-		\item \textit{Diagrama\_navegabilidad.png}
-		\item \textit{Diagrama\_secuencia\_enviar.png}
-		\item \textit{Diagrama\_secuencia\_visualizar.png}
-		\item \textit{Diagrama\_UML-Diseño.png}
-		\item \textit{Diagrama\_UML-Analisis.png}
-	\end{itemize}
-	\item \textbf{TFG\_codigo.zip} -> Carpeta comprimida con todo el código fuente.
-\end{itemize}
-
-Ahora se mostrará el contenido de dicha carpeta comprimida que contiene todo el código fuente de la aplicación la cual esta dividida a su vez en dos carpetas:
-
-\paragraph*{AuthServerGuardMe}
-Contiene el código que se aloja en \textit{Heroku} para darle funcionalidad al servidor. La clase principal es la llamada \texttt{mainAuthServer.js}.
-
-\paragraph*{GuardMe}
-Contiene el código fuente de la aplicación y se compone de las siguientes carpetas:
-\begin{itemize}
-	\item \textbf{assets} -> Carpeta que contiene los elementos gráficos usados en la aplicación. Se subdivide en una carpeta llamada \textit{images} que contiene todas las imagenes utilizadas para la construcción de la aplicación.
-	\item \textbf{components} -> Carpeta que contiene el código para todos los componentes creados.
-	\item \textbf{constants} -> Carpeta que contiene el código
-	\item \textbf{docs} -> Carpeta que contiene los archivos html generados por JSDoc.
-	\item \textbf{files} -> Carpeta en la que se encuentras los futuros archivos de Términos y Condiciones y Política de Privacidad entre otros.
-	\item \textbf{modules\_LICENSES} -> Carpeta que contiene una por una todas las licencias de las librerías utilizadas en el desarrollo.
-	\item \textbf{navigation} -> Carpeta que contiene las clases relativas a la navegación de la aplicación.
-	\item \textbf{objects} -> Carpeta que contiene los objetos utilizados en el desarrollo que en este caso ha sido solo Fire.js.
-	\item \textbf{screens} -> Carpeta que contiene todas las pantallas, agrupadas a su vez en subcarpetas que identifican la pantalla sobre la que están relacionadas.
-	\item \textbf{styles} -> Carpeta que contiene todos los estilos de las pantallas, agrupadas a su vez en subcarpetas que siguen la misma estructura que \textit{screens}.
-	\item \textbf{App.js} -> Clase principal y encargada de que comience la aplicación entera.
-	\item \textbf{LICENSE} -> Licencia sobre el código fuente.
-	\item \textbf{README.md} -> Archivo con la descripción del proyecto para la documentación y el repositorio de GitHub.
-	\item \textbf{package.json} -> Archivo que contiene las librerías utilizadas en el proyecto.
-	\item \textbf{app.json} -> Archivo que contiene la configuración de la aplicación.
-	\item \textbf{configJSDoc.json} -> Archivo de configuración para la creación de documentación por parte de JSDoc.
-	\item \textbf{Otros archivos} -> Los demás archivos no son relevantes ya que muchos se generan por defecto y los demás son configuraciones propias de expo.
-\end{itemize}
+% ----- Página de Bibliografía -----
 
 \newpage
 \nocite{*} %El comando bibliography enseña solo las referencias que se hayan usado en el texto. Este comando permite "no citar" todas y así que aparezcan.
