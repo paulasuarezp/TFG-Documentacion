@@ -9,66 +9,66 @@
 
 \subsubsection*{Registro e inicio de sesión}
 \begin{RFGestionUsuarios}
-  \item Un usuario deberá poder registrarse en el sistema.\label{req_registro} %RF-1
-  \begin{RFGestionUsuarios}
-    
-    \item Un usuario deberá registrarse con unas credenciales pertenecientes a una cuenta de Google.
-    \begin{RFGestionUsuarios}
-      \item El sistema no permitirá que un usuario se registre más de una vez.
-      \item El sistema pedirá la confirmación de los credenciales a Google.
-      \begin{RFGestionUsuarios}
-      	\item En caso de que los credenciales sean correctos, se accederá a la aplicación por primera vez.
-      	\item En caso de que los credenciales sean erróneos, se informará al usuario de dicho error.
-       \end{RFGestionUsuarios}
-    \end{RFGestionUsuarios}
-    
-    \item Un usuario deberá proporcionar el número de teléfono correspondiente al dispositivo que esté utilizando.
-    \begin{RFGestionUsuarios}
-    	\item El sistema comprobará que el número de teléfono corresponde al dispositivo con el que se esté realizando el registro.
-    	\begin{RFGestionUsuarios}
-     		\item El sistema emitirá un mensaje SMS a dicho dispositivo que se detectará automáticamente.
-      		\item El sistema validará el código de SMS recibido con el de la base de datos.
-    	\end{RFGestionUsuarios}
-   	\end{RFGestionUsuarios} 
-   	
-   	\item Una vez finalizado el registro, el sistema automáticamente:
-   		\begin{RFGestionUsuarios}
-   		\item Escribirá los datos recibidos del registro en la base de datos:
-    		\begin{RFGestionUsuarios}
-      			\item Nombre
-      			\item Apellidos
-      			\item Email
-      			\item Número de teléfono
-      			\item UID de Google
-      			\item URL de la imagen de perfil
-      			\item Locale
-      			\item Fecha de creación
-      			\item Fecha de último inicio de sesión
-    		\end{RFGestionUsuarios}
-    		
-    	\item Redirigirá al usuario a la pantalla principal.
-    	\end{RFGestionUsuarios}
-  \end{RFGestionUsuarios}
-  
-  \item Un usuario deberá poder iniciar sesión en el sistema. %RF-2
+	\item Un usuario deberá poder registrarse en el sistema.\label{req_registro}
+	\begin{RFGestionUsuarios}
+		\item El usuario deberá proporcionar el nombre de usuario que desea utilizar.
+			\begin{RFGestionUsuarios}
+				\item El sistema verificará que el nombre de usuario está disponible.
+				\item El sistema verificará que el nombre de usuario cumpla con las restricciones de formato especificadas en GU\_NOMBRE\_USUARIO.
+			\end{RFGestionUsuarios} 
+		\item El usuario deberá proporcionar una contraseña.
+			\begin{RFGestionUsuarios}
+				\item El sistema asegurará que la contraseña cumpla con las políticas de seguridad especificadas en \textit{GU\_CONTRASEÑA}.
+			\end{RFGestionUsuarios}
+		\item Un usuario deberá de confirmar la contraseña
+			\begin{RFGestionUsuarios}
+				\item El sistema verificará que la contraseña y su confirmación coincidan.
+			\end{RFGestionUsuarios}
+		\item Un usuario deberá de especificar la fecha de nacimiento.
+			\begin{RFGestionUsuarios}
+				\item El sistema comprobará que la fecha de nacimiento cumple con las restricciones de edad mínima especificadas en \textit{GU\_FECHA\_NACIMIENTO}.
+			\end{RFGestionUsuarios}
+		\item Una vez finalizado el registro, el sistema escribirá los datos en la base de datos:
+			\begin{RFGestionUsuarios}
+				\item Nombre de usuario
+				\item Contraseña cifrada
+				\begin {RFGestionUsuarios}
+					\item La contraseña se cifrará de acuerdo a \textit{GU\_CIFRADO\_CONTRASEÑA}.
+				\end{RFGestionUsuarios}
+				\item Fecha de nacimiento
+				\item Fecha de creación
+				\item \textit{ROL\_DEFECTO}
+				\item \textit{IMG\_PERFIL\_DEFECTO}
+				\item \textit{SALDO\_DEFECTO}
+			\end{RFGestionUsuarios}
+
+		\item El usuario será redirigido a la pantalla de inicio de sesión.
+	\end{RFGestionUsuarios}
+
+	\item Un usuario deberá poder iniciar sesión en el sistema.\label{req_inicio_sesion}
     \begin{RFGestionUsuarios}%RF2.1
-      \item Un usuario deberá iniciar sesión mediante las credenciales de Google.
-      \begin{RFGestionUsuarios}%RF2.1.1
-      	\item El sistema comprobará que las credenciales sean correctas.
-      	\item El sistema verificará que el usuario existe en la base de datos.
-      		\begin{RFGestionUsuarios}%RF2.1.1.1
-      			\item En caso de no existir, el sistema automáticamente:
-      			\begin{RFGestionUsuarios}%RF2.1.1.1.1
-      				\item Registrará al usuario siguiendo \textit{\ref{req_registro}}.
-      				\item Notificará a usuario.
-      			\end{RFGestionUsuarios}
-      			\item En caso de existir, el sistema automáticamente actualizará la información del usuario en la base de datos:
-      			\begin{RFGestionUsuarios}
-      				\item Fecha de último inicio de sesión
-      			\end{RFGestionUsuarios}
-      		\end{RFGestionUsuarios}
-      \end{RFGestionUsuarios}
-      
-      \item Una vez finalizado el inicio de sesión, el sistema automáticamente redirigirá al usuario a la pantalla principal.
+      \item Un usuario deberá iniciar sesión las siguientes credenciales.
+		\begin{RFGestionUsuarios}
+		  \item Nombre de usuario.
+		  \item Contraseña.
+		\end{RFGestionUsuarios}
+	  \item El sistema validará las credenciales introducidas.
+		\begin{RFGestionUsuarios}
+			\item El sistema comprobará que el nombre de usuario existe en la base de datos.
+			\item El sistema comprobará que la contraseña se corresponde con la registrada para dicho nombre de usuario.
+		\end{RFGestionUsuarios}
+
+      \item Si las credenciales son correctas, el usuario será redirigido a la pantalla principal.
+	  \item Si las credenciales son incorrectas:
+		\begin{RFGestionUsuarios}
+			\item El sistema mostrará un mensaje de error.
+			\item El usuario podrá intentar iniciar sesión de nuevo.
+		\end{RFGestionUsuarios}
     \end{RFGestionUsuarios}
+
 \end{RFGestionUsuarios}
+
+
+
+  
+  
