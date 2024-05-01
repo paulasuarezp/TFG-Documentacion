@@ -105,7 +105,8 @@
     colorlinks = true, % Colores en los enlaces 
     linkcolor = linkColor, % Color de los enlaces internos
     filecolor = linkColor, % Color de los enlaces a archivos
-    urlcolor = linkColor % Color de los enlaces externos
+    urlcolor = linkColor, % Color de los enlaces externos
+    citecolor = linkColor
 }
 
 
@@ -261,7 +262,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-\input{3-Arquitectura-Tecnologica.tex}
+\input{3-Definicion-arquitectura-tecnologica}
 
 \newpage
 \chapter{ESTUDIO DE VIABILIDAD DEL SISTEMA}
@@ -310,7 +311,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \end{tikzpicture}
 
 \newpage
-\input{7-Diseño-del-sistema-de-informacion.tex}
+\input{7-Diseño-sistema-informacion}
 
 \newpage
 \chapter{CONSTRUCCIÓN DEL SISTEMA DE INFORMACIÓN}
@@ -336,11 +337,16 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \input{9-Conclusiones-amplicaciones.tex}
 
 \newpage
-\chapter*{ANEXOS}
 \phantomsection
 \addcontentsline{toc}{chapter}{ANEXOS}
-\newpage
+\chapter*{ANEXOS}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+\end{tikzpicture}
 
+\newpage
+\input{Anexos}
 
 % ----- Página de Bibliografía -----
 
