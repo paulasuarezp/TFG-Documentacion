@@ -1,0 +1,110 @@
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\textbf{RF-\arabic*.}}
+\setlist[myEnumerate,2]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,3]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,4]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,5]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,6]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,7]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,8]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,9]{label*=\textbf{\arabic*.}}
+
+
+\subsubsubsection{Registro e inicio de sesión}
+
+\begin{myEnumerate}
+  \item Un usuario deberá poder registrarse en el sistema.\label{req_registro} %RF-1
+  \begin{myEnumerate}
+    
+    \item Un usuario deberá registrarse con unas credenciales pertenecientes a una cuenta de Google.
+    \begin{myEnumerate}
+      \item El sistema no permitirá que un usuario se registre más de una vez.
+      \item El sistema pedirá la confirmación de los credenciales a Google.
+      \begin{myEnumerate}
+      	\item En caso de que los credenciales sean correctos, se accederá a la aplicación por primera vez.
+      	\item En caso de que los credenciales sean erróneos, se informará al usuario de dicho error.
+       \end{myEnumerate}
+    \end{myEnumerate}
+    
+    \item Un usuario deberá proporcionar el número de teléfono correspondiente al dispositivo que esté utilizando.
+    \begin{myEnumerate}
+    	\item El sistema comprobará que el número de teléfono corresponde al dispositivo con el que se esté realizando el registro.
+    	\begin{myEnumerate}
+     		\item El sistema emitirá un mensaje SMS a dicho dispositivo que se detectará automáticamente.
+      		\item El sistema validará el código de SMS recibido con el de la base de datos.
+    	\end{myEnumerate}
+   	\end{myEnumerate} 
+   	
+   	\item Una vez finalizado el registro, el sistema automáticamente:
+   		\begin{myEnumerate}
+   		\item Escribirá los datos recibidos del registro en la base de datos:
+    		\begin{myEnumerate}
+      			\item Nombre
+      			\item Apellidos
+      			\item Email
+      			\item Número de teléfono
+      			\item UID de Google
+      			\item URL de la imagen de perfil
+      			\item Locale
+      			\item Fecha de creación
+      			\item Fecha de último inicio de sesión
+    		\end{myEnumerate}
+    		
+    	\item Redirigirá al usuario a la pantalla principal.
+    	\end{myEnumerate}
+  \end{myEnumerate}
+  
+  \item Un usuario deberá poder iniciar sesión en el sistema. %RF-2
+    \begin{myEnumerate}%RF2.1
+      \item Un usuario deberá iniciar sesión mediante las credenciales de Google.
+      \begin{myEnumerate}%RF2.1.1
+      	\item El sistema comprobará que las credenciales sean correctas.
+      	\item El sistema verificará que el usuario existe en la base de datos.
+      		\begin{myEnumerate}%RF2.1.1.1
+      			\item En caso de no existir, el sistema automáticamente:
+      			\begin{myEnumerate}%RF2.1.1.1.1
+      				\item Registrará al usuario siguiendo \textit{\ref{req_registro}}.
+      				\item Notificará a usuario.
+      			\end{myEnumerate}
+      			\item En caso de existir, el sistema automáticamente actualizará la información del usuario en la base de datos:
+      			\begin{myEnumerate}
+      				\item Fecha de último inicio de sesión
+      			\end{myEnumerate}
+      		\end{myEnumerate}
+      \end{myEnumerate}
+      
+      \item Una vez finalizado el inicio de sesión, el sistema automáticamente redirigirá al usuario a la pantalla principal.
+    \end{myEnumerate}
+\end{myEnumerate}
+
+\paragraph*{Llamada de emergencia}
+
+\begin{myEnumerate}[resume*]
+  \item Un usuario deberá poder realizar una llamada de auxilio.
+  \begin{myEnumerate}
+    \item El usuario deberá tener la sesión iniciada en la aplicación.
+  	\item Un usuario podrá clicar en un botón para realizar en la llamada.
+  	\begin{myEnumerate}
+  		\item El sistema verificará que la llamada no ha sido sin querer.
+  		\begin{myEnumerate}
+  			\item En caso de haber sido voluntaria, el sistema automáticamente realizará una llamada telefónica al teléfono de emergencias 112.
+  				\begin{myEnumerate}
+  					\item Los gastos de la llamada se atribuirán a cargo del usuario.
+				\end{myEnumerate}
+  			\item En caso de haber sido voluntaria, el sistema automáticamente realizará un aviso a los protectores del usuario en caso de tenerlos.
+  				\begin{myEnumerate}
+  					\item El sistema guardará la última ubicación registrada.
+  					\item El sistema generará una alerta a los protectores que contenga los siguientes datos del usuario:
+					 \begin{myEnumerate}
+  						\item Nombre
+  						\item Apellidos
+  						\item Última localización registrada
+  					 \end{myEnumerate}
+			    \end{myEnumerate}
+  		\end{myEnumerate}
+  	\end{myEnumerate}
+  	\item El sistema proporcionará un botón fácil de ver y clicar.
+  \end{myEnumerate}
+\end{myEnumerate}
+

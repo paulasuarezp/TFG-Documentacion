@@ -1,0 +1,47 @@
+\newlist{myEnumNF}{enumerate}{4}
+\setlist[myEnumNF,1]{label=\textbf{RNF-\arabic*.}}
+\setlist[myEnumNF,2]{label*=\textbf{\arabic*.}}
+\setlist[myEnumNF,3]{label*=\textbf{\arabic*.}}
+\setlist[myEnumNF,4]{label*=\textbf{\arabic*.}}
+
+\begin{myEnumNF}
+	\item El usuario deberá ser capaz de utilizar todas las funcionalidades desarrolladas en la aplicación sin problema.
+	\item La aplicación sera accesible para los usuarios a través de un portal de descarga.
+	\begin{myEnumNF}
+		\item La aplicación será multiplataforma.
+		\begin{myEnumNF}
+			\item La aplicación requiere mínimo las versiones:
+			\begin{myEnumNF}
+				\item 5.0 para Android
+				\item 10.0 para iOS
+			\end{myEnumNF}
+			\item Las versiones están condicionadas por los requisitos de Expo.
+		\end{myEnumNF}
+	\end{myEnumNF}
+	
+	\item Los servicios que utiliza la aplicación deberán mantenerla disponible el mayor tiempo posible.
+	\begin{myEnumNF}
+		\item El sistema estará disponible siguiendo el protocolo de los tres nueves: 99.9\%.
+		\begin{myEnumNF}
+			\item El sistema no estará disponible 43,8 minutos/mes u 8,76 horas/año.
+		\end{myEnumNF}
+	\end{myEnumNF}
+	\item Los usuarios de la aplicación no deberán tener conocimientos tecnológicos avanzados.
+		\begin{myEnumNF}
+		\item El nivel básico será requerido, lo que incluye haber tratado con un teléfono móvil alguna vez.
+	\end{myEnumNF}
+	
+	\item El sistema se conectará con la base de datos que albergará todos los datos asociados a los usuarios registrados y sus datos.
+	\begin{myEnumNF}
+		\item Las base de datos estará alojada en la nube.
+		\item Los tiempos de carga de datos no deberán sobrepasar los 10 segundos.
+	\end{myEnumNF}
+
+	\item El sistema se comunicará con:
+	\begin{myEnumNF}
+		\item Google Maps API
+		\item Google Firebase Cloud Firestore
+		\item Google Firebase Authentication
+		\item Whatsapp
+	\end{myEnumNF}
+\end{myEnumNF}
