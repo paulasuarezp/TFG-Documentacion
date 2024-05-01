@@ -1,0 +1,111 @@
+\newlist{RFSubastas}{enumerate}{5}
+\setlist[RFSubastas,1]{label=\textbf{RSP-\arabic*.}, leftmargin=*, align=left, font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFSubastas,2]{label*=\textbf{\arabic*.},font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFSubastas,3]{label*=\textbf{\arabic*.},font=\fontsize{9pt}{11pt}\selectfont}
+\setlist[RFSubastas,4]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+\setlist[RFSubastas,5]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+
+
+\subsubsubsection{Gestión de subastas y pujas}
+
+\begin{RFSubastas}
+	\item El sistema permitirá a los usuarios autenticados subastar cartas de su colección.
+	\begin{RFSubastas}
+		\item Un usuario deberá poder seleccionar una carta de su colección para subastar.
+		\item El sistema verificará que la carta seleccionada no esté en una subasta activa.
+		\item Un usuario deberá especificar el precio de salida de la subasta.
+		\item Un usuario deberá especificar la duración de la subasta.
+		\item El sistema registrará en la base de datos una nueva subasta con los siguientes datos:
+		\begin{RFSubastas}
+			\item Identificador único (UID).
+			\item Usuario que subasta la carta.
+			\item Carta subastada.
+			\item Estado de la subasta 'activa'.
+			\item Precio de salida.
+			\item Fecha de inicio.
+			\item Fecha de fin.
+		\end{RFSubastas}
+		\item El sistema actualizará el estado de la carta a 'en subasta'.
+		\item El sistema mostrará la subasta activa en la lista de subastas.
+	\end{RFSubastas}
+	\item El sistema permitirá a los usuarios autenticados finalizar subastas activas.
+	\begin{RFSubastas}
+		\item Un usuario deberá poder seleccionar una subasta activa para finalizar.
+		\item El sistema verificará que la subasta seleccionada pertenezca al usuario.
+		\item El sistema actualizará el estado de la subasta a 'cancelada'.
+		\item El sistema devolverá la carta subastada a la colección del usuario.
+		\item El sistema finalizará las pujas activas:
+		\begin{RFSubastas}
+			\item El sistema actualizará el estado de las pujas a 'cancelada'.
+			\item El sistema notificará a los usuarios que hayan pujado en la subasta de la cancelación.
+		\end{RFSubastas}
+	\end{RFSubastas}
+	\item El sistema permitirá a los usuarios autenticados visualizar las subastas activas.
+	\begin{RFSubastas}
+		\item Si el usuario es el propietario de la subasta activa se mostrará la opción de finalizar la subasta.
+		\item Si el usuario ya ha pujado en la subasta activa:
+		\begin{RFSubastas}
+			\item Se mostrará el precio de la puja realizada.
+			\item Se mostrará la opción de cancelar la puja.
+		\end{RFSubastas}
+	\end{RFSubastas}
+	\item El sistema permitirá a los usuarios autenticados pujar en subastas activas.
+	\begin{RFSubastas}
+		\item El sistema verificará que no se trata de una subasta propia del usuario.
+		\item Un usuario deberá especificar el precio de la puja.
+		\item El sistema verificará que el usuario tenga saldo suficiente antes de permitir la puja.
+		\item El sistema verificará que el usuario no tenga una puja activa en la subasta.
+		\item El sistema registrará en la base de datos una nueva puja con los siguientes datos:
+		\begin{RFSubastas}
+			\item Identificador único (UID).
+			\item Usuario que puja.
+			\item Subasta en la que se puja.
+			\item Estado de la puja 'activa'.
+			\item Precio de la puja.
+			\item Fecha de la puja.
+		\end{RFSubastas}
+	\end{RFSubastas}
+	\item Cuando el plazo de una subasta activa finalice:
+	\begin{RFSubastas}
+		\item El sistema seleccionará la puja más alta.
+		\begin{RFSubastas}
+			\item El sistema verificará que el usuario tenga saldo suficiente para realizar la compra.
+			\item Si el usuario no tiene saldo suficiente se seleccionará la siguiente puja más alta, repitiendo el proceso hasta encontrar un usuario con saldo suficiente.
+			\item Si el usuario tiene saldo suficiente se procederá a la compra de la carta.
+			\item El sistema registrará en la base de datos la transacción de la venta de la carta con los siguientes datos:
+			\begin{RFSubastas}
+				\item Identificador único (UID).
+				\item Usuario que compra la carta.
+				\item Concepto 'subasta'
+				\item Referencia a la subasta.
+				\item Precio de venta.
+				\item Fecha de venta.
+			\end{RFSubastas}
+			\item El sistema actualizará el saldo del usuario vendedor.
+			\item El sistema actualizará el saldo del usuario comprador.
+			\item El sistema transferirá la carta al usuario comprador.
+			\item El sistema actualizará el estado de la carta a 'colección privada'.
+			\item El sistema actualizará el estado de la subasta a 'ganadora'.
+			\item El sistema actualizará el estado de la subasta a 'finalizada'.
+			\item El sistema notificará a los usuarios implicados en la subasta del resultado.
+		\end{RFSubastas}
+		\item Si no hay ninguna puja:
+		\begin{RFSubastas}
+			\item El sistema actualizará el estado de la subasta a 'finalizada'.
+			\item El sistema devolverá la carta subastada a la colección del usuario.
+			\item El sistema notificará al usuario vendedor.
+		\end{RFSubastas}
+	
+	\end{RFSubastas}
+	\item El sistema permitirá a los usuarios autenticados visualizar el historial de subastas.
+	\begin{RFSubastas}
+		\item El sistema mostrará las subastas en las que el usuario ha participado.
+		\item El sistema mostrará las subastas en las que el usuario ha sido el vendedor.
+	\end{RFSubastas}
+	\item El sistema permitirá al usuario cancelar una puja activa.
+	\begin{RFSubastas}
+		\item El sistema verificará que la puja seleccionada pertenezca al usuario.
+		\item El sistema actualizará el estado de la puja a 'cancelada'.
+	\end{RFSubastas}
+	
+\end{RFSubastas}
