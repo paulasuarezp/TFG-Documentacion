@@ -1,0 +1,26 @@
+\newlist{RFTransacciones}{enumerate}{5}
+\setlist[RFTransacciones,1]{label=\textbf{RT-\arabic*.}, leftmargin=*, align=left, font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFTransacciones,2]{label*=\textbf{\arabic*.},font=\fontsize{10pt}{11pt}\selectfont}
+\setlist[RFTransacciones,3]{label*=\textbf{\arabic*.},font=\fontsize{9pt}{11pt}\selectfont}
+\setlist[RFTransacciones,4]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+\setlist[RFTransacciones,5]{label*=\textbf{\arabic*.},font=\fontsize{8pt}{11pt}\selectfont}
+
+
+\subsubsubsection{Gestión de transacciones}
+\begin{RFTransacciones}
+	\item El sistema deberá de registrar todos los movimientos de monedas realizados por los usuarios.
+	\item Cada transacción en el sistema deberá de poder identicarse de forma inequívoca. \hypertarget{RT-2}{}
+	\begin{RFTransacciones}
+		\item Deberá tener un identificador único.
+		\item Deberá tener un identificador de usuario.
+		\item Deberá tener un concepto explicativo.
+		\item Deberá tener una fecha y hora de realización.
+		\item Deberá tener un importe.
+		\item Deberá de tener una referencia al activo afectado.
+	\end{RFTransacciones}
+	\item El sistema deberá de permitir a los usuarios autenticados consultar sus transacciones.
+	\begin{RFTransacciones}
+		\item El sistema mostrará los datos mencionados en el punto \hyperlink{RT-2}{RT-2}.
+	\end{RFTransacciones}
+	\item Un usuario con rol de administrador deberá de poder consultar las transacciones de todos los usuarios.	
+\end{RFTransacciones}
