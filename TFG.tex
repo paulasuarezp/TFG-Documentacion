@@ -82,11 +82,11 @@
 % Formatear el contador para que se muestre como subsubsection.subsubsubsection
 \renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
 
-% Definir el comando subsubsubsection
 \newcommand{\subsubsubsection}[1]{%
   \refstepcounter{subsubsubsection}
-  \paragraph{#1}\mbox{}\\
+  \paragraph{#1}\mbox{} 
 }
+
 
 % Formato para el título de subsubsubsection
 \titleformat{\paragraph}
