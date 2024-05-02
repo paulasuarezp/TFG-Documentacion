@@ -1,47 +1,78 @@
-\newlist{myEnumNF}{enumerate}{4}
-\setlist[myEnumNF,1]{label=\textbf{RNF-\arabic*.}}
-\setlist[myEnumNF,2]{label*=\textbf{\arabic*.}}
-\setlist[myEnumNF,3]{label*=\textbf{\arabic*.}}
-\setlist[myEnumNF,4]{label*=\textbf{\arabic*.}}
+\newlist{RNF}{enumerate}{4}
+\setlist[RNF,1]{label=\textbf{RNF-\arabic*.}}
+\setlist[RNF,2]{label*=\textbf{\arabic*.}}
+\setlist[RNF,3]{label*=\textbf{\arabic*.}}
+\setlist[RNF,4]{label*=\textbf{\arabic*.}}
 
-\begin{myEnumNF}
-	\item El usuario deberá ser capaz de utilizar todas las funcionalidades desarrolladas en la aplicación sin problema.
-	\item La aplicación sera accesible para los usuarios a través de un portal de descarga.
-	\begin{myEnumNF}
-		\item La aplicación será multiplataforma.
-		\begin{myEnumNF}
-			\item La aplicación requiere mínimo las versiones:
-			\begin{myEnumNF}
-				\item 5.0 para Android
-				\item 10.0 para iOS
-			\end{myEnumNF}
-			\item Las versiones están condicionadas por los requisitos de Expo.
-		\end{myEnumNF}
-	\end{myEnumNF}
+\begin{RNF}
+	\item La aplicación deberá de ser accesible desde los navegadores:
+	\begin{RNF}
+		\item Google Chrome
+		\item Mozilla Firefox
+		\item Microsoft Edge
+		\item Safari
+	\end{RNF}
+
+	\item El sistema debe cumplir con las normativas de protección de datos:
+	\begin{RNF}
+		\item Reglamento General de Protección de Datos (RGPD)
+		\item Ley Orgánica de Protección de Datos y Garantía de los Derechos Digitales (LOPDGDD)
+	\end{RNF}
+	\item El sistema cumplirá con la Ley de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI).
+	\item El sistema cumplirá con las normas de accesibilidad Web Content Accessibility Guidelines (WCAG) 2.1:
+	\begin{RNF}
+		\item La aplicación debe alcanzar un nivel de accesibilidad AAA.
+		\begin{RNF}
+			\item Para verificar el cumplimiento de la accesibilidad, se utilizarán las siguientes herramientas:
+			\begin{RNF}
+				\item \coloredUnderline{\href{https://wave.webaim.org/}{WAVE}}
+				\item \coloredUnderline{\href{https://achecker.ca/checker/index.php}{AChecker}}
+				\item \coloredUnderline{\href{https://developers.google.com/web/tools/lighthouse}{Google Chrome Lighthouse}}
+			\end{RNF}
+		\end{RNF}
+	\end{RNF}
+
+
+	\item La aplicación deberá de ser \textit{responsive} a diferentes resoluciones de pantalla.
+	\begin{RNF}
+		\item Se deberá de adaptar a las siguientes resoluciones:
+		\begin{RNF}
+			\item Monitor Full HD: 1920x1080
+			\item Monitor HD: 1366x768
+			\item Tablet: 1024x768
+			\item Móvil: 360x640
+		\end{RNF}
+		\item Se comprobará la adaptabilidad con:
+		\begin{RNF}
+			\item Google Chrome DevTools
+			\item \coloredUnderline{\href{https://bluetree.ai/screenfly/}{Screenfly}} de BlueTree
+			\item Extensión de Chrome \coloredUnderline{\href{https://www.webmobilefirst.com/}{Mobile FIRST}}
+		\end{RNF}
+	\end{RNF}
+
+	\item La aplicación deberá de soportar un mínimo de 1000 usuarios concurrentes.
+	\item La aplicación deberá de tener un tiempo de respuesta inferior a 5 segundos.
 	
-	\item Los servicios que utiliza la aplicación deberán mantenerla disponible el mayor tiempo posible.
-	\begin{myEnumNF}
-		\item El sistema estará disponible siguiendo el protocolo de los tres nueves: 99.9\%.
-		\begin{myEnumNF}
-			\item El sistema no estará disponible 43,8 minutos/mes u 8,76 horas/año.
-		\end{myEnumNF}
-	\end{myEnumNF}
-	\item Los usuarios de la aplicación no deberán tener conocimientos tecnológicos avanzados.
-		\begin{myEnumNF}
-		\item El nivel básico será requerido, lo que incluye haber tratado con un teléfono móvil alguna vez.
-	\end{myEnumNF}
+	\item El sistema estará disponible un 99.5\% del tiempo.
+	\begin{RNF}
+		\item El sistema puede no estar disponible un máximo de 3,65 días al año u 7,2 horas al mes.
+	\end{RNF}
+
+	\item Los usuarios de la aplicación deberán tener conocimientos tecnológicos medios.
+	\begin{RNF}
+		\item El usuario deberá de tener conocimientos básicos de navegación web y haber realizado compras online anteriormente.
+	\end{RNF}
 	
-	\item El sistema se conectará con la base de datos que albergará todos los datos asociados a los usuarios registrados y sus datos.
-	\begin{myEnumNF}
+	\item El sistema se conectará con la base de datos que albergará todos los datos asociados a los usuarios registrados y todas las transacciones realizadas dentro de la aplicación.
+	\begin{RNF}
 		\item Las base de datos estará alojada en la nube.
 		\item Los tiempos de carga de datos no deberán sobrepasar los 10 segundos.
-	\end{myEnumNF}
+	\end{RNF}
 
 	\item El sistema se comunicará con:
-	\begin{myEnumNF}
-		\item Google Maps API
-		\item Google Firebase Cloud Firestore
-		\item Google Firebase Authentication
-		\item Whatsapp
-	\end{myEnumNF}
-\end{myEnumNF}
+	\begin{RNF}
+		\item PokéAPI
+		\item MongoDB Atlas
+		\item PayPal
+	\end{RNF}
+\end{RNF}
