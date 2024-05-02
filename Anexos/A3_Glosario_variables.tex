@@ -1,23 +1,55 @@
 \subsection{Glosario de términos}
-\begin{itemize}
-    \item \textbf{Cifrado de contraseña:} Proceso de encriptación de una contraseña.
-    \item \textbf{Rol:} Permisos y funcionalidades que tiene un usuario en la aplicación.
-    \item \textbf{Rareza de una carta:} Valor que indica la probabilidad de obtener una carta en un sobre.
-\end{itemize}
+\begin{table}[htb]
+    \centering
+    \caption{Descripción de términos}
+    \begin{tabular}{>{\columncolor{lightgreen!20}}p{7cm} p{10cm}}
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Término} & \textbf{Descripción} \\
+    \midrule
+    Cifrado de contraseña & Proceso de encriptación de una contraseña. \\
+    \midrule
+    Rol & Permisos y funcionalidades que tiene un usuario en la aplicación. \\
+    \midrule
+    Rareza & Valor que indica la probabilidad de obtener un activo en la aplicación. Se utiliza este valor para medir la exclusividad de un activo. Se aplica tanto a cartas, sobres como Pokemon. \\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection{Glosario de acrónimos}
-\begin{itemize}
-    \item \textbf{SHA-256:} Secure Hash Algorithm 256 bits.
-    \item \textbf{UID:} Unique Identifier.
-    \item \textbf{IDC:} Identificador de colección.
-\end{itemize}
+\begin{table}[htb]
+    \centering
+    \caption{Descripción de acrónimos}
+    \begin{tabular}{>{\columncolor{lightgreen!20}}p{7cm} p{10cm}}
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Acrónimo} & \textbf{Descripción} \\
+    \midrule
+    UID & Identificador único. \\
+    \bottomrule
+    \end{tabular}
+\end{table}
 
 \subsection{Glosario de abreviaturas}
-\begin{itemize}
-    \item \textbf{DD:} Día.
-    \item \textbf{MM:} Mes.
-    \item \textbf{AAAA:} Año.
-\end{itemize}
+\begin{table}[htb]
+    \centering
+    \caption{Descripción de abreviaturas}
+    \begin{tabular}{>{\columncolor{lightgreen!20}}p{7cm} p{10cm}}
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Abreviatura} & \textbf{Descripción} \\
+    \midrule
+    DD & Día. \\
+    \midrule
+    MM & Mes. \\
+    \midrule
+    AAAA & Año. \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
 
 \subsection{Glosario de variables}\hypertarget{anexo:glosario_variables}{}
 En esta sección se detallan los parámetros de configuración de usuario que se deben cumplir para poder utilizar la aplicación. Estos parámetros se encuentran en la tabla \ref{table:variables_requisitos}.
@@ -42,9 +74,6 @@ En esta sección se detallan los parámetros de configuración de usuario que se
     \hypertarget{confParam:gu-fechaNacimiento}{}
     \textbf{GU\_FECHA\_NACIMIENTO} & El formato  de la fecha es DD/MM/AAAA. \\
     \midrule
-    \hypertarget{confParam:gu-cifradoContrasena}{}
-    \textbf{GU\_CIFRADO\_CONTRASEÑA} & La contraseña se cifrará utilizando el algoritmo de cifrado SHA-256.  \\
-    \midrule
     \hypertarget{confParam:gu-rolDefecto}{}
     \textbf{GU\_ROL\_DEFECTO} & El rol por defecto será \textit{"STANDARD"}. \\
     \midrule
@@ -59,9 +88,6 @@ En esta sección se detallan los parámetros de configuración de usuario que se
     \midrule
     \hypertarget{confParam:cc-formatoIDCCarta}{}
     \textbf{CC\_FORMATO\_IDC\_CARTA} & El formato del identificador de colección de carta será CC-XXXX, donde XXXX es un número entero de cuatro dígitos. \\
-    \midrule
-    \hypertarget{confParam:metodosBancarios}{}
-    \textbf{CC\_MÉTODOS\_BANCARIOS} & El sistema de pago permitido es Paypal.\\
     \bottomrule
     \end{tabular}
 \end{table}
