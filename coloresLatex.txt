@@ -1,3 +1,5 @@
+\coloredUnderline{\hyperlink{Risks:identificacion_riesgos}{\ref*{Risks:identificacion_riesgos} \nameref*{Risks:identificacion_riesgos}}}
+
 colores latex:
 - verde pastel muy claro: [rgb]{0.922, 0.953, 0.910}
 {rgb}{0.824, 0.890, 0.784}
