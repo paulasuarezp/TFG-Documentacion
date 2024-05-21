@@ -2,7 +2,9 @@ En este proyecto, se simulará una pequeña empresa ficticia para su realizació
 Se han identificado los distintos perfiles que intervienen en el proyecto, así como las tareas que cada uno debe realizar. 
 Aunque el proyecto se llevará a cabo de forma individual, se ha considerado necesario estructurar estos roles para poder asignar un presupuesto adecuado a cada función.
 
-Los roles identificados en el equipo de trabajo se muestran en \coloredUnderline{\hyperlink{table:obs}{Tabla: \ref*{table:obs} \nameref*{table:obs}}}.
+Los roles identificados en el equipo de trabajo se muestran en \coloredUnderline{\hyperlink{table:obs}{Tabla: \ref*{table:obs} \nameref*{table:obs}}}. 
+Cabe destacar que el rol de Jefe de Proyecto (JP) es el encargado de supervisar y coordinar el trabajo de los demás roles y este rol ha sido considerado tanto para el alumno como para el tutor del TFG.
+
 
 \begin{table}[H]
 \centering
@@ -30,29 +32,37 @@ DOC & Documentador técnico \\
 \end{table}
  
 Por el tamaño del proyecto, se ha realizado una matriz de asignación de roles en lugar de una matriz de responsabilidades, también conocida como RACI (Responsable, Aprobador, Consultado, Informador).
-En la siguiente tabla se relacionan las tareas a realizar en el proyecto con los roles asignados a cada una de ellas. Cabe destacar que el rol de Jefe de Proyecto (JP) es el encargado de supervisar y coordinar el trabajo de los demás roles y este rol ha sido considerado tanto para el alumno como para el tutor del TFG.
+
 
 
 \begin{table}[H]
     \centering
-    \caption{Matriz de Responsabilidades}
-    \label{table:responsabilidades}
-    \begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-    \hline
-    \rowcolor{gray!30}
-    \textbf{Tarea} & \textbf{Jefe de Proyecto (JP)} & \textbf{Analista (AN)} & \textbf{Diseñador (DI)} & \textbf{Desarrollador (DE)} \\
-    \hline
-    Planificación & R & A & C & I \\
-    \hline
-    Análisis de Requisitos & A & R & C & I \\
-    \hline
-    Diseño de Sistema & C & C & R & I \\
-    \hline
-    Desarrollo & I & I & C & R \\
-    \hline
-    Pruebas & I & C & C & R \\
-    \hline
-    Entrega & A & C & I & R \\
-    \hline
+    \caption{Matriz de responsabilidades}
+    \label{table:matriz-responsabilidades}
+    \begin{tabular}{
+    >{\columncolor{lightgreen!20}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm}}
+    \cmidrule(l){2-7}
+    \rowcolor{darkgreen!50}
+    \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
+    \midrule
+    \rowcolor{lightgreen!20}
+    \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \midrule
+    Tarea 1 & X & X &  &  &  &  \\
+    \midrule
+    Tarea 2 &  & X & X &  &  &  \\
+    \midrule
+    Tarea 3 &  &  &  & X & X &  \\
+    \midrule
+    Tarea 4 &  &  &  &  & X & X \\
+    \midrule
+    Tarea 5 & X &  &  &  &  & X \\
+    \bottomrule
     \end{tabular}
-\end{table}
+    \end{table}
