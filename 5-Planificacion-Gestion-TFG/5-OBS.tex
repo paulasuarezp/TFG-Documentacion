@@ -31,23 +31,31 @@ DOC & Documentador técnico \\
 \end{tabular}
 \end{table}
  
-Debido al tamaño del proyecto, se ha decidido implementar una matriz de asignación de roles en lugar de una matriz de responsabilidades, con el fin de evitar un aumento innecesario en la complejidad del proyecto. 
-A continuación, se detallan las matrices de asignación de roles para cada fase identificada en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}}.
+Se ha decidido realizar una matriz de asignación de responsabilidades RACI para relacionar las tareas identifcadas en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}} con cada rol.
+En esta matriz, a cada tarea se le asigna un rol con una de las siguientes responsabilidades:
+\begin{itemize}
+    \item \textbf{R:} Responsable. Persona que realiza la tarea.
+    \item \textbf{A:} Aprobador. Persona que aprueba la tarea.
+    \item \textbf{C:} Consultado. Persona a la que se consulta sobre la tarea.
+    \item \textbf{I:} Informado. Persona a la que se informa sobre el avance y los resultados de la tarea.
+\end{itemize}
+Un mismo recursos puede tener varias responsabilidades en una misma tarea, en tal caso se anotarán separadas por el caracter \textit{``/''}.
 
 \subsubsubsection{Análisis del proyecto}
-La matriz de asignación de roles para la fase de análisis del proyecto se muestra en la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:matriz-analisis} \nameref*{table:matriz-analisis}}}.
+En la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:matriz-analisis} \nameref*{table:matriz-analisis}}} se muestra la matriz de responsabilidades para la fase de análisis.
 \begin{table}[H]
     \centering
-    \caption{Matriz de asignación de roles: Análisis del proyecto}
+    \caption{Matriz RACI. Análisis del proyecto}
     \label{table:matriz-analisis}
+    \hypertarget{table:matriz-analisis}{}
     \begin{tabular}{
-    >{\columncolor{lightgreen!20}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm}}
+    >{\columncolor{lightgreen!20}}m{7cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm}}
     \cmidrule(l){2-7}
     \rowcolor{darkgreen!50}
     \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
@@ -55,31 +63,32 @@ La matriz de asignación de roles para la fase de análisis del proyecto se mues
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Análisis del sistema & X & X &  & X &  &  \\
+    Análisis del sistema & A & R &  & C &  &  \\
     \midrule
-    Análisis de la arquitectura & X & X &  & X &  &  \\
+    Análisis de la arquitectura & A & R &  & C &  &  \\
     \midrule
-    Análisis de la infraestructura & X & X &  & X &  &  \\
+    Análisis de la infraestructura & A & R &  & C &  &  \\
     \midrule
-    Determinación del alcance de desarrollo & X & X &  &  & X &  \\
+    Determinación del alcance de desarrollo & A & R & I & C & I & I \\
     \bottomrule
     \end{tabular}
 \end{table}
 
 \subsubsubsection{Seguimiento del proyecto}
-La matriz de asignación de roles para la fase de seguimiento se muestra en la \coloredUnderline{\hyperlink{table:matriz-seguimiento}{Tabla: \ref*{table:matriz-seguimiento} \nameref*{table:matriz-seguimiento}}}.
+En la \coloredUnderline{\hyperlink{table:matriz-seguimiento}{Tabla: \ref*{table:matriz-seguimiento} \nameref*{table:matriz-seguimiento}}} se muestra la matriz de responsabilidades para la fase de seguimiento.
 \begin{table}[H]
     \centering
-    \caption{Matriz de asignación de roles: Seguimiento del proyecto}
-    \label{table:matriz-analisis}
+    \caption{Matriz RACI. Seguimiento del proyecto}
+    \label{table:matriz-seguimiento}
+    \hypertarget{table:matriz-seguimiento}{}
     \begin{tabular}{
-    >{\columncolor{lightgreen!20}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm} 
-    >{\columncolor{white}}m{2cm}}
+    >{\columncolor{lightgreen!20}}m{7cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm}}
     \cmidrule(l){2-7}
     \rowcolor{darkgreen!50}
     \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
@@ -87,13 +96,97 @@ La matriz de asignación de roles para la fase de seguimiento se muestra en la \
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Reunión de arranque & X & X & X & X & X & X \\
+    Reunión de arranque & A & I & I & I & I & R \\
     \midrule
-    Reuniones periódicas & X &  & X &  &  & X \\
+    Reuniones periódicas & A & I & I & I & I & R\\
     \midrule
-    Análisis de la infraestructura & X & X &  & X &  &  \\
+    Reunión de revisión & A & I & I & C & I & R  \\
     \midrule
-    Determinación del alcance de desarrollo & X & X &  &  & X &  \\
+    Reunión final & A & I & I & C & I & R  \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsubsection{Diseño del sistema}
+En la \coloredUnderline{\hyperlink{table:matriz-diseno}{Tabla: \ref*{table:matriz-diseno} \nameref*{table:matriz-diseno}}} se presenta la matriz de responsabilidades correspondiente a la fase de diseño. 
+Las tareas listadas en esta matriz son las tareas "hoja" de dicha fase, es decir, aquellas que no se descomponen en subtareas más pequeñas y, por lo tanto, representan las tareas finales 
+de la fase de diseño.
+\begin{table}[H]
+    \centering
+    \caption{Matriz RACI. Diseño del sistema}
+    \label{table:matriz-diseno}
+    \hypertarget{table:matriz-diseno}{}
+    \begin{tabular}{
+    >{\columncolor{lightgreen!20}}m{7cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm}}
+    \cmidrule(l){2-7}
+    \rowcolor{darkgreen!50}
+    \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
+    \midrule
+    \rowcolor{lightgreen!20}
+    \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \midrule
+    \textit{Backend}. Diseño del módulo de usuarios & A &  & I & R &  &  I \\
+    \midrule
+    \textit{Backend}. Diseño del módulo de cartas & A &  & I & R &  & I \\
+    \midrule
+    \textit{Backend}. Diseño del módulo de sobres de cartas & A &  & I & R &  & I \\
+    \midrule
+    \textit{Backend}. Diseño del módulo de subastas & A &  & I & R &  & I \\
+    \midrule
+    \textit{Backend}. Diseño del módulo de transacciones & A &  & I & R &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de logo de la aplicación & A &  & R & I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de la moneda de la aplicación & A &  & R & I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de la temática & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del árbol de navegación & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de las páginas de información & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de las página \textit{Home} & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño de las página de error & A &  & R & C/I &  & I \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsubsubsection{Implementación del sistema}
+En la \coloredUnderline{\hyperlink{table:matriz-implementacion}{Tabla: \ref*{table:matriz-implementacion} \nameref*{table:matriz-implementacion}}} se muestra la matriz de responsabilidades para la fase de implementación.
+\begin{table}[H]
+    \centering
+    \caption{Matriz RACI. Implementación del proyecto}
+    \label{table:matriz-implementacion}
+    \hypertarget{table:matriz-implementacion}{}
+    \begin{tabular}{
+    >{\columncolor{lightgreen!20}}m{7cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm} 
+    >{\columncolor{white}}m{1cm}}
+    \cmidrule(l){2-7}
+    \rowcolor{darkgreen!50}
+    \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
+    \midrule
+    \rowcolor{lightgreen!20}
+    \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \midrule
+    Reunión de arranque & A & I & I & I & I & R \\
+    \midrule
+    Reuniones periódicas & A & I & I & I & I & R\\
+    \midrule
+    Reunión de revisión & A & I & I & C & I & R  \\
+    \midrule
+    Reunión final & A & I & I & C & I & R  \\
     \bottomrule
     \end{tabular}
 \end{table}
