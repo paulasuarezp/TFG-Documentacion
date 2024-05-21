@@ -1,3 +1,9 @@
+% Definir colores RACI
+\definecolor{Rcolor}{RGB}{0, 51, 102} % Azul oscuro
+\definecolor{Acolor}{RGB}{0, 102, 0}  % Verde oscuro
+\definecolor{Ccolor}{RGB}{102, 51, 0} % Marrón oscuro
+\definecolor{Icolor}{RGB}{189, 0, 0}  % Rojo oscuro
+
 En este proyecto, se simulará una pequeña empresa ficticia para su realización. 
 Se han identificado los distintos perfiles que intervienen en el proyecto, así como las tareas que cada uno debe realizar. 
 Aunque el proyecto se llevará a cabo de forma individual, se ha considerado necesario estructurar estos roles para poder asignar un presupuesto adecuado a cada función.
@@ -34,12 +40,12 @@ DOC & Documentador técnico \\
 Se ha decidido realizar una matriz de asignación de responsabilidades RACI para relacionar las tareas identifcadas en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}} con cada rol.
 En esta matriz, a cada tarea se le asigna un rol con una de las siguientes responsabilidades:
 \begin{itemize}
-    \item \textbf{R:} Responsable. Persona que realiza la tarea.
-    \item \textbf{A:} Aprobador. Persona que aprueba la tarea.
-    \item \textbf{C:} Consultado. Persona a la que se consulta sobre la tarea.
-    \item \textbf{I:} Informado. Persona a la que se informa sobre el avance y los resultados de la tarea.
+    \item \textbf{\textcolor{Rcolor}{R}:} Responsable. Persona que realiza la tarea.
+    \item \textbf{\textcolor{Acolor}{A}:} Aprobador. Persona que aprueba la tarea.
+    \item \textbf{\textcolor{Ccolor}{C}:} Consultado. Persona a la que se consulta sobre la tarea.
+    \item \textbf{\textcolor{Icolor}{I}:} Informado. Persona a la que se informa sobre el avance y los resultados de la tarea.
 \end{itemize}
-Un mismo recursos puede tener varias responsabilidades en una misma tarea, en tal caso se anotarán separadas por el caracter \textit{``/''}.
+Un mismo recursos puede tener varias responsabilidades en una misma tarea, en tal caso se anotarán separadas por el caracter ``/''.
 
 \subsubsubsection{Análisis del proyecto}
 En la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:matriz-analisis} \nameref*{table:matriz-analisis}}} se muestra la matriz de responsabilidades para la fase de análisis.
@@ -63,13 +69,13 @@ En la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:mat
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Análisis del sistema & A & R &  & C &  &  \\
+    Análisis del sistema & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Rcolor}{R} }&  & \textbf{\textcolor{Ccolor}{C}} &  &  \\
     \midrule
-    Análisis de la arquitectura & A & R &  & C &  &  \\
+    Análisis de la arquitectura & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Rcolor}{R}}&  & \textbf{\textcolor{Ccolor}{C}} &  &  \\
     \midrule
-    Análisis de la infraestructura & A & R &  & C &  &  \\
+    Análisis de la infraestructura & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Rcolor}{R}} &  & \textbf{\textcolor{Ccolor}{C} }&  &  \\
     \midrule
-    Determinación del alcance de desarrollo & A & R & I & C & I & I \\
+    Determinación del alcance de desarrollo & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Rcolor}{R}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Ccolor}{C}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -96,13 +102,13 @@ En la \coloredUnderline{\hyperlink{table:matriz-seguimiento}{Tabla: \ref*{table:
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Reunión de arranque & A & I & I & I & I & R \\
+    Reunión de arranque & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Rcolor}{R}} \\
     \midrule
-    Reuniones periódicas & A & I & I & I & I & R\\
+    Reuniones periódicas & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Rcolor}{R}} \\
     \midrule
-    Reunión de revisión & A & I & I & C & I & R  \\
+    Reunión de revisión & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Ccolor}{C}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Rcolor}{R}} \\
     \midrule
-    Reunión final & A & I & I & C & I & R  \\
+    Reunión final & \textbf{\textcolor{Acolor}{A}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Ccolor}{C}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Rcolor}{R}} \\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -151,18 +157,35 @@ de la fase de diseño.
     \midrule
     \textit{Frontend}. Diseño de las páginas de información & A &  & R & C/I &  & I \\
     \midrule
-    \textit{Frontend}. Diseño de las página \textit{Home} & A &  & R & C/I &  & I \\
+    \textit{Frontend}. Diseño de la página \textit{Home} & A &  & R & C/I &  & I \\
     \midrule
-    \textit{Frontend}. Diseño de las página de error & A &  & R & C/I &  & I \\
+    \textit{Frontend}. Diseño de la página de error & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del módulo de usuarios & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del módulo de cartas & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del módulo de sobres de cartas & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del módulo de subastas & A &  & R & C/I &  & I \\
+    \midrule
+    \textit{Frontend}. Diseño del módulo de transacciones & A &  & R & C/I &  & I \\
+    \midrule
+    Diseño de la pruebas unitarias & A &  & & C/I & R & I \\
+    \midrule
+    Diseño de la pruebas de carga/estrés & A &  & & C/I & R & I \\
+    \midrule
+    Diseño de la pruebas \textit{end-to-end} & A &  & & C/I & R & I \\
     \bottomrule
     \end{tabular}
 \end{table}
 
 \subsubsubsection{Implementación del sistema}
 En la \coloredUnderline{\hyperlink{table:matriz-implementacion}{Tabla: \ref*{table:matriz-implementacion} \nameref*{table:matriz-implementacion}}} se muestra la matriz de responsabilidades para la fase de implementación.
+Igual que en el caso anterior, las tareas listadas en esta matriz son las tareas finales de dicha fase.
 \begin{table}[H]
     \centering
-    \caption{Matriz RACI. Implementación del proyecto}
+    \caption{Matriz RACI. Implementación del sistema}
     \label{table:matriz-implementacion}
     \hypertarget{table:matriz-implementacion}{}
     \begin{tabular}{
@@ -180,13 +203,41 @@ En la \coloredUnderline{\hyperlink{table:matriz-implementacion}{Tabla: \ref*{tab
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Reunión de arranque & A & I & I & I & I & R \\
+    \textit{Backend}. Implementación del módulo de usuarios & A &  &  & R & I &  I \\
     \midrule
-    Reuniones periódicas & A & I & I & I & I & R\\
+    \textit{Backend}. Implementación del módulo de cartas & A &  &  & R & I & I \\
     \midrule
-    Reunión de revisión & A & I & I & C & I & R  \\
+    \textit{Backend}. Implementación del módulo de sobres de cartas & A &  &  & R & I & I \\
     \midrule
-    Reunión final & A & I & I & C & I & R  \\
+    \textit{Backend}. Implementación del módulo de subastas & A &  &  & R & I & I \\
+    \midrule
+    \textit{Backend}. Implementación del módulo de transacciones & A &  &  & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación de la temática & A &  & C & R &  & I \\
+    \midrule
+    \textit{Frontend}. Implementación del árbol de navegación & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación de las páginas de información & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación de la página \textit{Home} & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación de la página de error & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación del módulo de usuarios & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación del módulo de cartas & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación del módulo de sobres de cartas & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación del módulo de subastas & A &  & C & R & I & I \\
+    \midrule
+    \textit{Frontend}. Implementación del módulo de transacciones & A &  & C & R & I & I \\
+    \midrule
+    Implementación de la pruebas unitarias & A &  & & C/I & R & I \\
+    \midrule
+    Implementación de la pruebas de carga/estrés & A &  & & C/I & R & I \\
+    \midrule
+    Implementación de la pruebas \textit{end-to-end} & A &  & & C/I & R & I \\
     \bottomrule
     \end{tabular}
 \end{table}
