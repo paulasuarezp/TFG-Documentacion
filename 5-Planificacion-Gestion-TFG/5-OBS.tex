@@ -2,7 +2,7 @@ En este proyecto, se simulará una pequeña empresa ficticia para su realizació
 Se han identificado los distintos perfiles que intervienen en el proyecto, así como las tareas que cada uno debe realizar. 
 Aunque el proyecto se llevará a cabo de forma individual, se ha considerado necesario estructurar estos roles para poder asignar un presupuesto adecuado a cada función.
 
-Los roles identificados en el equipo de trabajo se muestran en \coloredUnderline{\hyperlink{table:obs}{Tabla: \ref*{table:obs} \nameref*{table:obs}}}. 
+Los roles identificados se especifican en \coloredUnderline{\hyperlink{table:obs}{Tabla: \ref*{table:obs} \nameref*{table:obs}}}. 
 Cabe destacar que el rol de Jefe de Proyecto (JP) es el encargado de supervisar y coordinar el trabajo de los demás roles y este rol ha sido considerado tanto para el alumno como para el tutor del TFG.
 
 
@@ -31,14 +31,15 @@ DOC & Documentador técnico \\
 \end{tabular}
 \end{table}
  
-Por el tamaño del proyecto, se ha realizado una matriz de asignación de roles en lugar de una matriz de responsabilidades, también conocida como RACI (Responsable, Aprobador, Consultado, Informador).
+Debido al tamaño del proyecto, se ha decidido implementar una matriz de asignación de roles en lugar de una matriz de responsabilidades, con el fin de evitar un aumento innecesario en la complejidad del proyecto. 
+A continuación, se detallan las matrices de asignación de roles para cada fase identificada en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}}.
 
-
-
+\subsubsubsection{Análisis del proyecto}
+La matriz de asignación de roles para la fase de análisis del proyecto se muestra en la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:matriz-analisis} \nameref*{table:matriz-analisis}}}.
 \begin{table}[H]
     \centering
-    \caption{Matriz de responsabilidades}
-    \label{table:matriz-responsabilidades}
+    \caption{Matriz de asignación de roles: Análisis del proyecto}
+    \label{table:matriz-analisis}
     \begin{tabular}{
     >{\columncolor{lightgreen!20}}m{2cm} 
     >{\columncolor{white}}m{2cm} 
@@ -54,15 +55,45 @@ Por el tamaño del proyecto, se ha realizado una matriz de asignación de roles 
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
     \midrule
-    Tarea 1 & X & X &  &  &  &  \\
+    Análisis del sistema & X & X &  & X &  &  \\
     \midrule
-    Tarea 2 &  & X & X &  &  &  \\
+    Análisis de la arquitectura & X & X &  & X &  &  \\
     \midrule
-    Tarea 3 &  &  &  & X & X &  \\
+    Análisis de la infraestructura & X & X &  & X &  &  \\
     \midrule
-    Tarea 4 &  &  &  &  & X & X \\
-    \midrule
-    Tarea 5 & X &  &  &  &  & X \\
+    Determinación del alcance de desarrollo & X & X &  &  & X &  \\
     \bottomrule
     \end{tabular}
-    \end{table}
+\end{table}
+
+\subsubsubsection{Seguimiento del proyecto}
+La matriz de asignación de roles para la fase de seguimiento se muestra en la \coloredUnderline{\hyperlink{table:matriz-seguimiento}{Tabla: \ref*{table:matriz-seguimiento} \nameref*{table:matriz-seguimiento}}}.
+\begin{table}[H]
+    \centering
+    \caption{Matriz de asignación de roles: Seguimiento del proyecto}
+    \label{table:matriz-analisis}
+    \begin{tabular}{
+    >{\columncolor{lightgreen!20}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm} 
+    >{\columncolor{white}}m{2cm}}
+    \cmidrule(l){2-7}
+    \rowcolor{darkgreen!50}
+    \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
+    \midrule
+    \rowcolor{lightgreen!20}
+    \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \midrule
+    Reunión de arranque & X & X & X & X & X & X \\
+    \midrule
+    Reuniones periódicas & X &  & X &  &  & X \\
+    \midrule
+    Análisis de la infraestructura & X & X &  & X &  &  \\
+    \midrule
+    Determinación del alcance de desarrollo & X & X &  &  & X &  \\
+    \bottomrule
+    \end{tabular}
+\end{table}
