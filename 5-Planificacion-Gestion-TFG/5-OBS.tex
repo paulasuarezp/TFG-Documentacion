@@ -183,26 +183,39 @@ de la fase de diseño.
 \subsubsubsection{Implementación del sistema}
 En la \coloredUnderline{\hyperlink{table:matriz-implementacion}{Tabla: \ref*{table:matriz-implementacion} \nameref*{table:matriz-implementacion}}} se muestra la matriz de responsabilidades para la fase de implementación.
 Igual que en el caso anterior, las tareas listadas en esta matriz son las tareas finales de dicha fase.
-\begin{table}[H]
-    \centering
-    \caption{OBS de la fase Implementación del sistema}
-    \label{table:matriz-implementacion}
-    \hypertarget{table:matriz-implementacion}{}
-    \begin{tabular}{
+\begin{longtable}{
     >{\columncolor{lightgreen!20}}m{7cm} 
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} 
-    >{\columncolor{white}}m{1cm}}
+    >{\columncolor{white}}m{1cm} }
+    \caption{OBS de la fase Implementación del sistema} \label{table:matriz-implementacion}
+    \hypertarget{table:matriz-implementacion}{}
+    \\
     \cmidrule(l){2-7}
     \rowcolor{darkgreen!50}
     \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
     \midrule
     \rowcolor{lightgreen!20}
     \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \endfirsthead
+
+    \cmidrule(l){2-7}
+    \rowcolor{darkgreen!50}
+    \cellcolor{white} & \multicolumn{6}{c}{\textbf{Roles}} \\
     \midrule
+    \rowcolor{lightgreen!20}
+    \cellcolor{darkgreen!50}\textbf{Tarea} & \textbf{JP} & \textbf{AN} & \textbf{DI} & \textbf{DS} & \textbf{TE} & \textbf{DOC} \\
+    \endhead
+
+    \midrule
+    \multicolumn{7}{r}{{Continúa en la siguiente página\ldots}} \\
+    \endfoot
+
+    \endlastfoot
+
     \textit{Backend}. Implementación del módulo de usuarios & \textbf{\textcolor{Acolor}{A}} &  &  & \textbf{\textcolor{Rcolor}{R}} & \textbf{\textcolor{Icolor}{I}} &  \textbf{\textcolor{Icolor}{I}} \\
     \midrule
     \textit{Backend}. Implementación del módulo de cartas & \textbf{\textcolor{Acolor}{A}} &  &  & \textbf{\textcolor{Rcolor}{R}} & \textbf{\textcolor{Icolor}{I}} & \textbf{\textcolor{Icolor}{I}} \\
@@ -241,8 +254,7 @@ Igual que en el caso anterior, las tareas listadas en esta matriz son las tareas
     \midrule
     Implementación de la pruebas \textit{end-to-end} & \textbf{\textcolor{Acolor}{A}} &  &  & \textbf{\textcolor{Ccolor}{C}/\textcolor{Icolor}{I}} & \textbf{\textcolor{Rcolor}{R}} & \textbf{\textcolor{Icolor}{I}} \\
     \bottomrule
-    \end{tabular}
-\end{table}
+\end{longtable}
 
 \subsubsubsection{Fase de pruebas}
 A continuación, se detallan las responsabilidades de cada rol en la fase de pruebas del sistema. 
