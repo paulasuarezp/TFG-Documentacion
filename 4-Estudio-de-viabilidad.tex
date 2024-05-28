@@ -216,7 +216,7 @@ Considerando las necesidades del sistema a desarrollar, para soportar subastas e
 
 
 \subsubsection{Valoración de alternativas para el Frontend}
-Por último, se presenta un análisis de alternativas para el desarrollo del frontend.
+A continuación, se presenta un análisis de alternativas para el desarrollo del frontend.
 
 \subsubsubsection{React}
 React es una biblioteca de JavaScript desarrollada y mantenida por Facebook, centrada en la construcción de interfaces de usuario a través de componentes reutilizables. Se caracteriza por su virtual DOM y su enfoque declarativo.
@@ -274,3 +274,32 @@ A continuación, se presenta una comparación de las alternativas para el desarr
 Tras una evaluación detallada de las distintas opciones disponibles y en función de los requisitos específicos del sistema a desarrollar, se ha determinado que React es la tecnología más adecuada para el frontend.
 
 Esta decisión se basa, principalmente, en la gran comunidad de React y en la rica colección de recursos disponles.
+
+\subsubsection{Valoración de alternativas para la Base de Datos}
+Por último, se presenta un análisis de alternativas para la base de datos del sistema.
+
+\subsubsubsection{MySQL}
+MySQL es un sistema de gestión de bases de datos relacional de código abierto, ampliamente utilizado en aplicaciones web. Se destaca por su rendimiento, escalabilidad y fiabilidad.
+
+Entre sus ventajas, destacan su amplia adopción, su compatibilidad con múltiples plataformas y su soporte para transacciones ACID.
+Sin embargo, MySQL puede no ser la opción más adecuada para aplicaciones que requieren una alta disponibilidad y escalabilidad horizontal, ya que su arquitectura monolítica puede limitar su capacidad de adaptación a cargas de trabajo variables.
+
+\subsubsubsection{MongoDB}
+MongoDB es una base de datos NoSQL orientada a documentos, diseñada para la escalabilidad y la flexibilidad. Se caracteriza por su capacidad para manejar grandes volúmenes de datos y su esquema flexible.
+
+Entre sus ventajas, destacan su escalabilidad horizontal, su capacidad para manejar datos no estructurados y su rendimiento en operaciones de lectura y escritura.
+Sin embargo, MongoDB puede no ser la opción más adecuada para aplicaciones que requieren transacciones ACID complejas, ya que su modelo de consistencia eventual puede no ser adecuado para todas las aplicaciones.
+
+\subsubsubsection{Firebase}
+Firebase es una plataforma de desarrollo de aplicaciones móviles y web, propiedad de Google, que ofrece una base de datos en tiempo real y una amplia gama de servicios en la nube.
+
+Entre sus ventajas, destacan su facilidad de uso, su integración con otras herramientas de Google y su capacidad para manejar aplicaciones en tiempo real.
+Sin embargo, Firebase puede no ser la opción más adecuada para aplicaciones que requieren una alta personalización y control sobre la base de datos, ya que su modelo de datos basado en documentos puede limitar la flexibilidad en ciertos escenarios.
+
+\subsubsubsection{Comparativa de alternativas para la Base de Datos}
+En la siguiente tabla, se presenta una comparación de las alternativas para la base de datos del sistema.
+
+\subsubsection{Decisión final de la Base de Datos}
+Tras un análisis detallado de las distintas opciones disponibles y en función de los requisitos específicos del sistema a desarrollar, se ha determinado que MongoDB es la tecnología más adecuada para la base de datos. 
+De esta manera, con todas decisiones anteriores se obtiene una arquitectura MERN (MongoDB, Express, React, Node.js) que se adapta de manera óptima a las necesidades del sistema a desarrollar.
+
