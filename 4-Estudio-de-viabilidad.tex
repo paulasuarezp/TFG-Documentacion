@@ -339,28 +339,75 @@ Esta decisión se basa, principalmente, en la gran comunidad de React y en la ri
 Por último, se presenta un análisis de alternativas para la base de datos del sistema.
 
 \subsubsubsection{MySQL}
-MySQL es un sistema de gestión de bases de datos relacional de código abierto, ampliamente utilizado en aplicaciones web. Se destaca por su rendimiento, escalabilidad y fiabilidad.
+\coloredUnderline{\href{https://www.mysql.com/}{MySQL}} es un sistema de gestión de bases de datos relacional de código abierto, ampliamente utilizado en aplicaciones web. 
 
-Entre sus ventajas, destacan su amplia adopción, su compatibilidad con múltiples plataformas y su soporte para transacciones ACID.
-Sin embargo, MySQL puede no ser la opción más adecuada para aplicaciones que requieren una alta disponibilidad y escalabilidad horizontal, ya que su arquitectura monolítica puede limitar su capacidad de adaptación a cargas de trabajo variables.
+Entre sus ventajas, destacan su amplia adopción lo que conlleva una gran cantidad de recursos y documentación disponibles, su fiabilidad y robustez y su facilidad de uso. 
+
+Por otro lado, MySQL puede no ser la opción más adecuada para aplicaciones que requieren de operaciones avanzadas de análisis y procesamiento de datos, ya que su rendimiento en este ámbito puede ser inferior al de otras bases de datos.
 
 \subsubsubsection{MongoDB}
+\coloredUnderline{\href{https://www.mongodb.com/}{MongoDB}} es una base de datos NoSQL orientada a documentos, diseñada para la escalabilidad y la flexibilidad. Se caracteriza por su capacidad para manejar grandes volúmenes de datos y su esquema flexible.
 
-MongoDB es una base de datos NoSQL orientada a documentos, diseñada para la escalabilidad y la flexibilidad. Se caracteriza por su capacidad para manejar grandes volúmenes de datos y su esquema flexible.
+Entre sus ventajas, destacan su flexibilidad, permite que la base de datos crezca con la aplicación añadiendo nuevos campos a los documentos.
+Además, MongoDB es altamente escalable y puede manejar grandes volúmenes de datos de manera eficiente.
 
-Entre sus ventajas, destacan su escalabilidad horizontal, su capacidad para manejar datos no estructurados y su rendimiento en operaciones de lectura y escritura.
 Sin embargo, MongoDB puede no ser la opción más adecuada para aplicaciones que requieren transacciones ACID complejas, ya que su modelo de consistencia eventual puede no ser adecuado para todas las aplicaciones.
 
-\subsubsubsection{Firebase}
-Firebase es una plataforma de desarrollo de aplicaciones móviles y web, propiedad de Google, que ofrece una base de datos en tiempo real y una amplia gama de servicios en la nube.
+\subsubsubsection{PostgreSQL}
+\coloredUnderline{\href{https://www.postgresql.org/}{PostgreSQL}} es un sistema de gestión de bases de datos relacional de código abierto y gratuito, conocido por su robustez, escalabilidad y soporte para transacciones ACID.
 
-Entre sus ventajas, destacan su facilidad de uso, su integración con otras herramientas de Google y su capacidad para manejar aplicaciones en tiempo real.
-Sin embargo, Firebase puede no ser la opción más adecuada para aplicaciones que requieren una alta personalización y control sobre la base de datos, ya que su modelo de datos basado en documentos puede limitar la flexibilidad en ciertos escenarios.
+Entre sus ventajas, destacan su cumplimiento con los estándares SQL, su soporte para transacciones ACID y su capacidad para manejar grandes volúmenes de datos asegurando la integridad y seguridad de los mismos.
+
+Como inconvenientes, cabe mencionar que PostgreSQL puede ser más lento que otras bases de datos en operaciones de lectura y escritura para bases de datos pequeñas ya que está enfocada en manejar un gran volumen de datos,
+ y su curva de aprendizaje puede ser pronunciada para usuarios no familiarizados con SQL.
 
 \subsubsubsection{Comparativa de alternativas para la Base de Datos}
 En la siguiente tabla, se presenta una comparación de las alternativas para la base de datos del sistema.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ 
+       >{\columncolor{rowcolor}\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} 
+       >{\raggedright\arraybackslash}p{3cm} }
+        \rowcolor{lightgreen}
+    \toprule
+    \textbf{Criterio} & \textbf{MySQL} & \textbf{MongoDB} & \textbf{PostgreSQL} \\
+    \midrule
+    \textbf{Tipo de Base de Datos} & Relacional & NoSQL & Relacional \\
+    \midrule
+    \textbf{Modelo de Datos} & Tablas y Filas & Documentos JSON/BSON & Tablas y Filas \\
+    \midrule
+    \textbf{Lenguaje de Consulta} & SQL & MongoDB Query Language (MQL) & SQL \\
+    \midrule
+    \textbf{Escalabilidad} & Escalabilidad vertical y soporte para horizontal & Escalabilidad horizontal mediante sharding & Escalabilidad vertical y horizontal \\
+    \midrule
+    \textbf{Transacciones} & Soporte completo de ACID & Soporte parcial de ACID en ciertas operaciones & Soporte completo de ACID \\
+    \midrule
+    \textbf{JSON} & Soporte limitado mediante campos JSON & JSON nativo & Soporte avanzado de JSON y JSONB \\
+    \midrule
+    \textbf{Flexibilidad de Esquema} & Esquemas rígidos & Esquemas flexibles& Esquemas rígidos \\
+    \midrule
+    \textbf{Rendimiento} & Alto rendimiento en lecturas & Alto rendimiento en escrituras & Alto rendimiento en lecturas y escrituras \\
+    \bottomrule
+    \end{tabular}
+    \caption{Comparativa entre MySQL, MongoDB y PostgreSQL}
+    \label{tabla:comparacion_bases_datos}
+    \hypertarget{table:comparacion_bases_datos}{}
+\end{table}
+
 
 \subsubsection{Decisión final de la Base de Datos}
 Tras un análisis detallado de las distintas opciones disponibles y en función de los requisitos específicos del sistema a desarrollar, se ha determinado que MongoDB es la tecnología más adecuada para la base de datos. 
-De esta manera, con todas decisiones anteriores se obtiene una arquitectura MERN (MongoDB, Express, React, Node.js) que se adapta de manera óptima a las necesidades del sistema a desarrollar.
 
+Esta elección se basa en un \textit{trade-off}, es decir, se acepta la falta de integridad referencial y la consistencia eventual a cambio de una mayor flexibilidad y escalabilidad en el manejo de datos que es lo que se necesita para el sistema a desarrollar.
+
+De esta manera, con todas decisiones anteriores se obtiene una arquitectura MERN (MongoDB, Express, React, Node.js), ejemplificada en la \coloredUnderline{\hyperlink{fig:arquitectura_mern}{Figura \ref*{fig:arquitectura_mern}: \nameref*{fig:arquitectura_mern}}},comunmente utilizada en aplicaciones web modernas y que se ajusta a las necesidades del proyecto. 
+Se puede consultar más información sobre la arquitectura MERN en el siguiente enlace: \coloredUnderline{\href{https://www.mongodb.com/resources/languages/mern-stack}{MERN Stack}}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/4-Estudio-viabilidad/4_MERN.png}
+    \caption{MERN Stack: MongoDB, Express, React, Node.js}
+    \label{fig:arquitectura_mern}
+    \hypertarget{fig:arquitectura_mern}{}
+\end{figure}
