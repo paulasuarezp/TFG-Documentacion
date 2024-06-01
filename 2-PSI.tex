@@ -61,41 +61,29 @@ A continuación, se detallan las personas que participan en el proyecto junto co
  
 
 \subsection{Especificación del Ámbito y Alcance} 
-La plataforma a desarrollar, BidMon Universe, tiene como objetivo principal permitir al usuario coleccionar activos digitales, en este caso, cartas. 
-Estas se pueden obtener mediante una compra directa a la aplicación o por medio de subastas.
+El proyecto BidMon Universe tiene como objetivo principal el desarrollo de una plataforma que permitirá a los usuarios coleccionar activos digitales, específicamente cartas coleccionables. 
+Para adquirir estas cartas, los usuarios podrán realizar compras directas dentro de la aplicación o participar en subastas.
 
-La aplicación contará con una moneda virtual que permitirá a los usuarios adquirir cartas y participar en subastas. Los usuarios podrán recargar su saldo mediante una pasarela de pago.
-Un usuario autenticado tendrá la posibilidad de comprar cartas y si desea venderlas, podrá hacerlo mediante subastas ciegas. 
-El usuario tiene una colección privada de cartas que podrá consultar en cualquier momento. Tiene la posibilidad de marcar una carta como destacada para mostrarla en su perfil.
+La plataforma incorporará una moneda virtual que facilitará las transacciones de compra y subasta de cartas. Los usuarios podrán incrementar su saldo utilizando una pasarela de pago integrada. 
+Cada usuario autenticado tendrá la capacidad de comprar cartas y, si lo desea, ofrecerlas en subastas ciegas, donde no se revelarán las ofertas de otros participantes hasta el cierre de la misma. 
+Además, cada usuario mantendrá una colección privada de cartas, con la opción de destacar ciertas cartas en su perfil.
 
-Las subastas funcionarán de la siguiente manera: un usuario podrá subastar una carta y otros usuarios podrán pujar por ella.
-El sistema de subastas será ciego, es decir, los usuarios no podrán ver las pujas de los demás. 
-El usuario que haya realizado la puja más alta al finalizar la subasta será el ganador y se le descontará el importe de su puja del saldo de su cuenta.
-El usuario que vende la carta tiene posibilidad de personalizar los términos de la subasta, como la duración de la misma o el precio de salida. Además, podrá cancelar la subasta en cualquier momento.
+En cuanto a la mecánica de subastas, el usuario que ofrezca la puja más alta al finalizar el período establecido ganará la carta, y el monto ofrecido se deducirá de su saldo virtual. 
+El vendedor podrá establecer condiciones específicas para la subasta, como la duración y el precio inicial, y tendrá la opción de cancelar la subasta en cualquier momento.
 
-La plataforma contará con un sistema de notificaciones que informará a los usuarios sobre el estado de las subastas en las que participan o han iniciado.
+Para mantener informados a los usuarios, la plataforma contará con un sistema de notificaciones que proporcionará actualizaciones sobre las subastas en curso, tanto para las iniciadas 
+como para aquellas en las que el usuario participe. Asimismo, se mantendrá un registro detallado de todas las transacciones, incluidas compras, subastas y pujas, asegurando la trazabilidad y 
+transparencia de todas las operaciones. Las propias cartas también tendrán un historial de transacciones asociado, que se mostrará en la interfaz de usuario.
 
-Se llevará un registro de todas las transacciones realizadas en la plataforma para garantizar la trazabilidad y transparencia de las operaciones. 
-Se registrarán tanto las compras directas como las subastas y pujas realizadas. Las cartas adquiridas tendrán un historial de transacciones asociado.
+Los usuarios tendrán acceso a un panel de control donde podrán revisar su historial de transacciones y modificar aspectos de su perfil. 
+Por otro lado, los administradores tendrán herramientas específicas para supervisar y gestionar el historial de subastas, incluida la capacidad de cancelar aquellas que consideren fraudulentas.
 
-Todos los usuarios tendrán acceso a un panel de control donde podrán consultar el histórico de transacciones realizadas y modificar su perfil.
+Se establecen limitaciones significativas para la primera versión de la plataforma debido a restricciones de tiempo.
+No se incluirá un sistema de mensajería interna, ni se permitirá la formación de conexiones sociales directas entre usuarios. Además, no se incluirán funcionalidades de jugabilidad con las cartas, 
+ni se podrán exportar las colecciones de cartas a formatos externos ni convertir el saldo virtual en dinero real.
 
-Los administradores del sistema tendrán acceso a un panel de control donde podrán consultar el histórico de subastas y cancelar aquellas que consideren fraudulentas. 
-También podrán consultar el histórico de transacciones realizadas en la plataforma.
-
-
-Debido a la naturaleza dle proyecto, se han establecido las siguientes limitaciones y restricciones debido a la falta de tiempo y complejidad de las mismas.
-La aplicación no incluirá un sistema de mensajería interna ni permitirá la formación de relaciones sociales directas entre los usuarios, tales como "amistades" o conexiones similares.
-La plataforma se centrará exclusivamente en las transacciones y la colección de cartas.
-
-La carga de datos iniciales se realizará una única vez. Los administradores del sistema no podrán añadir nuevas cartas a través de la interfaz de usuario, 
-cualquier adición de nuevas cartas se realizará directamente en la base de datos. En futuras versiones del sistema se contempla la posibilidad de añadir esta funcionalidad.
-De igual forma, la plataforma no incluirá una opción para modificar la tienda de sobres de cartas, esta se cargará inicialmente y no se podrán añadir nuevos sobres.
-
-Además, la plataforma no incluirá una opción que permita a los usuarios exportar la colección de cartas que posean. 
-
-No se incluirá jugabilidad en la aplicación, es decir, no se podrán utilizar las cartas adquiridas para jugar a ningún juego ni se podrán obtener cartas mediante la realización de tareas o misiones. 
-
+Finalmente, los datos iniciales de las cartas se cargarán una única vez y no se permitirá la adición de nuevas cartas a través de la interfaz de usuario. De igual forma, no se incluirá la opción de
+añadir nuevos sobres de cartas a la tienda virtual desde la interfaz de usuario. Estas modificaciones se podrán realizar directamente en la base de datos.
 
 
 \subsection{Organización del Plan de Sistemas de Información }
