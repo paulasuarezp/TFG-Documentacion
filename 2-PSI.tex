@@ -11,7 +11,8 @@ El Plan de Sistemas de Información para este proyecto se aborda desde una persp
 De esta manera se establece un marco de trabajo que garantiza que, además de cumplir con las expectativas del mercado actual, el proyecto proporciona características y experiencias novedosas 
 que enriquecen la dinámica del coleccionismo digital.
 
-\subsection{Identificación del Alcance del Plan de Sistemas de Información} \hypertarget{sec:2_identificacion_alcance_PSI}{}
+\subsection{Identificación del Alcance del Plan de Sistemas de Información}  \label{sec:2_identificacion_alcance_PSI}
+\hypertarget{sec:2_identificacion_alcance_PSI}{}
 La aplicación web a desarrollar deberá de proporcionar al usuario final las siguientes funcionalidades de alto nivel:
 \begin{itemize}
     \item Todo usuario final puede acceder a la aplicación web y consultar información genérica sobre la misma.
@@ -60,30 +61,39 @@ A continuación, se detallan las personas que participan en el proyecto junto co
 \section{DEFINICIÓN Y ORGANIZACIÓN DEL PLAN DE SISTEMAS DE INFORMACIÓN}
  
 
-\subsection{Especificación del Ámbito y Alcance} 
-El proyecto BidMon Universe tiene como objetivo principal el desarrollo de una plataforma que permitirá a los usuarios coleccionar activos digitales, específicamente cartas coleccionables. 
-Para adquirir estas cartas, los usuarios podrán realizar compras directas dentro de la aplicación o participar en subastas.
+\subsection{Especificación del Ámbito y Alcance} \label{sec:2_2_1-Especificacion_ambito_alcance}
+\hypertarget{sec:2_2_1-Especificacion_ambito_alcance}{}
+Este proyecto se enfoca en el desarrollo de una plataforma, llamada BidMon Universe, diseñada para permitir a los usuarios coleccionar activos digitales, en particular, cartas coleccionables de Pokémon. 
+Para la adquisición de estas cartas, los usuarios podrán optar por compras directas dentro de la aplicación o mediante la participación en subastas.
 
-La plataforma incorporará una moneda virtual que facilitará las transacciones de compra y subasta de cartas. Los usuarios podrán incrementar su saldo utilizando una pasarela de pago integrada. 
-Cada usuario autenticado tendrá la capacidad de comprar cartas y, si lo desea, ofrecerlas en subastas ciegas, donde no se revelarán las ofertas de otros participantes hasta el cierre de la misma. 
-Además, cada usuario mantendrá una colección privada de cartas, con la opción de destacar ciertas cartas en su perfil.
 
-En cuanto a la mecánica de subastas, el usuario que ofrezca la puja más alta al finalizar el período establecido ganará la carta, y el monto ofrecido se deducirá de su saldo virtual. 
-El vendedor podrá establecer condiciones específicas para la subasta, como la duración y el precio inicial, y tendrá la opción de cancelar la subasta en cualquier momento.
+La plataforma incorporará una moneda virtual para facilitar las transacciones de compra y subasta de cartas. Los usuarios podrán aumentar su saldo a través de una pasarela de pago integrada. 
+Cada usuario autenticado podrá comprar cartas y, si así lo desea, ofrecerlas en subastas ciegas, donde las ofertas de otros participantes permanecerán ocultas hasta el cierre de la misma. 
+Este sistema de subasta a ciegas garantiza imparcialidad en el proceso de compra-venta y añade un elemento emocionante a la experiencia del usuario. 
+Adicionalmente, los usuarios podrán gestionar sus colecciones de manera privada, destacando cartas específicas en sus perfiles para exhibir sus activos más valorados.
 
-Para mantener informados a los usuarios, la plataforma contará con un sistema de notificaciones que proporcionará actualizaciones sobre las subastas en curso, tanto para las iniciadas 
-como para aquellas en las que el usuario participe. Asimismo, se mantendrá un registro detallado de todas las transacciones, incluidas compras, subastas y pujas, asegurando la trazabilidad y 
-transparencia de todas las operaciones. Las propias cartas también tendrán un historial de transacciones asociado, que se mostrará en la interfaz de usuario.
+
+Respecto a la mecánica de subastas, al participante que realice la oferta más alta se le adjudicará la carta al concluir el periodo establecido, y el importe correspondiente se deducirá 
+automáticamente de su saldo. El vendedor podrá establecer condiciones específicas para la subasta, como la duración y el precio inicial, y 
+tendrá la opción de cancelar la subasta en cualquier momento.
+
+
+Un sistema integral de notificaciones mantendrá a los usuarios constantemente informados sobre las actualizaciones de las subastas en las que están involucrados, 
+ya sea como vendedores o como postores. Esto se complementa con un registro exhaustivo de todas las transacciones efectuadas en la plataforma, promoviendo una total transparencia y trazabilidad 
+de las operaciones. Este registro no solo incluirá compras y ventas, sino también el historial completo de cada carta dentro de la plataforma.
+
 
 Los usuarios tendrán acceso a un panel de control donde podrán revisar su historial de transacciones y modificar aspectos de su perfil. 
-Por otro lado, los administradores tendrán herramientas específicas para supervisar y gestionar el historial de subastas, incluida la capacidad de cancelar aquellas que consideren fraudulentas.
+Por su parte, los administradores contarán con herramientas específicas para supervisar y gestionar el historial de subastas, incluida la capacidad de cancelar aquellas que consideren fraudulentas.
 
-Se establecen limitaciones significativas para la primera versión de la plataforma debido a restricciones de tiempo.
-No se incluirá un sistema de mensajería interna, ni se permitirá la formación de conexiones sociales directas entre usuarios. Además, no se incluirán funcionalidades de jugabilidad con las cartas, 
-ni se podrán exportar las colecciones de cartas a formatos externos ni convertir el saldo virtual en dinero real.
 
-Finalmente, los datos iniciales de las cartas se cargarán una única vez y no se permitirá la adición de nuevas cartas a través de la interfaz de usuario. De igual forma, no se incluirá la opción de
-añadir nuevos sobres de cartas a la tienda virtual desde la interfaz de usuario. Estas modificaciones se podrán realizar directamente en la base de datos.
+Dada la complejidad del proyecto y las restricciones de tiempo para su desarrollo, se han establecido ciertas limitaciones en la versión inicial de la plataforma.
+No se incluirá un sistema de mensajería interna ni se permitirá la formación de conexiones sociales directas entre usuarios. 
+Además, no se incluirán funcionalidades de jugabilidad con las cartas, ni se permitirá la exportación de las colecciones de cartas a formatos externos ni la conversión del saldo virtual en dinero real.
+
+
+Finalmente, los datos iniciales de las cartas se cargarán una única vez, y no se permitirá la adición de nuevas cartas a través de la interfaz de usuario. 
+De igual forma, no se incluirá la opción de añadir nuevos sobres de cartas a la tienda virtual desde la interfaz de usuario. Estas modificaciones se realizarán directamente en la base de datos.
 
 
 \subsection{Organización del Plan de Sistemas de Información }
