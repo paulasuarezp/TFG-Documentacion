@@ -124,6 +124,13 @@
 % Comando para subrayar enlaces
 \newcommand{\coloredUnderline}[1]{\bgroup\markoverwith{\textcolor{linkColor}{\rule[-0.5ex]{2pt}{0.4pt}}}\ULon{#1}}
 
+% Establecer la sangría del párrafo
+\setlength{\parindent}{15pt} % Valor típico
+
+% Establecer el espacio entre párrafos
+\setlength{\parskip}{6pt plus 2pt minus 1pt} % puede ajustar el espacio entre los párrafos de 5pt a 8pt según las necesidades del formato de la página
+
+
 
 \phantomsection
 \makeindex
@@ -268,6 +275,16 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 \input{2-PSI.tex}
 
 
+\newpage
+\chapter{ESTUDIO DE VIABILIDAD DEL SISTEMA}
+\noindent\begin{tikzpicture}
+% Definir el degradado
+\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
+
+\end{tikzpicture}
+\newpage
+\input{3-Estudio-de-viabilidad}
+
 
 %\newpage
 \chapter{DEFINICIÓN DE LA ARQUITECTURA TECNOLÓGICA}
@@ -277,17 +294,8 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \end{tikzpicture}
 \newpage
-\input{3-Definicion-arquitectura-tecnologica}
+\input{4-Arquitectura-tecnologica}
 
-\newpage
-\chapter{ESTUDIO DE VIABILIDAD DEL SISTEMA}
-\noindent\begin{tikzpicture}
-% Definir el degradado
-\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
-
-\end{tikzpicture}
-\newpage
-\input{4-Estudio-de-viabilidad.tex}
 
 
 \newpage
