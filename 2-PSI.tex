@@ -1,11 +1,15 @@
 
 \section{INICIO DEL PLAN DE SISTEMAS DE INFORMACIÓN}
 \subsection{Análisis de la Necesidad del Plan de Sistemas de Información}
-Con la tecnología, la forma en la que nos relacionamos con nuestros pasatiempos ha cambiado. La popularidad de plataformas como EA Sports FC y su modo Ultimate Team\cite{artsEASPORTSFC2023}, deja en evidencia que el mercado de coleccionismo digital está en pleno crecimiento \cite{sanmartin000MillonesDolares2021}. Sin embargo, aún existe un nicho de mercado específico por explorar: una plataforma dedicada exclusivamente al coleccionismo de cartas digitales.
+Con la tecnología, la forma en la que nos relacionamos con nuestros pasatiempos ha cambiado. La popularidad de plataformas como EA Sports FC y su modo Ultimate Team\cite{artsEASPORTSFC2023}, 
+deja en evidencia que el mercado de coleccionismo digital está en pleno crecimiento \cite{sanmartin000MillonesDolares2021}. 
+Sin embargo, aún existe un nicho de mercado específico por explorar: una plataforma dedicada exclusivamente al coleccionismo de cartas digitales.
 
 BidMon Universe trata de dar respuesta a esta necesidad, ofreciendo a los coleccionistas digitales una forma segura e innovadora de comprar y vender activos digitales mediante un sistema de pujas ciego.
 
-El Plan de Sistemas de Información para este proyecto se aborda desde una perspectiva que considera tanto la arquitectura técnica como la experiencia del usuario final. De esta manera se establece un marco de trabajo que garantiza que, además de cumplir con las expectativas del mercado actual, el proyecto proporciona características y experiencias novedosas que enriquecen la dinámica del coleccionismo digital.
+El Plan de Sistemas de Información para este proyecto se aborda desde una perspectiva que considera tanto la arquitectura técnica como la experiencia del usuario final. 
+De esta manera se establece un marco de trabajo que garantiza que, además de cumplir con las expectativas del mercado actual, el proyecto proporciona características y experiencias novedosas 
+que enriquecen la dinámica del coleccionismo digital.
 
 \subsection{Identificación del Alcance del Plan de Sistemas de Información} \hypertarget{sec:2_identificacion_alcance_PSI}{}
 La aplicación web a desarrollar deberá de proporcionar al usuario final las siguientes funcionalidades de alto nivel:
@@ -29,7 +33,6 @@ La aplicación web a desarrollar deberá de proporcionar al usuario final las si
         \item Número de pujas en las que ha participado.
         \item Número de subastas que ha realizado.
         \item Subastas activas.
-        \item Tendrán la opción de añadir este usuario como favorito. ``Seguir'' al usuario para estar al día de sus subastas.
     \end{itemize}
     \item Un usuario con rol de administrador podrá acceder al histórico de subastas y cancelar las que considere fraudulentas, el sistema notificará al usuario que la ha iniciado.
 \end{itemize}
@@ -58,13 +61,42 @@ A continuación, se detallan las personas que participan en el proyecto junto co
  
 
 \subsection{Especificación del Ámbito y Alcance} 
+La plataforma a desarrollar, BidMon Universe, tiene como objetivo principal permitir al usuario coleccionar activos digitales, en este caso, cartas. 
+Estas se pueden obtener mediante una compra directa a la aplicación o por medio de subastas.
+
+La aplicación contará con una moneda virtual que permitirá a los usuarios adquirir cartas y participar en subastas. Los usuarios podrán recargar su saldo mediante una pasarela de pago.
+Un usuario autenticado tendrá la posibilidad de comprar cartas y si desea venderlas, podrá hacerlo mediante subastas ciegas. 
+El usuario tiene una colección privada de cartas que podrá consultar en cualquier momento. Tiene la posibilidad de marcar una carta como destacada para mostrarla en su perfil.
+
+Las subastas funcionarán de la siguiente manera: un usuario podrá subastar una carta y otros usuarios podrán pujar por ella.
+El sistema de subastas será ciego, es decir, los usuarios no podrán ver las pujas de los demás. 
+El usuario que haya realizado la puja más alta al finalizar la subasta será el ganador y se le descontará el importe de su puja del saldo de su cuenta.
+El usuario que vende la carta tiene posibilidad de personalizar los términos de la subasta, como la duración de la misma o el precio de salida. Además, podrá cancelar la subasta en cualquier momento.
+
+La plataforma contará con un sistema de notificaciones que informará a los usuarios sobre el estado de las subastas en las que participan o han iniciado.
+
+Se llevará un registro de todas las transacciones realizadas en la plataforma para garantizar la trazabilidad y transparencia de las operaciones. 
+Se registrarán tanto las compras directas como las subastas y pujas realizadas. Las cartas adquiridas tendrán un historial de transacciones asociado.
+
+Todos los usuarios tendrán acceso a un panel de control donde podrán consultar el histórico de transacciones realizadas y modificar su perfil.
+
+Los administradores del sistema tendrán acceso a un panel de control donde podrán consultar el histórico de subastas y cancelar aquellas que consideren fraudulentas. 
+También podrán consultar el histórico de transacciones realizadas en la plataforma.
+
+
+Debido a la naturaleza dle proyecto, se han establecido las siguientes limitaciones y restricciones debido a la falta de tiempo y complejidad de las mismas.
+La aplicación no incluirá un sistema de mensajería interna ni permitirá la formación de relaciones sociales directas entre los usuarios, tales como "amistades" o conexiones similares.
+La plataforma se centrará exclusivamente en las transacciones y la colección de cartas.
+
+La carga de datos iniciales se realizará una única vez. Los administradores del sistema no podrán añadir nuevas cartas a través de la interfaz de usuario, 
+cualquier adición de nuevas cartas se realizará directamente en la base de datos. En futuras versiones del sistema se contempla la posibilidad de añadir esta funcionalidad.
+De igual forma, la plataforma no incluirá una opción para modificar la tienda de sobres de cartas, esta se cargará inicialmente y no se podrán añadir nuevos sobres.
+
+Además, la plataforma no incluirá una opción que permita a los usuarios exportar la colección de cartas que posean. 
+
+No se incluirá jugabilidad en la aplicación, es decir, no se podrán utilizar las cartas adquiridas para jugar a ningún juego ni se podrán obtener cartas mediante la realización de tareas o misiones. 
+
 
 
 \subsection{Organización del Plan de Sistemas de Información }
 
-
-
-\newpage
-\section{ESTUDIO DE LA INFORMACIÓN RELEVANTE}
- 
-\subsection{Selección y Análisis de Antecedentes} 
