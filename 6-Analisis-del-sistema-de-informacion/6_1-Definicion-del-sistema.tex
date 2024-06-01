@@ -20,22 +20,29 @@ funcionalidades de alto nivel que se espera que tenga la aplicación, y para una
 ver el apartado \coloredUnderline{\hyperlink{sec:6_2-Requisitos}{\ref*{sec:6_2-Requisitos} \nameref*{sec:6_2-Requisitos}}}.
 
 
-\subsection{Identificación de Actores del Sistema} 
+\subsection{Identificación de Actores del Sistema} \label{sec:6_1-Identificacion_actores}
+\hypertarget{sec:6_1-Identificacion_actores}{}
+
 El sistema está diseñado para soportar tres categorías principales de usuarios, cada uno con niveles de acceso y funcionalidades específicas adecuadas a su rol dentro de la plataforma:
 \begin{enumerate}
-    \item \textbf{Usuarios Invitados}
+    \item \textbf{Usuarios Invitados}. 
+    Los usuarios invitados son aquellos que aún no han completado el proceso de registro ni han iniciado sesión en la plataforma. 
     \begin{itemize}
-        \item Tienen acceso limitado exclusivamente a la página de bienvenida y a otras páginas informativas de acceso público dentro de la plataforma.
-        \item El objetivo es proporcionar a los usuarios no registrados información general sobre la plataforma y sus características sin comprometer la seguridad o la privacidad de las transacciones y actividades de los usuarios registrados.
-    \end{itemize}
+        \item Tienen acceso exclusivamente a la página de bienvenida y a otras páginas informativas de acceso público dentro de la plataforma.
+        \item El objetivo es proporcionar a los usuarios no registrados información general sobre la plataforma y sus características, sin comprometer la seguridad o la privacidad de las transacciones y actividades de los usuarios registrados.
+   \end{itemize}
     
-    \item \textbf{Usuarios Autenticados}
+    \item \textbf{Usuarios Autenticados}.
+    Un usuario autenticado es aquel que ha completado el proceso de registro y ha iniciado sesión en la plataforma.
     \begin{itemize}
         \item Tienen acceso a todas las funcionalidades operativas de la plataforma, incluyendo la colección de cartas, compra y subasta de estas.
     \end{itemize}
     
-    \item \textbf{Usuarios Administradores}
+    \item \textbf{Usuarios Administradores}.
+    Un usuario administrador es un usuario autenticado, pero con permisos especiales. Tiene acceso a más funcionalidades que los usuarios autenticados.
     \begin{itemize}
-        \item El acceso estaría limitado a la consulta de subastas activas, capacidad de intervenir en una subasta que considere fraudulenta y acceso al histórico de transacciones.
+        \item Tienen acceso a todas las funcionalidades operativas de la plataforma, sin poder realizar compras o subastas.
+        \item Tiene la capacidad de intervenir en una subasta que considere fraudulenta.
+        \item Tiene acceso a todo el historial de transacciones y subastas realizadas en la plataforma.
     \end{itemize}
 \end{enumerate}
