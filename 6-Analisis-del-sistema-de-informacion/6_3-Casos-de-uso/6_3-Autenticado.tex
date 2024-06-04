@@ -946,3 +946,59 @@
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
+
+
+
+\subsubsection{Caso de uso. Cerrar sesión} \label{sec:cu_cerrar-sesion}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Cerrar sesión} \label{table:cu_cerrar-sesion} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CERRAR SESIÓN}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Cerrar sesión -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CERRAR SESIÓN}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario puede cerrar sesión en el sistema si previamente ha iniciado sesión. \\
+    \midrule
+    Actores principales & Usuario autenticado o usuario administrador \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se elimina la sesión del usuario.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario hace clic en el botón de cerrar sesión. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El usuario hace clic en el botón de cerrar sesión.
+        \item El sistema elimina la sesión del usuario.
+        \item El sistema redirige al usuario a la página de inicio.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos &  \\
+    \midrule
+    Situaciones de error &  \\
+\end{longtable}
