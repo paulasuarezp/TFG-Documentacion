@@ -1,4 +1,4 @@
-
+\subsubsection{Caso de uso. Registro} \label{sec:cu_registro}
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
@@ -53,17 +53,17 @@
     \midrule
     Escenarios alternativos & 
     \begin{itemize}[nosep,leftmargin=*]
-      \item Escenario alternativo 1. El usuario cancela el registro.
+      \item \textbf{Escenario alternativo 1. El usuario cancela el registro.}
       \begin{enumerate}[nosep,leftmargin=*]
           \item El usuario hace clic en otro enlace.
           \item El sistema no crea el registro y redirige al usuario a la página correspondiente.
       \end{enumerate}
-      \item Escenario alternativo 2. El usuario ya está registrado en el sistema.
+      \item \textbf{Escenario alternativo 2. El usuario ya está registrado en el sistema.}
       \begin{enumerate}[nosep,leftmargin=*]
           \item El sistema muestra un mensaje de error.
           \item El sistema no crea el registro y redirige al usuario de nuevo al formulario de registro.
       \end{enumerate}
-      \item Escenario alternativo 3. El usuario no completa el formulario correctamente.
+      \item \textbf{Escenario alternativo 3. El usuario no completa el formulario correctamente.}
       \begin{enumerate}[nosep,leftmargin=*]
           \item El sistema muestra un mensaje de error con los campos que no se han completado correctamente.
           \item El sistema no crea el registro y redirige al usuario de nuevo al formulario de registro.
@@ -71,10 +71,90 @@
     \end{itemize} \\
     \midrule
     Situaciones de error & \begin{itemize}[nosep,leftmargin=*]
-      \item Error 1. Error de conexión a la base de datos.
+      \item \textbf{Error de conexión a la base de datos.}
       \begin{enumerate}[nosep,leftmargin=*]
           \item El sistema muestra un mensaje de error.
           \item El sistema redirige al usuario de nuevo al formulario de registro.
+      \end{enumerate}
+    \end{itemize} \\
+    \end{longtable}
+
+
+\subsubsection{Caso de uso. Iniciar sesión} \label{sec:cu_inicio-sesion}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Iniciar sesión} \label{table:cu_inicio-sesion} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{INICIAR SESIÓN}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Iniciar sesión -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{INICIAR SESIÓN}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario invitado puede iniciar sesión en el sistema para acceder a las funcionalidades del mismo. \\
+    \midrule
+    Actores principales & Usuario invitado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & El usuario debe de haberse registrado previamente en el sistema. \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se crea una nueva sesión para el usuario.
+        \item Se redirige al usuario a la página de inicio.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario hace clic en el botón de inicio de sesión. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra el formulario de inicio de sesión.
+        \item El usuario completa el formulario con sus credenciales.
+        \item El usuario hace clic en el botón de inicio de sesión.
+        \item El sistema valida las credenciales del usuario.
+        \item El sistema crea una nueva sesión para el usuario.
+        \item El sistema redirige al usuario a la página de inicio.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Escenario alternativo 1. El usuario cancela el inicio de sesión.}
+      \begin{enumerate}[nosep,leftmargin=*]
+          \item El usuario hace clic en otro enlace.
+          \item El sistema no crea la sesión para el usuario y redirige al usuario a la página correspondiente.
+      \end{enumerate}
+      \item \textbf{Escenario alternativo 2. El usuario no está registrado en el sistema o la contraseña es incorrecta.}
+      \begin{enumerate}[nosep,leftmargin=*]
+          \item El sistema muestra un mensaje de error.
+          \item El sistema no crea la sesión para el usuario y redirige al usuario de nuevo al formulario de inicio de sesión.
+      \end{enumerate}
+      \item \textbf{Escenario alternativo 3. El usuario no completa el formulario correctamente.}
+      \begin{enumerate}[nosep,leftmargin=*]
+          \item El sistema muestra un mensaje de error con los campos que no se han completado correctamente.
+          \item El sistema no crea la sesión para el usuario y redirige al usuario de nuevo al formulario de inicio de sesión.
+      \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Error de conexión a la base de datos.}
+      \begin{enumerate}[nosep,leftmargin=*]
+          \item El sistema muestra un mensaje de error.
+          \item El sistema redirige al usuario de nuevo al formulario de inicio de sesión.
       \end{enumerate}
     \end{itemize} \\
     \end{longtable}
