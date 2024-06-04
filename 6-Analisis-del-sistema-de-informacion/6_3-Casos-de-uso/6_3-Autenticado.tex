@@ -716,3 +716,89 @@
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
+
+
+
+\subsubsection{Caso de uso. Realizar puja} \label{sec:cu_realizar-puja}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Realizar puja} \label{table:cu_realizar-puja} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{REALIZAR PUJA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Realizar puja -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{REALIZAR PUJA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario autenticado puede realizar una puja en una subasta activa. \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+        \item El usuario debe tener saldo suficiente para realizar la puja.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se registra la puja en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario selecciona una subasta activa y hace clic en el botón de realizar puja. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra la información detallada de la subasta.
+        \item El usuario introduce la cantidad de la puja.
+        \item El usuario hace clic en el botón de realizar puja.
+        \item El sistema valida la cantidad de la puja.
+        \item El sistema registra la puja en la base de datos.
+        \item El sistema muestra un mensaje de éxito.
+        \item El sistema muestra un mensaje informativo, indicando que si en el momento de finalización del tiempo de la subasta no cuenta con el saldo suficiente, la puja no será válida.
+        \item El sistema redirige al usuario a la página de subastas.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. El usuario no tiene saldo suficiente para realizar la puja.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El usuario intenta realizar una puja sin tener saldo suficiente.
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no registrará la puja en la base de datos.
+            \item El sistema redirigirá al usuario a la página de subastas.
+        \end{enumerate}
+        \item \textbf{Escenario alternativo 2. El usuario introduce una cantidad de puja inválida.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no registrará la puja en la base de datos.
+            \item El sistema le mostrará al usuario los campos con errores.
+            \item El sistema permitirá al usuario corregir los errores.
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error de conexión a la base de datos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no registrará la puja en la base de datos.
+            \item El sistema redirigirá al usuario a la página de subastas.
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
