@@ -32,7 +32,7 @@ Este diagrama introduce los casos de uso que se describen en las siguientes secc
     \label{fig:diagrama_contexto}
 \end{figure}
 
-\subsection{Casos de uso: Registro}
+\subsection{Casos de uso. Usuario invitado}
 
 \begin{table}[H]
 \centering
@@ -46,23 +46,59 @@ Este diagrama introduce los casos de uso que se describen en las siguientes secc
 \rowcolor{darkgreen!50}
 \textbf{Nombre} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{10cm}}{\textbf{REGISTRO}} \\
 \midrule
-Descripción & Una descripción general del caso de uso \\
+Descripción & Un usuario invitado se puede registrar en el sistema para poder acceder a las funcionalidades del mismo. \\
 \midrule
-Actores principales & Los actores que inician el caso de uso \\
+Actores principales & Usuario invitado \\
 \midrule
-Actores secundarios & Los actores que participan, pero no inician el caso de uso \\
+Actores secundarios &  \\
 \midrule
-Precondiciones & Condiciones previas necesarias para que el caso de uso comience \\
+Precondiciones & El usuario no debe estar registrado en el sistema. \\
 \midrule
-Postcondiciones & Condiciones que se establecen una vez finalizado el caso de uso \\
+Postcondiciones & \begin{itemize}
+    \item Se crea un nuevo registro en la base de datos con los datos del usuario.
+    \item Se notifica al usuario que su registro ha sido exitoso.
+    \item Se redirige al usuario a la página de inicio de sesión.
+\end{itemize} \\
+
 \midrule
-Disparadores & Eventos que dan inicio al caso de uso \\
+Disparadores & El usuario hace clic en el botón de registro. \\
 \midrule
-Escenario principal & Secuencia de pasos principal entre actores y el sistema \\
+Escenario principal & \begin{enumerate}
+    \item El sistema muestra el formulario de registro.
+    \item El usuario completa el formulario con sus datos personales.
+    \item El usuario hace clic en el botón de registro.
+    \item El sistema valida los datos del formulario.
+    \item El sistema crea un nuevo registro en la base de datos con los datos del usuario.
+    \item El sistema notifica al usuario que su registro ha sido exitoso.
+    \item El sistema redirige al usuario a la página de inicio de sesión.
+\end{enumerate} \\
 \midrule
-Escenarios alternativos & Ramificaciones del escenario principal \\
+Escenarios alternativos & 
+\begin{itemize}
+    \item Escenario alternativo 1. El usuario cancela el registro.
+    \begin{enumerate}
+        \item El usuario hace clic en otro enlace.
+        \item El sistema no crea el registro y redirige al usuario a la página correspondiente.
+    \end{enumerate}
+    \item Escenario alternativo 2. El usuario ya está registrado en el sistema.
+    \begin{enumerate}
+        \item El sistema muestra un mensaje de error.
+        \item El sistema no crea el registro y redirige al usuario de nuevo al formulario de registro.
+    \end{enumerate}
+    \item Escenario alternativo 3. El usuario no completa el formulario correctamente.
+    \begin{enumerate}
+        \item El sistema muestra un mensaje de error con los campos que no se han completado correctamente.
+        \item El sistema no crea el registro y redirige al usuario de nuevo al formulario de registro.
+    \end{enumerate}
+\end{itemize} \\
 \midrule
-Situaciones de error & Situaciones en las que el caso de uso puede fallar \\
+Situaciones de error & \begin{itemize}
+    \item Error 1. Error de conexión a la base de datos.
+    \begin{enumerate}
+        \item El sistema muestra un mensaje de error.
+        \item El sistema redirige al usuario de nuevo al formulario de registro.
+    \end{enumerate}
+\end{itemize} \\
 \bottomrule
 \end{tabular}
 \end{table}
