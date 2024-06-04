@@ -140,7 +140,6 @@
         \item \textbf{Error de conexión a la base de datos.}
         \begin{enumerate}[nosep,leftmargin=*]
             \item El sistema mostrará un mensaje de error.
-            \item El sistema no mostrará la colección de cartas del usuario.
             \item El sistema le dará al usuario la opción de intentar cargar de nuevo la colección o volver a la página principal.
         \end{enumerate}
     \end{itemize} \\
@@ -714,7 +713,6 @@
         \item \textbf{Error de conexión a la base de datos.}
         \begin{enumerate}[nosep,leftmargin=*]
             \item El sistema mostrará un mensaje de error.
-            \item El sistema no mostrará la lista de subastas activas.
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
@@ -852,7 +850,7 @@
         \item La puja no se tendr´a en cuenta en el cálculo de la puja más alta.
     \end{itemize} \\
     \midrule
-    Disparadores & El usuario accede a la sección de subastas y hace clic en el botón de retirar puja. \\
+    Disparadores & El usuario accede a la sección de pujas activas, selecciona una puja y hace clic en el botón de retirar puja. \\
     \midrule
     Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
         \item El sistema muestra la lista de pujas activas del usuario.
@@ -880,8 +878,71 @@
         \item \textbf{Error de conexión a la base de datos.}
         \begin{enumerate}[nosep,leftmargin=*]
             \item El sistema mostrará un mensaje de error.
-            \item El sistema no marcará la puja como 'retirada' en la base de datos.
             \item El sistema redirigirá al usuario a la página de subastas.
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
+
+
+
+\subsubsection{Caso de uso. Consultar pujas activas} \label{sec:cu_consultar-pujas}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Consultar pujas activas} \label{table:cu_consultar-puja} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CONSULTAR PUJAS ACTIVAS}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Consultar pujas activas -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CONSULTAR PUJAS ACTIVAS}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario  \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \\
+    \midrule
+    Disparadores & El usuario accede a la sección de subastas y hace clic en el botón de ver pujas activas. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra la lista de pujas activas del usuario.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. No hay pujas activas.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje indicando que no hay pujas activas.
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error de conexión a la base de datos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
