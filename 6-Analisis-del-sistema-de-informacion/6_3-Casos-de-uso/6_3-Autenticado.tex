@@ -148,3 +148,85 @@
 \end{longtable}
 
 
+
+
+\subsubsection{Caso de uso. Modificar perfil} \label{sec:cu_modificar-perfil}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Modificar perfil} \label{table:cu_modificar-perfil} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{MODIFICAR PERFIL}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Modificar perfil -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{MODIFICAR PERFIL}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario autenticado puede modificar su perfil de usuario. \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se modifican los datos del perfil del usuario en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario accede a la sección de modificar perfil. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra el formulario de modificación de perfil.
+        \item El usuario modifica los campos que desee.
+        \item El usuario hace clic en el botón de guardar cambios.
+        \item El sistema valida los campos del formulario.
+        \item El sistema actualiza los datos del perfil del usuario.
+        \item El sistema muestra un mensaje de éxito.
+        \item El sistema redirige al usuario a la página que muestra su perfil.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. El usuario cancela la modificación de perfil.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El usuario hace clic en el botón de cancelar.
+            \item El sistema no modifica los datos del perfil del usuario.
+            \item El sistema redirige al usuario a la página que muestra su perfil.
+        \end{enumerate}
+        \item \textbf{Escenario alternativo 2. El usuario introduce datos inválidos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema muestra un mensaje de error.
+            \item El sistema no modifica los datos del perfil del usuario.
+            \item El sistema muestra los campos con errores.
+            \item El sistema permite al usuario corregir los errores.
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error de conexión a la base de datos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no modificará los datos del perfil del usuario.
+            \item El sistema le dará al usuario la opción de intentar guardar de nuevo los cambios o volver a la página que muestra su perfil.
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
