@@ -553,3 +553,85 @@
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
+
+
+
+
+\subsubsection{Caso de uso. Retirar una subasta} \label{sec:cu_retirar-subasta}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Retirar una subasta} \label{table:cu_retirar-subasta} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{RETIRAR UNA SUBASTA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Retirar una subasta -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{RETIRAR UNA SUBASTA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario  \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+        \item El usuario debe tener al menos una subasta activa.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se marca la subasta como 'cancelada' en la base de datos.
+        \item La carta subastada vuelve a estar disponible en la colección del usuario.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario accede a la sección de subastas y hace clic en el botón de retirar subasta. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra la lista de subastas activas del usuario.
+        \item El usuario selecciona la subasta que desea retirar.
+        \item El usuario hace clic en el botón de retirar subasta.
+        \item El sistema muestra un mensaje de confirmación.
+        \item El usuario confirma la retirada de la subasta.
+        \item El sistema marca la subasta como 'cancelada' en la base de datos.
+        \item La carta subastada vuelve a estar disponible en la colección del usuario.
+        \item El sistema muestra un mensaje de éxito.
+        \item El sistema redirige al usuario a la página de subastas.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. El usuario cancela la retirada de la subasta.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El usuario hace clic en el botón de cancelar en el mensaje de confirmación.
+            \item El sistema no marcará la subasta como 'cancelada' en la base de datos.
+            \item El sistema redirigirá al usuario a la página de subastas.
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error de conexión a la base de datos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no marcará la subasta como 'cancelada' en la base de datos.
+            \item El sistema no devolverá la carta subastada a la colección del usuario.
+            \item El sistema redirigirá al usuario a la página de subastas.
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
