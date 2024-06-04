@@ -371,3 +371,94 @@
         \end{enumerate}
     \end{itemize} \\
 \end{longtable}
+
+
+
+
+\subsubsection{Caso de uso. Recargar saldo} \label{sec:cu_recarga-saldo}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Recargar saldo} \label{table:cu_recarga-saldo} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{RECRAGAR SALDO}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Recargar saldo -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{RECARGAR SALDO}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario autenticado puede recargar saldo en su cuenta. \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario debe haber iniciado sesión en el sistema.
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se incrementa el saldo del usuario en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario accede a la sección de recarga de saldo. \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema muestra el formulario de recarga de saldo.
+        \item El usuario introduce la cantidad de saldo que desea recargar.
+        \item El usuario hace clic en el botón de recargar saldo.
+        \item El sistema valida la cantidad de saldo introducida.
+        \item El sistema redirige al usuario a la pasarela de pago.
+        \item El usuario completa el pago.
+        \item El sistema incrementa el saldo del usuario en la base de datos.
+        \item El sistema muestra un mensaje de éxito.
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. El usuario cancela la recarga de saldo en la pasarela de pago.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El usuario cancela el pago.
+            \item El sistema no incrementa el saldo del usuario en la base de datos.
+            \item El sistema redirige al usuario a la página que muestra su saldo actual.
+            \item El sistema muestra un mensaje de cancelación.
+        \end{enumerate}
+        \item \textbf{Escenario alternativo 2. El usuario introduce una cantidad de saldo inválida.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema muestra un mensaje de error.
+            \item El sistema muestra los campos con errores.
+            \item El sistema permite al usuario corregir los errores.
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error de conexión a la base de datos.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no incrementará el saldo del usuario en la base de datos.
+            \item El sistema le dará al usuario la opción de intentar recargar de nuevo el saldo o volver a la página de inicio.
+        \end{enumerate}
+        \item \textbf{Error en la pasarela de pago.}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema mostrará un mensaje de error.
+            \item El sistema no incrementará el saldo del usuario en la base de datos.
+            \item El sistema redirigirá al usuario a la página de recarga de saldo.
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
