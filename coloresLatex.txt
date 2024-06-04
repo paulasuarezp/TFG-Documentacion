@@ -38,3 +38,72 @@ Tarea 5 & X &  &  &  &  & X \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+
+
+
+
+
+\subsubsection{Caso de uso. Comprar sobre} \label{sec:cu_comprar-sobre}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Caso de uso. Comprar sobre} \label{table:cu_comprar-sobre} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{COMPRAR SOBRE}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Caso de uso. Comprar sobre -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Caso de uso} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{COMPRAR SOBRE}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Un usuario  \\
+    \midrule
+    Actores principales & Usuario autenticado \\
+    \midrule
+    Actores secundarios &  \\
+    \midrule
+    Precondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item El usuario 
+    \end{itemize} \\
+    \midrule
+    Postcondiciones & \begin{itemize}[nosep,leftmargin=*]
+        \item Se descuenta
+    \end{itemize} \\
+    \midrule
+    Disparadores & El usuario  \\
+    \midrule
+    Escenario principal & \begin{enumerate}[nosep,leftmargin=*]
+        \item El sistema
+    \end{enumerate} \\
+    \midrule
+    Escenarios alternativos & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Escenario alternativo 1. }
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El usuario 
+        \end{enumerate}
+    \end{itemize} \\
+    \midrule
+    Situaciones de error & 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Error .}
+        \begin{enumerate}[nosep,leftmargin=*]
+            \item El sistema 
+        \end{enumerate}
+    \end{itemize} \\
+\end{longtable}
