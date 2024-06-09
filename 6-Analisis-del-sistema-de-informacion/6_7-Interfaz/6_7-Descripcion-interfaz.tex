@@ -147,6 +147,9 @@ se muestra el boceto de la página de detalles de una subasta activa creada por 
 \end{figure}
 
 En el caso de que la subasta sea propia, el usuario puede cancelar la subasta como se muestra en la \coloredUnderline{\hyperlink{fig:p_auction_details_own}{Figura \ref*{fig:p_auction_details_own}: \nameref*{fig:p_auction_details_own}}}.
+El usuario no puede ver las pujas recibidas en su subasta, solo puede ver la información de la subasta. Esto se debe a que el sistema implementa un sistema de pujas ciegas.
+De esta manera, el dueño de la subasta no cancelará la subasta si ve que no ha recibido la puja que esperaba y los usuarios no se verán influenciados por las pujas de los demás.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/6-Analisis/6-Interfaz/prototipos/detalle-subasta-propia.png}
@@ -156,6 +159,8 @@ En el caso de que la subasta sea propia, el usuario puede cancelar la subasta co
 \end{figure}
 
 En el caso de que sea una subasta en la que el usuario ha pujado, el usuario puede retirar la puja como se muestra en la \coloredUnderline{\hyperlink{fig:p_auction_details_bid}{Figura \ref*{fig:p_auction_details_bid}: \nameref*{fig:p_auction_details_bid}}}.
+Por el mismo motivo que en el caso de las subastas propias, el usuario no puede ver las pujas de los demás usuarios ni la puja más alta.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/6-Analisis/6-Interfaz/prototipos/detalle-puja.png}
