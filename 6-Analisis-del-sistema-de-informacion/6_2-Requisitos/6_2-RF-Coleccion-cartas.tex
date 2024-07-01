@@ -12,28 +12,49 @@
 	\item El sistema tendrá una colección de cartas disponibles para los usuarios.
 	\begin{RFColeccionCartas}
 		\item Las cartas serán representaciones de pokémon.
-		\item Cada carta tendrá dos identificadores:
+		\item Cada carta cuenta con los siguientes campos:
 		\begin{RFColeccionCartas}
-			\item Un identificador único (UID).
-			\item Un identificador de colección (IDC) en formato \coloredUnderline{\hyperlink{confParam:cc-formatoIDCCarta}{CC\_FORMATO\_IDC\_CARTA}}..
+			\item Un identificador único (UID), generado por la base de datos.
+			\item Un identificador de colección (IDC) en formato \coloredUnderline{\hyperlink{confParam:cc-formatoIDCCarta}{CC\_FORMATO\_IDC\_CARTA}}, generado por el sistema.
+			\item Nombre del pokémon.
+			\item Rareza de la carta.
+			\item Fecha de lanzamiento.
+			\item Cantidad disponible.
+			\item Identificadores de las cartas vendidas.
+			\item Tipo del pokémon.
+			\item Descripción del pokémon.
+			\item Imagen del pokémon.
+			\item HP del pokémon.
+			\item Ataque del pokémon.
+			\item Defensa del pokémon.
+			\item Velocidad del pokémon.
+			\item Peso del pokémon.
+			\item Altura del pokémon.
+			\item Valor que indica si el pokémon es legendario.
+			\item Valor que indica si el pokémon es mítico.
+			\item Gimnasio al que pertenece el pokémon, si es que pertenece a alguno.
+			\item Número de áreas en las que se puede encontrar el pokémon.
+			\item Número de encuentros.
+			\item Media de posibilidad de captura.
 		\end{RFColeccionCartas}
-		\item El valor de cada carta será determinado por:
+		\item La rareza de las cartas se calcula en función de:
 		\begin{RFColeccionCartas}
 			\item El pokémon que representan.
 			\item Rareza del pokémon.
-			\item Rareza de la carta.
+			\item Media de posibilidad de captura.
+			\item Valor aleatorio.
 		\end{RFColeccionCartas}
 	\end{RFColeccionCartas}
-	\item El sistema deberá permitir a los usuarios autenticados coleccionar cartas.\label{req_coleccion_cartas}
+	\item Los usuarios autenticados podrán coleccionar cartas.\label{req_coleccion_cartas}
 	\begin{RFColeccionCartas}
-		\item Un usuario deberá poder visualizar las cartas que posee en su colección.
-		\item El sistema deberá de mostrar si una carta está repetida en la colección del usuario.
-		\item Un usuario deberá poder añadir cartas a su colección mediante:
+		\item El usuario podrá visualizar las cartas que posee en su colección.
+		\item El usuario podrá consultar la información de cada carta.
+		\item El usuario podrá añadir cartas a su colección mediante:
 		\begin{RFColeccionCartas}
 			\item La compra de sobres (ver \coloredUnderline{\hyperlink{req_sobres}{Gestión de sobres}}).
 			\item La compra de cartas individuales mediante subastas (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Gestión de subastas y pujas}}).
 		\end{RFColeccionCartas}
-		\item Un usuario deberá poder ver los movimientos de cartas, es decir, las transacciones previas de las cartas de su colección.
-		\item Un usuario deberá poder subastar cartas de su colección (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Gestión de subastas y pujas}})
+		\item El usuario podrá consultar los movimientos de cartas, es decir, las transacciones de las cartas de su colección.
+		\item El usuario podrá subastar cartas de su colección (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Gestión de subastas y pujas}})
 	\end{RFColeccionCartas}
 \end{RFColeccionCartas}

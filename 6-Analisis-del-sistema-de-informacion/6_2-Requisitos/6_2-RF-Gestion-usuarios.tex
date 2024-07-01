@@ -20,19 +20,20 @@
 			\begin{RFGestionUsuarios}
 				\item El sistema asegurará que la contraseña cumpla con las políticas de seguridad especificadas en \coloredUnderline{\hyperlink{confParam:gu-contrasena}{GU\_CONTRASEÑA}}.
 			\end{RFGestionUsuarios}
-		\item Un usuario deberá de confirmar la contraseña
+		\item El usuario deberá de confirmar la contraseña
 			\begin{RFGestionUsuarios}
 				\item El sistema verificará que la contraseña y su confirmación coincidan.
 			\end{RFGestionUsuarios}
-		\item Un usuario deberá de especificar la fecha de nacimiento.
+		\item El usuario deberá de especificar la fecha de nacimiento.
 			\begin{RFGestionUsuarios}
-               \item El sistema verificará que la fecha de nacimiento está en el formato \coloredUnderline{\hyperlink{confParam:gu-fechaNacimiento}{GU\_FECHA\_NACIMIENTO}}.
+               	\item El sistema verificará que la fecha de nacimiento está en el formato \coloredUnderline{\hyperlink{confParam:gu-fechaNacimiento}{GU\_FECHA\_NACIMIENTO}}.
 				\item El sistema verificará que el usuario cumple con \coloredUnderline{\hyperlink{confParam:gu-minEdad}{GU\_MIN\_EDAD}}.
-                
 			\end{RFGestionUsuarios}
-		\item Una vez finalizado el registro, el sistema escribirá los datos en la base de datos:
+		\item Si alguno de los datos introducidos no cumple con las restricciones especificadas, el sistema mostrará un mensaje de error.
+		\item Una vez finalizado el registro, el sistema registrará los datos en la base de datos:
 			\begin{RFGestionUsuarios}
 				\item Nombre de usuario
+				\item Nombre de usuario en minúsculas
 				\item Contraseña cifrada
 				\item Fecha de nacimiento
 				\item Fecha de creación
@@ -40,13 +41,13 @@
 				\item \coloredUnderline{\hyperlink{confParam:gu-imgPerfilDefecto}{GU\_IMG\_PERFIL\_DEFECTO}}
 				\item \coloredUnderline{\hyperlink{confParam:gu-saldoDefecto}{GU\_SALDO\_DEFECTO}}
 			\end{RFGestionUsuarios}
-
+		\item El sistema notificará al usuario que el registro ha sido completado con éxito.
 		\item El usuario será redirigido a la pantalla de inicio de sesión.
 	\end{RFGestionUsuarios}
 
-	\item Un usuario deberá poder iniciar sesión en el sistema.\label{req_inicio_sesion}
+	\item Un usuario podrá iniciar sesión en el sistema.\label{req_inicio_sesion}
     \begin{RFGestionUsuarios}%RF2.1
-      \item Un usuario deberá iniciar sesión las siguientes credenciales.
+      \item Un usuario deberá proporcionar las siguientes credenciales para iniciar sesión:
 		\begin{RFGestionUsuarios}
 		  \item Nombre de usuario.
 		  \item Contraseña.
@@ -61,6 +62,7 @@
 		\begin{RFGestionUsuarios}
 			\item El sistema redirigirá al usuario a la pantalla principal.
 			\item Se generará un token de sesión con las restricciones \coloredUnderline{\hyperlink{confParam:gu-tokenSesion}{GU\_TOKEN\_SESION}}.
+			\item El sistema establecerá una conexión Socket con el cliente para notificarle de eventos en tiempo real.
 		\end{RFGestionUsuarios}
 	  \item Si las credenciales son incorrectas:
 		\begin{RFGestionUsuarios}
@@ -69,10 +71,11 @@
 		\end{RFGestionUsuarios}
     \end{RFGestionUsuarios}
 
-	\item Un usuario autenticado deberá poder cerrar sesión en el sistema.\label{req_cerrar_sesion}
+	\item Un usuario autenticado podrá cerrar sesión en el sistema.\label{req_cerrar_sesion}
 	\begin{RFGestionUsuarios}
 		\item El sistema invalidará el token de sesión.
-		\item El sistema redirigirá al usuario a la pantalla de inicio de sesión.
+		\item El sistema cerrará la conexión Socket con el cliente.
+		\item El sistema redirigirá al usuario a la pantalla de inicio.
 	\end{RFGestionUsuarios}
 
 \end{RFGestionUsuarios}
