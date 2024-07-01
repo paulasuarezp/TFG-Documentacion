@@ -151,8 +151,8 @@
 		\item Si considera que la subasta no cumple con las normas del sistema, podrá cancelarla.
 		\begin{RFSubastas}
 			\item Se notificará a los usuarios implicados en la subasta de la cancelación.
+			\item Se le enviará una notificación en tiempo real al usuario vendedor.
 			\item Se registrará una transacción en la base de datos por la cancelación de la subasta como se describe en \coloredUnderline{\hyperlink{req_subastas_pujas:retirarSubasta}{Retirar subasta}}.
-
 		\end{RFSubastas}
 	\end{RFSubastas}
 
@@ -185,6 +185,8 @@
 				\item El sistema transferirá la carta al usuario comprador.
 				\item El sistema actualizará el estado de la puja a 'ganadora'.
 				\item El sistema actualizará la fecha de finalización de la puja a la fecha en la que el administrador confirmó la finalización.
+				\item El sistema enviará una notificación al usuario vendedor en tiempo real.
+				\item El sistema enviará una notificación al usuario comprador en tiempo real.
 			\end{RFSubastas}
 
 			\item Si no hay ninguna puja válida, el sistema devolverá la carta subastada a la colección del usuario.

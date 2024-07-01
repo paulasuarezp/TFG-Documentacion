@@ -22,6 +22,12 @@
     \item El sistema deberá de permitir a los usuarios autenticados consultar sus pujas activas. (Ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Subastas y pujas}})
     \item El sistema deberá de permitir a los usuarios autenticados consultar su saldo de monedas. 
     \item El sistema deberá de permitir a los usuarios autenticados recargar su saldo.
+    \item El usuario podrá consultar las notificaciones recibidas.
+     \begin{RFUsuarioAutenticado}
+        \item Podrá marcar todas las notificaciones como leídas.
+        \item Podrá marcar individualmente las notificaciones como leídas.
+    \end{RFUsuarioAutenticado}
+    \item Si el usuario está conectado en el momento en el que se le envía una notificación catalogada como importante, el sistema deberá de mostrar una notificación emergente.
     \begin{RFUsuarioAutenticado}
         \item El usuario indicará la cantidad de monedas que desea recargar.
         \item El sistema verificará que la cantidad de monedas a recargar cumpla con \coloredUnderline{\hyperlink{confParam:gu-restriccionesRecarga}{GU\_RESTRICCIONES\_RECARGA}}.
