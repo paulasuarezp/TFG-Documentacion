@@ -8,7 +8,16 @@
 
 \subsubsubsection{Gestión de transacciones}
 \begin{RFTransacciones}
-	\item El sistema deberá de registrar todos los movimientos de monedas realizados por los usuarios.
+	\item El sistema deberá de registrar todos los movimientos de cartas realizados por los usuarios.
+	\begin{RFTransacciones}
+		\item Una transacción por cada carta aquirida mediante compra de sobres.
+		\item Una transacción por cada carta puesta en subasta.
+		\item Una transacción por cada carta retirada de subasta.
+		\item Una transacción por cada carta adquirida mediante subasta.
+		\item Una transacción por cada puja realizada en una subasta.
+		\item Una transacción por cada puja retirada de una subasta.
+		\item Una transacción por cada puja ganadora en una subasta.
+	\end{RFTransacciones}
 	\item Cada transacción en el sistema deberá de poder identicarse de forma inequívoca. \hypertarget{RT-2}{}
 	\begin{RFTransacciones}
 		\item Deberá tener un identificador único.
@@ -19,8 +28,15 @@
 		\item Deberá de tener una referencia al activo afectado.
 	\end{RFTransacciones}
 	\item El sistema deberá de permitir a los usuarios autenticados consultar sus transacciones.
+	\item En el detalle de cada carta, el usuario podrá consultar las transacciones realizadas con esa carta.
 	\begin{RFTransacciones}
-		\item El sistema mostrará los datos mencionados en el punto \coloredUnderline{\hyperlink{RT-2}{RT-2}}.
+		\item Solo se mostrarán las transacciones correspondientes a una transferencia de carta.
+		\begin{RFTransacciones}
+			\item Carta adquirida mediante compra de sobres.
+			\item Carta adquirida mediante subasta.
+		\end{RFTransacciones}
+		\item No se mostrarán transacciones relacionadas con pujas o puestas en subasta.
+		\item No se mostrará el usuario que realizó la transacción.
 	\end{RFTransacciones}
 	\item Un usuario con rol de administrador deberá de poder consultar las transacciones de todos los usuarios.	
 \end{RFTransacciones}

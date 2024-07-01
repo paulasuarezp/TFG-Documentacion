@@ -85,13 +85,25 @@ En esta sección se detallan los parámetros de configuración de usuario que se
     \textbf{GU\_IMG\_PERFIL\_DEFECTO} & La imagen de perfil por defecto será la de un avatar.  \\
     \midrule
     \hypertarget{confParam:gu-saldoDefecto}{}
-    \textbf{GU\_SALDO\_DEFECTO} & El saldo por defecto será de 0 monedas. \\
+    \textbf{GU\_SALDO\_DEFECTO} & El saldo por defecto será de 100 monedas. \\
     \midrule
     \hypertarget{confParam:gu-tokenSesion}{}
-    \textbf{GU\_TOKEN\_SESION} & El token de sesión tendrá una duración de 1 hora. \\
+    \textbf{GU\_TOKEN\_SESION} & El token de sesión no tendrá una duración máxima. \\
+    \midrule
+    \hypertarget{confParam:gu-equivalencia}{}
+    \textbf{GU\_EQUIVALENCIA} & La equivalencia de monedas a dinero real será de 1 moneda = 0.01 euros. \\
+    \midrule
+    \hypertarget{confParam:gu-restriccionesRecarga}{}
+    \textbf{GU\_RESTRICCIONES\_RECARGA} & La cantidad de monedas a recargar debe ser un número entero positivo. La cantidad mínima a recargar es de 10 monedas. Se recargarán monedas en múltiplos de 10. \\
+    \midrule
+    \hypertarget{confParam:metodosBancarios}{}
+    \textbf{GU\_MÉTODOS\_BANCARIOS} & El método bancario aceptado será PayPal. \\
     \midrule
     \hypertarget{confParam:cc-formatoIDCCarta}{}
-    \textbf{CC\_FORMATO\_IDC\_CARTA} & El formato del identificador de colección de carta será CC-XXXX, donde XXXX es un número entero de cuatro dígitos. \\
+    \textbf{CC\_FORMATO\_IDC\_CARTA} & El formato del identificador de colección de carta será C-XX-YY, donde XX es un número entero de dos dígitos y YY es un número entero de dos dígitos. \\
+    \midrule
+    \hypertarget{confParam:cc-formatoIDCSobre}{}
+    \textbf{CC\_FORMATO\_IDC\_SOBRE} & El formato del identificador de colección de carta será CP-XX, donde XX es un número entero de dos dígitos. \\
     \bottomrule
     \end{tabular}
 \end{table}

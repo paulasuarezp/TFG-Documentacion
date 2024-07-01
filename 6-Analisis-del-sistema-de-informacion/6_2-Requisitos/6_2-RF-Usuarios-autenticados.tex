@@ -11,23 +11,24 @@
 	\item El sistema deberá de permitir a los usuarios autenticados modificar su información personal.
     \begin{RFUsuarioAutenticado}
         \item Un usuario deberá de poder modificar su imagen de perfil.
+        \begin{RFUsuarioAutenticado}
+            \item El sistema mostrará varias imágenes predefinidas para que el usuario pueda seleccionar una.
+        \end{RFUsuarioAutenticado}
         \item Un usuario deberá de poder modificar su contraseña.
     \end{RFUsuarioAutenticado}
-    \item El sistema deberá de permitir a los usuarios autenticados consultar su colección de cartas. (ver \coloredUnderline{\hyperlink{req_coleccion_cartas}{RCC-2}})
-    \item El sistema deberá de permitir a los usuarios autenticados consultar sus transacciones. (ver \coloredUnderline{\hyperlink{req_transacciones}{RT-3}})
-    \item El sistema deberá de permitir a los usuarios autenticados consultar sus subastas. (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{RSP-6}})
-    \item El sistema deberá de permitir a los usuarios autenticados consultar sus pujas. (ver \coloredUnderline{\hyperlink{req_subastas_pujas}{RSP-6}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar su colección de cartas. (Ver \coloredUnderline{\hyperlink{req_coleccion_cartas}{Colección de cartas}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus transacciones. (Ver \coloredUnderline{\hyperlink{req_transacciones}{Transacciones}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus subastas activas. (Ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Subastas y pujas}})
+    \item El sistema deberá de permitir a los usuarios autenticados consultar sus pujas activas. (Ver \coloredUnderline{\hyperlink{req_subastas_pujas}{Subastas y pujas}})
     \item El sistema deberá de permitir a los usuarios autenticados consultar su saldo de monedas. 
     \item El sistema deberá de permitir a los usuarios autenticados recargar su saldo.
     \begin{RFUsuarioAutenticado}
-        \item Un usuario deberá de poder recargar su saldo mediante \coloredUnderline{\hyperlink{confParam:metodosBancarios}{GU\_MÉTODOS\_BANCARIOS}}.
-        \item El sistema deberá de registrar en la base de datos una nueva transacción con los siguientes datos:
-        \begin{RFUsuarioAutenticado}
-            \item Identificador único (UID).
-            \item Usuario que realiza la recarga.
-            \item Concepto de recarga.
-            \item Fecha de recarga.
-            \item Importe de la recarga.
-        \end{RFUsuarioAutenticado}
+        \item El usuario indicará la cantidad de monedas que desea recargar.
+        \item El sistema verificará que la cantidad de monedas a recargar cumpla con \coloredUnderline{\hyperlink{confParam:gu-restriccionesRecarga}{GU\_RESTRICCIONES\_RECARGA}}.
+        \item La equivalencia de monedas a dinero real será \coloredUnderline{\hyperlink{confParam:gu-equivalencia}{GU\_EQUIVALENCIA}}.
+        \item El sistema informará al usuario del monto a pagar.
+        \item El usuario podrá recargar su saldo mediante \coloredUnderline{\hyperlink{confParam:metodosBancarios}{GU\_MÉTODOS\_BANCARIOS}}.
+        \item Si el usuario confirma la recarga, el sistema incrementará el saldo del usuario.
     \end{RFUsuarioAutenticado}
+
 \end{RFUsuarioAutenticado}
