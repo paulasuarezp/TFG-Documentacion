@@ -1,0 +1,43 @@
+@startuml
+participant "Administrador" as Admin
+participant "Interfaz de Usuario" as UI
+participant "Sistema de Gestión de Subastas" as AuctionSystem
+participant "Sistema de Gestión de Notificaciones" as NotificationSystem
+database "Base de Datos" as DB
+
+== Inicio de Sesión ==
+Admin -> UI : Inicia sesión
+
+== Acceso a Subastas Activas ==
+Admin -> UI : Selecciona "cerrar subastas finalizadas"
+UI -> AuctionSystem : Solicita subastas finalizadas
+AuctionSystem -> DB : Consulta subastas finalizadas
+DB -> AuctionSystem : Retorna subastas finalizadas
+
+== Procesamiento de Subastas ==
+AuctionSystem -> DB : Identifica pujas ganadoras, actualiza las subastas y las pujas
+DB -> AuctionSystem : Confirma actualización de subastas y pujas
+AuctionSystem -> DB : Genera una transacción por cada puja y subasta procesada
+DB -> AuctionSystem : Confirma el registro de transacciones
+
+
+== Notificación ==
+AuctionSystem -> DB : Transfiere montos y actualiza propietarios de cartas
+DB -> AuctionSystem : Confirma las transferencias
+AuctionSystem -> NotificationSystem: Registra las notificaciones a enviar.
+NotificationSystem -> DB: Registra las notificaciones.
+DB -> NotificationSystem: Confirma el registro de notificaciones.
+NotificationSystem -> UI : Envía notificaciones en tiempo real.
+
+== Respuesta al Administrador ==
+UI -> Admin : Muestra los resultados de las subastas procesadas.
+
+== Manejo de Errores ==
+alt Error de conexión a la base de datos
+    AuctionSystem -> UI : Muestra mensaje de error
+    UI -> Admin : Muestra mensaje de error
+end
+
+== Finalización ==
+Admin -> UI : Cierra sesión o continúa con otras tareas
+@enduml
