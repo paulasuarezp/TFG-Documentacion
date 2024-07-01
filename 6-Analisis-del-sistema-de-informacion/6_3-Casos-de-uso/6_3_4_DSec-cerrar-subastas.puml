@@ -20,7 +20,6 @@ DB -> AuctionSystem : Confirma actualización de subastas y pujas
 AuctionSystem -> DB : Genera una transacción por cada puja y subasta procesada
 DB -> AuctionSystem : Confirma el registro de transacciones
 
-
 == Notificación ==
 AuctionSystem -> DB : Transfiere montos y actualiza propietarios de cartas
 DB -> AuctionSystem : Confirma las transferencias
@@ -30,6 +29,7 @@ DB -> NotificationSystem: Confirma el registro de notificaciones.
 NotificationSystem -> UI : Envía notificaciones en tiempo real.
 
 == Respuesta al Administrador ==
+AuctionSystem -> UI : Envía las subastas finalizadas actualizadas
 UI -> Admin : Muestra los resultados de las subastas procesadas.
 
 == Manejo de Errores ==

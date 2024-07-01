@@ -1,0 +1,64 @@
+@startuml
+actor "Usuario Autenticado" as User
+participant "Interfaz de Usuario" as UI
+participant "Sistema de Compras" as PurchaseSystem
+database "Base de Datos" as DB
+
+== Inicio de Sesión de Transacción ==
+User -> UI : selecciona comprar sobre
+UI -> PurchaseSystem : solicita compra del paquete de cartas
+PurchaseSystem -> DB : inicia sesión de transacción
+DB -> PurchaseSystem : confirma inicio de sesión
+
+== Obtención del Paquete de Cartas ==
+PurchaseSystem -> DB : busca paquete de cartas
+DB -> PurchaseSystem : retorna datos del paquete
+
+== Verificación de Disponibilidad ==
+PurchaseSystem -> PurchaseSystem : verifica disponibilidad del paquete
+alt Paquete no disponible
+    PurchaseSystem -> UI : notifica paquete agotado
+    UI -> User : muestra mensaje de paquete agotado
+    deactivate PurchaseSystem
+else Paquete disponible
+
+== Verificación de Saldo del Usuario ==
+    PurchaseSystem -> DB : busca usuario por nombre de usuario
+    DB -> PurchaseSystem : retorna datos del usuario
+    PurchaseSystem -> PurchaseSystem : verifica saldo del usuario
+    alt Saldo insuficiente
+        PurchaseSystem -> UI : notifica saldo insuficiente
+        UI -> User : muestra mensaje de saldo insuficiente
+        deactivate PurchaseSystem
+    else Saldo suficiente
+
+== Generación de Cartas ==
+        PurchaseSystem -> DB : genera cartas y actualiza inventario
+        DB -> PurchaseSystem : confirma generación de cartas
+
+== Actualización del Saldo del Usuario ==
+        PurchaseSystem -> DB : actualiza saldo del usuario
+        DB -> PurchaseSystem : confirma actualización de saldo
+
+== Registro de Transacciones ==
+        PurchaseSystem -> DB : registra transacciones por cada carta generada
+        DB -> PurchaseSystem : confirma transacciones registradas
+        PurchaseSystem -> DB : añade las cartas generadas a la colección del usuario
+        DB -> PurchaseSystem : confirma actualización de la colección
+        PurchaseSystem -> UI : notifica éxito de compra
+        UI -> User : muestra éxito y las cartas generadas
+    end
+end
+
+== Manejo de Errores ==
+alt Error durante el proceso
+    PurchaseSystem -> DB : aborta transacción
+    DB -> PurchaseSystem : confirma aborto
+    PurchaseSystem -> UI : notifica fallo de transacción
+    UI -> User : muestra mensaje de error
+end
+
+== Finalización de Sesión ==
+PurchaseSystem -> DB : cierra sesión de transacción
+DB -> PurchaseSystem : confirma cierre de sesión
+@enduml
