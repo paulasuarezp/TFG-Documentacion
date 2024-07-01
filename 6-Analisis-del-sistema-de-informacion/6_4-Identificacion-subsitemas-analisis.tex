@@ -1,4 +1,79 @@
+En esta sección se detallan los subsistemas por los que se compone el sistema de información, así como los interfaces entre ellos.
 
 \subsection{Descripción de los Subsistemas} 
+En esta sección se enumeran los subsistemas que componen BidMon Universe.
+Un subsistema es un conjunto de elementos de software que interactúan entre sí para llevar a cabo una serie de tareas relacionadas.
+La aplicación se divide en dos subsistemas principales: el backend y el frontend.
+
+\subsubsection{Backend}
+El backend es el subsistema que se encarga de gestionar la lógica de negocio y la persistencia de los datos.
+Este subsistema se comunica con el frontend para recibir y enviar información.
+El backend se divide en los siguientes módulos:
+\begin{itemize}
+    \item \textbf{Módulo de usuarios:} se encarga de gestionar la autenticación de los usuarios y la información de los mismos.
+    \item \textbf{Módulo de cartas:} se encarga de gestionar la colección de cartas disponibles en el sistema.
+    \item \textbf{Módulo de sobres:} se encarga de gestionar los sobres de cartas disponibles en el sistema.
+    \item \textbf{Módulo de mazos de cartas:} se encarga de gestionar los mazos de cartas disponibles en el sistema.
+    \item \textbf{Módulo de cartas de usuario:} se encarga de gestionar la colección de cartas de los usuarios.
+    \item \textbf{Módulo de transacciones:} se encarga de gestionar las transacciones realizadas por los usuarios.
+    \item \textbf{Módulo de compras:} se encarga de gestionar las compras de sobres de cartas por parte de los usuarios.
+    \item \textbf{Módulo de subastas:} se encarga de gestionar las subastas de cartas por parte de los usuarios.
+    \item \textbf{Módulo de pujas:} se encarga de gestionar las pujas realizadas por los usuarios en las subastas.
+    \item \textbf{Módulo de notificaciones:} se encarga de gestionar las notificaciones enviadas a los usuarios.
+    \item \textbf{Módulo de PayPal:} se encarga de gestionar las transacciones realizadas a través de PayPal.
+\end{itemize}
+
+\subsubsection{Frontend}
+El frontend es el subsistema que se encarga de gestionar la interfaz de usuario.
+Este subsistema se comunica con el backend para obtener y enviar información.
+El frontend se divide en los siguientes módulos:
+\begin{itemize}
+    \item \textbf{API} se encarga de gestionar las peticiones y respuestas entre el frontend y el backend.
+    \item \textbf{Contenido estático} se encarga de gestionar el contenido estático de la aplicación.
+    \item \textbf{Lógica} se encarga de gestionar la lógica de la interfaz de usuario, como los estados de Redux y la conexión con Socket.io.
+    \item \textbf{Vistas} se encarga de gestionar las vistas de la aplicación.
+    \begin{itemize}
+        \item \textbf{Componentes} se encarga de gestionar los componentes de la aplicación.
+        \item \textbf{Páginas} se encarga de gestionar las páginas de la aplicación.
+    \end{itemize}
+\end{itemize}
 
 \subsection{Descripción de los Interfaces entre Subsistemas}
+Los subsistemas de BidMon Universe, específicamente el backend y el frontend, interactúan a través de una API REST y Socket.io.
+Los módulos internos de cada subsistema también interactúan entre sí localmente.
+
+\subsubsection{API REST}
+El frontend se comunica con el backend principalmente a través de una API REST. Esta API es responsable de manejar todas las solicitudes HTTP enviadas desde el frontend, incluyendo la autenticación de usuarios, la gestión de cartas y las transacciones.
+
+\begin{itemize}
+    \item \textbf{Endpoints}: Los endpoints de la API REST están estructurados para soportar operaciones CRUD sobre los recursos del sistema, como usuarios, cartas, y transacciones.
+    \item \textbf{Seguridad}: Se utiliza HTTPS para asegurar la comunicación y JWT (JSON Web Tokens) para la autenticación y autorización de usuarios.
+    \item \textbf{Datos Intercambiados}: Los datos se intercambian en formato JSON, con estructuras específicas para cada tipo de operación. 
+\end{itemize}
+
+\subsubsection{Socket.io}
+Para operaciones en tiempo real, como las notificaciones se hace uso de Socket.io. Este subsistema permite una comunicación bidireccional basada en eventos entre el cliente y el servidor.
+
+\begin{itemize}
+    \item \textbf{Conexiones de Sockets}: Los usuarios se autentican en la conexión y se suscriben al canal por defecto, permitiendo la recepción de notificaciones en tiempo real.
+    \item \textbf{Manejo de Eventos}: Los eventos como \texttt{'notification'} son gestionados a través de sockets para actualizar a los usuarios en tiempo real.
+\end{itemize}
+
+\subsubsection{Persistencia de Datos}
+La comunicación entre el backend y \coloredUnderline{\href{https://www.mongodb.com/es/atlas}{MongoDB Atlas}} se gestiona a través de  \coloredUnderline{\href{https://mongoosejs.com}{Mongoose}}, una biblioteca de modelado de objetos que facilita la estructuración de datos y las operaciones de base de datos.
+
+\begin{itemize}
+    \item \textbf{Modelos de Datos}: Cada módulo del backend define modelos Mongoose que corresponden a las colecciones de la base de datos, asegurando que los datos se manejen consistentemente.
+    \item \textbf{Transacciones de Datos}: Las operaciones que requieren integridad transaccional, como las compras de sobres de cartas, utilizan sesiones y transacciones de Mongoose para garantizar que se procesen completamente o se reviertan en caso de error.
+\end{itemize}
+
+\subsubsection{Módulo de PayPal}
+Este módulo del backend es crucial para la gestión de todas las transacciones financieras realizadas a través de \coloredUnderline{\href{https://www.paypal.com}{Paypal}}. Implementa las siguientes funcionalidades clave:
+
+\begin{itemize}
+    \item \textbf{Generación de Token de Acceso}: Autenticación con la API de PayPal para obtener permisos de transacción.
+    \item \textbf{Creación de Órdenes de Pago}: Envío de detalles de transacciones financieras a PayPal y manejo de las respuestas.
+    \item \textbf{Manejo de Respuestas de PayPal}: Procesamiento de las respuestas de la API para confirmar transacciones o manejar errores.
+\end{itemize}
+
+El frontend, mientras tanto, facilita la interacción del usuario con estas funciones, proporcionando interfaces claras y seguras para iniciar pagos y visualizar los resultados de las transacciones.
