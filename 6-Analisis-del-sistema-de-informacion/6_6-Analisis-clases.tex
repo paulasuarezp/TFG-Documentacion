@@ -52,6 +52,137 @@ El paquete \textbf{frontend} contiene las clases que implementan la interfaz de 
 \end{itemize}
 
 \subsection{Diagrama de Clases} 
+El diagrama de clases muestra las clases que componen la lógica de negocio del sistema. Se omite representar las relaciones entre las clases para simplificar el diagrama y que sea más legible. En el apartado \coloredUnderline{\hyperlink{sec:6_6_3-Descripcion-Clases}{ \ref*{sec:6_6_3-Descripcion-Clases}: \nameref*{sec:6_6_3-Descripcion-Clases}}}
+se describen las clases y las relaciones entre ellas.
 
-\subsection{Descripción de las Clases}
+En la \coloredUnderline{\hyperlink{fig:6_6_Diagrama-Clases}{Figura \ref*{fig:6_6_Diagrama-Clases}: \nameref*{fig:6_6_Diagrama-Clases}}} se muestra el diagrama de clases del paquete \textbf{restapi}.
+\begin{figure}[H]
+    \hypertarget{fig:6_6_Diagrama-Clases}{}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/6-Analisis/6-Clases/6_6_Clases-restapi.png}
+    \caption{Diagrama de Clases del Paquete restapi}
+    \label{fig:6_6_Diagrama-Clases}
+\end{figure}
+
+
+\subsection{Descripción de las Clases} \hypertarget{sec:6_6_3-Descripcion-Clases}{} \label{sec:6_6_3-Descripcion-Clases}
+A continuación, se describen las clases que componen el sistema y las relaciones entre ellas.
+\subsubsection{Clase \textit{server}}
+
+\subsubsection{Descripción de Clase. Server} \label{sec:descripcion_server}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. Server} \label{table:descripcion_server} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{SERVER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. Server -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{SERVER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona los servidores HTTP y HTTPS, la conexión a MongoDB, y la gestión de conexiones de sockets mediante Socket.IO. También incluye la configuración de variables de entorno y el manejo de errores. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{httpPort}: number, puerto en el que el servidor HTTP escucha.
+      \item \textbf{httpsPort}: number, puerto en el que el servidor HTTPS escucha (solo en producción).
+      \item \textbf{mongoURI}: string, URI de conexión a la base de datos MongoDB.
+      \item \textbf{httpsOptions}: object, opciones para el servidor HTTPS en producción.
+      \item \textbf{httpServer}: object, instancia del servidor HTTP.
+      \item \textbf{httpsServer}: object, instancia del servidor HTTPS.
+      \item \textbf{io}: object, instancia de Socket.IO para manejar conexiones de sockets.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{config()}: void, configura las variables de entorno.
+      \item \textbf{createServers()}: void, crea y configura los servidores HTTP y HTTPS.
+      \item \textbf{connectToDatabase()}: void, conecta a la base de datos MongoDB.
+      \item \textbf{startServers()}: void, inicia los servidores HTTP y HTTPS.
+      \item \textbf{setupSocketIO()}: void, configura el middleware de autenticación de sockets y maneja eventos de conexión y desconexión.
+      \item \textbf{closeServer()}: Promise<void>, cierra los servidores HTTP, HTTPS y la conexión a la base de datos.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{App}: Importa y usa la clase App.
+      \item \textbf{AuthSocket}: Importa y usa el middleware de autenticación de sockets.
+    \end{itemize} \\
+    \end{longtable}
+
+\subsubsection{Clase \textit{app}}
+\subsubsection{Descripción de Clase. App} \label{sec:descripcion_app}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. App} \label{table:descripcion_app} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{APP}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. App -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{APP}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona la aplicación Express, incluyendo las políticas CORS, las rutas de la API y el middleware para el manejo de errores. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{app}: Application, instancia de la aplicación Express.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{use()}: void, permite configurar las rutas y los middlewares de la aplicación.
+      \item \textbf{listen()}: void, inicia el servidor en el puerto especificado.
+      \item \textbf{errorHandler()}: void, middleware para manejar errores en la aplicación.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuctionRouter}: Importa y usa las rutas de subasta.
+      \item \textbf{BidRouter}: Importa y usa las rutas de oferta.
+      \item \textbf{CardPackRouter}: Importa y usa las rutas de paquetes de cartas.
+      \item \textbf{CardRouter}: Importa y usa las rutas de cartas.
+      \item \textbf{DeckRouter}: Importa y usa las rutas de mazos.
+      \item \textbf{NotificationRouter}: Importa y usa las rutas de notificaciones.
+      \item \textbf{PaypalRouter}: Importa y usa las rutas de PayPal.
+      \item \textbf{PurchasesRouter}: Importa y usa las rutas de compras.
+      \item \textbf{TransactionRouter}: Importa y usa las rutas de transacciones.
+      \item \textbf{UserCardRouter}: Importa y usa las rutas de cartas de usuario.
+      \item \textbf{UserRouter}: Importa y usa las rutas de usuario.
+    \end{itemize} \\
+    \end{longtable}
+
+
+\subsubsection{Clases del paquete \textit{middlewares}}
+\subsubsection{Clases del paquete \textit{routes}}
+\subsubsection{Clases del paquete \textit{controllers}}
+\subsubsection{Clases del paquete \textit{models}}
+\subsubsection{Clases del paquete \textit{utils}}
+\subsubsection{Clases del paquete \textit{scripts}}
 
