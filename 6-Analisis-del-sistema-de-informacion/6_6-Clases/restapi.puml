@@ -1,0 +1,109 @@
+@startuml
+
+package controllers {
+    class auctionController
+    class bidController
+    class cardController
+    class cardPackController
+    class deckController
+    class notificationController
+    class paypalController
+    class purchasesController
+    class transactionController
+    class userCardController
+    class userController
+}
+
+package models {
+    entity auction 
+    entity bid 
+    entity card 
+    entity cardPack 
+    entity deck 
+    entity notification 
+    entity transaction 
+    entity user 
+    entity userCard 
+    
+    package utils {
+        enum enums 
+        class gymLeaders
+        class validations
+    }
+}
+
+package middleware {
+    class authMiddleware
+    class authSocket
+}
+
+package routes {
+    class auctionRoutes
+    class bidRoutes
+    class cardPackRoutes
+    class cardRoutes
+    class deckRoutes
+    class notificationRoutes
+    class paypalRoutes
+    class purchasesRoutes
+    class transactionRoutes
+    class userCardRoutes
+    class userRoutes
+}
+
+package scripts {
+    class fetchDecksData
+    class fetchPokemonData
+    class loadCardPacks
+    class loadDecks
+    class loadPokemonData
+}
+
+class App
+class Server
+
+' Relaciones entre rutas y controladores
+auctionRoutes ..> auctionController
+bidRoutes ..> bidController
+cardPackRoutes ..> cardPackController
+cardRoutes ..> cardController
+deckRoutes ..> deckController
+notificationRoutes ..> notificationController
+paypalRoutes ..> paypalController
+purchasesRoutes ..> purchasesController
+transactionRoutes ..> transactionController
+userCardRoutes ..> userCardController
+userRoutes ..> userController
+
+' Relaciones entre middleware y rutas
+authMiddleware ..> auctionRoutes
+authMiddleware ..> bidRoutes
+authMiddleware ..> cardPackRoutes
+authMiddleware ..> cardRoutes
+authMiddleware ..> deckRoutes
+authMiddleware ..> notificationRoutes
+authMiddleware ..> paypalRoutes
+authMiddleware ..> purchasesRoutes
+authMiddleware ..> transactionRoutes
+authMiddleware ..> userCardRoutes
+authMiddleware ..> userRoutes
+
+' Relaciones entre server, app y middleware
+Server ..> authSocket
+Server ..> App
+App ..> routes
+
+' Relaciones entre controladores y modelos
+auctionController ..> auction
+bidController ..> bid
+cardController ..> card
+cardPackController ..> cardPack
+deckController ..> deck
+notificationController ..> notification
+paypalController ..> transaction
+purchasesController ..> purchases
+transactionController ..> transaction
+userCardController ..> userCard
+userController ..> user
+
+@enduml
