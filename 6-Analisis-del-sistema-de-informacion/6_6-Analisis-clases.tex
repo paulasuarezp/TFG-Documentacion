@@ -180,7 +180,362 @@ A continuación, se describen las clases que componen el sistema y las relacione
 
 
 \subsubsection{Clases del paquete \textit{middlewares}}
+\subsubsubsection{Descripción de Clase. AuthMiddleware} \label{sec:descripcion_authmiddleware}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. AuthMiddleware} \label{table:descripcion_authmiddleware} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUTHMIDDLEWARE}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. AuthMiddleware -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUTHMIDDLEWARE}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase proporciona middleware para la autenticación y autorización de usuarios mediante tokens JWT. Incluye la verificación de tokens y la verificación de roles de administrador. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{jwt}: Object, módulo para manejar JSON Web Tokens.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{auth(req: Request, res: Response, next: any)}: void, middleware para verificar la autenticidad del token JWT en las peticiones.
+      \item \textbf{verifyAdmin(req: Request, res: Response, next: any)}: void, middleware para verificar que el usuario tiene rol de administrador.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \\
+    \end{longtable}
+
+\subsubsubsection{Descripción de Clase. AuthSocket} \label{sec:descripcion_authsocket}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. AuthSocket} \label{table:descripcion_authsocket} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUTHSOCKET}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. AuthSocket -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUTHSOCKET}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase proporciona middleware para la autenticación de conexiones de sockets mediante tokens JWT. Verifica la validez y el formato del token proporcionado en el handshake de la conexión del socket. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{jwt}: Object, módulo para manejar JSON Web Tokens.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{authSocket(socket: Socket, next: (err?: Error) => void)}: void, middleware para verificar la autenticidad del token JWT en las conexiones de sockets.
+    \end{itemize} \\
+    \midrule
+    Relaciones &  \\
+    \end{longtable}
+
+
 \subsubsection{Clases del paquete \textit{routes}}
+\subsubsubsection{Descripción de Clase. AuctionRouter} \label{sec:descripcion_auctionrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. AuctionRouter} \label{table:descripcion_auctionrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTIONROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. AuctionRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTIONROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con las subastas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{auctionRouter}: Router, instancia del enrutador de Express para las subastas.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getAuctions(req: Request, res: Response)}: void, maneja la obtención de todas las subastas.
+      \item \textbf{getAuction(req: Request, res: Response)}: void, maneja la obtención de una subasta por su ID.
+      \item \textbf{getActiveAuctions(req: Request, res: Response)}: void, maneja la obtención de todas las subastas activas.
+      \item \textbf{getActiveAuctionsByUser(req: Request, res: Response)}: void, maneja la obtención de todas las subastas activas de un usuario.
+      \item \textbf{putUserCardUpForAuction(req: Request, res: Response)}: void, maneja la puesta en subasta de una carta de usuario.
+      \item \textbf{withdrawnUserCardFromAuction(req: Request, res: Response)}: void, maneja la retirada de una carta de usuario de una subasta.
+      \item \textbf{checkAllActiveAuctions(req: Request, res: Response)}: void, verifica todas las subastas activas y actualiza su estado si es necesario.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
+      \item \textbf{AuctionController}: Importa y utiliza métodos del controlador de subastas.
+    \end{itemize} \\
+    \end{longtable}
+
+    \subsubsubsection{Descripción de Clase. BidRouter} \label{sec:descripcion_bidrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. BidRouter} \label{table:descripcion_bidrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BIDROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. BidRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BIDROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con las pujas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{bidRouter}: Router, instancia del enrutador de Express para las pujas.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getBidById(req: Request, res: Response)}: void, maneja la obtención de una puja por su ID.
+      \item \textbf{createBid(req: Request, res: Response)}: void, maneja la creación de una nueva puja.
+      \item \textbf{getActiveBidsByUser(req: Request, res: Response)}: void, maneja la obtención de todas las pujas activas de un usuario.
+      \item \textbf{withdrawBid(req: Request, res: Response)}: void, maneja la retirada de una puja.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
+      \item \textbf{BidController}: Importa y utiliza métodos del controlador de pujas.
+    \end{itemize} \\
+    \end{longtable}
+
+\subsubsubsection{Descripción de Clase. CardPackRouter} \label{sec:descripcion_cardpackrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. CardPackRouter} \label{table:descripcion_cardpackrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACKROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. CardPackRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACKROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con los sobres de cartas en la aplicación Express. Incluye la autenticación mediante middleware. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{cardPackRouter}: Router, instancia del enrutador de Express para los sobres de cartas.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getCardPacks(req: Request, res: Response)}: void, maneja la obtención de todos los sobres de cartas.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
+      \item \textbf{CardPackController}: Importa y utiliza el método del controlador de sobres de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+
+\subsubsubsection{Descripción de Clase. CardRouter} \label{sec:descripcion_cardrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. CardRouter} \label{table:descripcion_cardrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. CardRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con las cartas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{cardRouter}: Router, instancia del enrutador de Express para las cartas.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getCard(req: Request, res: Response)}: void, maneja la obtención de una carta por su ID.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
+      \item \textbf{CardController}: Importa y utiliza el método del controlador de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+\subsubsubsection{Descripción de Clase. NotificationRouter} \label{sec:descripcion_notificationrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. NotificationRouter} \label{table:descripcion_notificationrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATIONROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. NotificationRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATIONROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con las notificaciones en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{notificationRouter}: Router, instancia del enrutador de Express para las notificaciones.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getNotifications(req: Request, res: Response)}: void, maneja la obtención de todas las notificaciones de un usuario.
+      \item \textbf{markAsRead(req: Request, res: Response)}: void, maneja el marcado de una notificación como leída.
+      \item \textbf{markAllAsRead(req: Request, res: Response)}: void, maneja el marcado de todas las notificaciones de un usuario como leídas.
+      \item \textbf{hasUnreadNotifications(req: Request, res: Response)}: void, verifica si un usuario tiene notificaciones no leídas.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
+      \item \textbf{NotificationController}: Importa y utiliza métodos del controlador de notificaciones.
+    \end{itemize} \\
+    \end{longtable}
+
+    \subsubsubsection{Descripción de Clase. PaypalRouter} \label{sec:descripcion_paypalrouter}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción de Clase. PaypalRouter} \label{table:descripcion_paypalrouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PAYPALROUTER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción de Clase. PaypalRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Clase} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PAYPALROUTER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Esta clase configura y gestiona las rutas relacionadas con las órdenes de PayPal en la aplicación Express. Incluye validaciones para las peticiones y manejo de errores. \\
+    \midrule
+    Atributos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{paypalRouter}: Router, instancia del enrutador de Express para las órdenes de PayPal.
+    \end{itemize} \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{createOrder(req: Request, res: Response)}: void, maneja la creación de una nueva orden de PayPal.
+      \item \textbf{updateOrder(req: Request, res: Response)}: void, maneja la actualización del saldo de un usuario después de completar un pago.
+    \end{itemize} \\
+    \midrule
+    Relaciones & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{PaypalController}: Importa y utiliza el método del controlador de PayPal para crear órdenes.
+      \item \textbf{User}: Importa y utiliza el modelo de usuario para actualizar el saldo.
+    \end{itemize} \\
+    \end{longtable}
+
+
 \subsubsection{Clases del paquete \textit{controllers}}
 \subsubsection{Clases del paquete \textit{models}}
 \subsubsection{Clases del paquete \textit{utils}}
