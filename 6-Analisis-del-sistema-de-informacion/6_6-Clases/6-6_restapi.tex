@@ -1413,17 +1413,17 @@ Cada componente del paquete \textit{models} se corresponde con una colección de
     \end{itemize} \\
     \end{longtable}
 
-
-%------------------------- PAQUETE SCRIPTS -------------------------
+ 
+    %------------------------- PAQUETE SCRIPTS -------------------------
 \subsubsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{scripts}}
 Los componentes del paquete \textit{scripts} son archivos ejecutables que contienen funciones auxiliares para la inicialización de la base de datos y la carga de datos de prueba.
 
-
+%--- FETCHDECKDATA ---
 %--- FETCHDECKDATA ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
-    }
+}
     \caption{Descripción del componente: FetchDeckData} \label{table:descripcion_fetchdeckdata} \\
     \toprule
     \rowcolor{darkgreen!50}
@@ -1431,7 +1431,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endfirsthead
     
     \multicolumn{2}{c}%
-    {{ \tablename\ \thetable{} Descripción del componente: FetchDeckData -- continuación de la página anterior}} \\
+    {{\tablename\ \thetable{} Descripción del componente: FetchDeckData -- continuación de la página anterior}} \\
     \toprule
     \rowcolor{darkgreen!50}
     \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{FETCHDECKDATA}} \\
@@ -1446,21 +1446,18 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endlastfoot
     
     \midrule
-    Descripción & Este componente se encarga de recuperar y almacenar datos de mazos en un archivo CSV. Utiliza la biblioteca \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{decks_data.csv}. 
-    \\
+    Descripción & Este componente se encarga de recuperar y almacenar datos de mazos en un archivo CSV. Utiliza la biblioteca \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{decks_data.csv}. \\
     \midrule
-    Métodos &
-    \begin{itemize}[nosep,leftmargin=*]
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{fetchAndStoreDecks()}: Promise\<void\>, genera un mazo de cartas por cada rareza y lo almacena en un archivo CSV.
     \end{itemize} \\
-    \\
     \midrule
     Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{Utils}: Utiliza el enum \textit{CardRarity}, que define la rareza de las cartas.
     \end{itemize} \\
     \midrule
     Interfaces proporcionadas & \\
-    \end{longtable}
+\end{longtable}
 
 
 %--- LOADDECKDATA ---
@@ -1490,8 +1487,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endlastfoot
     
     \midrule
-    Descripción & Este componente se encarga de cargar datos de mazos desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} y \textit{mongoose} para leer el archivo y realizar operaciones en la base de datos.
-    \\
+    Descripción & Este componente se encarga de cargar datos de mazos desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} y \textit{mongoose} para leer el archivo y realizar operaciones en la base de datos. \\
     \midrule
     Métodos &
     \begin{itemize}[nosep,leftmargin=*]
@@ -1534,8 +1530,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endlastfoot
     
     \midrule
-    Descripción & Este componente se encarga de recuperar y almacenar datos de Pokémon en un archivo CSV. Utiliza la biblioteca \textit{axios} para realizar solicitudes a la API de PokeAPI y \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{cards_data.csv}.
-    \\
+    Descripción & Este componente se encarga de recuperar y almacenar datos de Pokémon en un archivo CSV. Utiliza la biblioteca \textit{axios} para realizar solicitudes a la API de PokeAPI y \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{cards_data.csv}. \\
     \midrule
     Métodos &
     \begin{itemize}[nosep,leftmargin=*]
@@ -1580,8 +1575,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endlastfoot
     
     \midrule
-    Descripción & Este componente se encarga de cargar datos de Pokémon desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB.
-    \\
+    Descripción & Este componente se encarga de cargar datos de Pokémon desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB. \\
     \midrule
     Métodos &
     \begin{itemize}[nosep,leftmargin=*]
@@ -1596,8 +1590,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     Interfaces proporcionadas & \\
     \end{longtable}
 
-
-%--- LOADCARDPACKDATA ---
+%--- LOADCARDPACKSDATA ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
@@ -1624,8 +1617,7 @@ Los componentes del paquete \textit{scripts} son archivos ejecutables que contie
     \endlastfoot
     
     \midrule
-    Descripción & Este componente se encarga de cargar datos de paquetes de cartas desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB.
-    \\
+    Descripción & Este componente se encarga de cargar datos de paquetes de cartas desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB. \\
     \midrule
     Métodos &
     \begin{itemize}[nosep,leftmargin=*]
