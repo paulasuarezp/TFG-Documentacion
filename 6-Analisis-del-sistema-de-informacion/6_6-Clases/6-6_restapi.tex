@@ -110,6 +110,7 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
 \end{longtable}
 
 
+%------------------------- PAQUETE MIDDLWARES -------------------------
 \subsubsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{middlewares}}\label{sec:descripcion_authmiddleware}
 %--- AUTHMIDDLEWARE ---
 \begin{longtable}{
@@ -192,8 +193,12 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \end{itemize} \\
     \end{longtable}
 
-
+%------------------------- PAQUETE ROUTES -------------------------
 \subsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{routes}}
+En el diagrama se muestra una relación de dependencia entre \textit{App} y los componentes del paquete \textit{routes}. 
+En la práctica, cada componente del paquete \textit{routes} proporciona sus rutas a \textit{App} a través su propia instancia de \textit{Router} de Express. 
+Se ha decidido simplificar la representación para facilitar la comprensión del diagrama, dado que todos los componentes del paquete \textit{routes} mantienen la misma relación con \textit{App}.
+
 %--- AUCTIONROUTER ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
@@ -243,7 +248,7 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \end{itemize} \\
     \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{Auction Router}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+      \item \textbf{Auction Router}: Proporciona las rutas para la gestión de subastas.
     \end{itemize} \\
     \end{longtable}
 
@@ -274,7 +279,7 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \endlastfoot
     
     \midrule
-    Descripción & Esta clase configura y gestiona las rutas relacionadas con las pujas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    Descripción & Este componente configura y gestiona las rutas relacionadas con las pujas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
     \midrule
     Atributos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{bidRouter}: Router, instancia del enrutador de Express para las pujas.
@@ -292,10 +297,13 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
       \item \textbf{BidController}: Importa y utiliza métodos del controlador de pujas.
     \end{itemize} \\
     \midrule
-    Interfaces requeridas &  \\
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User Authentication}: Middleware para la autenticación de usuarios.
+      \item \textbf{Bid MGMT.}: Utiliza los métodos definidos en el controlador de pujas, \textit{BidController}.
+    \end{itemize} \\
     \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{User Authentication}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+      \item \textbf{Bid Router}: Proporciona las rutas para la gestión de pujas.
     \end{itemize} \\
     \end{longtable}
 
@@ -326,30 +334,24 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \endlastfoot
     
     \midrule
-    Descripción & Esta clase configura y gestiona las rutas relacionadas con los sobres de cartas en la aplicación Express. Incluye la autenticación mediante middleware. \\
-    \midrule
-    Atributos & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{cardPackRouter}: Router, instancia del enrutador de Express para los sobres de cartas.
-    \end{itemize} \\
+    Descripción & Este componente configura y gestiona las rutas relacionadas con los sobres de cartas en la aplicación Express. Incluye la autenticación mediante middleware. \\
     \midrule
     Métodos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{getCardPacks(req: Request, res: Response)}: void, maneja la obtención de todos los sobres de cartas.
     \end{itemize} \\
     \midrule
-    Relaciones & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
-      \item \textbf{CardPackController}: Importa y utiliza el método del controlador de sobres de cartas.
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User Authentication}: Middleware para la autenticación de usuarios.
+      \item \textbf{CardPack MGMT.}: Utiliza los métodos definidos en el controlador de sobres de cartas, \textit{CardPackController}.
     \end{itemize} \\
     \midrule
-    Interfaces requeridas &  \\
-    \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{User Authentication}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+      \item \textbf{CardPack Router}: Proporciona las rutas para la gestión de sobres de cartas.
     \end{itemize} \\
     \end{longtable}
 
 
-\subsubsubsection{Descripción del componente:  CardRouter} \label{sec:descripcion_cardrouter}
+%--- CARDROUTER ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
@@ -378,27 +380,21 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \midrule
     Descripción & Esta clase configura y gestiona las rutas relacionadas con las cartas en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
     \midrule
-    Atributos & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{cardRouter}: Router, instancia del enrutador de Express para las cartas.
-    \end{itemize} \\
-    \midrule
     Métodos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{getCard(req: Request, res: Response)}: void, maneja la obtención de una carta por su ID.
     \end{itemize} \\
     \midrule
-    Relaciones & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
-      \item \textbf{CardController}: Importa y utiliza el método del controlador de cartas.
+    Interfaces requeridas  & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User Authentication}: Middleware para la autenticación de usuarios.
+      \item \textbf{Card MGMT.}: Utiliza los métodos definidos en el controlador de cartas, \textit{CardController}.
     \end{itemize} \\
     \midrule
-    Interfaces requeridas &  \\
-    \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{User Authentication}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+        \item \textbf{Card Router}: Proporciona las rutas para la gestión de cartas.
     \end{itemize} \\
     \end{longtable}
 
-\subsubsubsection{Descripción del componente:  NotificationRouter} \label{sec:descripcion_notificationrouter}
+% --- NOTIFICATIONROUTER ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
@@ -425,7 +421,7 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \endlastfoot
     
     \midrule
-    Descripción & Esta clase configura y gestiona las rutas relacionadas con las notificaciones en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
+    Descripción & Este componente configura y gestiona las rutas relacionadas con las notificaciones en la aplicación Express. Incluye la autenticación mediante middleware y validaciones para las peticiones. \\
     \midrule
     Atributos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{notificationRouter}: Router, instancia del enrutador de Express para las notificaciones.
@@ -438,19 +434,17 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
       \item \textbf{hasUnreadNotifications(req: Request, res: Response)}: void, verifica si un usuario tiene notificaciones no leídas.
     \end{itemize} \\
     \midrule
-    Relaciones & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{AuthMiddleware}: Middleware para la autenticación de usuarios.
-      \item \textbf{NotificationController}: Importa y utiliza métodos del controlador de notificaciones.
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User Authentication}: Middleware para la autenticación de usuarios.
+      \item \textbf{Notification MGMT.}: Utiliza los métodos definidos en el controlador de notificaciones, \textit{NotificationController}.
     \end{itemize} \\
     \midrule
-    Interfaces requeridas &  \\
-    \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{User Authentication}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+        \item \textbf{Notification Router}: Proporciona las rutas para la gestión de notificaciones.
     \end{itemize} \\
     \end{longtable}
 
-    \subsubsubsection{Descripción del componente:  PaypalRouter} \label{sec:descripcion_paypalrouter}
+%--- PAYPALROUTER ---
 \begin{longtable}{
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
@@ -477,27 +471,20 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \endlastfoot
     
     \midrule
-    Descripción & Esta clase configura y gestiona las rutas relacionadas con las órdenes de PayPal en la aplicación Express. Incluye validaciones para las peticiones y manejo de errores. \\
-    \midrule
-    Atributos & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{paypalRouter}: Router, instancia del enrutador de Express para las órdenes de PayPal.
-    \end{itemize} \\
+    Descripción & Este componente configura y gestiona las rutas relacionadas con las órdenes de PayPal en la aplicación Express. Incluye validaciones para las peticiones y manejo de errores. \\
     \midrule
     Métodos & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{createOrder(req: Request, res: Response)}: void, maneja la creación de una nueva orden de PayPal.
       \item \textbf{updateOrder(req: Request, res: Response)}: void, maneja la actualización del saldo de un usuario después de completar un pago.
     \end{itemize} \\
     \midrule
-    Relaciones & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{PaypalController}: Importa y utiliza el método del controlador de PayPal para crear órdenes.
-      \item \textbf{User}: Importa y utiliza el modelo de usuario para actualizar el saldo.
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Paypal MGMT.}: Utiliza los métodos definidos en el controlador de PayPal, \textit{PaypalController}.
     \end{itemize} \\
     \midrule
-    Interfaces requeridas &  \\
-    \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{User Authentication}: Proporciona middleware para la autenticación de usuarios, verificando la validez del token JWT y, ofreciendo la posibilidad de verificar roles de administrador.
+      \item \textbf{Paypal Router}: Proporciona las rutas para la gestión de órdenes de PayPal.
     \end{itemize} \\
     \end{longtable}
 
-
+%------------------------- PAQUETE CONTROLLERS -------------------------
