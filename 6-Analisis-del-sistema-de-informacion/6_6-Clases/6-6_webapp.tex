@@ -1,0 +1,77 @@
+\subsubsubsection{Descripción de los Componentes del Subsistema webapp}
+En este apartado se describirá la funcionalidad de los componentes del subsistema webapp. 
+\begin{itemize}
+    \item \textbf{Index}: Es el punto de entrada de la aplicación. Este componente se encarga del renderizado del componente \textit{App}.
+    \item \textbf{App}: es el componente principal de la aplicación. Este componente define el diagrama de navegabilidad de la aplicación y se encarga de renderizar los componentes de la aplicación en función de la ruta actual. 
+    Se relaciona, por lo tanto, con el paquete \textit{pages} y con el componente \textit{Theme} para definir el tema de la aplicación.
+    \item \textbf{Theme}: es el componente que define el tema de la aplicación. Este componente se encarga de definir los colores y tipografías de la aplicación.
+    \item \textbf{API}: es el componente que se encarga de realizar las peticiones a la API. Este componente se relaciona con el paquete \textit{shared} para definir los tipos de datos compartidos entre las distintas partes de la aplicación.
+    \item \textbf{Redux}: es el componente que se encarga de gestionar el estado de la aplicación. Gestiona los siguientes estados:
+    \begin{itemize}
+        \item \textbf{user}: contiene la información del usuario autenticado.
+        \item \textbf{notification}: estado para gestionar las visualizaciones de las notificaciones en tiempo real.
+        \item \textbf{update}: estado para gestionar las actualizaciones de los datos de la aplicación.
+    \end{itemize}
+    \item \textbf{Socket}: es el componente que se encarga de gestionar la conexión con Socket.io. Concretamente se utiliza para que los usuarios puedan recibir notificaciones en tiempo real.
+    \item \textbf{Shared}: es el componente que se encarga de definir los tipos de datos compartidos entre las distintas partes de la aplicación.
+    \item \textbf{Utils}: es el componente que se encarga de definir utilidades de la aplicación. Contiene las siguientes utilidades:
+    \begin{itemize}
+        \item \textbf{cardData}: Colección de cartas de ejemplo para la aplicación. Se utiliza en un componente de la aplicación para mostrar cartas de ejemplo.
+        \item \textbf{fieldsValidation}: utilidad para validar los campos de un formulario.
+        \item \textbf{PrivateRoute}: componente que implementa una ruta privada de la aplicación. Verifica que un usuario esté autenticado antes de renderizar un componente.
+        \item \textbf{RouteRedirector}: componente que implementa un redireccionador de rutas de la aplicación. Redirige a la ruta solicitada si el usuario cumple con el rol requerido, en caso contrario redirige a la ruta por defecto.
+        \item \textbf{utils}: funciones de utilidad para la aplicación, como conversión de fechas y generación de mensajes.
+    \end{itemize}
+    \item \textbf{views}: contiene los componentes que implementan las vistas de la aplicación, y se divide en los siguientes subpaquetes:
+    \begin{itemize}
+        \item \textbf{components}: contiene los archivos que implementan los componentes de la aplicación. 
+        Estos se usan para definir componentes más complejos que se reutilizan en distintas partes de la aplicación.
+        \begin{itemize}
+            \item \textbf{Button}: componente que implementa un botón de la aplicación. En este componente se definen los distintos tipos de botones que se utilizan en la aplicación.
+            \item \textbf{Calendar}: componente que implementa un calendario de la aplicación.
+            \item \textbf{Card}: componente que implementa una carta de la aplicación. 
+            \item \textbf{CardDetail}: componente que implementa el modelo base de un detalle de carta.
+            \item \textbf{Cardpack}: componente que implementa un sobre de cartas de la aplicación.
+            \item \textbf{Container}: componente que implementa distintos tipos de contenedores de la aplicación.
+            \item \textbf{Form}: componente que define los formularios de la aplicación.
+            \item \textbf{Footer}: componente que implementa el pie de página de la aplicación.
+            \item \textbf{Header}: componente que implementa la cabecera de la aplicación.
+            \item \textbf{LogoBox}: componente que implementa el logotipo de la aplicación.
+            \item \textbf{Menu}: componente que implementa los distintos menús de la aplicación.
+            \item \textbf{Messages}: componente que implementa los distintos mensajes informativos de la aplicación.
+            \item \textbf{Ornament}: componente que implementa distintos adornos de la aplicación.
+            \item \textbf{Paper}: componente que implementa un contenedor con sombra, se utiliza para mostrar información en la aplicación.
+            \item \textbf{Switch}: componente que implementa un interruptor de la aplicación. Concretamente, se utiliza para cambiar entre los modos claro y oscuro de la temática de la aplicación.
+            \item \textbf{Table}: componente que implementa una tabla de la aplicación.
+        \end{itemize}
+        \item \textbf{pages}: contiene los archivos que implementan las páginas de la aplicación.
+        \begin{itemize}
+            \item \textbf{BasePage}: página que implementa la estructura base de una página de la aplicación.
+            \item \textbf{BasePageWithNav}: página que implementa la estructura base de una página de la aplicación con navegación.
+            \item \textbf{NotFoundPage}: página que implementa la página de error 404.
+            \item En el paquete \textit{guest} se encuentran las páginas que puede ver cualquier usuario:
+            \begin{itemize}
+                \item \textbf{Home}: página principal de la aplicación.
+                \item \textbf{Login}: página de inicio de sesión.
+                \item \textbf{SignUp}: página de registro de usuario.
+                \item \textbf{About}: página de información sobre la aplicación.
+            \end{itemize}
+             \item En el paquete \textit{admin} se encuentran las páginas que puede ver un usuario con rol de administrador:
+            \begin{itemize}
+                \item \textbf{AdminPage}: página de administración de la aplicación.
+                \item \textbf{AdminTransactions}: página de administración de usuarios.
+                \item \textbf{AdminAuctionDetail}: página de administración de transacciones.
+                \item \textbf{AuctionsAdmin}: página de administración de subastas.
+            \end{itemize}
+            \item En el paquete \textit{standard} se encuentran las páginas que puede ver un usuario autenticado con rol de usuario no administrador:
+            \begin{itemize}
+                \item \textbf{Logueado}: página de inicio del usuario autenticado.
+                \item \textbf{EditProfile}: página de perfil del usuario autenticado.
+                \item \textbf{CardDetail}: página de detalle de carta.
+                \item \textbf{Shop}: página de tienda, en ella el usuario puede adquirir sobres de cartas.
+                \item \textbf{Auctions}: página de subastas, en ella el usuario puede participar en subastas.
+                \item \textbf{Transactions}: página de transacciones, en ella el usuario puede consultar las subastas realizadas.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
