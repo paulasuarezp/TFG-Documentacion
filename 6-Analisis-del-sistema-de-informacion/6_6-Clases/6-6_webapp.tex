@@ -44,7 +44,8 @@ En este apartado se describirá la funcionalidad de los componentes del subsiste
             \item \textbf{Switch}: componente que implementa un interruptor de la aplicación. Concretamente, se utiliza para cambiar entre los modos claro y oscuro de la temática de la aplicación.
             \item \textbf{Table}: componente que implementa una tabla de la aplicación.
         \end{itemize}
-        \item \textbf{pages}: contiene los archivos que implementan las páginas de la aplicación.
+        \item \textbf{pages}: contiene los archivos que implementan las páginas de la aplicación. Las páginas definen la estructura de las distintas vistas de la aplicación.
+        Estas se crean utilizando los componentes definidos en el paquete \textit{components} junto con otros componentes de React.
         \begin{itemize}
             \item \textbf{BasePage}: página que implementa la estructura base de una página de la aplicación.
             \item \textbf{BasePageWithNav}: página que implementa la estructura base de una página de la aplicación con navegación.
@@ -68,10 +69,20 @@ En este apartado se describirá la funcionalidad de los componentes del subsiste
                 \item \textbf{Logueado}: página de inicio del usuario autenticado.
                 \item \textbf{EditProfile}: página de perfil del usuario autenticado.
                 \item \textbf{CardDetail}: página de detalle de carta.
+                \item \textbf{AuctionCardDetail}: página que muestra el detalle de una carta en subasta.
+                \item \textbf{BidCardDetail}: página que muestra el detalle de una puja realizada a una determinada carta.
                 \item \textbf{Shop}: página de tienda, en ella el usuario puede adquirir sobres de cartas.
-                \item \textbf{Auctions}: página de subastas, en ella el usuario puede participar en subastas.
-                \item \textbf{Transactions}: página de transacciones, en ella el usuario puede consultar las subastas realizadas.
+                \item \textbf{ActiveAuctions}: página de subastas, en ella el usuario puede participar en subastas.
+                \item \textbf{UserTransactions}: página de transacciones, en ella el usuario puede consultar las subastas realizadas.
+                \item \textbf{InBox}: página de notificaciones, en ella el usuario puede consultar las notificaciones recibidas.
+                \item \textbf{MyCollection}: página de colección, en ella el usuario puede consultar las cartas que posee.
+                \item \textbf{RechargeBalance}: página de recarga de saldo, en ella el usuario puede recargar su saldo. Se comunica por HTTPS con la pasarela de pago, en este caso con la API de PayPal.
             \end{itemize}
         \end{itemize}
     \end{itemize}
 \end{itemize}
+
+% Nota adicional sobre los componentes
+\bigskip
+\textbf{Nota:} En el diagrama de componentes, una caja no necesariamente representa un único componente; puede representar múltiples componentes. 
+Por ejemplo, en el caso del componente \textit{Button}, en la práctica se han implementado varios componentes que representan distintos tipos de botones de la aplicación.
