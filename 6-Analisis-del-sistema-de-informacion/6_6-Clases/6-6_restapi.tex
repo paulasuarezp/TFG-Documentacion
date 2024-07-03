@@ -1007,6 +1007,369 @@ En la práctica, cada componente del paquete \textit{controllers} se puede comun
     \end{longtable}
 
 
-
-
 %------------------------- PAQUETE MODELS -------------------------
+\subsubsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{models}}
+Los componentes del paquete \textit{models} definen los esquemas de datos utilizados para almacenar la información en la base de datos MongoDB. 
+Cada componente del paquete \textit{models} se corresponde con una colección de la base de datos, salvo el componente \textit{utils}, que encapsula funciones auxiliares para la definición de esquemas.
+
+%--- AUCTION ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Auction} \label{table:descripcion_auction} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTION}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Auction -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTION}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las subastas en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de las subastas, incluyendo la tarjeta en subasta, el vendedor, el precio inicial, el estado de la subasta y las pujas asociadas. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{AuctionStatus} para definir los posibles estados de una subasta.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Auction}: Proporciona el modelo de datos para gestionar las subastas.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- BID ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Bid} \label{table:descripcion_bid} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BID}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Bid -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BID}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las pujas en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de las pujas, incluyendo la subasta, el usuario que realiza la puja, la carta en puja y el estado de la puja. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{BidStatus} para definir los posibles estados de una puja.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Bid}: Proporciona el modelo de datos para gestionar las pujas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- CARD ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Card} \label{table:descripcion_card} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARD}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Card -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARD}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las cartas en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de las cartas de Pokémon, incluyendo sus atributos, tipo, rareza y estadísticas. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza los enums \textit{CardRarity}, \textit{PokemonGym} y \textit{PokemonType} para definir las características de las cartas.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card}: Proporciona el modelo de datos para gestionar las cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- CARDPACK ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: CardPack} \label{table:descripcion_card} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACK}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: CardPack -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACK}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para los sobres cartas en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de los sobres de cartas, incluyendo el nombre, precio y el tipo de cartas que contiene. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas &  \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{CardPack}: Proporciona el modelo de datos para gestionar los sobres de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- DECK ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Deck} \label{table:descripcion_deck} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{DECK}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Deck -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{DECK}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para los mazos en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de los mazos de cartas, incluyendo su ID, nombre, tipo, fecha de publicación y las cartas que contiene. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{CardRarity} para definir el tipo de mazo.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Deck}: Proporciona el modelo de datos para gestionar los mazos.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- NOTIFICATION ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Notification} \label{table:descripcion_notification} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATION}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Notification -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATION}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las notificaciones en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar las notificaciones, incluyendo el usuario asociado, el tipo de notificación, el mensaje, la importancia y si es en tiempo real. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza los enums \textit{NotificationType} y \textit{NotificationImportance} para definir las características de las notificaciones.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Notification}: Proporciona el modelo de datos para gestionar las notificaciones.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- TRANSACTION ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Transaction} \label{table:descripcion_transaction} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{TRANSACTION}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Transaction -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{TRANSACTION}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las transacciones en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar las transacciones realizadas por los usuarios, incluyendo la compra y venta de cartas, las subastas y las pujas. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{TransactionConcept} para definir los conceptos de las transacciones.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Transaction}: Proporciona el modelo de datos para gestionar las transacciones.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- USER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: User} \label{table:descripcion_user} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: User -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para los usuarios en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de los usuarios, incluyendo nombre de usuario, contraseña, imagen de perfil, fecha de nacimiento, saldo y rol de usuario. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Mongoose}: Utiliza la biblioteca \textit{Mongoose} para la definición del esquema y el modelo.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User}: Proporciona el modelo de datos para gestionar los usuarios.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- USERCARD ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: UserCard} \label{table:descripcion_usercard} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCARD}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: UserCard -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCARD}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente define el esquema y el modelo de datos para las cartas de usuario en la aplicación utilizando Mongoose. Proporciona una estructura para almacenar y gestionar la información de las cartas que pertenecen a los usuarios, incluyendo la referencia a la carta, el usuario propietario, el estado de la carta y el historial de transacciones. \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{CardStatus} para definir los posibles estados de una carta de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{UserCard}: Proporciona el modelo de datos para gestionar las cartas de usuario.
+    \end{itemize} \\
+    \end{longtable}
