@@ -42,7 +42,7 @@ se ha creado una tabla con su descripción detallada, explicando su función esp
     \midrule
     Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{App}: Usa el componente App, que configura las rutas de la API REST.
-      \item \textbf{AuthSocket}: Usa el middleware de autenticación de sockets.
+      \item \textbf{Socket Authentication}: Usa el middleware de autenticación de sockets.
       \item \textbf{HTTP/HTTPS}: Para la conexión a los servidores HTTP y HTTPS.
     \end{itemize} \\
     \midrule
@@ -813,6 +813,7 @@ En la práctica, cada componente del paquete \textit{controllers} se puede comun
     \end{itemize} \\
     \midrule
     Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{PayPal API}: Utiliza la API de PayPal para la integración de pagos.
       \item \textbf{User}: Utiliza el modelo de datos de usuario para la actualización del saldo.
     \end{itemize} \\
     \midrule
@@ -995,9 +996,6 @@ En la práctica, cada componente del paquete \textit{controllers} se puede comun
     \end{itemize} \\
     \midrule
     Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{bcrypt}: Utiliza la biblioteca \textit{bcrypt} para hashing de contraseñas.
-      \item \textbf{jsonwebtoken}: Utiliza la biblioteca \textit{jsonwebtoken} para la creación de tokens JWT.
-      \item \textbf{yup}: Utiliza la biblioteca \textit{yup} para validaciones de esquema.
       \item \textbf{User}: Utiliza el modelo de datos de usuario.
     \end{itemize} \\
     \midrule
@@ -1138,7 +1136,7 @@ Cada componente del paquete \textit{models} se corresponde con una colección de
     >{\columncolor{lightgreen!20}}p{4cm}
     p{12cm}
     }
-    \caption{Descripción del componente: CardPack} \label{table:descripcion_card} \\
+    \caption{Descripción del componente: CardPack} \label{table:descripcion_cardpack} \\
     \toprule
     \rowcolor{darkgreen!50}
     \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACK}} \\
@@ -1324,9 +1322,7 @@ Cada componente del paquete \textit{models} se corresponde con una colección de
     \midrule
     Métodos & \\
     \midrule
-    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
-      \item \textbf{Mongoose}: Utiliza la biblioteca \textit{Mongoose} para la definición del esquema y el modelo.
-    \end{itemize} \\
+    Interfaces requeridas & \\
     \midrule
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{User}: Proporciona el modelo de datos para gestionar los usuarios.
@@ -1372,4 +1368,274 @@ Cada componente del paquete \textit{models} se corresponde con una colección de
     Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
       \item \textbf{UserCard}: Proporciona el modelo de datos para gestionar las cartas de usuario.
     \end{itemize} \\
+    \end{longtable}
+
+%--- UTILS ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: Modelos} \label{table:descripcion_modelos} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{MODELOS}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: Modelos -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{MODELOS}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente contiene las enumeraciones, validaciones y líderes de gimnasio utilizados en la aplicación. Está compuesto por tres archivos: \textit{Enums.ts}, \textit{validations.ts} y \textit{gymLeaders.ts}. 
+    \begin{itemize}[nosep,leftmargin=*]
+        \item \textbf{Enums.ts}: Contiene las enumeraciones para los diferentes tipos de Pokémon, gimnasios, rarezas de cartas y estados de las cartas.
+        \item \textbf{validations.ts}: Define las validaciones para los datos de usuario utilizando la biblioteca Yup, incluyendo restricciones para nombres de usuario, contraseñas y fechas de nacimiento.
+        \item \textbf{gymLeaders.ts}: Proporciona un mapa que asocia nombres de gimnasios con los líderes de Pokémon y una función para encontrar el gimnasio de un Pokémon si es un líder de gimnasio.
+    \end{itemize} \\
+    \midrule
+    Métodos & \\
+    \midrule
+    Interfaces requeridas & \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Proporciona las enumeraciones, validaciones y la lógica para obtener los líderes de gimnasio utilizados en las cartas de la aplicación.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%------------------------- PAQUETE SCRIPTS -------------------------
+\subsubsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{scripts}}
+Los componentes del paquete \textit{scripts} son archivos ejecutables que contienen funciones auxiliares para la inicialización de la base de datos y la carga de datos de prueba.
+
+
+%--- FETCHDECKDATA ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: FetchDeckData} \label{table:descripcion_fetchdeckdata} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{FETCHDECKDATA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: FetchDeckData -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{FETCHDECKDATA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente se encarga de recuperar y almacenar datos de mazos en un archivo CSV. Utiliza la biblioteca \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{decks_data.csv}. 
+    \\
+    \midrule
+    Métodos &
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{fetchAndStoreDecks()}: Promise\<void\>, genera un mazo de cartas por cada rareza y lo almacena en un archivo CSV.
+    \end{itemize} \\
+    \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Utils}: Utiliza el enum \textit{CardRarity}, que define la rareza de las cartas.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \\
+    \end{longtable}
+
+
+%--- LOADDECKDATA ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: loadDecks} \label{table:descripcion_loaddecks} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADDECKS}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: loadDecks -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADDECKS}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente se encarga de cargar datos de mazos desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} y \textit{mongoose} para leer el archivo y realizar operaciones en la base de datos.
+    \\
+    \midrule
+    Métodos &
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{connectToMongoDB()}: Promise\<void\>, conecta con la base de datos MongoDB utilizando la URI especificada en las variables de entorno.
+      \item \textbf{loadCSVData(filePath: string)}: Promise\<void\>, lee los datos del archivo CSV especificado, los procesa y los almacena en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card}: Modelo utilizado para gestionar las cartas en la base de datos.
+      \item \textbf{Deck}: Modelo utilizado para gestionar los mazos en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \\
+    \end{longtable}
+
+%--- FETCHPOKEMONDATA ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: FetchPokemonData} \label{table:descripcion_fetchpokemondata} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{FETCHPOKEMONDATA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: FetchPokemonData -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{FETCHPOKEMONDATA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente se encarga de recuperar y almacenar datos de Pokémon en un archivo CSV. Utiliza la biblioteca \textit{axios} para realizar solicitudes a la API de PokeAPI y \textit{csv-writer} para crear y escribir registros en un archivo llamado \textit{cards_data.csv}.
+    \\
+    \midrule
+    Métodos &
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{fetchAndStorePokemon()}: Promise\<void\>, recupera datos de Pokémon desde la PokeAPI y los almacena en un archivo CSV.
+      \item \textbf{getPokemonRarity(n_encounters: number, n_location_area: number, averageMaxChance: number, is_legendary: boolean, is_mythical: boolean)}: string, determina la rareza de un Pokémon basado en diversos factores.
+      \item \textbf{calculatePokemonRarity(n_encounters: number, n_location_area: number, averageMaxChance: number)}: string, calcula la rareza de un Pokémon utilizando criterios arbitrarios.
+      \item \textbf{getCardRarity()}: CardRarity, genera aleatoriamente la rareza de una carta.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{PokéAPI}: Utiliza la API de PokéAPI para obtener datos de Pokémon.
+      \item \textbf{Utils}: Proporciona la función \textit{findGymByPokemon} para encontrar el gimnasio asociado a un Pokémon y las enumeraciones \textit{PokemonGym}, \textit{PokemonType}, \textit{PokemonRarity} y \textit{CardRarity}.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \\
+    \end{longtable}
+
+%--- LOADPOKEMONDATA ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: LoadPokemonData} \label{table:descripcion_loadpokemondata} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADPOKEMONDATA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: LoadPokemonData -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADPOKEMONDATA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente se encarga de cargar datos de Pokémon desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB.
+    \\
+    \midrule
+    Métodos &
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{connectToMongoDB()}: Promise\<boolean\>, establece una conexión con la base de datos MongoDB.
+      \item \textbf{loadCSVData(filePath: string)}: Promise\<void\>, carga datos desde un archivo CSV y los inserta en la base de datos MongoDB.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card}: Modelo de datos para las cartas de Pokémon.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \\
+    \end{longtable}
+
+
+%--- LOADCARDPACKDATA ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: LoadCardPacksData} \label{table:descripcion_loadcardpacksdata} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADCARDPACKSDATA}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: LoadCardPacksData -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{LOADCARDPACKSDATA}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente se encarga de cargar datos de paquetes de cartas desde un archivo CSV en la base de datos MongoDB. Utiliza las bibliotecas \textit{csv-parser} para leer el archivo CSV y \textit{mongoose} para interactuar con MongoDB.
+    \\
+    \midrule
+    Métodos &
+    \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{connectToMongoDB()}: Promise\<boolean\>, establece una conexión con la base de datos MongoDB.
+      \item \textbf{loadCSVData(filePath: string)}: Promise\<void\>, carga datos desde un archivo CSV y los inserta en la base de datos MongoDB.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{CardPack}: Modelo de datos para los paquetes de cartas.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \\
     \end{longtable}
