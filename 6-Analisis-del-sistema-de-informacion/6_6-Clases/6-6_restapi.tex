@@ -488,3 +488,525 @@ Se ha decidido simplificar la representación para facilitar la comprensión del
     \end{longtable}
 
 %------------------------- PAQUETE CONTROLLERS -------------------------
+\subsubsubsection{Descripción de componentes del subsistema restapi. Paquete \textit{controllers}}
+En el diagrama se muestra una relación de dependencia entre los componentes del paquete \textit{controllers} y los componentes del paquete \textit{models}.
+En la práctica, cada componente del paquete \textit{controllers} se puede comunicar con cualquier componente del paquete \textit{models} para realizar operaciones de lectura y escritura en la base de datos.
+
+%--- AUCTIONCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: AuctionController} \label{table:descripcion_auctioncontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTIONCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: AuctionController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{AUCTIONCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las subastas en la aplicación Express, incluyendo la recuperación, creación y actualización de subastas, así como la gestión de pujas y la transferencia de cartas. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getAuctions(req: Request, res: Response)}: void, recupera todas las subastas activas disponibles en la base de datos.
+      \item \textbf{getAuction(req: Request, res: Response)}: void, recupera una subasta específica por su ID.
+      \item \textbf{getActiveAuctions(req: Request, res: Response)}: void, recupera todas las subastas activas, excluyendo las del usuario actual.
+      \item \textbf{getActiveAuctionsByUser(req: Request, res: Response)}: void, recupera todas las subastas activas asociadas a un usuario específico.
+      \item \textbf{putUserCardUpForAuction(req: Request, res: Response)}: void, pone una carta en subasta, realizando una serie de validaciones y creando registros asociados.
+      \item \textbf{withdrawnUserCardFromAuction(req: Request, res: Response)}: void, retira una carta de la subasta, actualizando su estado y cancelando la subasta.
+      \item \textbf{checkAllActiveAuctions(req: Request, res: Response)}: void, verifica todas las subastas activas y cierra aquellas que han finalizado, determinando los ganadores.
+      \item \textbf{checkWinnerBid(auction: IAuction, session: any)}: Promise, verifica el ganador de una subasta y procesa la transferencia de la carta al mismo.
+      \item \textbf{transferCard(auction: IAuction, bid: IBid, session: any)}: Promise, transfiere una carta de un usuario vendedor a un usuario comprador, registrando las transacciones de venta y compra.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Auction}: Utiliza el modelo de datos de subasta.
+      \item \textbf{Bid}: Utiliza el modelo de datos de puja.
+      \item \textbf{Notification}: Utiliza el modelo de datos de notificación.
+      \item \textbf{Transaction}: Utiliza el modelo de datos de transacción.
+      \item \textbf{User}: Utiliza el modelo de datos de usuario.
+      \item \textbf{UserCard}: Utiliza el modelo de datos de cartas de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Auction Controller}: Proporciona las funcionalidades de gestión de subastas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- BIDCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: BidController} \label{table:descripcion_bidcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BIDCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: BidController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{BIDCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las pujas en subastas de la aplicación Express, incluyendo la creación, recuperación y retirada de pujas. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{createBid(req: Request, res: Response)}: void, realiza una puja por una carta en una subasta.
+      \item \textbf{getActiveBidsByUser(req: Request, res: Response)}: void, obtiene todas las pujas activas realizadas por un usuario específico.
+      \item \textbf{withdrawBid(req: Request, res: Response)}: void, retira una puja realizada por un usuario en una subasta específica.
+      \item \textbf{getBidById(req: Request, res: Response)}: void, recupera una puja específica por su identificador.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Auction}: Utiliza el modelo de datos de subasta.
+      \item \textbf{Bid}: Utiliza el modelo de datos de puja.
+      \item \textbf{Transaction}: Utiliza el modelo de datos de transacción.
+      \item \textbf{User}: Utiliza el modelo de datos de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Bid Controller}: Proporciona las funcionalidades de gestión de pujas.
+    \end{itemize} \\
+\end{longtable}
+
+%--- CARDPACKCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: CardController} \label{table:descripcion_cardcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: CardController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las cartas en la aplicación Express, incluyendo la obtención de cartas por ID. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getCard(req: Request, res: Response)}: void, obtiene una carta por su ID.
+      \item \textbf{getCardById(id: any, session: ClientSession)}: Promise<ICard | null>, obtiene una carta por su ID de tipo \textit{mongoose.Types.ObjectId} en una sesión de base de datos.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card}: Utiliza el modelo de datos de carta.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card Controller}: Proporciona las funcionalidades de gestión de cartas.
+    \end{itemize} \\
+\end{longtable}
+
+
+
+
+%--- CARDPACKCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: CardPackController} \label{table:descripcion_cardpackcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACKCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: CardPackController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{CARDPACKCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con los sobres de cartas en la aplicación Express, incluyendo la obtención de todos los sobres de cartas disponibles. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getCardPacks(req: Request, res: Response)}: void, obtiene todos los sobres de cartas registrados en la base de datos.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{CardPack}: Utiliza el modelo de datos de sobres de cartas.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{CardPackController}: Proporciona las funcionalidades de gestión de sobres de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- DECKCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: DeckController} \label{table:descripcion_deckcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{DECKCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: DeckController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{DECKCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con los mazos de cartas en la aplicación Express, incluyendo la obtención de todos los mazos disponibles y la recuperación de un mazo específico por su ID. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getDecks(req: Request, res: Response)}: void, obtiene todos los mazos de cartas registrados en la base de datos.
+      \item \textbf{getDeck(req: Request, res: Response)}: void, obtiene un mazo de cartas por su ID.
+      \item \textbf{getDeckByDeckId(deckId: string, session: ClientSession)}: Promise<IDeck | null>, obtiene las cartas de un mazo por su ID en una sesión de base de datos.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Deck}: Utiliza el modelo de datos de mazo de cartas.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Deck Controller}: Proporciona las funcionalidades de gestión de mazos de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- NOTIFICATIONCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: NotificationController} \label{table:descripcion_notificationcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATIONCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: NotificationController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{NOTIFICATIONCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las notificaciones en la aplicación Express, incluyendo la recuperación de notificaciones, el marcado como leídas y el envío de notificaciones en tiempo real. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getNotifications(req: Request, res: Response)}: void, recupera el histórico de notificaciones de un usuario específico.
+      \item \textbf{markAsRead(req: Request, res: Response)}: void, marca una notificación específica como leída.
+      \item \textbf{markAllAsRead(req: Request, res: Response)}: void, marca todas las notificaciones de un usuario como leídas.
+      \item \textbf{hasUnreadNotifications(req: Request, res: Response)}: void, comprueba si el usuario tiene notificaciones sin leer.
+      \item \textbf{sendNotification(notification: INotification)}: void, envía una notificación a un usuario específico.
+      \item \textbf{sendRealTimeNotification(notification: INotification)}: void, envía una notificación en tiempo real.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Notification}: Utiliza el modelo de datos de notificación.
+      \item \textbf{User}: Utiliza el modelo de datos de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Notification Controller}: Proporciona las funcionalidades de gestión de notificaciones.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- PAYPALCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: PaypalController} \label{table:descripcion_paypalcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PAYPALCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: PaypalController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PAYPALCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con la integración de la API de PayPal en la aplicación Express, incluyendo la generación de tokens de acceso y la creación de órdenes de pago. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{generateAccessToken()}: Promise\<string\>, genera un token de acceso a la API de PayPal.
+      \item \textbf{handleResponse(response: any)}: Promise\<\{jsonResponse: any, httpStatusCode: number\}\>, maneja la respuesta de la API de PayPal.
+      \item \textbf{createOrder(username: string, balance: number, total: number)}: Promise\<\{jsonResponse: any, httpStatusCode: number\}\>, crea una orden de PayPal para recargar el saldo del usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{User}: Utiliza el modelo de datos de usuario para la actualización del saldo.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Paypal Controller}: Proporciona las funcionalidades de integración con PayPal.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- PURCHASECONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: PurchaseController} \label{table:descripcion_cardpackpurchasecontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PURCHASECONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: PurchaseController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{PURCHASECONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con la compra de paquetes de cartas en la aplicación Express, incluyendo la verificación de disponibilidad, generación de cartas y actualización del saldo del usuario. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{purchaseCardPack(req: Request, res: Response)}: Promise\<void\>, permite comprar un paquete de cartas.
+      \item \textbf{generateCards(deckId: string, quantity: number, session: ClientSession)}: Promise\<ICard[]\>, genera cartas aleatorias de un mazo.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Card}: Utiliza el modelo de datos de carta.
+      \item \textbf{CardPack}: Utiliza el modelo de datos de paquete de cartas.
+      \item \textbf{Deck}: Utiliza el modelo de datos de mazo de cartas.
+      \item \textbf{Transaction}: Utiliza el modelo de datos de transacción.
+      \item \textbf{User}: Utiliza el modelo de datos de usuario.
+      \item \textbf{UserCard}: Utiliza el modelo de datos de carta de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Purchase Controller}: Proporciona las funcionalidades de compra de paquetes de cartas.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- TRANSACTIONCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: TransactionController} \label{table:descripcion_transactioncontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{TRANSACTIONCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: TransactionController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{TRANSACTIONCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las transacciones en la aplicación Express, incluyendo la obtención de todas las transacciones, transacciones por nombre de usuario y transacciones por ID de carta de usuario. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getTransactions(req: Request, res: Response)}: Promise\<void\>, obtiene todas las transacciones registradas en la base de datos.
+      \item \textbf{getTransactionsByUsername(req: Request, res: Response)}: Promise\<void\>, obtiene todas las transacciones de un usuario por su nombre de usuario.
+      \item \textbf{getTransactionsByUserCardId(req: Request, res: Response)}: Promise\<void\>, obtiene todas las transacciones de cartas para el ID (ObjectId) de la carta de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Transaction}: Utiliza el modelo de datos de transacción.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{Transaction Controller}: Proporciona las funcionalidades de gestión de transacciones.
+    \end{itemize} \\
+    \end{longtable}
+
+%--- USERCARDCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: UserCardController} \label{table:descripcion_usercardcontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCARDCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: UserCardController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCARDCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con las cartas de usuario en la aplicación Express, incluyendo la obtención de todas las cartas de un usuario por su nombre de usuario y la obtención de una carta específica por su ID. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{getUserCards(req: Request, res: Response)}: Promise\<void\>, obtiene todas las cartas de un usuario por su nombre de usuario.
+      \item \textbf{getUserCard(req: Request, res: Response)}: Promise\<void\>, obtiene una carta de un usuario dado el ID de la carta.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{UserCard}: Utiliza el modelo de datos de carta de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{UserCardController}: Proporciona las funcionalidades de gestión de cartas de usuario.
+    \end{itemize} \\
+    \end{longtable}
+
+
+%--- USERCONTROLLER ---
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{12cm}
+    }
+    \caption{Descripción del componente: UserController} \label{table:descripcion_usercontroller} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCONTROLLER}} \\
+    \endfirsthead
+    
+    \multicolumn{2}{c}%
+    {{ \tablename\ \thetable{} Descripción del componente: UserController -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Componente} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{12cm}}{\textbf{USERCONTROLLER}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{2}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    Descripción & Este componente gestiona las operaciones relacionadas con los usuarios en la aplicación Express, incluyendo la creación, autenticación, y actualización de datos del usuario. \\
+    \midrule
+    Métodos & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{createUser(req: Request, res: Response)}: Promise\<void\>, permite crear un nuevo usuario.
+      \item \textbf{loginUser(req: Request, res: Response)}: Promise\<void\>, permite iniciar sesión a un usuario.
+      \item \textbf{getUser(req: Request, res: Response)}: Promise\<void\>, permite obtener un usuario por su nombre de usuario.
+      \item \textbf{updateUserAvatar(req: Request, res: Response)}: Promise\<void\>, permite actualizar la imagen de perfil de un usuario.
+      \item \textbf{updateUserPassword(req: Request, res: Response)}: Promise\<void\>, permite actualizar la contraseña de un usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces requeridas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{bcrypt}: Utiliza la biblioteca \textit{bcrypt} para hashing de contraseñas.
+      \item \textbf{jsonwebtoken}: Utiliza la biblioteca \textit{jsonwebtoken} para la creación de tokens JWT.
+      \item \textbf{yup}: Utiliza la biblioteca \textit{yup} para validaciones de esquema.
+      \item \textbf{User}: Utiliza el modelo de datos de usuario.
+    \end{itemize} \\
+    \midrule
+    Interfaces proporcionadas & \begin{itemize}[nosep,leftmargin=*]
+      \item \textbf{UserController}: Proporciona las funcionalidades de gestión de usuarios.
+    \end{itemize} \\
+    \end{longtable}
+
+
+
+
+%------------------------- PAQUETE MODELS -------------------------
