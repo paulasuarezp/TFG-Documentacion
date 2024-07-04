@@ -2,11 +2,8 @@
 Se realizarán cuatro tipos de pruebas para garantizar la calidad del sistema: pruebas unitarias, pruebas de integración, pruebas de usabilidad y pruebas de accesibilidad.
 \subsubsection{Pruebas Unitarias}
 Las pruebas unitarias se realizarán para comprobar que cada componente del sistema funciona correctamente de forma aislada.
-Para ello, se utilizará el framework de pruebas Jest tanto para el subsistema \textbf{restapi} como para el subsistema \textbf{webapp}.
-\begin{itemize}
-    \item \textbf{Pruebas Unitarias restapi}: Se realizarán pruebas unitarias para cada \textit{router} del subsistema \textbf{restapi}, de esta manera se comprueba que las rutas de la API REST funcionan correctamente.
-    \item \textbf{Pruebas Unitarias webapp}: Se realizarán pruebas unitarias para los componentes más imporantes del subsistema \textbf{webapp} para comprobar que se renderizan correctamente.
-\end{itemize}
+Se realizarán pruebas unitarias en el subsistema \textbf{restapi}, para comprobar que las rutas de la API REST funcionan correctamente, y en el subsistema \textbf{webapp}, para comprobar que los componentes de la interfaz de usuario se renderizan correctamente.
+Para ello, se utilizará el framework de pruebas Jest para ambos subsistemas.
 
 \subsubsection{Pruebas de Integración}
 Las pruebas de integración se realizarán para comprobar que los distintos componentes del sistema funcionan correctamente en conjunto.
@@ -20,7 +17,8 @@ Por cuestiones de tiempo, estas pruebas se realizarán con un grupo reducido de 
 
 \subsubsection{Pruebas de Accesibilidad}
 Las pruebas de accesibilidad se realizarán para comprobar que la aplicación es accesible para personas con discapacidades.
-Se utilizará la herramienta de evaluación de accesibilidad de Google Lighthouse y WAVE para comprobar que la aplicación cumple con los estándares de accesibilidad.
+Se utilizará la herramienta de evaluación de accesibilidad de Google Lighthouse y el plugin de Google Chrome 
+\coloredUnderline{\href{https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh}{WAVE Evaluation Tool}} para comprobar la accesibilidad de la aplicación.
 
 
 \subsubsection{Especificación técnica del Plan de Pruebas}
@@ -542,7 +540,15 @@ es decir, se ha iniciado sesión previamente con un usuario existente.
 \subsubsubsection{Pruebas Unitarias. Webapp}
 En el subsistema \textbf{webapp} se han realizado 5 pruebas unitarias automáticas, se han probado los componentes más importantes de la aplicación y todas han pasado con éxito.
 El resto de componentes se han probado de forma manual y se ha comprobado que su comportamiento es el esperado.
-
+Las pruebas unitarias automáticas que se han realizado son las siguientes:
+\begin{itemize}
+    \item \textbf{Página Home}.
+    \item \textbf{Página de Registro}.
+    \item \textbf{Página de Inicio de Sesión}.
+    \item \textbf{Página Acerca de}.
+    \item \textbf{Página de Bienvenida}. Página que se muestra al iniciar sesión.
+\end{itemize}
+En todas las pruebas se ha comprobado que los componentes de la aplicación funcionan correctamente, verificando que renderiza los elementos esperados.
 
 \subsubsection{Pruebas de Integración}
 Las pruebas de integración se han realizado con éxito, se han comprobado que los distintos componentes del sistema funcionan correctamente en conjunto.
@@ -576,9 +582,8 @@ Se ha realizado un cuestionario de usabilidad con distintas preguntas para evalu
 Estas preguntas pretenden evaluar la calidad del diseño de la interfaz, la facilidad de uso y la satisfacción del usuario.
 Este cuestionario se ha proporcionado a los usuarios para que lo completen después de realizar las tareas asignadas.
 En la tabla  \coloredUnderline{\hyperlink{table:cuestionario_usabilidad}{Tabla \ref*{table:cuestionario_usabilidad}. \nameref*{table:cuestionario_usabilidad}}} se muestra el cuestionario de usabilidad que se ha proporcionado a los usuarios.
-
-\begin{longtable}{ \hypertarget{table:cuestionario_usabilidad}{}
-    >{\columncolor{lightgreen!20}}p{4cm}
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{7cm}
     >{\centering\arraybackslash}p{1.3cm}
     >{\centering\arraybackslash}p{1.3cm}
     >{\centering\arraybackslash}p{1.3cm}
@@ -588,15 +593,14 @@ En la tabla  \coloredUnderline{\hyperlink{table:cuestionario_usabilidad}{Tabla \
     \caption{Cuestionario de usabilidad de la aplicación} \label{table:cuestionario_usabilidad} \\
     \toprule
     \rowcolor{darkgreen!50}
-    \textbf{Pregunta} & \multicolumn{4}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{1}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{2}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{3}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{4}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{5}} \\
+    \multicolumn{6}{|c|}{\textbf{Cuestionario de usabilidad de la aplicación}} \\
     \endfirsthead
     
     \multicolumn{6}{c}%
     {{ \tablename\ \thetable{} Cuestionario de usabilidad de la aplicación -- continuación de la página anterior}} \\
     \toprule
     \rowcolor{darkgreen!50}
-   \textbf{Pregunta} & \multicolumn{4}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{1}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{2}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{3}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{4}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{5}} \\
-    
+    \multicolumn{6}{|c|}{\textbf{Cuestionario de usabilidad de la aplicación}} \\
     \midrule
     \endhead
     
@@ -606,19 +610,333 @@ En la tabla  \coloredUnderline{\hyperlink{table:cuestionario_usabilidad}{Tabla \
     
     \bottomrule
     \endlastfoot
-    
     \midrule
-    \rowcolor{lightgray}
+    \rowcolor{darkgreen!50}
+    \multicolumn{6}{|c|}{Navegabilidad de la Aplicación} \\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Pregunta} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+    \midrule
+    Es fácil de navegar por la aplicación & & & & & \\
+     \midrule
+    Sabe cómo volver a la página principal & & & & & \\
+     \midrule
+    Encuentra fácilmente la información que busca & & & & & \\
+     \midrule
+    Sabe dónde está en la aplicación en todo momento & & & & & \\
+    \midrule
+
+    \rowcolor{darkgreen!50}
+    \multicolumn{6}{|c|}{Facilidad de Uso} \\
+     \midrule
+     \rowcolor{darkgreen!30}
+    \textbf{Pregunta} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+    \midrule
+    ¿Le resulta sencillo utilizar la aplicación? & & & & & \\
+    \midrule
+    ¿Le resulta fácil realizar las tareas asignadas? & & & & & \\
+    \midrule
+    ¿Le resulta fácil poner en subasta una carta? & & & & & \\
+    \midrule 
+    ¿Le resulta fácil comprar un paquete de cartas? & & & & & \\
+    \midrule
+    ¿Le resulta fácil consultar sus notificaciones? & & & & & \\
+    \midrule
+    ¿Le resulta fácil consultar sus susbastas activas? & & & & & \\
+    \midrule
+    ¿Le resulta fácil consultar sus pujas activas? & & & & & \\
+    \midrule
+
+
+    \rowcolor{darkgreen!50}
+    \multicolumn{6}{|c|}{Funcionalidad} \\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Pregunta} & \textbf{Sí} & \textbf{No} & \multicolumn{3}{c|}{\textbf{Comentarios}} \\
+    \midrule
+    ¿El comportamiento de los botones es el esperado? & & & \\
+    \midrule
+    ¿La aplicación responde de forma rápida? & & &  \\
+    \midrule
+    ¿Ha encontrado algún error en la aplicación? & & &  \\
+
+
+    \midrule
+    \rowcolor{darkgreen!50}
     \multicolumn{6}{|c|}{Calidad del Interfaz} \\
     \midrule
-    El tipo y tamaño de letra es & & & & & \\
+    ¿La aplicación muestra la información de forma clara y concisa? & & & & & \\
     \midrule
-    Los iconos e imágenes usados son & & & & & \\
+    ¿La aplicación muestra mensajes de error claros y útiles? & & & & & \\
     \midrule
-    Los colores empleados son & & & & & \\
+    ¿Le resulta útil la información proporcionada? & & & & & \\
     \midrule
-    La organización de los elementos es & & & & & \\
+    ¿Los colores empleados son agradables y fáciles de leer? & & & & & \\
     \midrule
-    Las estructuras de las tablas son & & & & & \\
+    ¿Los iconos utilizados son comprensibles y descriptivos? & & & & & \\
     \midrule
+    ¿La aplicación es visualmente atractiva? & & & & & \\
+    \midrule
+    ¿La estructura de la aplicación es clara y fácil de entender? & & & & & \\
+    \midrule
+
+    \rowcolor{darkgreen!50}
+    \multicolumn{6}{|c|}{Satisfacción del Usuario} \\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Pregunta} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+    \midrule
+    ¿Está satisfecho con la aplicación? & & & & & \\
+    \midrule
+    ¿Recomendaría la aplicación a otras personas? & & & & & \\
+    \midrule
+    ¿Volvería a utilizar la aplicación en el futuro? & & & & & \\
+    \midrule
+
+    \rowcolor{darkgreen!50}
+    \multicolumn{6}{|c|}{Comentarios Adicionales} \\
+    \midrule
+    \rowcolor{white}
+    & & & & & \\
+    \rowcolor{white}
+    & & & & & \\
+    \rowcolor{white}
+    & & & & & \\
+    \rowcolor{white}
+    & & & & & \\
+    \bottomrule
+
 \end{longtable}
+
+
+\subsubsubsection{Tareas asignadas a los usuarios}
+Se les ha asignado una serie de tareas a los usuarios para que realicen durante las pruebas de usabilidad.
+Estas tareas han sido diseñadas para evaluar la facilidad de uso y la eficacia de la aplicación.
+Están ordenadas de forma que los usuarios puedan completarlas de forma lógica y secuencial.
+
+\begin{itemize}
+    \item \textbf{Tarea 1}: Crear una cuenta de usuario.
+    \item \textbf{Tarea 2}: Iniciar sesión en la aplicación.
+    \item \textbf{Tarea 3}: Cambiar la imagen de perfil.
+    \item \textbf{Tarea 4}: Adquirir un sobre de cartas.
+    \item \textbf{Tarea 5}: Consultar colección de cartas.
+    \item \textbf{Tarea 6}: Poner en subasta una carta.
+    \item \textbf{Tarea 7}: Consultar subastas activas de todos los usuarios.
+    \item \textbf{Tarea 8}: Consultar sus propias subastas activas.
+    \item \textbf{Tarea 9}: Consultar sus propias pujas activas.
+    \item \textbf{Tarea 10}: Retirar una carta de una subasta.
+    \item \textbf{Tarea 11}: Pujar por una carta en subasta.
+    \item \textbf{Tarea 12}: Consultar notificaciones.
+    \item \textbf{Tarea 13}: Marcar una notificación como leída.
+    \item \textbf{Tarea 14}: Consultar transacciones.
+    \item \textbf{Tarea 15}: Cerrar sesión.
+\end{itemize}
+
+
+
+\subsubsubsection{Cuestionario para el responsable de pruebas}
+Se ha creado un cuestionario para el responsable de pruebas con distintas preguntas para evaluar el resultado de las pruebas de usabilidad realizadas.
+Estas preguntas pretenden evaluar los comportamientos observados en los distintos usuarios a la hora de realizar las tareas asignadas.
+En la tabla  \coloredUnderline{\hyperlink{table:cuestionario_responsable}{Tabla \ref*{table:cuestionario_responsable}. \nameref*{table:cuestionario_responsable}}} se muestra el cuestionario para el responsable de pruebas.
+Deberá de marcar con una 'X' en la columna correspondiente si la tarea ha sido completada o no por el usuario, y añadir cualquier comentario adicional que considere relevante.
+
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{7cm}
+    >{\centering\arraybackslash}p{1cm}
+    >{\centering\arraybackslash}p{1cm}
+    >{\centering\arraybackslash}p{5cm}
+    }
+    \caption{Cuestionario para el responsable de pruebas} \label{table:cuestionario_responsable} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \endfirsthead
+    
+    \multicolumn{4}{c}%
+    {{ \tablename\ \thetable{} Cuestionario para el responsable de pruebas-- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{Tarea 1}: Crear una cuenta de usuario & & & \\
+    \midrule
+    \textbf{Tarea 2}: Iniciar sesión en la aplicación & & & \\
+    \midrule
+    \textbf{Tarea 3}: Cambiar la imagen de perfil & & & \\
+    \midrule
+    \textbf{Tarea 4}: Adquirir un sobre de cartas & & & \\
+    \midrule
+    \textbf{Tarea 5}: Consultar colección de cartas & & & \\
+    \midrule
+    \textbf{Tarea 6}: Poner en subasta una carta & & & \\
+    \midrule
+    \textbf{Tarea 7}: Consultar subastas activas de todos los usuarios & & & \\
+    \midrule
+    \textbf{Tarea 8}: Consultar sus propias subastas activas & & & \\
+    \midrule
+    \textbf{Tarea 9}: Consultar sus propias pujas activas & & & \\
+    \midrule
+    \textbf{Tarea 10}: Retirar una carta de una subasta & & & \\
+    \midrule
+    \textbf{Tarea 11}: Pujar por una carta en subasta & & & \\
+    \midrule
+    \textbf{Tarea 12}: Consultar notificaciones & & & \\
+    \midrule
+    \textbf{Tarea 13}: Marcar una notificación como leída & & & \\
+    \midrule
+    \textbf{Tarea 14}: Consultar transacciones & & & \\
+    \midrule
+    \textbf{Tarea 15}: Cerrar sesión & & & \\
+    \end{longtable}
+
+
+\subsubsubsection{Resultados de las pruebas de usabilidad}
+Se han recopilado los resultados de las pruebas de usabilidad realizadas con los usuarios y el responsable de pruebas.
+Se han analizado los resultados y se han identificado los problemas de usabilidad y las áreas de mejora de la aplicación.
+En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \ref*{table:resultados_usabilidad}. \nameref*{table:resultados_usabilidad}}}, se muestran los resultados de las pruebas de usabilidad realizadas.
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{7cm}
+    >{\centering\arraybackslash}p{1cm}
+    >{\centering\arraybackslash}p{1cm}
+    >{\centering\arraybackslash}p{5cm}
+    }
+    \caption{Resultados de las pruebas de usabilidad} \label{table:resultados_usabilidad} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \endfirsthead
+    
+    \multicolumn{4}{c}%
+    {{ \tablename\ \thetable{} Resultados de las pruebas de usabilidad -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{4}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 1. Crear una cuenta de usuario}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 2. Iniciar sesión en la aplicación}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 3. Cambiar la imagen de perfil}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 4. Adquirir un sobre de cartas}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 5. Consultar colección de cartas}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 6. Poner en subasta una carta}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 7. Consultar subastas activas de todos los usuarios}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 8. Consultar sus propias subastas activas}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 9. Consultar sus propias pujas activas}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 10. Retirar una carta de una subasta}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 11. Pujar por una carta en subasta}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 12. Consultar notificaciones}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 13. Marcar una notificación como leída}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 14. Consultar transacciones}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \midrule
+    \multicolumn{4}{|c|}{\textbf{Tarea 15. Cerrar sesión}} \\
+    \textbf{Usuario 1}& & & \\
+    \midrule
+    \textbf{Usuario 2}& & & \\
+    \midrule
+    \textbf{Usuario 3}& & & \\
+    \bottomrule
+
+    
+    \end{longtable}
