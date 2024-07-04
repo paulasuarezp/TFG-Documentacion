@@ -59,6 +59,7 @@ En esta sección se mostrarán los resultados de las pruebas realizadas y se ana
 Las pruebas unitarias se han realizado con éxito, se han comprobado que los componentes del sistema funcionan correctamente de forma aislada.
 Se han realizado pruebas unitarias para cada \textit{router} del subsistema \textbf{restapi} y para los componentes más importantes del subsistema \textbf{webapp}. 
 
+\subsubsubsection{Pruebas Unitarias. Restapi}
 En el subsistema \textbf{restapi} se han realizado 51 pruebas unitarias, todas ellas han pasado con éxito obteniendo un 76.78\% de cobertura de código para \textit{routers}.
 Se puede ver detallado el porcentaje de cobertura de código en la \coloredUnderline{\hyperlink{fig:6_8_Cobertura-Code-Restapi}{Figura \ref*{fig:6_8_Cobertura-Code-Restapi}: \nameref*{fig:6_8_Cobertura-Code-Restapi}}}.
 \begin{figure}[H]
@@ -69,6 +70,476 @@ Se puede ver detallado el porcentaje de cobertura de código en la \coloredUnder
     \label{fig:6_8_Cobertura-Code-Restapi}
 \end{figure}
 
+A continuación, se detallan las pruebas unitarias realizadas en el subsistema \textbf{restapi}, con su descripición y resultado esperado.
+Cabe destacar que para la ejecución de todas las pruebas, salvo para \textit{POST /api/users/login} y \textit{POST /api/users/signup}, se ha utilizado un token de autenticación válido, 
+es decir, se ha iniciado sesión previamente con un usuario existente.
+%-------------------TABLA PRUEBAS UNITARIAS RESTAPI-------------------
+
+%-------------------TESTS DE AUCTIONROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de auctionRouter} \label{table:test_auctionRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de auctionRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de auctionRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de auctionRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/auctions} & Devuelve todas las subastas. & 200, la respuesta contiene una lista de subastas. \\
+    \midrule
+    \textbf{GET /api/auctions/a/:id} & Devuelve una subasta específica. & 200, la respuesta contiene los datos de la subasta. \\
+    \midrule
+    \textbf{GET /api/auctions/a/:id (no existe)} & Devuelve 404 si el ID de la subasta no se encuentra. & 404, la respuesta indica que la subasta no se encuentra. \\
+    \midrule
+    \textbf{GET /api/auctions/active/:username} & Devuelve todas las subastas activas para un nombre de usuario válido. & 200, la respuesta contiene una lista de subastas activas. \\
+    \midrule
+    \textbf{GET /api/auctions/active/u/:username} & Devuelve todas las subastas activas para un usuario. & 200, la respuesta contiene una lista de subastas activas. \\
+    \end{longtable}
+
+%-------------------TESTS DE BIDROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de bidRouter} \label{table:test_bidRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de bidRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de bidRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de bidRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/bids/b/:id} & Devuelve una oferta específica. & 200, la respuesta contiene los datos de la oferta. \\
+    \midrule
+    \textbf{GET /api/bids/b/:id (no existe)} & Devuelve 404 si el ID de la oferta no se encuentra. & 404, la respuesta indica que la oferta no se encuentra. \\
+    \midrule
+    \textbf{GET /api/bids/active/u/:username} & Devuelve todas las ofertas activas para un nombre de usuario válido. & 200, la respuesta contiene una lista de ofertas activas. \\
+    \end{longtable}
+
+%-------------------TESTS DE CARDPACKROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de cardPackRouter} \label{table:test_cardPackRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de cardPackRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de cardPackRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de cardPackRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/cardpacks} & Devuelve todos los paquetes de cartas disponibles. & 200, la respuesta contiene una lista de paquetes de cartas filtrados por disponibilidad. \\
+    \end{longtable}
+
+%-------------------TESTS DE CARDROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de cardRouter} \label{table:test_cardRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de cardRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de cardRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de cardRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/cards/:cardId} & Devuelve una carta por su ID. & 200, la respuesta contiene los datos de la carta, incluyendo el nombre 'bulbasaur'. \\
+    \midrule
+    \textbf{GET /api/cards/:cardId (no existe)} & Devuelve 404 si la carta no se encuentra. & 404, la respuesta contiene el mensaje 'Carta no encontrada.'. \\
+    \midrule
+    \textbf{GET /api/cards/:cardId (error)} & Maneja errores de forma adecuada. & 500, la respuesta contiene el mensaje 'Se ha producido un error al obtener la carta.'. \\
+    \end{longtable}
+
+
+
+%-------------------TESTS DE DECKROUTER-------------------
+
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de deckRouter} \label{table:test_deckRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de deckRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de deckRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de deckRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/decks} & Devuelve todos los mazos de cartas. & 200, la respuesta contiene una lista de mazos de cartas. \\
+    \midrule
+    \textbf{GET /api/decks/:deckid} & Devuelve un mazo de cartas por su ID. & 200, la respuesta contiene los datos del mazo de cartas, incluyendo 'deckId', 'name', 'type', y 'publicationDate'. \\
+    \midrule
+    \textbf{GET /api/decks (error)} & Maneja errores de forma adecuada al obtener todos los mazos de cartas. & 500, la respuesta contiene el mensaje 'Se ha producido un error al obtener los mazos de cartas.'. \\
+    \midrule
+    \textbf{GET /api/decks/:deckid (no existe)} & Devuelve 404 si el mazo de cartas no se encuentra. & 404, la respuesta contiene el mensaje 'Mazo de cartas no encontrado.'. \\
+    \midrule
+    \textbf{GET /api/decks/:deckid (error)} & Maneja errores de forma adecuada al obtener un mazo de cartas por su ID. & 500, la respuesta contiene el mensaje 'Se ha producido un error al obtener el mazo de cartas.'. \\
+    \end{longtable}
+
+
+%-------------------TESTS DE NOTIFICATIONROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de notificationRouter} \label{table:test_notificationRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de notificationRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de notificationRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de notificationRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/notifications/:username} & Devuelve todas las notificaciones para un nombre de usuario válido. & 200, la respuesta contiene una lista de notificaciones. \\
+    \midrule
+    \textbf{GET /api/notifications/unread/:username} & Devuelve todas las notificaciones no leídas para un nombre de usuario válido. & 200, la respuesta contiene una lista de notificaciones no leídas. \\
+    \midrule
+    \textbf{PATCH /api/notifications/notification/:notificationId/read} & Marca una notificación como leída. & 200, la respuesta indica éxito. \\
+    \midrule
+    \textbf{PATCH /api/notifications/read/:username} & Marca todas las notificaciones de un usuario como leídas. & 200, la respuesta indica éxito. \\
+    \end{longtable}
+
+
+%-------------------TESTS DE PURCHASESROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de purchasesRouter} \label{table:test_purchasesRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de purchasesRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de purchasesRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de purchasesRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{POST /api/purchases/cardpack} & Compra un paquete de cartas exitosamente, disminuyendo la cantidad disponible del paquete y el saldo del usuario, creando cartas de usuario y transacciones. & 200, la respuesta indica éxito y las verificaciones post-compra son correctas. \\
+    \midrule
+    \textbf{POST /api/purchases/cardpack (usuario no existe)} & Maneja errores cuando el usuario no existe. & 500, la respuesta contiene el mensaje 'El usuario no existe.'. \\
+    \midrule
+    \textbf{POST /api/purchases/cardpack (saldo insuficiente)} & Maneja errores cuando el usuario no tiene suficiente saldo. & 500, la respuesta indica un error de saldo insuficiente. \\
+    \midrule
+    \textbf{POST /api/purchases/cardpack (paquete no existe)} & Maneja errores cuando el paquete de cartas no existe. & 500, la respuesta indica que el paquete de cartas no se encuentra. \\
+    \midrule
+    \textbf{POST /api/purchases/cardpack (paquete no disponible)} & Maneja errores cuando el paquete de cartas no está disponible. & 500, la respuesta indica que el paquete de cartas no está disponible. \\
+    \end{longtable}
+
+
+
+%-------------------TESTS DE TRANSACTIONROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de transactionRouter} \label{table:descripcion_transactionRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de transactionRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de transactionRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de transactionRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/transactions} & Devuelve todas las transacciones. & 200, la respuesta contiene una lista de transacciones. \\
+    \midrule
+    \textbf{GET /api/transactions/u/:username} & Devuelve las transacciones para un nombre de usuario válido. & 200, la respuesta contiene una lista de transacciones para el usuario. \\
+    \midrule
+    \textbf{GET /api/transactions/c/:userCardId} & Devuelve las transacciones para un ID de carta de usuario válido. & 200, la respuesta contiene una lista de transacciones para la carta de usuario. \\
+    \midrule
+    \textbf{GET /api/transactions (no admin)} & Devuelve 403 si el usuario no es administrador. & 403, la respuesta contiene el mensaje 'Acceso denegado. Se requiere rol de administrador.'. \\
+    \midrule
+    \textbf{GET /api/transactions/u/:username (username inválido)} & Devuelve 400 para un nombre de usuario inválido. & 400, la respuesta contiene errores de validación para el nombre de usuario. \\
+    \end{longtable}
+
+
+
+%-------------------TESTS DE USERCARDROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de userCardRouter} \label{table:test_userCardRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de userCardRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de userCardRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de userCardRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{GET /api/usercards/u/:username} & Devuelve las tarjetas de usuario para un nombre de usuario válido. & 200, la respuesta contiene un arreglo de tarjetas de usuario. \\
+    \midrule
+    \textbf{GET /api/usercards/:id} & Devuelve una tarjeta de usuario específica. & 200, la respuesta contiene la tarjeta de usuario con el campo 'legibleCardId'. \\
+    \midrule
+    \textbf{GET /api/usercards/:id (no existe)} & Devuelve 404 si la tarjeta de usuario no se encuentra. & 404, la respuesta indica que la tarjeta de usuario no se encuentra. \\
+    \midrule
+    \textbf{GET /api/usercards/:id (ID inválido)} & Devuelve 400 para un ID de tarjeta de usuario inválido. & 400, la respuesta indica un error. \\
+    \midrule
+    \textbf{GET /api/usercards/u/:username (nombre de usuario muy largo)} & Devuelve 400 si el nombre de usuario es demasiado largo. & 400, la respuesta indica un error con un mensaje sobre la longitud del nombre de usuario. \\
+    \end{longtable}
+
+%-------------------TESTS DE USERROUTER-------------------
+\begin{longtable}{
+    >{\columncolor{lightgreen!20}}p{4cm}
+    p{6cm}
+    p{4cm}
+    }
+    \caption{Tests de userRouter} \label{table:test_userRouter} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de userRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \endfirsthead
+    
+    \multicolumn{3}{c}%
+    {{ \tablename\ \thetable{} Tests de userRouter -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \multicolumn{3}{|c|}{\textbf{Tests de userRouter}}\\
+    \midrule
+    \rowcolor{darkgreen!30}
+    \textbf{Ruta a probar} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{6cm}}{\textbf{Descripción}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{4cm}}{\textbf{Resultado esperado}} \\
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{3}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \textbf{POST /api/users/login} & Inicia sesión un usuario existente con el nombre de usuario 'test' y la contraseña 'Password123-'. & 200, la respuesta contiene un token y datos del usuario. \\
+    \midrule
+    \textbf{POST /api/users/signup} & Crea un nuevo usuario con el nombre de usuario 'newuser' y la contraseña 'Password123-'. & 201, la respuesta contiene un mensaje de éxito y datos del nuevo usuario. \\
+    \midrule
+    \textbf{GET /api/users/:username} & Obtiene los detalles del usuario 'test' con un token válido. & 200, la respuesta contiene los datos del usuario. \\
+    \midrule
+    \textbf{PATCH /api/users/update/avatar} & Actualiza la imagen de perfil del usuario 'test' a 'avatar1.png'. & 200, la respuesta indica éxito. \\
+    \midrule
+    \textbf{PATCH /api/users/update/pass} & Actualiza la contraseña del usuario 'test' a 'NewPass1234-'. & 200, la respuesta indica éxito. \\
+    \midrule
+    \textbf{GET /api/users/:username (error handling)} & Devuelve 400 si el nombre de usuario es demasiado largo. & 400, la respuesta indica error. \\
+    \midrule
+    \textbf{GET /api/users/:username (sin token)} & Devuelve 401 si no se proporciona un token. & 401, la respuesta indica error. \\
+    \midrule
+    \textbf{GET /api/users/:username (usuario no encontrado)} & Devuelve 404 si el usuario no se encuentra. & 404, la respuesta contiene mensaje de usuario no encontrado. \\
+    \midrule
+    \textbf{GET /api/users/:username (error)} & Maneja errores de forma adecuada. & 500, la respuesta indica error interno. \\
+    \midrule
+    \textbf{POST /api/users/login (usuario no existe)} & Devuelve 401 si el usuario no existe. & 401, la respuesta indica error. \\
+    \midrule
+    \textbf{POST /api/users/login (contraseña incorrecta)} & Devuelve 401 si la contraseña es incorrecta. & 401, la respuesta indica error. \\
+    \midrule
+    \textbf{POST /api/users/login (error)} & Maneja errores de forma adecuada. & 500, la respuesta indica error interno. \\
+    \midrule
+    \textbf{POST /api/users/signup (usuario ya existe)} & Devuelve 400 si el nombre de usuario ya existe. & 400, la respuesta indica error. \\
+    \midrule
+    \textbf{POST /api/users/signup (datos incompletos)} & Devuelve 400 si falta el nombre de usuario, contraseña o fecha de nacimiento. & 400, la respuesta indica error. \\
+    \midrule
+    \textbf{POST /api/users/signup (error)} & Maneja errores de forma adecuada. & 500, la respuesta contiene mensaje de error y autenticación fallida. \\
+    \end{longtable}
+
+
+
+
+\subsubsubsection{Pruebas Unitarias. Webapp}
 En el subsistema \textbf{webapp} se han realizado 5 pruebas unitarias automáticas, se han probado los componentes más importantes de la aplicación y todas han pasado con éxito.
 El resto de componentes se han probado de forma manual y se ha comprobado que su comportamiento es el esperado.
 
@@ -100,10 +571,54 @@ Los datos de los usuarios son los siguientes:
     \item \textbf{Usuario 3}: Mujer de 18 años, con experiencia en el uso de aplicaciones web. Ha utilizado aplicaciones similares anteriormente, pero no ha llegado a realizar compras en ellas.
 \end{itemize}
 
-Se les ha trasladado el siguiente cuestionario para evaluar la usabilidad de la aplicación:
-\begin{itemize}
-    \item \textbf{Facilidad de Uso}: ¿Cómo de fácil ha sido para ti utilizar la aplicación?
-    \item \textbf{Claridad de la Información}: ¿La información presentada en la aplicación ha sido clara y fácil de entender?
-    \item \textbf{Diseño de la Interfaz}: ¿Qué opinas del diseño de la interfaz de usuario?
-    \item \textbf{Facilidad de Navegación}: ¿Has encontrado fácilmente lo que buscabas en la aplicación?
-    \item \textbf{Satisfacción General}: ¿Qué opinas de la aplicación en general?
+\subsubsubsection{Cuestionario de usabilidad}
+Se ha realizado un cuestionario de usabilidad con distintas preguntas para evaluar la calidad de la interfaz de usuario de la aplicación.
+Estas preguntas pretenden evaluar la calidad del diseño de la interfaz, la facilidad de uso y la satisfacción del usuario.
+Este cuestionario se ha proporcionado a los usuarios para que lo completen después de realizar las tareas asignadas.
+En la tabla  \coloredUnderline{\hyperlink{table:cuestionario_usabilidad}{Tabla \ref*{table:cuestionario_usabilidad}. \nameref*{table:cuestionario_usabilidad}}} se muestra el cuestionario de usabilidad que se ha proporcionado a los usuarios.
+
+\begin{longtable}{ \hypertarget{table:cuestionario_usabilidad}{}
+    >{\columncolor{lightgreen!20}}p{4cm}
+    >{\centering\arraybackslash}p{1.3cm}
+    >{\centering\arraybackslash}p{1.3cm}
+    >{\centering\arraybackslash}p{1.3cm}
+    >{\centering\arraybackslash}p{1.3cm}
+    >{\centering\arraybackslash}p{1.3cm}
+    }
+    \caption{Cuestionario de usabilidad de la aplicación} \label{table:cuestionario_usabilidad} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+    \textbf{Pregunta} & \multicolumn{4}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{1}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{2}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{3}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{4}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{5}} \\
+    \endfirsthead
+    
+    \multicolumn{6}{c}%
+    {{ \tablename\ \thetable{} Cuestionario de usabilidad de la aplicación -- continuación de la página anterior}} \\
+    \toprule
+    \rowcolor{darkgreen!50}
+   \textbf{Pregunta} & \multicolumn{4}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{1}} & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{2}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{3}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{4}}  & \multicolumn{1}{>{\columncolor{darkgreen!50}\centering\arraybackslash}p{1.3cm}}{\textbf{5}} \\
+    
+    \midrule
+    \endhead
+    
+    \midrule
+    \multicolumn{6}{r}{{Continúa en la siguiente página...}} \\ 
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    \midrule
+    \rowcolor{lightgray}
+    \multicolumn{6}{|c|}{Calidad del Interfaz} \\
+    \midrule
+    El tipo y tamaño de letra es & & & & & \\
+    \midrule
+    Los iconos e imágenes usados son & & & & & \\
+    \midrule
+    Los colores empleados son & & & & & \\
+    \midrule
+    La organización de los elementos es & & & & & \\
+    \midrule
+    Las estructuras de las tablas son & & & & & \\
+    \midrule
+\end{longtable}
