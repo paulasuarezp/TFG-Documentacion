@@ -7,17 +7,37 @@
 En el contexto del desarrollo del proyecto, se ha procedido a la identificación y análisis de los perfiles profesionales implicados, así como de las respectivas responsabilidades 
 y tareas asignadas a cada uno. Aunque la ejecución del proyecto se realizará de forma individual, 
 esta estructuración permite una asignación y gestión presupuestaria más precisa, alineando los recursos financieros con las funciones específicas requeridas para cada etapa del proyecto. 
+Los roles se han representado por medio de la estructura jerárquica OBS (\textit{Organizational Breakdown Structure}), 
+mostrada en la \coloredUnderline{\hyperlink{fig:obs}{Figura: \ref*{fig:obs} \nameref*{fig:obs}}}, 
+faiclitando la visualización de la estructura organizativa del proyecto.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/5_OBS.png}
+    \caption{Estructura jerárquica de los perfiles profesionales implicados en el proyecto}
+    \label{fig:obs}
+    \hypertarget{fig:obs}{}
+\end{figure}
 
 
-Los roles identificados se especifican en \coloredUnderline{\hyperlink{table:obs}{Tabla: \ref*{table:obs} \nameref*{table:obs}}}. 
-Cabe destacar que el rol de Jefe de Proyecto (JP) es el encargado de supervisar y coordinar el trabajo de los demás roles y este rol ha sido considerado tanto para el alumno como para el tutor del TFG.
 
+Se ha decidido realizar una matriz de asignación de responsabilidades RACI para relacionar las tareas identifcadas en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}} con cada rol.
+En esta matriz, a cada tarea se le asigna un rol con una de las siguientes responsabilidades:
+\begin{itemize}
+    \item \textbf{\textcolor{Rcolor}{R}:} Responsable. Persona que realiza la tarea.
+    \item \textbf{\textcolor{Acolor}{A}:} Aprobador. Persona que aprueba la tarea.
+    \item \textbf{\textcolor{Ccolor}{C}:} Consultado. Persona a la que se consulta sobre la tarea.
+    \item \textbf{\textcolor{Icolor}{I}:} Informado. Persona a la que se informa sobre el avance y los resultados de la tarea.
+\end{itemize}
+Un mismo recurso puede tener varias responsabilidades en una misma tarea, en tal caso se anotarán separadas por el caracter ``/''. 
+Los recursos que no tienen ninguna responsabilidad en una tarea se dejan en blanco.
+En la tabla \coloredUnderline{\hyperlink{table:recursos}{Tabla \ref*{table:recursos}: \nameref*{table:recursos}}}, se muestran los roles y las abreviaturas utilizadas en la matriz RACI.
 
 \begin{table}[H]
 \centering
-\hypertarget{table:obs}{}
-\caption{Perfiles que intervienen en el proyecto}
-\label{table:obs}
+\hypertarget{table:recursos}{}
+\caption{Roles y abreviaturas de los recursos}
+\label{table:recursos}
 \begin{tabular}{>{\columncolor{lightgreen!20}}p{2.2cm} p{6cm}}
 \toprule
 \rowcolor{darkgreen!50}
@@ -38,21 +58,12 @@ DOC & Documentador técnico \\
 \end{tabular}
 \end{table}
  
-Se ha decidido realizar una matriz de asignación de responsabilidades RACI para relacionar las tareas identifcadas en \coloredUnderline{\hyperlink{sec:5-WBS}{\ref*{sec:5-WBS} \nameref*{sec:5-WBS}}} con cada rol.
-En esta matriz, a cada tarea se le asigna un rol con una de las siguientes responsabilidades:
-\begin{itemize}
-    \item \textbf{\textcolor{Rcolor}{R}:} Responsable. Persona que realiza la tarea.
-    \item \textbf{\textcolor{Acolor}{A}:} Aprobador. Persona que aprueba la tarea.
-    \item \textbf{\textcolor{Ccolor}{C}:} Consultado. Persona a la que se consulta sobre la tarea.
-    \item \textbf{\textcolor{Icolor}{I}:} Informado. Persona a la que se informa sobre el avance y los resultados de la tarea.
-\end{itemize}
-Un mismo recursos puede tener varias responsabilidades en una misma tarea, en tal caso se anotarán separadas por el caracter ``/''.
 
 \subsubsubsection{Análisis del proyecto}
 En la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:matriz-analisis} \nameref*{table:matriz-analisis}}} se muestra la matriz de responsabilidades para la fase de análisis.
 \begin{table}[H]
     \centering
-    \caption{OBS de la fase Análisis del proyecto}
+    \caption{Tabla RACI de la fase Análisis del proyecto}
     \label{table:matriz-analisis}
     \hypertarget{table:matriz-analisis}{}
     \begin{tabular}{
@@ -85,7 +96,7 @@ En la \coloredUnderline{\hyperlink{table:matriz-analisis}{Tabla: \ref*{table:mat
 En la \coloredUnderline{\hyperlink{table:matriz-seguimiento}{Tabla: \ref*{table:matriz-seguimiento} \nameref*{table:matriz-seguimiento}}} se muestra la matriz de responsabilidades para la fase de seguimiento.
 \begin{table}[H]
     \centering
-    \caption{OBS de la fase Seguimiento del proyecto}
+    \caption{Tabla RACI de la fase Seguimiento del proyecto}
     \label{table:matriz-seguimiento}
     \hypertarget{table:matriz-seguimiento}{}
     \begin{tabular}{
@@ -120,7 +131,7 @@ Las tareas listadas en esta matriz son las tareas "hoja" de dicha fase, es decir
 de la fase de diseño.
 \begin{table}[H]
     \centering
-    \caption{OBS de la fase Diseño del sistema}
+    \caption{Tabla RACI de la fase Diseño del sistema}
     \label{table:matriz-diseno}
     \hypertarget{table:matriz-diseno}{}
     \begin{tabular}{
@@ -192,7 +203,7 @@ Igual que en el caso anterior, las tareas listadas en esta matriz son las tareas
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} 
     >{\columncolor{white}}m{1cm} }
-    \caption{OBS de la fase Implementación del sistema} \label{table:matriz-implementacion}
+    \caption{Tabla RACI de la fase Implementación del sistema} \label{table:matriz-implementacion}
     \hypertarget{table:matriz-implementacion}{}
     \\
     \cmidrule(l){2-7}
@@ -262,7 +273,7 @@ A continuación, se detallan las responsabilidades de cada rol en la fase de pru
 En la \coloredUnderline{\hyperlink{table:matriz-pruebas}{Tabla: \ref*{table:matriz-pruebas} \nameref*{table:matriz-pruebas}}}, se muestra la matriz de responsabilidades para la fase de pruebas.
 \begin{table}[H]
     \centering
-    \caption{OBS de la Fase de pruebas}
+    \caption{Tabla RACI de la Fase de pruebas}
     \label{table:matriz-pruebas}
     \hypertarget{table:matriz-pruebas}{}
     \begin{tabular}{
@@ -293,7 +304,7 @@ En la \coloredUnderline{\hyperlink{table:matriz-pruebas}{Tabla: \ref*{table:matr
 En la \coloredUnderline{\hyperlink{table:matriz-despliegue}{Tabla: \ref*{table:matriz-despliegue} \nameref*{table:matriz-despliegue}}}, se muestra la matriz de responsabilidades para la fase de despliegue.
 \begin{table}[H]
     \centering
-    \caption{OBS de la fase Despliegue del sistema}
+    \caption{Tabla RACI de la fase Despliegue del sistema}
     \label{table:matriz-despliegue}
     \hypertarget{table:matriz-despliegue}{}
     \begin{tabular}{
@@ -322,7 +333,7 @@ En la \coloredUnderline{\hyperlink{table:matriz-despliegue}{Tabla: \ref*{table:m
 Por último, en la \coloredUnderline{\hyperlink{table:matriz-documentacion}{Tabla: \ref*{table:matriz-documentacion} \nameref*{table:matriz-documentacion}}}, se muestra la matriz de responsabilidades para la fase de documentación.
 \begin{table}[H]
     \centering
-    \caption{OBS de la fase Documentación del proyecto}
+    \caption{Tabla RACI de la fase Documentación del proyecto}
     \label{table:matriz-documentacion}
     \hypertarget{table:matriz-documentacion}{}
     \begin{tabular}{
