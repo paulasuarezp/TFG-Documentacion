@@ -1,32 +1,53 @@
 \subsection{Especificación del Plan de Pruebas}
 Se realizarán cuatro tipos de pruebas para garantizar la calidad del sistema: pruebas unitarias, pruebas de integración, pruebas de usabilidad y pruebas de accesibilidad.
+A continuación, se detallará cómo se llevarán a cabo las pruebas de cada tipo y se especificarán los criterios de aceptación para cada una de ellas.
+
 \subsubsection{Pruebas Unitarias}
 Las pruebas unitarias se realizarán para comprobar que cada componente del sistema funciona correctamente de forma aislada.
 Se realizarán pruebas unitarias en el subsistema \textbf{restapi}, para comprobar que las rutas de la API REST funcionan correctamente, y en el subsistema \textbf{webapp}, para comprobar que los componentes de la interfaz de usuario se renderizan correctamente.
-Para ello, se utilizará el framework de pruebas Jest para ambos subsistemas.
+
+Para ello, se utilizará el framework de pruebas Jest para ambos subsistemas y se ejecutarán las pruebas en un entorno de test local.
+Se espera que todas las pruebas unitarias pasen con éxito y que se alcance un porcentaje de cobertura de código mínima del 60\% para el subsistema \textbf{restapi} 
+y para el subsistema \textbf{webapp} se deberán de cubrir los componentes que más se reutilizan en la aplicación.
+
+
+Estas pruebas se realizarán en un entorno de test local, se utilizarán datos de prueba que simulan la información que se almacenará en la base de datos junto con una base de datos de pruebas.
+
 
 \subsubsection{Pruebas de Integración}
-Las pruebas de integración se realizarán para comprobar que los distintos componentes del sistema funcionan correctamente en conjunto.
-Se realizarán en el subsistema \textbf{webapp}. Estas pruebas reciben el nombre de pruebas \textit{end-to-end} y se realizarán con el framework de 
-pruebas jest-cucumber y Puppeteer, que permite simular la interacción de un usuario con la aplicación y son muy descriptivas al iincluir escenarios de prueba escritos en lenguaje natural.
+Las pruebas de integración, también conocidas como pruebas de extremo a extremo o \textit{end-to-end}, se realizarán para comprobar que los distintos componentes del sistema funcionan correctamente en conjunto.
+Se realizarán en el subsistema \textbf{webapp} con el framework de pruebas jest-cucumber y Puppeteer, que permite simular la interacción de un usuario con la aplicación y son muy descriptivas al iincluir escenarios de prueba escritos en lenguaje natural.
+Estas pruebas se ejecutarán en un entorno de local de desarrollo y se utilizarán datos reales de la base de datos de desarrollo.
+
+Los criterios de aceptación para estas pruebas son que se compruebe que un usuario puede iniciar sesión en la aplicación y que se renderice correctamente la página de inicio.
 
 \subsubsection{Pruebas de Usabilidad}
 Las pruebas de usabilidad se realizarán para comprobar que la interfaz de usuario es intuitiva y fácil de usar.
 Se realizarán pruebas de usabilidad en el subsistema \textbf{webapp} con usuarios reales, que evaluarán la interfaz de usuario y proporcionarán retroalimentación sobre su usabilidad.
-Por cuestiones de tiempo, estas pruebas se realizarán con un grupo reducido de usuarios.
+Estas pruebas se ejecutarán en un entorno de producción y se utilizarán datos reales de la base de datos de producción.
+Los criterios de aceptación para estas pruebas son que no se reporten errores graves de usabilidad y que la interfaz de usuario sea fácil de usar para los usuarios reales.
 
 \subsubsection{Pruebas de Accesibilidad}
 Las pruebas de accesibilidad se realizarán para comprobar que la aplicación es accesible para personas con discapacidades.
-Se utilizará la herramienta de evaluación de accesibilidad de Google Lighthouse y el plugin de Google Chrome 
+Se utilizará el plugin de Google Chrome 
 \coloredUnderline{\href{https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh}{WAVE Evaluation Tool}} para comprobar la accesibilidad de la aplicación.
+En un primer lugar se realizarán las pruebas de accesibilidad en el entorno de desarrollo y posteriormente, se repetirán en el entorno de producción con los errores corregidos.
+
+Los criterios de aceptación para estas pruebas es que no haya errores de accesibilidad en el plugin WAVE Evaluation Tool,
+permitiendo solo los errores de accesibilidad relacionados con el diseño específico de la aplicación.
 
 
-\subsubsection{Especificación técnica del Plan de Pruebas}
-En esta sección se detallará como se llevarán a cabo las pruebas de cada tipo y se especificarán los criterios de aceptación para cada una de ellas.
-Además, se especifica el dispositivo y navegador en el que se realizarán las pruebas.
+\subsubsection{Pruebas de adaptabilidad}
+Las pruebas de adaptabilidad se realizarán para comprobar que la aplicación se renderiza correctamente en distintos dispositivos y navegadores.
+Las pruebas se realizarán en el entorno de producción y se utilizarán distintos dispositivos y navegadores para comprobar la adaptabilidad de la aplicación.
+Los criterios de aceptación para estas pruebas son que la aplicación se renderice correctamente en dispositivos móviles, tabletas y ordenadores, y que funcione correctamente en los navegadores Google Chrome, Mozilla Firefox y Safari.
 
-\subsubsubsection{Dispositivo y navegador para las pruebas}
-Las pruebas se realizarán en un ordenador portátil con las siguientes características:
+
+\subsection{Resultados de las Pruebas}
+En esta sección se especificará en primer lugar las características del dispositivo y de los navegadores utilizados, y a continuación se detallarán los resultados de las pruebas realizadas.
+
+\subsubsection{Dispositivo y navegadores utilizados}
+Las pruebas se han llevado a cabo en un ordenador portátil con las siguientes características:
 \begin{itemize}
     \item \textbf{Sistema Operativo}: macOS Sonoma 14.5.
     \item \textbf{Procesador}: Apple M3 Pro Max.
@@ -35,8 +56,7 @@ Las pruebas se realizarán en un ordenador portátil con las siguientes caracter
     \item \textbf{Memoria RAM}: 36 GB.
 \end{itemize}
 
-Como navegador se utilizará Google Chrome en su última versión para las pruebas unitarias y de integración.
-Para el resto de pruebas se utilizará Google Chrome, Mozilla Firefox y Safari.
+Como navegador se ha utilizado Google Chrome principalmente, las pruebas de adaptabilidad se han realizado además en Mozilla Firefox y Safari.
 Las versiones de los navegadores son las siguientes:
 \begin{itemize}
     \item \textbf{Google Chrome}: Versión 126.0.6478.127 (64 bits).
@@ -44,14 +64,6 @@ Las versiones de los navegadores son las siguientes:
     \item \textbf{Safari}: Versión 17.5 (19618.2.12.11.6)
 \end{itemize}
 
-\subsubsubsection{Entorno de pruebas y datos de prueba}
-Las pruebas unitarias se realizarán en un entorno de test local, se han creado datos de prueba que simulan la información que se almacenará en la base de datos y se usa una base de datos de pruebas.
-Para las pruebas de integración se utilizarán datos reales de la base de datos de desarrollo y se simularán las interacciones de los usuarios, para ello se ejecutarán los tests en un entorno de local de desarrollo.
-Para las pruebas de usabilidad y accesibilidad se utilizará un entorno de producción, ya que se necesitan datos reales y usuarios reales para evaluar la usabilidad y accesibilidad de la aplicación.
-
-
-\subsection{Resultados de las Pruebas}
-En esta sección se mostrarán los resultados de las pruebas realizadas y se analizarán los resultados obtenidos.
 
 \subsubsection{Pruebas Unitarias}
 Las pruebas unitarias se han realizado con éxito, se han comprobado que los componentes del sistema funcionan correctamente de forma aislada.
@@ -71,6 +83,8 @@ Se puede ver detallado el porcentaje de cobertura de código en la \coloredUnder
 A continuación, se detallan las pruebas unitarias realizadas en el subsistema \textbf{restapi}, con su descripición y resultado esperado.
 Cabe destacar que para la ejecución de todas las pruebas, salvo para \textit{POST /api/users/login} y \textit{POST /api/users/signup}, se ha utilizado un token de autenticación válido, 
 es decir, se ha iniciado sesión previamente con un usuario existente.
+
+
 %-------------------TABLA PRUEBAS UNITARIAS RESTAPI-------------------
 
 %-------------------TESTS DE AUCTIONROUTER-------------------
@@ -538,17 +552,23 @@ es decir, se ha iniciado sesión previamente con un usuario existente.
 
 
 \subsubsubsection{Pruebas Unitarias. Webapp}
-En el subsistema \textbf{webapp} se han realizado 5 pruebas unitarias automáticas, se han probado los componentes más importantes de la aplicación y todas han pasado con éxito.
+En el subsistema \textbf{webapp} se han realizado 9 pruebas unitarias automáticas, se han probado los componentes más importantes de la aplicación y todas han pasado con éxito.
 El resto de componentes se han probado de forma manual y se ha comprobado que su comportamiento es el esperado.
-Las pruebas unitarias automáticas que se han realizado son las siguientes:
+Las pruebas unitarias automáticas se han realizado sobre los componentes que más se reutilizan en la aplicación, estos son:
 \begin{itemize}
-    \item \textbf{Página Home}.
-    \item \textbf{Página de Registro}.
-    \item \textbf{Página de Inicio de Sesión}.
-    \item \textbf{Página Acerca de}.
-    \item \textbf{Página de Bienvenida}. Página que se muestra al iniciar sesión.
+    \item \textbf{Componente \textit{Button}}: Se ha comprobado que el componente \textit{Button} renderiza correctamente, que se muestra el texto esperado y que se ejecuta la función \textit{onClick} cuando se hace clic en el botón.
+    \item \textbf{Componente \textit{Calendar}}: Se ha comprobado que el componente \textit{Calendar} renderiza correctamente, que se ejecuta la función \textit{onChange} cuando se selecciona una fecha y que si hay un error en la fecha se muestre un mensaje de error.
+    \item \textbf{Componente \textit{ErrorMessageBox}}: Se ha comprobado que el componente \textit{ErrorMessageBox} renderiza correctamente y que redirige a la página de inicio cuando se hace clic en el botón que contiene.
+    \item \textbf{Componente \textit{PokemonCard}}: Se ha comprobado que la carta de Pokémon se renderiza correctamente y que se ejecutan los distintos \textit{onClick} dependiendo de su configuración inicial.
 \end{itemize}
-En todas las pruebas se ha comprobado que los componentes de la aplicación funcionan correctamente, verificando que renderiza los elementos esperados.
+En la figura \coloredUnderline{\hyperlink{fig:coverage_webapp}{Figura \ref*{fig:coverage_webapp}. \nameref*{fig:coverage_webapp}}} se muestran los resultados de las pruebas unitarias automáticas realizadas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/6-Analisis/6-Pruebas/6_8_webapp-unit.png}
+    \caption{Resultados de las pruebas unitarias automáticas de la webapp}
+    \hypertarget{fig:coverage_webapp}{}
+    \label{fig:coverage_webapp}
+\end{figure}
 
 \subsubsection{Pruebas de Integración}
 Las pruebas de integración se han realizado con éxito, se han comprobado que los distintos componentes del sistema funcionan correctamente en conjunto.
@@ -562,6 +582,15 @@ Las pruebas que se han realizado son las siguientes:
      \item \textbf{Prueba de Registro de Usuario Fallido}: Se ha comprobado que el registro de usuario falla cuando los datos introducidos no son válidos. 
      Se verifica que la aplicación responde correctamente a errores en el registro de usuario y se resaltan los campos con errores.
 \end{itemize}
+
+En la figura \coloredUnderline{\hyperlink{fig:coverage_webapp2}{Figura \ref*{fig:coverage_webapp}. \nameref*{fig:coverage_webapp}}} se muestran los resultados de las pruebas de integración automáticas realizadas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/6-Analisis/6-Pruebas/6_8_webapp-e2e.png}
+    \caption{Resultados de las pruebas de integración automáticas de la webapp}
+    \hypertarget{fig:coverage_webapp2}{}
+    \label{fig:coverage_webapp2}
+\end{figure}
 
 El resto de pruebas de integración se han realizado de forma manual y se ha comprobado que el comportamiento de la aplicación es el esperado.
 
@@ -803,24 +832,24 @@ Deberá de marcar con una 'X' en la columna correspondiente si la tarea ha sido 
 \subsubsubsection{Resultados de las pruebas de usabilidad}
 Se han recopilado los resultados de las pruebas de usabilidad realizadas con los usuarios y el responsable de pruebas.
 Se han analizado los resultados y se han identificado los problemas de usabilidad y las áreas de mejora de la aplicación.
-En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \ref*{table:resultados_usabilidad}. \nameref*{table:resultados_usabilidad}}}, se muestran los resultados de las pruebas de usabilidad realizadas.
+En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \ref*{table:resultados_usabilidad}. \nameref*{table:resultados_usabilidad}}}, se muestran la recopilación de los resultados de las pruebas de usabilidad realizadas.
 \begin{longtable}{
-    >{\columncolor{lightgreen!20}}p{7cm}
+    >{\columncolor{lightgreen!20}}p{2cm}
     >{\centering\arraybackslash}p{1cm}
     >{\centering\arraybackslash}p{1cm}
-    >{\centering\arraybackslash}p{5cm}
+    >{\centering\arraybackslash}p{12cm}
     }
     \caption{Resultados de las pruebas de usabilidad} \label{table:resultados_usabilidad} \\
     \toprule
     \rowcolor{darkgreen!50}
-    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \textbf{Usuario} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
     \endfirsthead
     
     \multicolumn{4}{c}%
     {{ \tablename\ \thetable{} Resultados de las pruebas de usabilidad -- continuación de la página anterior}} \\
     \toprule
     \rowcolor{darkgreen!50}
-    \textbf{Tarea} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
+    \textbf{Usuario} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
     \midrule
     \endhead
     
@@ -832,6 +861,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \endlastfoot
     
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 1. Crear una cuenta de usuario}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -839,6 +869,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 2. Iniciar sesión en la aplicación}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -846,6 +877,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 3. Cambiar la imagen de perfil}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -853,6 +885,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 4. Adquirir un sobre de cartas}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -860,6 +893,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 5. Consultar colección de cartas}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -867,6 +901,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 6. Poner en subasta una carta}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -874,6 +909,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 7. Consultar subastas activas de todos los usuarios}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -881,6 +917,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 8. Consultar sus propias subastas activas}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -888,6 +925,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 9. Consultar sus propias pujas activas}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -895,6 +933,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 10. Retirar una carta de una subasta}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -902,6 +941,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 11. Pujar por una carta en subasta}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -909,6 +949,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 12. Consultar notificaciones}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -916,6 +957,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 13. Marcar una notificación como leída}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -923,6 +965,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 14. Consultar transacciones}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -930,6 +973,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \textbf{Usuario 3}& & & \\
     \midrule
+    \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 15. Cerrar sesión}} \\
     \textbf{Usuario 1}& & & \\
     \midrule
@@ -940,3 +984,45 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
 
     
     \end{longtable}
+
+
+\subsubsection{Pruebas de Accesibilidad}
+Una vez desplegada la aplicación en un entorno de producción, se ha realizado una auditoría de accesibilidad para comprobar que la aplicación cumple con los estándares de accesibilidad web.
+El proceso de auditoría de accesibilidad se ha realizado con el plugin de Google Chrome WAVE, que proporciona una serie de recomendaciones para mejorar la accesibilidad de la aplicación.
+Se han identificado una serie de problemas de accesibilidad en la aplicación y se han corregido para mejorar la accesibilidad de la aplicación.
+Una vez corregidos los problemas de accesibilidad, se ha vuelto a realizar la auditoría de accesibilidad para comprobar que la aplicación cumple con los estándares de accesibilidad web.
+
+Los problemas de accesibilidad identificados y corregidos en la aplicación son los siguientes:
+\begin{itemize}
+    \item \textbf{Problema 1}: Falta de etiquetas en los formularios.
+    \item \textbf{Problema 2}: Falta de etiquetas en los botones.
+    \item \textbf{Problema 3}: Falta de etiquetas en las imágenes.
+    \item \textbf{Problema 4}: Falta de contraste en los colores.
+    \item \textbf{Problema 5}: Falta de descripción en los enlaces.
+    \item \textbf{Problema 6}: Falta de etiquetas en las tablas.
+    \item \textbf{Problema 7}: Falta de etiquetas en los elementos de formulario.
+    \item \textbf{Problema 8}: Falta de etiquetas en los elementos de navegación.
+\end{itemize}
+
+Se asumen algunos de los problemas de contraste de colores, ya que la aplicación tiene un diseño específico y se ha optado por mantener el diseño original.
+Concretamente, los errores de contraste se dan en el diseño de las cartas. Estos son elegidos de forma dinámica por el tipo de carta que representa y se ha optado por mantener el diseño original,
+asumiendo que no afecta a la usabilidad de la aplicación debido a que la información de la carta es accesible de otras formas.
+
+En el Anexo se muestra el resultado de la auditoría de accesibilidad realizada con el plugin WAVE de Google Chrome y LightHouse de Google Chrome para todas las páginas de la aplicación.
+
+
+
+
+\subsubsection{Pruebas de Adaptabilidad}
+Se han realizado pruebas de adaptabilidad de la aplicación en distintos dispositivos y tamaños de pantalla para comprobar que la aplicación se adapta correctamente a diferentes resoluciones y tamaños de pantalla.
+Se han probado la aplicación en dispositivos móviles, tabletas y ordenadores de escritorio para comprobar que la aplicación se ve correctamente en todos los dispositivos.
+Concretamente, se han probado los siguientes dispositivos:
+\begin{itemize}
+    \item \textbf{Dispositivos móviles}: Se ha probado la aplicación en un dispositivo móvil iPhone 12.
+    \item \textbf{Tabletas}: Se ha probado la aplicación en una tableta iPad 8ª generación.
+    \item \textbf{Ordenadores}: Se ha probado la aplicación en un ordenador de 16 pulgadas.
+    \item \textbf{Monitor externo}: Se ha probado la aplicación en un monitor externo de 24 pulgadas.
+\end{itemize}
+
+Como resultado de las pruebas de adaptabilidad, se ha comprobado que la aplicación se adapta correctamente a diferentes resoluciones y tamaños de pantalla.
+Se pueden ver las capturas de pantalla de la aplicación en los distintos dispositivos en el Anexo.

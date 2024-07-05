@@ -21,6 +21,8 @@ Para desplegar la aplicación, se han seguido los siguientes pasos:
 
     \item \textbf{Establecer un nombre de dominio}: Se ha asociado un nombre de dominio a la dirección IP pública de la máquina virtual para facilitar el acceso a la aplicación.
 
+    \item \textbf{Configuración de la máquina virtual}: Se han instalado los paquetes necesarios en la máquina virtual para el correcto funcionamiento de la aplicación, como Docker, Docker Compose, Nginx, Certbot, etc.
+    
     \item \textbf{Contenedores Docker}: Se ha utilizado Docker para contenerizar la aplicación y facilitar su despliegue. 
     Para facilitar la tarea se ha configurado integración continua con GitHub Actions, de forma que cada vez que se realiza un \textit{pull-request} a la rama principal del repositorio, se construyen y despliegan los contenedores en la máquina virtual de Azure.
     Se han creado dos contenedores, uno para el subsistema \textbf{restapi} y otro para el subsistema \textbf{webapp}. Cada uno de estos expone uno o varios puertos diferentes para la comunicación con el exterior.
