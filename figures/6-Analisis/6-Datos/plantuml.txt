@@ -1,0 +1,188 @@
+@startuml
+
+entity Auction {
+    + _id : ObjectId
+    + legibleCardId : String
+    + seller : ObjectId
+    + sellerUsername : String
+    + initialPrice : Number
+    + currentPrice : Number
+    + finalPrice : Number
+    + publicationDate : Date
+    + duration : Number
+    + estimatedEndDate : Date
+    + endDate : Date
+    + status : AuctionStatus
+    + winner : ObjectId
+    + winnerUsername : String
+    + bids : ObjectId[]
+}
+
+entity UserCard {
+    + _id : ObjectId
+    + card : ObjectId
+    + user : ObjectId
+    + username : String
+    + legibleCardId : String
+    + status : CardStatus
+    + transactionHistory : ObjectId[]
+}
+
+entity User {
+    + _id : ObjectId
+    + username : String
+    + username_lower : String
+    + password : String
+    + profileImg : String
+    + birthday : String
+    + balance : Number
+    + role : String
+}
+
+entity Bid {
+    + _id : ObjectId
+    + auction : ObjectId
+    + user : ObjectId
+    + username : String
+    + usercard : ObjectId
+    + legibleCardId : String
+    + initDate : Date
+    + estimatedDate : Date
+    + endDate : Date
+    + price : Number
+    + status : BidStatus
+}
+
+entity Card {
+    + _id : ObjectId
+    + cardId : String
+    + pokemonId : Number
+    + name : String
+    + rarity : CardRarity
+    + releaseDate : Date
+    + availableQuantity : Number
+    + cards : ObjectId[]
+    + pokemonType : PokemonType
+    + description : String[]
+    + image : String
+    + hp : Number
+    + attack : Number
+    + defense : Number
+    + speed : Number
+    + weight : Number
+    + height : Number
+    + is_legendary : Boolean
+    + is_mythical : Boolean
+    + n_location_area : Number
+    + n_encounters : Number
+    + averageMaxChance : Number
+    + gym : PokemonGym[]
+}
+
+entity CardPack {
+    + _id : ObjectId
+    + cardPackId : String
+    + name : String
+    + price : Number
+    + releaseDate : Date
+    + numberOfCards : Number
+    + availableQuantity : Number
+    + available : Boolean
+    + deckId1 : String
+    + quantity1 : Number
+    + deckId2 : String
+    + quantity2 : Number
+    + deckId3 : String
+    + quantity3 : Number
+}
+
+entity Deck {
+    + _id : ObjectId
+    + deckId : String
+    + name : String
+    + type : CardRarity
+    + publicationDate : Date
+    + cards : ObjectId[]
+}
+
+entity Notification {
+    + _id : ObjectId
+    + usuarioId : ObjectId
+    + username : String
+    + type : NotificationType
+    + message : String
+    + read : Boolean
+    + creationDate : Date
+    + readDate : Date
+    + importance : NotificationImportance
+    + realTime : Boolean
+}
+
+entity Transaction {
+    + _id : ObjectId
+    + user : ObjectId
+    + username : String
+    + legibleCardId : String
+    + userCard : ObjectId
+    + concept : TransactionConcept
+    + date : Date
+    + price : Number
+    + cardId : ObjectId
+    + auctionId : ObjectId
+    + bidId : ObjectId
+    + cardPackId : ObjectId
+    + legibleCardPackId : String
+}
+
+enum AuctionStatus {
+    + status : String
+}
+
+enum BidStatus {
+    + status : String
+}
+
+enum CardRarity {
+    + rarity : String
+}
+
+enum PokemonType {
+    + type : String
+}
+
+enum PokemonGym {
+    + gym : String
+}
+
+enum NotificationType {
+    + type : String
+}
+
+enum NotificationImportance {
+    + importance : String
+}
+
+enum TransactionConcept {
+    + concept : String
+}
+
+Auction }o--|| UserCard : "card"
+Auction }o--|| User : "seller"
+Auction }o--|| Bid : "winner"
+Auction }o--|| Bid : "bids"
+
+Bid }o--|| Auction : "auction"
+Bid }o--|| User : "user"
+Bid }o--|| UserCard : "usercard"
+
+Card }o--|| UserCard : "cards"
+Deck }o--|| Card : "cards"
+Notification }o--|| User : "usuarioId"
+Transaction }o--|| User : "user"
+Transaction }o--|| UserCard : "userCard"
+Transaction }o--|| Card : "cardId"
+Transaction }o--|| Auction : "auctionId"
+Transaction }o--|| Bid : "bidId"
+Transaction }o--|| CardPack : "cardPackId"
+
+@enduml
