@@ -280,7 +280,6 @@ Se ha utilizado para la planificación del proyecto y el seguimiento de las tare
 \subsection{Manual de Instalación y Ejecución}
 El código fuente de la aplicación se encuentra en el repositorio de GitHub \coloredUnderline{\href{https://github.com/paulasuarezp/BidMonUniverse}{BidMonUniverse}}.
 por lo que para instalar la aplicación es necesario clonar el repositorio en un entorno local.
-
 Para instalar la aplicación en un entorno local, se deben seguir los siguientes pasos:
 \begin{enumerate}
     \item Clonar el repositorio de GitHub en un entorno local.
@@ -294,38 +293,38 @@ Para instalar la aplicación en un entorno local, se deben seguir los siguientes
             \item \texttt{npm -v}
         \end{itemize}
     \end{itemize}
-
     \item Instalar las dependencias de \textit{webapp}. Para ello hay que ejecutar los siguientes comandos:
-      \begin{enumerate}
-          \item \texttt{cd webapp}
-          \item \texttt{npm install}
-      \end{enumerate}
+    \begin{enumerate}
+        \item \texttt{cd webapp}
+        \item \texttt{npm install}
+    \end{enumerate}
     \item Instalar las dependencias de \textit{restapi}. Para ello hay que ejecutar los siguientes comandos:
-      \begin{enumerate}
-          \item \texttt{cd restapi}
-          \item \texttt{npm install}
-      \end{enumerate}
+    \begin{enumerate}
+        \item \texttt{cd restapi}
+        \item \texttt{npm install}
+    \end{enumerate}
     \item Configurar las variables de entorno.
-      \begin{enumerate}
-          \item Crear un archivo \texttt{.env} en la carpeta \texttt{restapi} con las siguientes variables de entorno:
-          \begin{itemize}
-              \item \texttt{MONGO\_URI}: URI de la base de datos de MongoDB.
-              \item \texttt{TOKEN\_SECRET}: Clave secreta para la generación de tokens JWT.
-              \item \texttt{TEST\_MONGO\_URI}: URI de la base de datos de pruebas de MongoDB.
-              \item \texttt{PAYPAL\_CLIENT\_ID}: ID de cliente de PayPal.
-              \item \texttt{PAYPAL\_CLIENT\_SECRET}: Clave secreta de PayPal.
-              \item \texttt{NODE\_ENV=development}: Entorno de desarrollo.
-          \end{itemize}
-
+    \begin{enumerate}
+        \item Crear un archivo \texttt{.env} en la carpeta \texttt{restapi} con las siguientes variables de entorno:
+        \begin{itemize}
+            \item \texttt{MONGO\_URI}: URI de la base de datos de MongoDB.
+            \item \texttt{TOKEN\_SECRET}: Clave secreta para la generación de tokens JWT.
+            \item \texttt{TEST\_MONGO\_URI}: URI de la base de datos de pruebas de MongoDB.
+            \item \texttt{PAYPAL\_CLIENT\_ID}: ID de cliente de PayPal.
+            \item \texttt{PAYPAL\_CLIENT\_SECRET}: Clave secreta de PayPal.
+            \item \texttt{NODE\_ENV=development}: Entorno de desarrollo.
+        \end{itemize}
+    \end{enumerate}
     \item Iniciar la aplicación. Para ello hay que ejecutar los siguientes comandos:
-      \begin{enumerate}
-          \item \texttt{cd backend}, si no se está en la carpeta del \textit{backend}.
-          \item \texttt{npm start}
-          \item \texttt{cd frontend}, si no se está en la carpeta del \textit{frontend}.
-          \item \texttt{npm start}
-      \end{enumerate}
+    \begin{enumerate}
+        \item \texttt{cd backend}, si no se está en la carpeta del \textit{backend}.
+        \item \texttt{npm start}
+        \item \texttt{cd frontend}, si no se está en la carpeta del \textit{frontend}.
+        \item \texttt{npm start}
+    \end{enumerate}
     \item Acceder a la aplicación en un navegador web a través de la dirección \texttt{http://localhost:3000}.
 \end{enumerate}
+
 
 
 \subsection{Manual de Usuario} 
@@ -476,7 +475,7 @@ y podría retirar la subasta si lo desea.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/mi_subasta_detalle.png}
     \caption{Página de detalle de una subasta activa creada por el usuario.}
-    \label{fig:interfaz-detalle-mi-subasta}
+    \label{fig:m-interfaz-detalle-mi-subasta}
 \end{figure}
 
 
@@ -508,7 +507,7 @@ las pujas y subastas realizadas por el usuario.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/transacciones.png}
     \caption{Página de transacciones realizadas por el usuario.}
-    \label{fig:interfaz-transacciones}
+    \label{fig:m-interfaz-transacciones}
 \end{figure}
 
 
@@ -555,7 +554,7 @@ A esta página se accede haciendo clic en el avatar del usuario en la esquina su
     \centering
     \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/perfil1.png}
     \caption{Página de perfil del usuario.}
-    \label{fig:interfaz-perfil1}
+    \label{fig:m-interfaz-perfil1}
 \end{figure}
 
 
@@ -563,7 +562,7 @@ A esta página se accede haciendo clic en el avatar del usuario en la esquina su
     \centering
     \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/perfil2.png}
     \caption{Página de perfil del usuario, con la opción de cambiar la imagen de perfil desplegada.}
-    \label{fig:interfaz-perfil2}
+    \label{fig:m-interfaz-perfil2}
 \end{figure}
 
 Es importante que el usuario recuerde su contraseña, ya que no se puede recuperar en caso de olvido.
