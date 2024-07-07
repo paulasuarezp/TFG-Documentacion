@@ -30,7 +30,9 @@ Los criterios de aceptación para estas pruebas son que no se reporten errores g
 \subsubsection{Pruebas de Accesibilidad}
 Las pruebas de accesibilidad se realizarán para comprobar que la aplicación es accesible para personas con discapacidades.
 Se utilizará el plugin de Google Chrome 
-\coloredUnderline{\href{https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh}{WAVE Evaluation Tool}} para comprobar la accesibilidad de la aplicación.
+\coloredUnderline{\href{https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh}{WAVE Evaluation Tool}} para comprobar la accesibilidad de la aplicación,
+también se utilizará Google Lighthouse para comprobar la accesibilidad de la aplicación.
+
 En un primer lugar se realizarán las pruebas de accesibilidad en el entorno de desarrollo y posteriormente, se repetirán en el entorno de producción con los errores corregidos.
 
 Los criterios de aceptación para estas pruebas es que no haya errores de accesibilidad en el plugin WAVE Evaluation Tool,
@@ -846,7 +848,7 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \endfirsthead
     
     \multicolumn{4}{c}%
-    {{ \tablename\ \thetable{} Resultados de las pruebas de usabilidad -- continuación de la página anterior}} \\
+    {{ \tablename\ \thetable{} Resultados de las tareas de las pruebas de usabilidad -- continuación de la página anterior}} \\
     \toprule
     \rowcolor{darkgreen!50}
     \textbf{Usuario} & \textbf{Sí} & \textbf{No} & \textbf{Comentarios} \\
@@ -863,127 +865,147 @@ En la tabla  \coloredUnderline{\hyperlink{table:resultados_usabilidad}{Tabla \re
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 1. Crear una cuenta de usuario}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & Tras varios intentos ha conseguido crear una cuenta de usuario. Problema entendiendo las restricciones del nombre de usuario y contraseña. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & &  \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & Tras un intento fallido ha conseguido crear una cuenta de usuario. \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 2. Iniciar sesión en la aplicación}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 3. Cambiar la imagen de perfil}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}&  &  X & Como la imagen de perfil cambia automáticamente en la información del perfil, no confirmaba el cambio. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & Ha sugerido una opción para eliminar la imagen de perfil. \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 4. Adquirir un sobre de cartas}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1} & X & & Sin querer ha cerrado el \textit{modal} en el que se muestran las cartas adquiridas antes de verlas. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2} & X & & Ha encontrado un error al adquirir un sobre de cartas y seguidamente volver a intentar adquirir el mismo sobre.
+    Este error ya ha sido corregido en la versión actual de la aplicación. \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3} & X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 5. Consultar colección de cartas}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 6. Poner en subasta una carta}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& & X & No ha encontrado la opción para poner en subasta una carta. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& & X & Finalmente, ha encontrado la opción para poner en subasta una carta, pero se considera como una tarea poco intuitiva ya que 
+    ha buscado en la sección de subastas en lugar de en la sección de colección de cartas. \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 7. Consultar subastas activas de todos los usuarios}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 8. Consultar sus propias subastas activas}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& & X & No entendía el funcionamiento del \textit{slider} para ver sus propias subastas activas. 
+    Se ha añadido un mensaje de ayuda para explicar el funcionamiento del \textit{slider}. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & Ha indicado como mejora que la interfaz indicase de forma más clara cuáles son sus propias subastas activas. 
+    En la versión actual se cambia el título y añade un mensaje de ayuda para indicar que se están viendo las subastas activas del usuario. \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 9. Consultar sus propias pujas activas}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & Al principio, intentaba buscar la opción de consultar sus propias pujas activas en la sección de subastas activas. \\ 
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 10. Retirar una carta de una subasta}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 11. Pujar por una carta en subasta}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 12. Consultar notificaciones}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& X & & \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & Intentaba acceder al detalle de la notificación haciendo clic en la notificación.
+    La aplicación no permite acceder al detalle de la notificación.\\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 13. Marcar una notificación como leída}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1} & X & & Al principio, intentaba marcar una notificación como leída haciendo clic en la notificación. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2} & X & & Al principio, intentaba marcar una notificación como leída haciendo clic en la notificación. \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & Al principio, intentaba marcar una notificación como leída haciendo clic en la notificación. \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 14. Consultar transacciones}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1} & X & & 
+    Ha indicado como mejora que la interfaz indicase de forma más clara cuáles son las transacciones de compra y venta.
+    \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & Ha encontrado las notificaciones de adquisición de cartas mediante sobre poco informativas. \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & No entendía para que servía ver el identificador de la carta involucrada en la transacción. \\
     \midrule
     \rowcolor{darkgreen!30}
     \multicolumn{4}{|c|}{\textbf{Tarea 15. Cerrar sesión}} \\
-    \textbf{Usuario 1}& & & \\
+    \textbf{Usuario 1}& & X & Ha cerrado la pestaña del navegador en lugar de cerrar sesión. \\
     \midrule
-    \textbf{Usuario 2}& & & \\
+    \textbf{Usuario 2}& X & & \\
     \midrule
-    \textbf{Usuario 3}& & & \\
+    \textbf{Usuario 3}& X & & \\
     \bottomrule
 
-    
     \end{longtable}
+
+En base a los resultados de las pruebas de usabilidad, se han identificado los siguientes problemas de usabilidad y áreas de mejora de la aplicación:
+\begin{itemize}
+    \item \textbf{Problema 1}: Falta de mensajes de ayuda en algunas secciones de la aplicación.
+    En la sección de subastas activas, se ha añadido un mensaje de ayuda para explicar el funcionamiento del \textit{slider}.
+    De igual forma, en la sección de subastas activas propias se ha cambiado el título y añadido un mensaje de ayuda para indicar que se están viendo las subastas activas del usuario.
+    \item \textbf{Problema 2}: Falta de claridad en la navegación de la aplicación.
+    \item \textbf{Problema 4}: Falta de claridad en la información proporcionada en las transacciones. Para una próxima versión se añadirá una Descripción
+    más completa de la descripción y de los activos involucrados en la transacción. Además, se actualizará el diseño de tal manera que se diferencie
+    claramente entre las transacciones de compra y venta.
+    \item \textbf{Problema 5}: Falta de claridad en el botón de marcar la notificación como leída. 
+    Se ha añadido un \textit{tooltip} para indicar que el botón sirve para marcar la notificación como leída.
+\end{itemize}
+
 
 
 \subsubsection{Pruebas de Accesibilidad}
@@ -1016,12 +1038,21 @@ En el Anexo se muestra el resultado de la auditoría de accesibilidad realizada 
 \subsubsection{Pruebas de Adaptabilidad}
 Se han realizado pruebas de adaptabilidad de la aplicación en distintos dispositivos y tamaños de pantalla para comprobar que la aplicación se adapta correctamente a diferentes resoluciones y tamaños de pantalla.
 Se han probado la aplicación en dispositivos móviles, tabletas y ordenadores de escritorio para comprobar que la aplicación se ve correctamente en todos los dispositivos.
-Concretamente, se han probado los siguientes dispositivos:
+
+Concretamente, se han probado los siguientes dispositivos reales:
 \begin{itemize}
     \item \textbf{Dispositivos móviles}: Se ha probado la aplicación en un dispositivo móvil iPhone 12.
     \item \textbf{Tabletas}: Se ha probado la aplicación en una tableta iPad 8ª generación.
     \item \textbf{Ordenadores}: Se ha probado la aplicación en un ordenador de 16 pulgadas.
     \item \textbf{Monitor externo}: Se ha probado la aplicación en un monitor externo de 24 pulgadas.
+\end{itemize}
+
+Además, se han probado la aplicación en distintos navegadores y sistemas operativos para comprobar que la aplicación se ve correctamente en todos los navegadores y sistemas operativos.
+También se ha comprobado con las herramientas:
+\begin{itemize}
+			\item Google Chrome DevTools
+			\item \coloredUnderline{\href{https://bluetree.ai/screenfly/}{Screenfly}} de BlueTree
+			\item Extensión de Chrome \coloredUnderline{\href{https://www.webmobilefirst.com/}{Mobile FIRST}}
 \end{itemize}
 
 Como resultado de las pruebas de adaptabilidad, se ha comprobado que la aplicación se adapta correctamente a diferentes resoluciones y tamaños de pantalla.
