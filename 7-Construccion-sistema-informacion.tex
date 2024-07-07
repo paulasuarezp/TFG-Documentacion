@@ -1,96 +1,277 @@
 
 \section{PREPARACIÓN DEL ENTORNO DE GENERACIÓN Y CONSTRUCCIÓN}
 
-\subsection{Estándares y normas seguidos}
-
-
-\subsection{Lenguajes de programación}
-
-
 \subsection{Herramientas y programas usados para el desarrollo}
+Para el desarrollo de la aplicación se han utilizado diversas herramientas y programas que han facilitado la creación del sistema.  
+
+\subsubsection{Lenguaje de programación}
+El sistema ha sido desarrollado en su totalidad en TypeScript\cite{typescript}, tanto el \textit{frontend} como el \textit{backend}. 
+
+TypeScript es un superconjunto de JavaScript que añade tipado estático al lenguaje.
+Esto permite detectar errores en tiempo de compilación y facilita el mantenimiento del código ya que es mucho más descriptivo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Typescript.png}
+    \caption{Logo de TypeScript}
+\end{figure}
+
+\subsubsection{Entorno de ejecución}
+Se ha utilizado Node.js\cite{nodejs} como entorno de ejecución para JavaScript.
+Node.js permite ejecutar código JavaScript en el servidor y es muy popular en el desarrollo de aplicaciones web.
+A través de npm, el gestor de paquetes de Node.js, se han instalado las dependencias necesarias para el desarrollo de la aplicación.
+Este gestor de paquetes permite instalar y gestionar las dependencias de un proyecto de forma sencilla y cuenta con un amplio repositorio de paquetes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Nodejs.jpeg}
+    \caption{Logo de Node.js}
+\end{figure}
 
 
-\newpage
-\section{GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y PROCEDIMIENTOS}
+\subsubsection{Base de datos}
+La base de datos utilizada en el sistema es MongoDB\cite{mongodb}, una base de datos NoSQL orientada a documentos.
+Se ha utilizado MongoDB Atlas como servicio de base de datos en la nube, lo que ha permitido desplegar la base de datos de forma sencilla y segura.
 
-\textcolor[rgb]{0.65,0.16,0}{Ejemplos de tablas descripción de clases}
-
-\begin{table}[H]
-\vspace{-4mm}
-  \centering
-  \caption{Descripción de diseño de LoginScreen}
-    \begin{tabular}{p{8.645em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{LoginScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de inicio de sesión.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{signInWithGoogle} & \multicolumn{2}{p{22.64em}}{Hace una llamada al objeto Fire para el inicio de sesión con Firebase authentication mediante una cuenta de Google.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/mongodb.png}
+    \caption{Logo de MongoDB}
+\end{figure}
 
 
-\begin{table}[htbp]
-  \centering
-  \caption{Descripción de diseño de HomeScreen}
-    \begin{tabular}{p{10em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{HomeScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de emergencia.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{componentWillMount} & \multicolumn{2}{r}{} \\
-    \midrule
-    \textbf{emergencyCalling} & \multicolumn{2}{p{21.285em}}{Es el método encargado de redirigir la aplicación hacia el marcador con el 112 marcado.} \\
-    \midrule
-    \textbf{warnProtectors} & \multicolumn{2}{p{21.285em}}{[Falta implementar] Es el encargado de generar un mensaje de aviso a los protectores creando notificaciones push.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
+\subsubsection{Proveedor de servicios en la nube}
+Para el despliegue de la aplicación se ha utilizado Azure\cite{azure}, la plataforma en la nube de Microsoft.
+Azure ofrece una amplia gama de servicios en la nube, como servidores virtuales, bases de datos, almacenamiento y servicios de inteligencia artificial.
 
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS UNITARIAS}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/MicrosoftAzure.png}
+    \caption{Logo de Microsoft Azure}
+\end{figure}
 
 
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS DE INTEGRACIÓN}
+\subsubsection{Librerías y frameworks}
+Se han utilizado diversas librerías y frameworks para el desarrollo de la aplicación, tanto en el \textit{frontend} como en el \textit{backend}.
+Este tipo de herramientas permiten acelerar el desarrollo y facilitan la creación de interfaces de usuario y la gestión de la lógica de negocio.
+\subsubsection{Frontend}
+El \textit{frontend} de la aplicación ha sido desarrollado en React\cite{react}, una librería de JavaScript para la creación de interfaces de usuario,
+en combinación con Material-UI\cite{materialui}, una librería de componentes de React, se ha creado una interfaz de usuario moderna y atractiva.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/React.png}
+        \caption{Logo de React}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/MaterialUI.png}
+        \caption{Logo de Material-UI}
+    \end{minipage}
+\end{figure}
 
 
-\newpage
-\section{EJECUCIÓN DE LAS PRUEBAS DEL SISTEMA}
+El resto de dependencias que cabe destacar utilizadas en el \textit{frontend} son:
+\begin{itemize}
+        \item \texttt{redux}: Biblioteca para el manejo del estado de la aplicación.
+        \item \texttt{framer-motion}: Librería para animaciones en React.
+        \item \texttt{socket.io-client}: Cliente para la comunicación en tiempo real con WebSockets.
+        \item \texttt{styled-components}: Librería para escribir CSS en JavaScript.
+        \item \texttt{yup}: Librería para la validación de esquemas de datos.
+        \item \texttt{sweetalert2}: Librería para mostrar alertas personalizadas.
+        \item \texttt{react-router-dom}: Librería para la navegación en React.
+        \item \texttt{react-hook-form}: Librería para la gestión de formularios en React.
+        \item \texttt{react-paypal-js}: Librería para la integración de pagos con PayPal.
+        \item \texttt{react-slick}: Librería para la creación de carruseles en React.
+        \item \texttt{Jest}: Framework de pruebas para JavaScript.
+        \item \texttt{Puppeteer}: Librería para realizar pruebas de extremo a extremo.
+        \item \texttt{Cucumber}: Herramienta para pruebas.
+\end{itemize}
 
-\subsection{Prueba de Usabilidad}
 
-\subsection{Pruebas de Accesibilidad} 
- 
-\subsubsection{Revisión Preliminar} 
 
-\subsubsection{Evaluación de Conformidad} 
+\subsubsection{Backend}
+El \textit{backend} de la aplicación ha sido desarrollado con Express\cite{express}, un framework de Node.js para la creación de aplicaciones web y APIs.
+Express es muy popular en el desarrollo de aplicaciones web y permite crear servidores de forma sencilla y rápida.
 
-\subsubsection{Checklist del WCAG 2.1} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/express.png}
+    \caption{Logo de Express}
+\end{figure}
 
-\subsubsection{Accesibilidad con Dispositivos Móviles} 
+Las dependencias más destacadas utilizadas en el \textit{backend} son:
+\begin{itemize}
+    \item \texttt{axios}: Cliente HTTP basado en promesas para Node.js y el navegador.
+    \item \texttt{bcrypt}: Librería para el hashing de contraseñas.
+    \item \texttt{body-parser}: Middleware para analizar cuerpos de solicitudes HTTP en Node.js.
+    \item \texttt{cors}: Middleware para habilitar CORS (Cross-Origin Resource Sharing).
+    \item \texttt{jsonwebtoken}: Implementación de JSON Web Tokens.
+    \item \texttt{mongoose}: Librería de modelado de datos de MongoDB para Node.js.
+    \item \texttt{socket.io}: Biblioteca para aplicaciones web en tiempo real.
+    \item \texttt{yup}: Librería para la validación de esquemas de datos.
+    \item \texttt{csv-parser}: Librería para analizar archivos CSV.
+    \item \texttt{csv-writer}: Librería para escribir archivos CSV.
+    \item \texttt{paypal-rest-sdk}: SDK para la integración con PayPal.
+    \item \texttt{Jest}: Framework de pruebas para JavaScript.
+    \item \texttt{supertest}: Biblioteca para pruebas HTTP.
+\end{itemize}
+
+
+
+\subsubsection{Entorno de desarrollo}
+\subsubsubsection{Gestión de versiones}
+Para la gestión de versiones se ha utilizado Git\cite{git}, un sistema de control de versiones distribuido que permite llevar un control de los cambios en el código fuente.
+Como plataforma de alojamiento de repositorios se ha utilizado GitHub\cite{github}, que permite alojar proyectos de software y facilita la colaboración entre desarrolladores.
+Además, se ha utilizado GitHub Actions para la integración continua y GitKraken\cite{gitkraken} como cliente de escritorio para la gestión de ramas y \textit{pull requests}.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Git.png}
+        \caption{Logo de Git}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Github.png}
+        \caption{Logo de GitHub}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/GitKraken.jpeg}
+        \caption{Logo de GitKraken}
+    \end{minipage}
+\end{figure}
+
+\subsubsubsection{Editor de código}
+Para el desarrollo del código fuente se ha utilizado Visual Studio Code\cite{vscode}, 
+un editor de código fuente desarrollado por Microsoft que incluye soporte para depuración, control de versiones y resaltado de sintaxis.
+Admite extensiones que permiten ampliar sus funcionalidades y es muy popular entre los desarrolladores.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/VSCode.png}
+    \caption{Logo de Visual Studio Code}
+\end{figure}
+
+Además, se ha utilizado Notepad++\cite{notepad++} como editor de texto para la edición de archivos de configuración y otros archivos de texto
+necesarios para desplegar la aplicación en un servidor.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Notepad.png}
+    \caption{Logo de Notepad++}
+\end{figure}
+
+
+\subsubsection{Cliente SSH}
+Para la conexión remota con el servidor se ha utilizado MobaXterm\cite{mobaxterm}, un cliente SSH que permite conectarse a servidores remotos de forma segura.
+Tiene una interfaz gráfica intuitiva y permite la transferencia de archivos a través de SCP y SFTP.
+Se ha utilizado principalmente para la conexión con el servidor de producción y para la transferencia de archivos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/MobaXterm.png}
+    \caption{Logo de MobaXterm}
+\end{figure}
+
+\subsubsection{Postman}
+Para probar las rutas de la API se ha utilizado Postman\cite{postman}, una herramienta que permite realizar peticiones HTTP a servidores y analizar las respuestas.
+De esta manera se ha comprobado el funcionamiento de la API sin necesidad de utilizar el \textit{frontend}, lo que ha facilitado el desarrollo y la depuración de la aplicación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Postman.png}
+    \caption{Logo de Postman}
+\end{figure}
+
+
+\subsubsection{Documentación}
+
+\subsubsubsection{Memoria del proyecto}
+La documentación del proyecto se ha realizado con LaTeX\cite{latex}, un sistema de composición de textos que permite crear documentos de alta calidad tipográfica.
+Se ha utilizado la herramienta Overleaf\cite{overleaf} para la visualización y edición de los documentos, ya que permite la colaboración en tiempo real y la exportación a PDF.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/LaTeX.png}
+        \caption{Logo de LaTeX}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Overleaf.png}
+        \caption{Logo de Overleaf}
+    \end{minipage}
+\end{figure}
+
+
+\subsubsubsection{Diagramas}
+Para la creación de diagramas se han utilizado diversas herramientas, como Lucidchart\cite{lucidchart} y Draw.io\cite{drawio}, que permiten crear diagramas de forma sencilla y exportarlos en varios formatos.
+Se ha utilizado PlantUML\cite{plantuml} para la creación de diagramas de forma textual, lo que facilita la creación y modificación de los diagramas. 
+Por último, se ha utilizado Excalidraw\cite{excalidraw} para la creación de las interfaces de usuario de la aplicación.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Lucidchart.png}
+        \caption{Logo de Lucidchart}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Drawio.png}
+        \caption{Logo de Draw.io}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/PlantUML.png}
+        \caption{Logo de PlantUML}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/7-Construccion/Excalidraw.png}
+        \caption{Logo de Excalidraw}
+    \end{minipage}
+\end{figure}
+
+
+\subsubsubsection{Hojas de cálculo}
+Para la creación de hojas de cálculo se ha utilizado Microsoft Excel\cite{excel}, una herramienta de Microsoft Office que permite crear y editar hojas de cálculo.
+Se ha utilizado principalemente para la elaboración de presupuestos y cálculos de costes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Excel.png}
+    \caption{Logo de Microsoft Excel}
+\end{figure}
+
+\subsubsubsection{Planificación}
+Para la planificación del proyecto se ha utilizado Microsoft Project\cite{project}, una herramienta de Microsoft Office que permite crear diagramas de Gantt y planificar tareas y recursos.
+Se ha utilizado para la planificación del proyecto y el seguimiento de las tareas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{figures/7-Construccion/Project.png}
+    \caption{Logo de Microsoft Project}
+\end{figure}
+
 
 
 \newpage
