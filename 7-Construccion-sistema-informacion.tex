@@ -588,35 +588,32 @@ Estos scripts se ejecutarán localmente dependiendo de los datos que se quieran 
 Los archivos generados deben de estar en el directorio \texttt{data} de la carpeta \texttt{restapi}.
 Es necesario tener instalado Node.js y npm en el sistema para ejecutar los scripts y comprobar que la base de datos está en funcionamiento.
 Además, si se realiza una importanción con datos recopilados manualmente, es necesario que los datos estén en el formato correcto.
-
 Para ejecutar los scripts, se debe situar en la carpeta \texttt{restapi} y ejecutar los siguientes comandos:
 \begin{itemize}
     \item Exportar datos de cartas:
     \begin{enumerate}
         \item \texttt{npm run fetch-data}
-        \item Este comando generará un archivo \texttt{cards_data.csv} en el directorio \texttt{data}. Recopila datos de PokéAPI
+        \item Este comando generará un archivo \texttt{cards\_data.csv} en el directorio \texttt{data}. Recopila datos de PokéAPI
         \coloredUnderline{\href{https://pokeapi.co/}{PokéAPI}}, aplica la lógica de negocio y los exporta a un archivo CSV.
     \end{enumerate}
     \item Importar datos de cartas:
     \begin{enumerate}
         \item \texttt{npm run load-data}
-        \item Este comando leerá el archivo \texttt{cards_data.csv} y cargará los datos en la base de datos.
+        \item Este comando leerá el archivo \texttt{cards\_data.csv} y cargará los datos en la base de datos.
     \end{enumerate}
     \item Exportar datos de mazos:
     \begin{enumerate}
         \item \texttt{npm run fetchDecksData}
-        \item Este comando generará un archivo \texttt{decks_data.csv} en el directorio \texttt{data}.
+        \item Este comando generará un archivo \texttt{decks\_data.csv} en el directorio \texttt{data}.
     \end{enumerate}
     \item Importar datos de mazos:
     \begin{enumerate}
         \item \texttt{npm run loadDecksData}
-        \item Este comando leerá el archivo \texttt{decks_data.csv} y cargará los datos en la base de datos.
+        \item Este comando leerá el archivo \texttt{decks\_data.csv} y cargará los datos en la base de datos.
     \end{enumerate}
     \item Importar datos de sobres de cartas:
     \begin{enumerate}
         \item \texttt{npm run loadCardPacksData}
-        \item Este comando leerá el archivo \texttt{cardPacks_data.csv} y cargará los datos en la base de datos.
+        \item Este comando leerá el archivo \texttt{cardPacks\_data.csv} y cargará los datos en la base de datos.
     \end{enumerate}
 \end{itemize}
-
-
