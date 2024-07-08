@@ -1,49 +1,96 @@
 \newpage
-\section{AMPLIACIONES} 
-El proyecto se podría ampliar de diversas formas para mejorar la experiencia del usuario y añadir nuevas funcionalidades.
-A continuación, se detallan algunas de las ampliaciones que se podrían llevar a cabo:
+\section{AMPLIACIONES}
 
-\begin{itemize}
-    \item \textbf{Sistema de torneos}: Se podría implementar un sistema de torneos en el que los usuarios puedan competir entre ellos con las cartas de su colección.
-    Los usuarios podrían usar las cartas de su colección, que ya tienen un nivel de ataque y defensa, para competir en torneos y ganar premios.
-    Las cartas podrían subir de nivel con el uso, lo que incrementaría su valor.
-    \item \textbf{Mejoras de rendimiento}: Se podría implementar paginación en la obtención de resultados de la base de datos para mejorar el rendimiento de la aplicación.
-    \item \textbf{Internacionalización}: Se podría implementar un sistema de internacionalización para que la aplicación esté disponible en varios idiomas.
-    La aplicación ya dispone de un botón de internacionalización adaptable a diferentes dispositivos y tamaños de pantalla,
-    por lo que sería relativamente sencillo implementar esta funcionalidad.
-    \item \textbf{Administración del sistema}: Se podría ampliar la aplicación para que los administradores puedan gestionar los usuarios, la tienda y las cartas.
-    Los administradores podrían añadir nuevos sobres a la tienda, gestionar los usuarios, descatalogar cartas o añadir nuevas cartas a la base de datos.
-    Estas funcionalidades serían relativamente sencillas de implementar, ya que la aplicación se ha diseñado contemplando la posibilidad de añadir nuevas funcionalidades.
-    Por ejemplo, descatalogar una carta sería tan sencillo como cambiar un campo en la base de datos.
-    \item \textbf{Cierre de subastas automático}: Se podría implementar un \textit{cron job} que cierre las subastas automáticamente cuando llegue la fecha de cierre
-    o un \textit{trigger} en la base de datos que cierre la subasta cuando se alcance el tiempo límite.
-    Esta funcionalidad permitiría automatizar el cierre de las subastas y evitar que los usuarios administradores tengan que estar pendientes de cerrarlas manualmente.
-    El método de cierre de subastas ya está implementado en la aplicación, por lo que sería relativamente sencillo implementar esta funcionalidad.
-    No se ha llevado a cabo debido a las limitaciones de presupuesto, ya que automatizar esta tarea significa tener un servidor en funcionamiento las 24 horas del día.
+El proyecto se puede ampliar de diversas formas para mejorar la experiencia del usuario y añadir nuevas funcionalidades. A continuación, se detallan algunas posibles ampliaciones:
 
-\end{itemize}
+    \subsubsection{Jugabilidad}
+    Implementar un sistema de torneos en el que los usuarios compitan entre ellos utilizando las cartas de su colección. 
+    Estas cartas, que ya tienen un nivel de ataque y defensa, podrían mejorar con el uso, incrementando su valor. Los torneos ofrecerían premios a los ganadores, 
+    fomentando así la participación y el compromiso de los usuarios.
 
 
+    \subsubsection{Mejoras de rendimiento}
+    Implementar la paginación en la obtención de resultados de la base de datos para optimizar el rendimiento de la aplicación. 
+    Esta mejora permitiría una gestión más eficiente de los datos y una experiencia de usuario más fluida.
+
+
+    \subsubsection{Notificaciones}
+    Sería interesante mejorar el sistema de notificaciones permitiendo a los usuarios recibir 
+    alertas en tiempo real sobre eventos importantes, como el cierre de una subasta sin la necesidad de estar conectado a la aplicación.
+    Para ello, se podría implementar un sistema que combine la implementación actual con un sistema de notificaciones por correo electrónico o SMS.
+
+    \subsubsection{Internacionalización}
+    Desarrollar un sistema de internacionalización para que la aplicación esté disponible en varios idiomas. 
+
+    Dado que la aplicación ya dispone de un componente de internacionalización adaptable a diferentes dispositivos y tamaños de pantalla, esta funcionalidad sería relativamente sencilla de implementar.
+    Consistiría en añadir los textos en diferentes idiomas y hacer visible dicho componente en la interfaz de usuario.
+
+
+    \subsubsection{Administración del sistema}
+    Se podría añadir nuevas funcionalidades al panel de administración para gestionar el sistema de forma más eficiente.
+
+    La página de bienvenida mostraría un resumen de las estadísticas de la plataforma, como el número de usuarios, cartas en circulación, subastas activas, etc.
+
+
+    Esto incluiría la capacidad de añadir nuevos sobres a la tienda, gestionar usuarios, descatalogar cartas y añadir nuevas cartas a la base de datos desde la interfaz de administración, 
+    entre otras funcionalidades.
+
+    Estas funcionalidades son sencillas de implementar, ya que la arquitectura de la aplicación permite la adición de nuevas características con facilidad. 
+    Por ejemplo, descatalogar una carta solo requeriría modificar un campo en la base de datos.
+
+
+    \subsubsection{Cierre de subastas automático}
+    Implementar un \textit{cron job} para cerrar las subastas automáticamente cuando llegue la fecha de cierre, o un \textit{trigger} en la base de datos 
+    para cerrarlas al alcanzar el tiempo límite. Esto automatizaría el proceso de cierre de subastas, eliminando la necesidad de intervención manual por parte de los administradores. 
+
+    El método de cierre de subastas ya está implementado. Este método busca las subastas que han alcanzado la fecha de cierre, procesa las pujas vinculadas a ellas,
+    se selecciona la puja más alta válida y se realiza la transferencia de la carta y de saldo, registrando las transacciones correspondientes y notificando a los usuarios implicados.
+    
+    El motivo de no implementar el cierre automático de subastas pese a tener la funcionalidad es la limitación presupuestaria, 
+    ya que un proceso automatizado requiere de un servidor que esté constantemente activo lo que implica un coste adicional.
+
+    \subsubsection{Estadísticas de mercado}
+
+    Actualmente la aplicación cuenta con un registro de todas las transacciones realizadas por cada carta, por lo que un usuario manualmente podría analizar estos datos para obtener estadísticas del mercado de una carta.
+
+    Sería interesante implementar un sistema de estadísticas que permita a los usuarios visualizar la evolución del precio de una carta a lo largo del tiempo,
+    así como comparar el precio de una carta en diferentes momentos. Esto proporcionaría a los usuarios información valiosa sobre el valor de sus cartas y les ayudaría a tomar decisiones 
+    informadas sobre su colección y sus inversiones.
+
+
+    \subsubsection{Retirada de saldo}
+
+    Actualmente, los usuarios no pueden retirar el saldo de su cuenta. 
+    Implementar un sistema de retirada de saldo permitiría a los usuarios transferir el saldo acumulado en su cuenta a su cuenta bancaria o a una cartera de criptomonedas.
+    Lo que haría más atractiva la inversión en la plataforma, ya que los usuarios podrían recuperar su inversión en cualquier momento.
 
 
 
 
 \section{CONCLUSIONES}
-Este proyecto ha sido una experiencia muy enriquecedora, ya que se han aplicado muchos de los conocimientos adquiridos durante la carrera en un proyecto 
-que ha supuesto un reto tanto a nivel técnico como organizativo.
 
-En cuanto a la parte técnica, se ha profundizado en el desarrollo de aplicaciones web con React, lo que ha permitido adquirir nuevos conocimientos
-sobre esta tecnología y mejorar las habilidades en el desarrollo de interfaces de usuario. Además, se ha trabajado con Sockets para la comunicación en tiempo real
-entre el cliente y el servidor, lo que ha supuesto un reto añadido y ha permitido aprender cómo funcionan las comunicaciones en tiempo real.
+Este proyecto ha sido una experiencia muy enriquecedora, ya que he aplicado numerosos conocimientos adquiridos durante mi carrera en un entorno que ha supuesto un 
+reto tanto a nivel técnico como organizativo.
 
-Por otro lado, a nivel organizativo, también ha supuesto un reto llevar a cabo un proyecto de estas características de forma individual.
-Se ha tenido que planificar el proyecto, establecer unos objetivos y cumplir con los plazos establecidos. Además, se ha tenido que gestionar el tiempo
-de forma eficiente para poder cumplir con las tareas planificadas.
+En cuanto a la parte técnica, he profundizado en el desarrollo de aplicaciones web con React, lo que me ha permitido adquirir nuevos conocimientos sobre esta 
+tecnología y mejorar mis habilidades en el desarrollo de interfaces de usuario. Además, he trabajado por primera vez con Sockets para la comunicación en tiempo real entre el cliente y el servidor, 
+lo cual ha representado un desafío adicional y me ha permitido entender mejor el funcionamiento de las comunicaciones en tiempo real.
+También ha permitido profundizar en el uso de MongoDB y Mongoose, lo que me ha permitido mejorar mis habilidades en el diseño de bases de datos NoSQL y en la interacción con las mismas.
+Asimismo, aunque ya había desplegado otra aplicación en Azure, este proyecto me ha permitido profundizar en el uso de esta plataforma 
+y en sentirme más cómoda configurando los servicios necesarios para el despliegue de la aplicación.
+
+A nivel organizativo, llevar a cabo un proyecto de estas características de forma individual ha sido un reto significativo. He tenido que planificar el proyecto, 
+establecer objetivos y cumplir con los plazos establecidos. 
+He tenido varios problemas al principio por mala planificación y querer abarcar demasiado, pero con el tiempo he aprendido a priorizar y a centrarme en las tareas más importantes.
+A centrarme en hacer un modelo base y de ahí ir añadiendo funcionalidades, lo que me ha permitido avanzar de forma más eficiente y cumplir con los plazos establecidos.
 
 
-Es complicado destacar una única parte del proyecto, ya que todas las fases han sido importantes y han aportado un valor añadido al proyecto.
-No obstante, si tuviera que destacar una parte, sería la de diseño de la interfaz de usuario, ya que ha sido una de las partes más creativas y en la que
-se ha podido plasmar la idea inicial del proyecto y con la que me siento más satisfecha.
+Una de las primeras decisiones que tomé fue realizar la documentación en LaTeX. Aunque inicialmente fue un desafío debido a mi falta de experiencia y la complejidad en el manejo de tablas 
+y referencias cruzadas, con el tiempo he adquirido soltura y he logrado completar la documentación con éxito. Al final, esta elección resultó ser acertada, ya que pude llevar un control de 
+versiones de la documentación con Git, lo que facilitó la gestión de los cambios.
 
+Es difícil destacar una única parte del proyecto, ya que todas las fases han sido importantes y han aportado un valor añadido. No obstante, si tuviera que destacar una, 
+sería el diseño de la interfaz de usuario, ya que ha sido una de las partes más creativas y en la que pude plasmar la idea inicial del proyecto. 
 
-
+Debo de agradecer a mi tutor, por el tema propuesto, ya que me ha permitido explorar un campo que incentivó mi lado creativo, 
+lo cual ha hecho que el proceso de desarrollo haya sido más ameno y satisfactorio. Además, su apoyo y orientación han sido fundamentales para la realización del proyecto.

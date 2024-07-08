@@ -475,7 +475,7 @@ y podría retirar la subasta si lo desea.
     \centering
     \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/mi_subasta_detalle.png}
     \caption{Página de detalle de una subasta activa creada por el usuario.}
-    \label{fig:m-interfaz-detalle-mi-subasta}
+    \label{fig:m-interfaz-detalle-mi-subasta1}
 \end{figure}
 
 
@@ -570,6 +570,37 @@ Además, debe asegurarse de confirmar los cambios antes de salir de la página d
 
 \subsubsection{Cierre de sesión}
 Para cerrar la sesión, el usuario puede hacer clic sobre  su avatar en la esquina superior derecha y seleccionar la opción de \textit{Cerrar sesión}.
+
+
+\subsubsection{Rol de administrador}
+El rol de administrador tiene acceso a una serie de funcionalidades distintas a las de un usuario normal.
+El administrador puede ver una lista de todas las transacciones realizadas en la aplicación, incluyendo las compras de sobres, las subastas y las pujas.
+Además, tiene la posibilidad de cerrar las subastas que han finalizado.
+Este proceso consiste en que el sistema procesa todas las subastas cuya duración ha expirado y asigna la carta subastada al usuario que ha realizado la puja más alta.
+Si no hay pujas, la carta se devuelve al usuario que la subastó.
+A continuación, se muestra la vista de subastas activas para el administrador.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/subastas-admin.png}
+    \caption{Página de subastas activas para el administrador.}
+    \label{fig:m-interfaz-admin-subastas}
+\end{figure}
+
+Si pulsa en el botón de \textit{Cerrar subastas terminadas}, se abrirá un modal de confirmación en el que se 
+le informa que la acción no se puede deshacer y se le pide que confirme la acción.
+Una vez confirmada, el sistema procesará las subastas finalizadas y asignará las cartas a los usuarios correspondientes.
+Mostrará un diálogo con el resultado de la operación, indicando el precio final de la carta y el usuario al que se le ha asignado o 
+si la carta ha sido devuelta al usuario que la subastó.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/6-Analisis/6-Interfaz/interfaz/subastas-admin-cierre.png}
+    \caption{Diálogo informativo de cierre de subastas para el administrador.}
+    \label{fig:m-interfaz-cerrar-subastas}
+\end{figure}
+
+El inicio de sesión se realiza de igual manera que para un usuario normal, pero no se puede registrar un nuevo administrador desde la aplicación.
 
 
 

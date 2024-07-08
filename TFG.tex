@@ -31,6 +31,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{caption}
 \usepackage{longtable} %Permite que las tablas puedan ocupar más de una página
+\usepackage{array}         % Mejoras en las presentaciones de las tablas
+\usepackage{pdflscape}
 \captionsetup{hypcap=true}  % Asegura que los links apunten a la parte superior de la figura
 
 
@@ -110,7 +112,7 @@
 % Configuración de los estilos del capítulo
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\raggedright}
-  {\color{darkgreen}\chaptertitlename\ \thechapter}{20pt}{\Huge\color{black}\raggedright}
+  {\color{darkgreen}\chaptertitlename\ \thechapter}{10pt}{\Huge\color{black}\raggedright}
 
 % Estilos de los enlaces 
 \hypersetup{
@@ -175,14 +177,24 @@ Copyright (C) 2020 \textbf{ELENA ALLEGUE GONZÁLEZ, JOSÉ MANUEL REDONDO LÓPEZ}
 Teaching Innovation Project: PINN-19-A-029 (University of Oviedo)\\
 This work has been published in \cite{RedondoPlantillasRG19} \cite{RedondoUCO20}\\
 \\
-Esta versión de la plantilla para Trabajos de Fin de Grado ha sido posible gracias a la donación de la ex-alumna Elena Allegue González de su documentación de Trabajo de Fin de Grado, que ha servido como base para elaborar esta versión. Aquí podréis encontrar todos los títulos y subtítulos de las secciones, pero las explicaciones se mantendrán en la versión \textit{Word} de la plantilla (se proporciona una versión PDF de la misma para facilitar el acceso a las mismas). No obstante, del trabajo de Elena se han conservado ejemplos de como hacer elementos clave como imágenes, tablas, etc.
-
-Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabajo bastante largo, pero gracias al trabajo de Elena se ha podido equiparar esta versión con las de \textit{Word} mucho más rápidamente.
 % ----- Fin Página de copyright -----
 
 %\newpage
 \pagestyle{fancy}
-\chapter*{Agradecimientos}
+\chapter*{Declaración Responsable}
+La alumna Paula Suárez Prieto
+
+Con DNI: 34295806T
+
+Y UO: 269745
+
+Declara que esta obra es completamente original y
+se han citado debidamente las fuentes utilizadas durante la realización de la misma.
+
+Y para que así conste, firma la presente declaración en Oviedo, a 08 de julio de 2024.
+
+
+
 
 \pagestyle{fancy}
 
@@ -252,12 +264,7 @@ Desarrollar una versión \textit{Latex} de la plantilla desde cero es una trabaj
 
 \newpage
 \thispagestyle{empty}
-\chapter{Introducción}
-\noindent\begin{tikzpicture}
-% Definir el degradado
-\shade[left color=darkgreen, right color=lightgreen] (0,0) rectangle (\textwidth-1pt,0.2);
-
-\end{tikzpicture}
+\chapter{INTRODUCCIÓN}
 \input{1-Introduccion.tex}
 
 \newpage
